@@ -1,0 +1,2841 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_Alert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Sacrifice"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_SpecialsState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        9013
+                    ],
+                    "GAIGOBCNNEE": "SpecialsState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "SpecialsState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Entity_MassRatio": 9999.0,
+                        "Entity_WeightRatio": 5.0
+                    },
+                    "onBeingHit": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Sacrifice"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_ActionPointRegister",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        9013
+                    ],
+                    "GAIGOBCNNEE": "ActionPointRegister_Preach"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ActionPointRegister_Preach": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RegisterAIActionPoint",
+                            "pointType": "PreachPoint"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ReleaseAIActionPoint",
+                            "pointType": "PreachPoint"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "ReleaseAIActionPoint",
+                            "pointType": "PreachPoint"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_TurnToSacrifice",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Sacrifice",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_OutOfSacrifice",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Sacrifice"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_Sacrifice_NeuronBroadcaster",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Sacrifice"
+                    ],
+                    "GAIGOBCNNEE": "NeuronBroadcast_Surround"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NeuronBroadcast_Surround": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "BroadcastNeuronStimulate",
+                            "EPADBCOELIH": "SURROUND",
+                            "CJNNGCCCHOH": true,
+                            "rayCount": 50.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "BroadcastNeuronStimulate",
+                            "EPADBCOELIH": "SURROUND",
+                            "rayCount": 50.0
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "BroadcastNeuronStimulate",
+                            "EPADBCOELIH": "SURROUND",
+                            "rayCount": 50.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_Sacrifice_Effect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Sacrifice"
+                    ],
+                    "GAIGOBCNNEE": "Sacrifice_Effect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Sacrifice_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Common_Preach"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_Disappear",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetCanDieImmediately",
+                    "PGEOCOLLNBO": true
+                },
+                {
+                    "$type": "KillSelf",
+                    "BEKKIHBPHGD": true,
+                    "EOIGEKNINFE": true,
+                    "EKINLACJBGF": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Abyss_Fire_SpecialsState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "Sacrifice",
+                        "TurnToSacrifice"
+                    ],
+                    "OFLAPMGKHHE": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JLLNCKPFKLD": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_ElementShield_Remove_NoBroken"
+                        }
+                    ],
+                    "MCFCEOACJEB": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ElementState",
+                            "weight": 2
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_ElementShield"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_ElementShield_Effect"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ElementShield_Remove_NoBroken",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                },
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ElementState",
+                    "weight": 2
+                },
+                {
+                    "$type": "ResetAnimatorTrigger",
+                    "triggerID": "ShiledBrokenTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_SacrificeAlert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ElementState",
+                    "weight": 2
+                },
+                {
+                    "$type": "TriggerAbility",
+                    "abilityName": "Abyss_Fire_ElementShield"
+                },
+                {
+                    "$type": "TriggerAbility",
+                    "abilityName": "Abyss_Fire_ElementShield_Effect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_WeaponElement",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        201,
+                        300,
+                        301
+                    ],
+                    "GAIGOBCNNEE": "WeaponEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "WeaponEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_WeaponElement"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "WeaponEffect"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ElementShield",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        300,
+                        301,
+                        302
+                    ],
+                    "GAIGOBCNNEE": "Abyss_Fire_ElementShield_RecoverHandler"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ElementShield_DurabilityImprove": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Abyss_Fire_ElementShield_RecoverHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                        }
+                    ]
+                },
+                "UNIQUE_MonsterEliteAffix_DefaultState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "UseSkillEliteSet",
+                            "AFIOIAPCKEJ": 1
+                        }
+                    ]
+                },
+                "UNIQUE_Abyss_Fire_ElementShield": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Fire",
+                    "elementDurability": [
+                        300.0,
+                        "ElementShield_DurabilityImprove",
+                        "Mul",
+                        300.0,
+                        "Add"
+                    ],
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Fire",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224,
+                            "HMLKELJFCKD": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "Target",
+                                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "TargetOriginOwner",
+                                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_ElementShield_Hit_Invalid",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByGlobalValue",
+                                            "MICIJLHMIIH": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD_HIT"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "SendEffectTrigger",
+                                    "MOCGJNIDDAI": "BeHitInvalid",
+                                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_ElementShield_BS"
+                                }
+                            ],
+                            "FFOEHJLIDFC": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "Target",
+                                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "TargetOriginOwner",
+                                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_ElementShield_Hit",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByGlobalValue",
+                                            "MICIJLHMIIH": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD_HIT"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "SendEffectTrigger",
+                                    "MOCGJNIDDAI": "BeHit",
+                                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_ElementShield_BS"
+                                }
+                            ],
+                            "NGOKEFIDFCJ": true,
+                            "HJAIAEACKHM": true
+                        },
+                        {
+                            "$type": "VelocityForceMixin",
+                            "MPGPCCEHFGL": [
+                                "WindZoneType"
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_MoveOnWaterHandler"
+                        },
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 14001
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "ShiledBrokenTrigger"
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ElementState"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_RETURNTOBORN_TAG_",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_MoveOnWaterHandler"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield_Effect"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ELITEAFFIX_DEFENCE_ENHANCE",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 301.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Fire",
+                                    "elementDurability": 25.0,
+                                    "enBreak": 0.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "none",
+                                    "hitImpulseType": "LV0",
+                                    "muteHitText": true
+                                }
+                            }
+                        },
+                        {
+                            "$type": "DamageByAttackValue",
+                            "NPHOOPNDCAC": "TargetOwner",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ELITEAFFIX_DEFENCE_ENHANCE",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 301.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Fire",
+                                    "elementDurability": 25.0,
+                                    "enBreak": 0.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "none",
+                                    "hitImpulseType": "LV0",
+                                    "muteHitText": true
+                                }
+                            }
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                        }
+                    ]
+                },
+                "UNIQUE_Abyss_Fire_MoveOnWaterHandler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "EnableCharacterMoveOnWaterMixin"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValueToOverrideMap",
+                    "BPCFCANOMNH": "_MONSTERAFFIX_ELEMENTSHIELD_DURABILITYIMPROVE",
+                    "OGAHELLALBB": "ElementShield_DurabilityImprove"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_TAG",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_MonsterEliteAffix_DefaultState"
+                },
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ElementState",
+                    "weight": 2
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ElementState",
+                    "weight": 2
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ElementShield_Effect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        300,
+                        301,
+                        302
+                    ],
+                    "GAIGOBCNNEE": "Abyss_Fire_ElementShield_Effect_RecoverHandler"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Abyss_Fire_ElementShield_Effect_RecoverHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield_Effect"
+                        }
+                    ]
+                },
+                "UNIQUE_Abyss_Fire_ElementShield_Effect": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_ElementShield"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_ElementShield"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_ElementShield_BS"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_ElementShield"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_ElementShield"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield_Effect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ElementShield_Remove",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_DizzyTimer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        100,
+                        101
+                    ],
+                    "GAIGOBCNNEE": "Abyss_Fire_DizzyTimer_Handler"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ElementShield_GapReduce": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Abyss_Fire_DizzyTimer_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_DizzyTimer"
+                        }
+                    ],
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_DizzyTimer"
+                        }
+                    ]
+                },
+                "UNIQUE_Abyss_Fire_DizzyTimer": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        12.0,
+                        "ElementShield_GapReduce",
+                        "Mul",
+                        12.0,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 3.0
+                    },
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "intID": "ElementState",
+                            "weight": 1
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValueToOverrideMap",
+                    "BPCFCANOMNH": "_MONSTERAFFIX_ELEMENTSHIELD_GAPREDUCE",
+                    "OGAHELLALBB": "ElementShield_GapReduce"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_GatherStart",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GatherStart",
+                        "GatherLoop",
+                        "GatherSuccess_Alert"
+                    ],
+                    "GAIGOBCNNEE": "GatherState"
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        201
+                    ],
+                    "GAIGOBCNNEE": "GatherEndure"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "GatherEndure": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.4000000059604645
+                    }
+                },
+                "GatherState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_GATHERFAILEDSTATE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "intID": "ElementState"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_GatherLoop",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GatherLoop"
+                    ],
+                    "GAIGOBCNNEE": "GatherLoop_Effect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GatherLoop"
+                    ],
+                    "GAIGOBCNNEE": "Gather_FireImpulse_Default"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "GatherLoop_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Gather"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_WeaponElement"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Abyss_Fire_FireImpulse_ReduceGV"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_TARGET",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "CABLIPAKCGB": 42201008,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "CreateGadget",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_HIT",
+                                    "value": 0.0,
+                                    "EODMLMGMLNP": true
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_TARGET",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                }
+                            ],
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByPredicatePoint",
+                                "JBPCKOKLHEB": true,
+                                "BIOOFAHEGLA": 0.75
+                            },
+                            "CABLIPAKCGB": 42201007,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                },
+                "Gather_FireImpulse_Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.75,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "HJJEAOMEOFI": "Gather_BornPos",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 2.0,
+                                    "MFBOELKCPDP": 7.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "Gather_BornPos",
+                                "MICIJLHMIIH": ""
+                            },
+                            "OADJJGJKKLA": {
+                                "enable": true,
+                                "PCLKNLDEHGH": 10.0
+                            },
+                            "CABLIPAKCGB": 42201007,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                },
+                "Abyss_Fire_FireImpulse_ReduceGV": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 1.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_HIT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_GatherAlert",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GatherSuccess_Alert"
+                    ],
+                    "GAIGOBCNNEE": "GatherAlert"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "GatherAlert": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Gather_Alert"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_GatherSuccess",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_DizzyTimer"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Gather_AS_Hor",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 5.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Gather_AS_Ver",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 5.0,
+                                    "PHDCJAHHIOG": -0.5
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 1.0,
+                                "KAAPLGBEDPM": 10.0,
+                                "PHDCJAHHIOG": 1.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 2.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 0.1599999964237213,
+                        "shakeTime": 0.30000001192092896,
+                        "shakeDistance": 25.0,
+                        "shakeDir": {
+                            "_y": 1.0
+                        },
+                        "extension": {
+                            "rangeAttenuation": 0.8999999761581421
+                        }
+                    }
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_GATHERFAILEDSTATE_",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "DoWatcherSystemAction",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_GATHERFAILEDSTATE_",
+                            "value": 1.0
+                        }
+                    ],
+                    "GPGMPHIIAMD": 82006,
+                    "LNGKALMLMGN": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_Impulse",
+            "HNEIEGHMLKH": {
+                "FireImpulse": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.6000000238418579,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Impulse"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Impulse_Alert"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireImpulse_Damage"
+                        }
+                    ]
+                },
+                "FireImpulse_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 3.0,
+                                    "ICGFCBOFFDI": 0.75
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Fire",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 100.0,
+                                        "attackType": "Range"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV7",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeType": "CustomVector",
+                                        "shakeRange": 0.03999999910593033,
+                                        "shakeTime": 0.11999999731779099,
+                                        "shakeDir": {
+                                            "_y": 1.0
+                                        },
+                                        "extension": {}
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Abyss_Fire_FireImpulse_AddGV"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireImpulse_HitDelay"
+                        }
+                    ]
+                },
+                "FireImpulse_HitDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Abyss_Fire_FireImpulse_ReduceGV"
+                        }
+                    ]
+                },
+                "Abyss_Fire_FireImpulse_AddGV": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 1.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_HIT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Abyss_Fire_FireImpulse_ReduceGV": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 1.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_HIT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "FireImpulse"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ImpulseArea",
+            "HNEIEGHMLKH": {
+                "Abyss_Fire_ImpulseArea_AddGV": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 1.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_TARGET",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Abyss_Fire_ImpulseArea_ReduceGV": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 1.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_FIREIMPULSE_TARGET",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KJKECFBMHKH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "Abyss_Fire_ImpulseArea_AddGV"
+                }
+            ],
+            "JPKNDOGGOIN": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "Abyss_Fire_ImpulseArea_ReduceGV"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_BlinkEffect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Blink"
+                    ],
+                    "GAIGOBCNNEE": "Blink_State"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Blink_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Blink_Shield"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Blink_Actions"
+                        }
+                    ]
+                },
+                "UNIQUE_Blink_Shield": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield_Effect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_ABYSS_FIRE_ELEMENTSHIELD",
+                                    "value": 1.0
+                                }
+                            ],
+                            "abilityName": "Abyss_Fire_ElementShield_Effect"
+                        }
+                    ]
+                },
+                "UNIQUE_Blink_Actions": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ELITEAFFIX_AGILITY_ENHANCE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_AS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.6499999761581421,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ELITEAFFIX_AGILITY_ENHANCE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "abilityName": "Abyss_Fire_DoBlink_Damage"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Blink_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Blink_DenyLockOn"
+                        },
+                        {
+                            "$type": "TriggerSetVisible"
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard",
+                            "COCENMAFJGD": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard"
+                        }
+                    ]
+                },
+                "Blink_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Blink_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Blink_Shield"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Blink_Actions"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_BS"
+                },
+                {
+                    "$type": "ClearLockTarget",
+                    "NPHOOPNDCAC": "CurLocalAvatar"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_BlinkPoint",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPoint",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "DGICDMAKHOJ": 60.0,
+                    "JLCCGHLNHOI": 5.0,
+                    "GLALMCMAFJF": 7.0
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTeleportToPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_DoBlink",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "DoBlink"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_DoBlink_Visible",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_AS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.6499999761581421,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Blink_Actions"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_DoBlink_Damage",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 2.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_Blink_AS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Blink_Shield"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ForceDefend",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        101
+                    ],
+                    "GAIGOBCNNEE": "ForceDefend"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ForceDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit",
+                                "BeHitThrow"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "OKEAOJGNCNJ": 0.20000000298023224,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 8.0,
+                            "EAEELLPBGHO": false,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "TriggerAbility",
+                                    "abilityName": "Abyss_Fire_ForceBlink"
+                                },
+                                {
+                                    "$type": "ClearLockTarget",
+                                    "NPHOOPNDCAC": "CurLocalAvatar"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ForceBlink",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ForceBlink"
+                    ],
+                    "GAIGOBCNNEE": "ForceBlink_State"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ForceBlink_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_ForceBlink_Actions"
+                        }
+                    ]
+                },
+                "UNIQUE_ForceBlink_Actions": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ForceBlink_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ForceBlink_DenyLockOn"
+                        },
+                        {
+                            "$type": "TriggerSetVisible"
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard",
+                            "COCENMAFJGD": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard"
+                        }
+                    ]
+                },
+                "ForceBlink_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "ForceBlink_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_DizzyTimer"
+                },
+                {
+                    "$type": "TryFindBlinkPoint",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "DGICDMAKHOJ": 30.0,
+                    "JLCCGHLNHOI": 9.0,
+                    "GLALMCMAFJF": 12.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ForceBlink_Actions"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_BS"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ForceBlink_DoBlink",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "DoBlink"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_AS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "RootNode"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ForceBlink_Visible",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ForceBlink_Actions"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ForceBlink_AS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ElementState",
+                    "weight": 1
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ReturnToBorn",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ReturnToBorn"
+                    ],
+                    "GAIGOBCNNEE": "ReturnToBorn_Disappear"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ReturnToBorn_Disappear": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_RETURNTOBORN_TAG_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_ReturnToBorn_Shield"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_ReturnToBorn_Actions"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_ReturnToBorn_Dizzy"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_BS"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_RETURNTOBORN_TAG_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_ReturnToBorn_Shield": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_ElementShield"
+                        },
+                        {
+                            "$type": "ResetAnimatorTrigger",
+                            "triggerID": "ShiledBrokenTrigger"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ReturnToBorn_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ReturnToBorn_DenyLockOn"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ElementState",
+                            "weight": 2
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_ElementShield_Effect"
+                        }
+                    ]
+                },
+                "UNIQUE_ReturnToBorn_Dizzy": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Abyss_Fire_DizzyTimer"
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ElementState",
+                            "weight": 2
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_ElementShield"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_ElementShield_Effect"
+                        }
+                    ]
+                },
+                "UNIQUE_ReturnToBorn_Actions": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible"
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard",
+                            "COCENMAFJGD": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox",
+                                "HitBox_ElementShield"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushCollider_ElementShield"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "ReturnToBorn_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "ReturnToBorn_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_RETURNTOBORN_TAG_",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ReturnToBorn_AS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Blink_AS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.6499999761581421,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ReturnToBorn_Dizzy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ReturnToBorn_Visible",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ReturnToBorn_Actions"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_ReturnToBorn_ElementShield",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ReturnToBorn_Shield"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_Cyclone",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "NormalAtk"
+                    ],
+                    "GAIGOBCNNEE": "Normal_WeaponEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Normal_WeaponEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Normal_WeaponElement"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_WeaponElement"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Normal_WeaponEffect"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42201006,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.6000000238418579,
+                            "PHDCJAHHIOG": 1.5
+                        },
+                        "JBPCKOKLHEB": true,
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget"
+                        },
+                        "ANAGBFPADIE": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_Cyclone_Loop",
+            "HNEIEGHMLKH": {
+                "Cyclone_Loop": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 50.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Cyclone"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Cyclone_Loop"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Cyclone_Loop"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_Cyclone_Collide",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 0.25
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.75,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 80.0,
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {
+                                "shakeType": "HitVector",
+                                "shakeRange": 0.05999999865889549,
+                                "shakeTime": 0.11999999731779099,
+                                "shakeDir": {
+                                    "_z": 1.0
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_FireEnergy",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "SpecialAtk"
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Special_WeaponEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Special_WeaponEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Special_WeaponElement"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_WeaponElement"
+                        }
+                    ]
+                },
+                "Abyss_Fire_AttackEnhance": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 4.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "CDReset",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "CDReset"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 42201003,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": -4.329999923706055,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 7.5
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 42201003,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 4.329999923706055,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 7.5
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 42201003,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Abyss_Fire_AttackEnhance"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_FireEnergy_Surround",
+            "HNEIEGHMLKH": {
+                "FireEnergy_Surround_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Spray_BS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": -4.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Spray_BS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": -3.4639999866485596,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 2.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Abyss_Fire_Spray_BS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 3.4639999866485596,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 2.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "UNIQUE_Special_WeaponEffect"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireEnergy_Surround_Spray"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireEnergy_Surround_SprayTimer"
+                        }
+                    ]
+                },
+                "FireEnergy_Surround_SprayTimer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireEnergy_Surround_Spray"
+                        }
+                    ]
+                },
+                "FireEnergy_Surround_Spray": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.3499999940395355,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Abyss_Fire_FireEnergy_Damage"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "FireEnergy_Surround_Timer"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_FireEnergy_Damage",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": -4.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 1.0,
+                                "KAAPLGBEDPM": 1.0,
+                                "PHDCJAHHIOG": 5.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "Abyss_Fire_FireEnergy",
+                            "attenuationTag": "Abyss_Fire_FireEnergy",
+                            "attenuationGroup": "Abyss_Fire_FireEnergy_Attenuation",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {
+                                "shakeType": "HitVector",
+                                "shakeRange": 0.1599999964237213,
+                                "shakeTime": 0.15000000596046448,
+                                "shakeDistance": 25.0,
+                                "shakeDir": {
+                                    "_z": 1.0
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -3.4639999866485596,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 2.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 1.0,
+                                "KAAPLGBEDPM": 1.0,
+                                "PHDCJAHHIOG": 5.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "Abyss_Fire_FireEnergy",
+                            "attenuationTag": "Abyss_Fire_FireEnergy",
+                            "attenuationGroup": "Abyss_Fire_FireEnergy_Attenuation",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {
+                                "shakeType": "HitVector",
+                                "shakeRange": 0.1599999964237213,
+                                "shakeTime": 0.15000000596046448,
+                                "shakeDistance": 25.0,
+                                "shakeDir": {
+                                    "_z": 1.0
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 3.4639999866485596,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 2.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 1.0,
+                                "KAAPLGBEDPM": 1.0,
+                                "PHDCJAHHIOG": 5.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "Abyss_Fire_FireEnergy",
+                            "attenuationTag": "Abyss_Fire_FireEnergy",
+                            "attenuationGroup": "Abyss_Fire_FireEnergy_Attenuation",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {
+                                "shakeType": "HitVector",
+                                "shakeRange": 0.1599999964237213,
+                                "shakeTime": 0.15000000596046448,
+                                "shakeDistance": 25.0,
+                                "shakeDir": {
+                                    "_z": 1.0
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Abyss_Fire_AnimationSteer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "NormalAtk"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "SpecialAtk"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "RandomAction"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ]
+        }
+    }
+]

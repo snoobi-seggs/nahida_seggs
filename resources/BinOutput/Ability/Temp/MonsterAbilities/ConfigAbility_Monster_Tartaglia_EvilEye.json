@@ -1,0 +1,2487 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_Debut",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Tartaglia_EvilEye_Debut": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_Transform_Effect"
+                        }
+                    ]
+                },
+                "Tartaglia_CommonState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "ACOKKHADPOJ": true,
+                            "KPGAIMMIKDA": 13002
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ShowUICombatBar",
+                    "JFJHBPNMMHH": true,
+                    "FAPKJBBCHKA": true
+                },
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "triggerID": "DebutTrigger",
+                    "IFJLLJJCLNC": true
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_CommonState"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsBySelfGroup",
+                        "POCPPGDMDEA": "AND",
+                        "weight": 3
+                    },
+                    "GAIGOBCNNEE": "UNIQUE_Tartaglia_EvilEye_Debut"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_ReminderController",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTERAFFIX_QUEST_ADJUST",
+                            "value": 1.0
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "ShowReminder",
+                            "angularVelocityThreshold": 201010201
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_EquipController",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "NormalIdle_Blade",
+                        "NormalAttack_Blade",
+                        "NormalAttack_Flexible",
+                        "HiraishinBS",
+                        "RushMove",
+                        "ExtraAttack",
+                        "Defend",
+                        "DefendAttack",
+                        "Recover"
+                    ],
+                    "GAIGOBCNNEE": "Tartaglia_EquipController_Blade"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "NormalAttack_DualBlade",
+                        "StrikeAttackBS",
+                        "StrikeAttack",
+                        "SweepAttack",
+                        "Hiraishin",
+                        "HiraishinAS"
+                    ],
+                    "GAIGOBCNNEE": "Tartaglia_EquipController_DualBlade"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_EquipController_Blade": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EQUIPCONTROLLER_BLADE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "TriggerCreateGadgetToEquipPart",
+                                    "CABLIPAKCGB": 50004033,
+                                    "EPBOKNDHCPD": "equip02"
+                                },
+                                {
+                                    "$type": "TriggerCreateGadgetToEquipPart",
+                                    "CABLIPAKCGB": 50004034,
+                                    "EPBOKNDHCPD": "equip03"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EQUIPCONTROLLER_BLADE",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "TriggerHideWeapon",
+                                    "ACDFJMCPFGH": true,
+                                    "FLCNICMDANB": [
+                                        "equip02",
+                                        "equip03"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "HasBlade",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip02",
+                                "equip03"
+                            ]
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "HasBlade"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_DisappearL"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_DisappearR"
+                        }
+                    ]
+                },
+                "Tartaglia_EquipController_DualBlade": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EQUIPCONTROLLER_DUALBLADE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "TriggerCreateGadgetToEquipPart",
+                                    "CABLIPAKCGB": 50004037,
+                                    "EPBOKNDHCPD": "equip04"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EQUIPCONTROLLER_DUALBLADE",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "TriggerHideWeapon",
+                                    "ACDFJMCPFGH": true,
+                                    "FLCNICMDANB": [
+                                        "equip04"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip04"
+                            ]
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_Disappear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Tartaglia_DualBlade",
+            "HNEIEGHMLKH": {
+                "MonEquip_Tartaglia_DualBlade": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_Weapon"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "MonEquip_Tartaglia_DualBlade"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Tartaglia_Blade_Electric",
+            "HNEIEGHMLKH": {
+                "MonEquip_Tartaglia_Blade_Electric": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_Weapon"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "MonEquip_Tartaglia_Blade_Electric"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_GapController",
+            "EDDGGPMFDGK": {
+                "Tartaglia_Active_RandomTime": 9.0,
+                "Tartaglia_StopAttack_RandomTime": 3.0
+            },
+            "HNEIEGHMLKH": {
+                "Tartaglia_GapController_Initial": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack"
+                        },
+                        {
+                            "$type": "SetRandomOverrideMapValue",
+                            "MOCGLDDNLKO": 12.0,
+                            "DMNANPGJBJH": 6.0,
+                            "OGAHELLALBB": "Tartaglia_Active_RandomTime"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Tartaglia_GapController_Active"
+                        }
+                    ]
+                },
+                "Tartaglia_GapController_Active": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "Tartaglia_Active_RandomTime",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetRandomOverrideMapValue",
+                            "MOCGLDDNLKO": 5.0,
+                            "DMNANPGJBJH": 3.0,
+                            "OGAHELLALBB": "Tartaglia_StopAttack_RandomTime"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Tartaglia_GapController_StopAttack"
+                        }
+                    ]
+                },
+                "Tartaglia_GapController_StopAttack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "Tartaglia_StopAttack_RandomTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack"
+                        },
+                        {
+                            "$type": "SetRandomOverrideMapValue",
+                            "MOCGLDDNLKO": 12.0,
+                            "DMNANPGJBJH": 6.0,
+                            "OGAHELLALBB": "Tartaglia_Active_RandomTime"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Tartaglia_GapController_Active"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_GapController_Initial"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_ThunderClap_Over",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_TARTAGLIA_THUNDERCLAP_OVER",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Tartaglia_Empty",
+                        "Tartaglia_ThunderClap_Over"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Tartaglia_ThunderClap_Over": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllTeams",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap_TeamController"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_ThunderClap_Detect",
+            "HNEIEGHMLKH": {
+                "Tartaglia_ThunderClap_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Tartaglia_ThunderClap"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap_TeamSearcher"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Tartaglia_ThunderClap_Explosion",
+                                        "Tartaglia_Hiraishin"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap_Explosion"
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_ThunderClap_Explosion": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_EXPLOSION",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap"
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_ThunderClap_TeamSearcher": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetHPRatio",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "BCJJBMJKHED": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap_TeamController"
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_ThunderClap_TeamController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_ThunderClap"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_ThunderClap_Remove"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_ThunderClap": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Electric",
+                    "elementDurability": 50.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_EXPLOSION",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "value": 0.0,
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_EXPLOSION",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Tartaglia_ThunderClap_Explosion"
+                                },
+                                {
+                                    "$type": "DamageByAttackValue",
+                                    "attackInfo": {
+                                        "attackTag": "",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": 2.0,
+                                            "damagePercentageRatio": 0.0,
+                                            "elementType": "Electric",
+                                            "elementDurability": 0.0,
+                                            "strikeType": "Default",
+                                            "enBreak": 5000.0
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "default",
+                                            "hitImpulseType": "LV1"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap_TeamController"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_ThunderClap_TeamController"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_ThunderClap_Detect"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NJEOPILMKCN": true,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByActionPoint",
+                        "JBPCKOKLHEB": true,
+                        "FJHFIALOBFM": "AureaePoint",
+                        "LLLNBABIECO": {
+                            "$type": "SelectActionPointByID",
+                            "FEFAIFDFKME": 1
+                        }
+                    },
+                    "JCAMCEOBIFG": true,
+                    "CABLIPAKCGB": 42903101,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "Enemy",
+                    "CEBMHIFOHJM": true
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "SetGlobalValue",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsBySelfGroup",
+                        "POCPPGDMDEA": "AND",
+                        "weight": 3
+                    },
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_OVER",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_ThunderClap_AIController",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_TARTAGLIA_THUNDERCLAP_LEVEL",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        2.5,
+                        4.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Tartaglia_ThunderClap_Level_Empty",
+                        "Tartaglia_ThunderClap_Level_1st",
+                        "Tartaglia_ThunderClap_Level_2nd"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_ThunderClap_AIController": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "AllTeams",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_COUNT",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_COUNT",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Tartaglia_ThunderClap_AIController_Count"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "RemoveModifier",
+                                    "GAIGOBCNNEE": "Tartaglia_ThunderClap_AIController_Count"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_AIController_Count": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Tartaglia_ThunderClap_SetTrue"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_LEVEL",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Tartaglia_ThunderClap_SetFalse"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_LEVEL",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_LEVEL",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_SetTrue": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "HasThunderClap",
+                            "value": true
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_SetFalse": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "HasThunderClap"
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_Level_1st": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Tartaglia_ThunderClap_SetTrue_1st"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Tartaglia_ThunderClap_SetFalse_1st"
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_SetTrue_1st": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ThunderClapLevel_1st",
+                            "value": true
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_SetFalse_1st": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ThunderClapLevel_1st"
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_Level_2nd": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Tartaglia_ThunderClap_SetTrue_2nd"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Tartaglia_ThunderClap_SetFalse_2nd"
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_SetTrue_2nd": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ThunderClapLevel_2nd",
+                            "value": true
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_SetFalse_2nd": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ThunderClapLevel_2nd"
+                        }
+                    ]
+                },
+                "Tartaglia_ThunderClap_Level_Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_ThunderClap_AIController"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_COUNT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_ChangePosition",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "ChangePosition01",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition01",
+                    "MMHONEIBHNP": 0.05999999865889549
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "ChangePosition02",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition02",
+                    "MMHONEIBHNP": 0.05999999865889549
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "ChangePosition03",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition03",
+                    "MMHONEIBHNP": 0.05999999865889549
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_ChangePosition01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition"
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_ChangePosition02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition"
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_ChangePosition03": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition"
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_ChangePosition": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_ChangePosition"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_ChangePositionBS"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_ChangePosition_DenyLockOn"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_ChangePositionAS"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_ChangePosition_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Tartaglia_EvilEye_ChangePosition_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPointByBorn",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByActionPoint",
+                        "JBPCKOKLHEB": true,
+                        "FJHFIALOBFM": "AureaePoint",
+                        "LLLNBABIECO": {
+                            "$type": "SelectActionPointByAwayFromAvatar",
+                            "distance": 16.0
+                        }
+                    },
+                    "AGCEGPFKFPK": false,
+                    "ILELFGNFDLO": 2.5
+                },
+                {
+                    "$type": "FixedMonsterRushMove",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornByTeleportToPoint"
+                    },
+                    "FPIJACIKJKL": 0.30000001192092896,
+                    "MPOEADACOHO": [
+                        "ChangePosition01",
+                        "ChangePosition02",
+                        "ChangePosition03"
+                    ],
+                    "AGIKEIFOMLO": "",
+                    "MCKCNFKKEFD": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_Defend",
+            "EDDGGPMFDGK": {
+                "Tartaglia_EvilEye_Defend_RandomValue": 0.0,
+                "Tartaglia_EvilEye_DefendAttack_Probability": 0.12999999523162842
+            },
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_Defend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "NormalIdle",
+                                "NormalIdle_Blade",
+                                "NormalMove",
+                                "Defend",
+                                "NormalAttack_Flexible",
+                                "StrikeAttack_Flexible",
+                                "SweepAttack_Flexible",
+                                "ChangePosition_Flexible"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 0.0,
+                            "HFCIHIJGLMA": 0,
+                            "attackType": "Melee",
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "SetRandomOverrideMapValue",
+                                    "MOCGLDDNLKO": 1.0,
+                                    "OGAHELLALBB": "Tartaglia_EvilEye_Defend_RandomValue"
+                                },
+                                {
+                                    "$type": "SetAnimatorFloat",
+                                    "floatID": "RandomValue",
+                                    "value": "Tartaglia_EvilEye_Defend_RandomValue"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_DEFEND",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Defend_Effect"
+                                }
+                            ]
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_DEFEND",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByHitEnBreak",
+                                    "DCBBLJKHKCA": 0.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Predicated",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByHitElement",
+                                            "GOMLPAOIKJA": "Electric"
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "RemoveModifier",
+                                            "GAIGOBCNNEE": "Tartaglia_EvilEye_Defend_Effect"
+                                        },
+                                        {
+                                            "$type": "SetAnimatorTrigger",
+                                            "triggerID": "ForceDefendAttackTrigger"
+                                        },
+                                        {
+                                            "$type": "Predicated",
+                                            "NPHOOPNDCAC": "Target",
+                                            "ELDBAFHCOBL": [
+                                                {
+                                                    "$type": "ByEntityTypes",
+                                                    "entityTypes": [
+                                                        "Avatar"
+                                                    ]
+                                                }
+                                            ],
+                                            "NCNDEAPMKCP": [
+                                                {
+                                                    "$type": "TurnDirection",
+                                                    "NPHOOPNDCAC": "Target"
+                                                }
+                                            ],
+                                            "BMIOBLGLPIM": [
+                                                {
+                                                    "$type": "TurnDirection",
+                                                    "NPHOOPNDCAC": "TargetOriginOwner"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "Randomed",
+                                            "PLKDGIELEEF": "Tartaglia_EvilEye_DefendAttack_Probability",
+                                            "NCNDEAPMKCP": [
+                                                {
+                                                    "$type": "RemoveModifier",
+                                                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Defend_Effect"
+                                                },
+                                                {
+                                                    "$type": "SetAnimatorTrigger",
+                                                    "triggerID": "DefendAttackTrigger"
+                                                },
+                                                {
+                                                    "$type": "Predicated",
+                                                    "NPHOOPNDCAC": "Target",
+                                                    "ELDBAFHCOBL": [
+                                                        {
+                                                            "$type": "ByEntityTypes",
+                                                            "entityTypes": [
+                                                                "Avatar"
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "NCNDEAPMKCP": [
+                                                        {
+                                                            "$type": "TurnDirection",
+                                                            "NPHOOPNDCAC": "Target"
+                                                        }
+                                                    ],
+                                                    "BMIOBLGLPIM": [
+                                                        {
+                                                            "$type": "TurnDirection",
+                                                            "NPHOOPNDCAC": "TargetOriginOwner"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_DEFEND",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Defend_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_Defend"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_Defend_Broken"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "Target",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_Defend_BeHit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByLookAtEntity"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Defend"
+                },
+                {
+                    "$type": "SetAnimatorBool",
+                    "HHFIHBEAPAP": "DefendState",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_Recover",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "BeHit"
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAnimatorBool",
+                                    "value": true,
+                                    "MOCGJNIDDAI": "DefendState"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Recover_Timer"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Tartaglia_EvilEye_Recover_RandomTime": 7.0
+            },
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_Recover_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": [
+                        1.0,
+                        "Tartaglia_EvilEye_Recover_RandomTime",
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit"
+                            ],
+                            "OKFKMBDCDHO": "",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": "Tartaglia_EvilEye_Recover_RandomTime",
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "RemoveModifier",
+                                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Recover_Timer"
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_PhysicalSubHurtDelta": -0.5,
+                        "Actor_FireSubHurtDelta": -0.5,
+                        "Actor_ElecSubHurtDelta": -0.5,
+                        "Actor_WaterSubHurtDelta": -0.5,
+                        "Actor_GrassSubHurtDelta": -0.5,
+                        "Actor_WindSubHurtDelta": -0.5,
+                        "Actor_IceSubHurtDelta": -0.5,
+                        "Actor_RockSubHurtDelta": -0.5
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "DefendState"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ClearEndura"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "DefendState",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                601
+                            ]
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "StopAttack"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "TurnDirectionToPos",
+                            "NPHOOPNDCAC": "TargetOriginOwner",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitEnBreak",
+                                    "DCBBLJKHKCA": 0.0
+                                }
+                            ],
+                            "FJCBIPKOKMF": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAISkillCDAvailableNow",
+                    "FJNGOGJOBEE": [
+                        501
+                    ]
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_Blade_Recover"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "ICGFCBOFFDI": 8.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 0.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 10000.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV6",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeRange": 0.6000000238418579,
+                                "shakeTime": 0.36000001430511475,
+                                "shakeDistance": 30.0,
+                                "extension": {
+                                    "baseCycle": 0.07999999821186066,
+                                    "cycleDamping": -0.03999999910593033
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_NormalAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "NormalAttack_Blade",
+                        "NormalAttack_DualBlade",
+                        "NormalAttack"
+                    ],
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_NormalAttack"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "RushMove_Normal",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_RushMove",
+                    "AAIFCLGLOMO": 0.6000000238418579
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_NormalAttack": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByAnimatorStateIDMixin",
+                            "stateIDs": [
+                                "NormalAttack01",
+                                "NormalAttack02",
+                                "NormalAttack03"
+                            ],
+                            "KELPBOLPMNI": [
+                                {
+                                    "$type": "SetAnimatorFloat",
+                                    "floatID": "RandomValue",
+                                    "NPDHFAKOCJC": true,
+                                    "JDGCMDOIDDI": 0.0,
+                                    "KGAKOONKNAD": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_RushMove": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_RushMove"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_RushMoveBS"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_RushMove_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_RushMove_DenyLockOn"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_RushMoveAS"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_RushMove_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Tartaglia_EvilEye_RushMove_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPointByBorn",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTargetLinearPoint",
+                        "JBPCKOKLHEB": true,
+                        "FOILCBGLNDF": -2.0,
+                        "JBNMHNDDJJC": 0.0,
+                        "GCJBBHLBLLG": 50.0
+                    },
+                    "AGCEGPFKFPK": false,
+                    "ILELFGNFDLO": 2.5
+                },
+                {
+                    "$type": "FixedMonsterRushMove",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornByTeleportToPoint"
+                    },
+                    "FPIJACIKJKL": 0.20000000298023224,
+                    "MPOEADACOHO": [
+                        "RushMove_Normal"
+                    ],
+                    "AGIKEIFOMLO": "",
+                    "MCKCNFKKEFD": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_ExtraAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "RushMove",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_RushMove",
+                    "AAIFCLGLOMO": 0.6000000238418579
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_RushMove": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_RushMove"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_RushMoveBS"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_RushMove_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_RushMove_DenyLockOn"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_RushMoveAS"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_RushMove_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Tartaglia_EvilEye_RushMove_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPointByBorn",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTargetLinearPoint",
+                        "JBPCKOKLHEB": true,
+                        "FOILCBGLNDF": -1.0,
+                        "JBNMHNDDJJC": 0.0,
+                        "GCJBBHLBLLG": 50.0
+                    },
+                    "AGCEGPFKFPK": false,
+                    "ILELFGNFDLO": 2.5
+                },
+                {
+                    "$type": "FixedMonsterRushMove",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornByTeleportToPoint"
+                    },
+                    "FPIJACIKJKL": 0.20000000298023224,
+                    "MPOEADACOHO": [
+                        "RushMove"
+                    ],
+                    "AGIKEIFOMLO": "",
+                    "MCKCNFKKEFD": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_StrikeAttack_SetPos",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_STRIKEATTACK_POS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTargetLinearPoint",
+                        "JBPCKOKLHEB": true,
+                        "FOILCBGLNDF": 5.0,
+                        "JBNMHNDDJJC": 7.0,
+                        "GCJBBHLBLLG": 20.0
+                    },
+                    "OGADOPDNBMM": false
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_StrikeAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "StrikeAttackBS"
+                    ],
+                    "EOOBFBGMGLD": 0.44999998807907104,
+                    "IMHBEGIKDKB": 0.5400000214576721,
+                    "HENDIIJFPCI": 1800.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "StrikeAttack"
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_DUALBLADE_STRIKEATTACK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "SetRandomOverrideMapValue",
+                            "MOCGLDDNLKO": 4.5,
+                            "DMNANPGJBJH": 0.5,
+                            "OGAHELLALBB": "Tartaglia_EvilEye_StrikeAttack_Count"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsAttackOver"
+                        }
+                    ]
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "StrikeAttack",
+                    "GAIGOBCNNEE": "StrikeAttack_Bullet",
+                    "MMHONEIBHNP": 0.27000001072883606
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Tartaglia_EvilEye_StrikeAttack_Count": 3.0
+            },
+            "HNEIEGHMLKH": {
+                "StrikeAttack_Bullet": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TurnDirectionToPos",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "GDENJEFPMGC": "_MONSTER_TARTAGLIA_EVILEYE_STRIKEATTACK_POS",
+                        "MICIJLHMIIH": ""
+                    }
+                },
+                {
+                    "$type": "FixedMonsterRushMove",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "GDENJEFPMGC": "_MONSTER_TARTAGLIA_EVILEYE_STRIKEATTACK_POS",
+                        "MICIJLHMIIH": ""
+                    },
+                    "FPIJACIKJKL": 0.20000000298023224,
+                    "MPOEADACOHO": [
+                        "StrikeAttack"
+                    ],
+                    "AGIKEIFOMLO": "",
+                    "MCKCNFKKEFD": true
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42903102,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf"
+                    },
+                    "NJEOPILMKCN": true,
+                    "ENJEPFDLDDF": "Self"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42903103,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf"
+                    },
+                    "NJEOPILMKCN": true,
+                    "ENJEPFDLDDF": "Self"
+                },
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_DUALBLADE_STRIKEATTACK",
+                            "value": "Tartaglia_EvilEye_StrikeAttack_Count",
+                            "ONPJJFKDCED": "LessAndEqual"
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_DUALBLADE_STRIKEATTACK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsAttackOver",
+                            "value": true
+                        }
+                    ]
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_StrikeAttack"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_StrikeAttack_Bullet",
+            "HNEIEGHMLKH": {
+                "CollisionTriggerTimer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "CollisionTriggerTimer"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "DamageByAttackValue",
+                    "NPHOOPNDCAC": "Target",
+                    "attackInfo": {
+                        "attackTag": "Tartaglia_ThunderClap",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 0.75,
+                            "damagePercentageRatio": 0.0,
+                            "elementType": "Electric",
+                            "elementDurability": 0.0,
+                            "strikeType": "Default",
+                            "enBreak": 50.0
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV7"
+                        },
+                        "cameraShake": {
+                            "shakeRange": 0.23999999463558197,
+                            "shakeTime": 0.36000001430511475
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_StrikeAttack_Scene",
+            "HNEIEGHMLKH": {
+                "CollisionTriggerTimer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "CollisionTriggerTimer"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Avatar"
+                            ]
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByCollisionPoint"
+                                    },
+                                    "ICGFCBOFFDI": 2.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 100.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 5000.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "",
+                                        "hitImpulseType": "LV0"
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_Hiraishin",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Hiraishin"
+                    ],
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_Hiraishin": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_HiraishinBS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "WeaponR"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_Hiraishin"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_EvilEye_Hiraishin_Alert"
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_HIRAISHIN_POS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "JBPCKOKLHEB": true
+                            },
+                            "OGADOPDNBMM": false
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_EvilEye_Hiraishin_Alert": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_EvilEye_Hiraishin_Alert_Team"
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_EvilEye_Hiraishin_Alert_Team": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_MONSTER_TARTAGLIA_THUNDERCLAP",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Tartaglia_EvilEye_Hiraishin_Empty",
+                                "Tartaglia_EvilEye_Hiraishin_Follow"
+                            ]
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Hiraishin_Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_HiraishinAlert",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "JBPCKOKLHEB": true,
+                                "GDENJEFPMGC": "_MONSTER_TARTAGLIA_EVILEYE_HIRAISHIN_POS",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Hiraishin_Follow": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_HiraishinAlert_Follow"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Caster",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_SetPos"
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Hiraishin_SetPos": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "Applier",
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_HIRAISHIN_POS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "JBPCKOKLHEB": true
+                            },
+                            "OGADOPDNBMM": false
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_THUNDERCLAP_AVATAR",
+                            "value": 1.0
+                        }
+                    ],
+                    "HJJEAOMEOFI": "_MONSTER_TARTAGLIA_EVILEYE_HIRAISHIN_POS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "JBPCKOKLHEB": true
+                    },
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "TryFindBlinkPointByBorn",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "GDENJEFPMGC": "_MONSTER_TARTAGLIA_EVILEYE_HIRAISHIN_POS",
+                        "MICIJLHMIIH": ""
+                    },
+                    "AGCEGPFKFPK": false,
+                    "ILELFGNFDLO": 2.5
+                },
+                {
+                    "$type": "DoBlink"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_HiraishinJumpAS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "JBPCKOKLHEB": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Tartaglia_EvilEye_HiraishinAS",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "HiraishinAS",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_Blink",
+                    "AAIFCLGLOMO": 0.02500000037252903,
+                    "MMHONEIBHNP": 0.1599999964237213
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Tartaglia_EvilEye_Hiraishin_DamageController": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Tartaglia_EvilEye_DualBlade_HiraishinAS"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "GAIGOBCNNEE": "UNIQUE_Tartaglia_EvilEye_Hiraishin_DamageOnce"
+                        }
+                    ]
+                },
+                "UNIQUE_Tartaglia_EvilEye_Hiraishin_DamageOnce": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Applier",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "value": 5.0
+                                },
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "ONPJJFKDCED": "Y",
+                                    "value": 5.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DamageByAttackValue",
+                                    "attackInfo": {
+                                        "attackTag": "Tartaglia_Hiraishin",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": 2.0,
+                                            "damagePercentageRatio": 0.0,
+                                            "elementType": "Electric",
+                                            "elementDurability": 0.0,
+                                            "strikeType": "Default",
+                                            "enBreak": 1000.0
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "default",
+                                            "hitImpulseType": "LV8"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Hiraishin_Blink": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_DenyLockOn"
+                        },
+                        {
+                            "$type": "TriggerSetRenderersEnable",
+                            "GEDDBEFBOKD": [
+                                "Body",
+                                "Body_CloakEffectMesh"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip04"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetRenderersEnable",
+                            "GEDDBEFBOKD": [
+                                "Body",
+                                "Body_CloakEffectMesh"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip04"
+                            ]
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Hiraishin_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Tartaglia_EvilEye_Hiraishin_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                },
+                "Tartaglia_EvilEye_Hiraishin_AttackLandedHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Tartaglia_Hiraishin"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_AttackLanded"
+                        }
+                    ]
+                },
+                "Tartaglia_EvilEye_Hiraishin_AttackLanded": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_TARTAGLIA_WATCHER_82065_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_AttackLandedHandler"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Tartaglia_EvilEye_Hiraishin_DamageController"
+                }
+            ]
+        }
+    }
+]

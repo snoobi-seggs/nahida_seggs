@@ -1,0 +1,4010 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_Collision_MeteoriteDebuffController",
+            "HNEIEGHMLKH": {
+                "AddDebuff": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "DebuffTimer"
+                        }
+                    ]
+                },
+                "DebuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Crystal_Ice_Shield"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_BombBarrel_01_Explode"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 70900360,
+                            "DOLAJLACEDF": 5001
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "AddDebuff"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_Collision_MeteoriteSeal",
+            "EDDGGPMFDGK": {
+                "DebuffDuration": 20.0
+            },
+            "HNEIEGHMLKH": {
+                "Timmer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "DebuffDuration",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Eff_Barrier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 150.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01_Imprison"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "AddElementDurability",
+                            "value": -10.0,
+                            "GAIGOBCNNEE": "Eff_Barrier",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 150.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalDir",
+                            "HJJEAOMEOFI": "_AVATAR_HIT_DIR",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByHitPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByBackToHitBoxCenter"
+                                }
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01_ImprisonHit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByHitPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByBackToHitBoxCenter"
+                                }
+                            }
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01_ImprisonBroken"
+                        }
+                    ]
+                },
+                "DeBuffController": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR6",
+                                "ONPOPLLHJLE": "All",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "AttackDebuff"
+                        }
+                    ]
+                },
+                "AttackDebuff": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "DebuffDuration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": -0.800000011920929
+                    },
+                    "state": "SpeedDown",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Eff_Barrier"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DeBuffController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Timmer"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_BigAster",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "GearDefault"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Mode1"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Mode2"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "curteamscore": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Mode1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "Blend",
+                            "value": 1.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Idle",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                },
+                "Mode2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "Blend",
+                            "value": 1.0
+                        }
+                    ]
+                },
+                "GearDefault": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "Blend",
+                            "value": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonsterAffix_Aster_Score",
+            "HNEIEGHMLKH": {
+                "AddScore_To_CurAvatar": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 10.0,
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 100.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "ApplyModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "AKMLOIFOBPO": "Nearest",
+                        "JBKKOJLJHDK": "CircleR5",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Avatar"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "AddScore_To_CurAvatar"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_UpLoader",
+            "HNEIEGHMLKH": {
+                "SetAbilityEnableT": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityEnable",
+                            "enable": true
+                        }
+                    ]
+                },
+                "SetAbilityEnableF": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityEnable"
+                        }
+                    ]
+                }
+            },
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "ApplyModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "JBKKOJLJHDK": "CircleR5",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Avatar"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "SetAbilityEnableF"
+                }
+            ],
+            "KJKECFBMHKH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "SetAbilityEnableT"
+                }
+            ],
+            "JPKNDOGGOIN": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "SetAbilityEnableF"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_UpLoader_Small",
+            "HNEIEGHMLKH": {
+                "SetAbilityEnableT": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityEnable",
+                            "enable": true
+                        }
+                    ]
+                },
+                "SetAbilityEnableF": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityEnable"
+                        }
+                    ]
+                }
+            },
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "ApplyModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "JBKKOJLJHDK": "CircleR2",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Avatar"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "SetAbilityEnableF"
+                }
+            ],
+            "KJKECFBMHKH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "SetAbilityEnableT"
+                }
+            ],
+            "JPKNDOGGOIN": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "SetAbilityEnableF"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_ScoreDummy",
+            "EDDGGPMFDGK": {
+                "dummyscore": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Dummy_Ready": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Wind",
+                    "elementDurability": 101.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "IIODNDPEFFH": true,
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValueToTarget",
+                            "IGKNCNDCLOO": "Team",
+                            "KNAELFCJEPL": "Self",
+                            "DHPMANPAAFN": "AVATAR_ASTER_SCORE",
+                            "CGMMPCHEGIH": "DUMMY_ASTER_SCORE"
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "ASTER_CUR",
+                            "OGAHELLALBB": "curteamscore"
+                        },
+                        {
+                            "$type": "AddElementDurability",
+                            "ACOKKHADPOJ": true,
+                            "value": [
+                                0.0,
+                                "dummyscore",
+                                "Sub"
+                            ],
+                            "GAIGOBCNNEE": "Dummy_Ready",
+                            "elementType": "Wind",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 101.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "damagePercentageRatio": 0.0,
+                                    "elementDurability": 100.0,
+                                    "damageExtra": 1.0
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Dummy_Ready"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "IS_SCOREDUMMY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "DUMMY_ASTER_SCORE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 100.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_PlayEntity_Esay",
+            "EDDGGPMFDGK": {
+                "MaxScore": 200.0,
+                "SubScore": -0.30000001192092896,
+                "CurScore": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Init": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_SkillButtonController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ShowExtraAbility",
+                            "overtime": 20003
+                        },
+                        {
+                            "$type": "SetExtraAbilityEnable"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ShowExtraAbility"
+                        }
+                    ]
+                },
+                "UNIQUE_TuntController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                0.0,
+                                99.5,
+                                100.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "SetTaunt"
+                            ]
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "SetTaunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "Avatar_Taunt"
+                        }
+                    ]
+                },
+                "Avatar_Taunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "GIMODGBFNIA": 50.0
+                        }
+                    ]
+                },
+                "UNIQUE_PlayerNotify": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "clear_energy",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": 0.0,
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_DamageUp_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 2,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ChannelBlock_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 3,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ScoreMult_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 4,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_DebuffTimer_Team"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 5,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_UperScoreMult_Arua"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_DebuffTimer_Team": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyModifierWithSharedDurabilityMixin",
+                            "GAIGOBCNNEE": "DebuffTimer"
+                        }
+                    ]
+                },
+                "DebuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 70900360,
+                            "DOLAJLACEDF": 5001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                },
+                "UNIQUE_Team_DamageUp_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_DamageUp_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ]
+                },
+                "Team_DamageUp_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "DamageUp": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": 0.800000011920929
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Team_ChannelBlock_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ChannelBlock_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ]
+                },
+                "ChannelBlock": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 10.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ChannelBlock_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_ScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ]
+                },
+                "ScoreMult": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Circle"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_UperScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_UperScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_UperScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_AvatarStateController": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Avatar_State"
+                        },
+                        {
+                            "$type": "ServerUpdateGlobalValueMixin",
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "MaxScore",
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Avatar_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Channel_Loop",
+                                "Channel_AS",
+                                "Channel_BS"
+                            ],
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "AvatarInChannel": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "NPHOOPNDCAC": "Caster"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "LineEff_FindAster"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Active"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "state": "Interrupt"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "CopyGlobalValue",
+                                    "IGKNCNDCLOO": "Team",
+                                    "KNAELFCJEPL": "Caster",
+                                    "DHPMANPAAFN": "AVATAR_ASTER_SCORE",
+                                    "CGMMPCHEGIH": "AVATAR_ASTER_SCORE"
+                                },
+                                {
+                                    "$type": "SetGlobalValueToOverrideMap",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                                    "OGAHELLALBB": "CurScore"
+                                },
+                                {
+                                    "$type": "ServerLuaCall",
+                                    "NPHOOPNDCAC": "Team",
+                                    "MINNFFNDCJH": "CurScenePlay",
+                                    "PDFANJKMFNK": "UpdateAsterInterrupt",
+                                    "LIOGECEPJAH": 0.0,
+                                    "FDDPMCCJIKN": 0.0,
+                                    "KNJMHMKNCKF": 0.0
+                                },
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": [
+                                        0.699999988079071,
+                                        "CurScore",
+                                        "Mul"
+                                    ],
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "triggerID": "EndChannelTrigger"
+                                },
+                                {
+                                    "$type": "RemoveModifier",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "GAIGOBCNNEE": "AvatarInChannel"
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_RecevieFinish"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Team",
+                            "MINNFFNDCJH": "CurScenePlay",
+                            "PDFANJKMFNK": "UpdateAsterProgress",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "LineEff_FindAster": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "NPHOOPNDCAC": "Applier",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Recevie",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffPoint",
+                                "MMFHENHCBGB": "Self"
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "Init"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_AvatarStateController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_PlayerNotify"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_TuntController"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "NPHOOPNDCAC": "CurLocalAvatar",
+                    "triggerID": "StartChannelTrigger"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "AvatarInChannel"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_PlayEntity_Normal",
+            "EDDGGPMFDGK": {
+                "MaxScore": 200.0,
+                "SubScore": -0.5,
+                "CurScore": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Init": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_SkillButtonController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ShowExtraAbility",
+                            "overtime": 20004
+                        },
+                        {
+                            "$type": "SetExtraAbilityEnable"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ShowExtraAbility"
+                        }
+                    ]
+                },
+                "UNIQUE_TuntController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                0.0,
+                                99.5,
+                                100.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "SetTaunt"
+                            ]
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "SetTaunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "Avatar_Taunt"
+                        }
+                    ]
+                },
+                "Avatar_Taunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "GIMODGBFNIA": 50.0
+                        }
+                    ]
+                },
+                "UNIQUE_PlayerNotify": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "clear_energy",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": 0.0,
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_DamageUp_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 2,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ChannelBlock_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 3,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ScoreMult_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 4,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_DebuffTimer_Team"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 5,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_UperScoreMult_Arua"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_DebuffTimer_Team": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyModifierWithSharedDurabilityMixin",
+                            "GAIGOBCNNEE": "DebuffTimer"
+                        }
+                    ]
+                },
+                "DebuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 70900360,
+                            "DOLAJLACEDF": 5001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                },
+                "UNIQUE_Team_DamageUp_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_DamageUp_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ]
+                },
+                "Team_DamageUp_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "DamageUp": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": 0.800000011920929
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Team_ChannelBlock_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ChannelBlock_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ]
+                },
+                "ChannelBlock": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 10.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ChannelBlock_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_ScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ]
+                },
+                "ScoreMult": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Circle"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_UperScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_UperScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_UperScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_AvatarStateController": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Avatar_State"
+                        },
+                        {
+                            "$type": "ServerUpdateGlobalValueMixin",
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "MaxScore",
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Avatar_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Channel_Loop",
+                                "Channel_AS",
+                                "Channel_BS"
+                            ],
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "AvatarInChannel": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "NPHOOPNDCAC": "Caster"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "LineEff_FindAster"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Active"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "state": "Interrupt"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "CopyGlobalValue",
+                                    "IGKNCNDCLOO": "Team",
+                                    "KNAELFCJEPL": "Caster",
+                                    "DHPMANPAAFN": "AVATAR_ASTER_SCORE",
+                                    "CGMMPCHEGIH": "AVATAR_ASTER_SCORE"
+                                },
+                                {
+                                    "$type": "SetGlobalValueToOverrideMap",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                                    "OGAHELLALBB": "CurScore"
+                                },
+                                {
+                                    "$type": "ServerLuaCall",
+                                    "NPHOOPNDCAC": "Team",
+                                    "MINNFFNDCJH": "CurScenePlay",
+                                    "PDFANJKMFNK": "UpdateAsterInterrupt",
+                                    "LIOGECEPJAH": 0.0,
+                                    "FDDPMCCJIKN": 0.0,
+                                    "KNJMHMKNCKF": 0.0
+                                },
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": [
+                                        0.5,
+                                        "CurScore",
+                                        "Mul"
+                                    ],
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "triggerID": "EndChannelTrigger"
+                                },
+                                {
+                                    "$type": "RemoveModifier",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "GAIGOBCNNEE": "AvatarInChannel"
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_RecevieFinish"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Team",
+                            "MINNFFNDCJH": "CurScenePlay",
+                            "PDFANJKMFNK": "UpdateAsterProgress",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "LineEff_FindAster": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "NPHOOPNDCAC": "Applier",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Recevie",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffPoint",
+                                "MMFHENHCBGB": "Self"
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "Init"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_AvatarStateController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_PlayerNotify"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_TuntController"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "NPHOOPNDCAC": "CurLocalAvatar",
+                    "triggerID": "StartChannelTrigger"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "AvatarInChannel"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_PlayEntity_Hard",
+            "EDDGGPMFDGK": {
+                "MaxScore": 300.0,
+                "SubScore": -1.0,
+                "CurScore": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Init": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_SkillButtonController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ShowExtraAbility",
+                            "overtime": 20005
+                        },
+                        {
+                            "$type": "SetExtraAbilityEnable"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ShowExtraAbility"
+                        }
+                    ]
+                },
+                "UNIQUE_TuntController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                0.0,
+                                99.5,
+                                100.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "SetTaunt"
+                            ]
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "SetTaunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "Avatar_Taunt"
+                        }
+                    ]
+                },
+                "Avatar_Taunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "GIMODGBFNIA": 50.0
+                        }
+                    ]
+                },
+                "UNIQUE_PlayerNotify": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "clear_energy",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": 0.0,
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_DamageUp_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 2,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ChannelBlock_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 3,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ScoreMult_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 4,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_DebuffTimer_Team"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 5,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_UperScoreMult_Arua"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_DebuffTimer_Team": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyModifierWithSharedDurabilityMixin",
+                            "GAIGOBCNNEE": "DebuffTimer"
+                        }
+                    ]
+                },
+                "DebuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 70900360,
+                            "DOLAJLACEDF": 5001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                },
+                "UNIQUE_Team_DamageUp_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_DamageUp_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ]
+                },
+                "Team_DamageUp_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "DamageUp": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": 0.800000011920929
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Team_ChannelBlock_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ChannelBlock_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ]
+                },
+                "ChannelBlock": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 10.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ChannelBlock_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_ScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ]
+                },
+                "ScoreMult": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Circle"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_UperScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_UperScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_UperScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_AvatarStateController": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Avatar_State"
+                        },
+                        {
+                            "$type": "ServerUpdateGlobalValueMixin",
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "MaxScore",
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Avatar_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Channel_Loop",
+                                "Channel_AS",
+                                "Channel_BS"
+                            ],
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "AvatarInChannel": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "NPHOOPNDCAC": "Caster"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "LineEff_FindAster"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Active"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "state": "Interrupt"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": 0.0,
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "ServerLuaCall",
+                                    "NPHOOPNDCAC": "Team",
+                                    "MINNFFNDCJH": "CurScenePlay",
+                                    "PDFANJKMFNK": "UpdateAsterInterrupt",
+                                    "LIOGECEPJAH": 0.0,
+                                    "FDDPMCCJIKN": 0.0,
+                                    "KNJMHMKNCKF": 0.0
+                                },
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "triggerID": "EndChannelTrigger"
+                                },
+                                {
+                                    "$type": "RemoveModifier",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "GAIGOBCNNEE": "AvatarInChannel"
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_RecevieFinish"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Team",
+                            "MINNFFNDCJH": "CurScenePlay",
+                            "PDFANJKMFNK": "UpdateAsterProgress",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "LineEff_FindAster": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "NPHOOPNDCAC": "Applier",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Recevie",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffPoint",
+                                "MMFHENHCBGB": "Self"
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "Init"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_AvatarStateController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_PlayerNotify"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_TuntController"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "NPHOOPNDCAC": "CurLocalAvatar",
+                    "triggerID": "StartChannelTrigger"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "AvatarInChannel"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Aster_PlayEntity_Single",
+            "EDDGGPMFDGK": {
+                "MaxScore": 400.0,
+                "SubScore": -0.30000001192092896,
+                "CurScore": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Init": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_SkillButtonController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ShowExtraAbility",
+                            "overtime": 20006
+                        },
+                        {
+                            "$type": "SetExtraAbilityEnable"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ShowExtraAbility"
+                        }
+                    ]
+                },
+                "UNIQUE_TuntController": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                0.0,
+                                99.5,
+                                100.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "SetTaunt"
+                            ]
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "SetTaunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "Avatar_Taunt"
+                        }
+                    ]
+                },
+                "Avatar_Taunt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "GIMODGBFNIA": 50.0
+                        }
+                    ]
+                },
+                "UNIQUE_PlayerNotify": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "clear_energy",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": 0.0,
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 1,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_DamageUp_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 2,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ChannelBlock_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 3,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_ScoreMult_Arua"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 4,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_DebuffTimer_Team"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "PlayerUidNotifyMixin",
+                            "HIPCIIHJJML": "random_buff_aster",
+                            "JBNJEIGGHMO": 5,
+                            "GMFCOCAJBDM": "Equal",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Team_UperScoreMult_Arua"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_DebuffTimer_Team": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyModifierWithSharedDurabilityMixin",
+                            "GAIGOBCNNEE": "DebuffTimer"
+                        }
+                    ]
+                },
+                "DebuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Debuff_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 70900360,
+                            "DOLAJLACEDF": 5001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                },
+                "UNIQUE_Team_DamageUp_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_DamageUp_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DamageUp"
+                        }
+                    ]
+                },
+                "Team_DamageUp_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "DamageUp": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": 0.800000011920929
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Team_ChannelBlock_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ChannelBlock_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ChannelBlock"
+                        }
+                    ]
+                },
+                "ChannelBlock": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.5,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 10.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ChannelBlock_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_ScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_ScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Wave"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "All",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ScoreMult"
+                        }
+                    ]
+                },
+                "ScoreMult": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_PROGRESS_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_ScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_02_Circle"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_UperScoreMult_Arua": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Team_UperScoreMult_Arua_Eff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "ASTER_ENERGY_RATIO",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Team_UperScoreMult_Arua_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Aster_Buff_01"
+                        }
+                    ]
+                },
+                "UNIQUE_AvatarStateController": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Avatar_State"
+                        },
+                        {
+                            "$type": "ServerUpdateGlobalValueMixin",
+                            "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "MaxScore",
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Avatar_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Channel_Loop",
+                                "Channel_AS",
+                                "Channel_BS"
+                            ],
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "AvatarInChannel": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "NPHOOPNDCAC": "Caster"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "LineEff_FindAster"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Active"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "SetExtraAbilityState",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                                    "value": 0.0
+                                }
+                            ],
+                            "state": "Interrupt"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "CHANNEL_BLOCK",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "CopyGlobalValue",
+                                    "IGKNCNDCLOO": "Team",
+                                    "KNAELFCJEPL": "Caster",
+                                    "DHPMANPAAFN": "AVATAR_ASTER_SCORE",
+                                    "CGMMPCHEGIH": "AVATAR_ASTER_SCORE"
+                                },
+                                {
+                                    "$type": "SetGlobalValueToOverrideMap",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "BPCFCANOMNH": "AVATAR_ASTER_SCORE",
+                                    "OGAHELLALBB": "CurScore"
+                                },
+                                {
+                                    "$type": "ServerLuaCall",
+                                    "NPHOOPNDCAC": "Team",
+                                    "MINNFFNDCJH": "CurScenePlay",
+                                    "PDFANJKMFNK": "UpdateAsterInterrupt",
+                                    "LIOGECEPJAH": 0.0,
+                                    "FDDPMCCJIKN": 0.0,
+                                    "KNJMHMKNCKF": 0.0
+                                },
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "NPHOOPNDCAC": "Team",
+                                    "value": [
+                                        0.699999988079071,
+                                        "CurScore",
+                                        "Mul"
+                                    ],
+                                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "triggerID": "EndChannelTrigger"
+                                },
+                                {
+                                    "$type": "RemoveModifier",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "GAIGOBCNNEE": "AvatarInChannel"
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "CHARGE_SUCCESS",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR50",
+                                "HGGKBNKCCFA": "CurLocalAvatar",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "AFLAEMMPLPN": "CurLocalAvatar",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BIG_ASTER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_RecevieFinish"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Team",
+                            "MINNFFNDCJH": "CurScenePlay",
+                            "PDFANJKMFNK": "UpdateAsterProgress",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "triggerID": "EndChannelTrigger"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "AvatarInChannel"
+                        }
+                    ]
+                },
+                "LineEff_FindAster": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "NPHOOPNDCAC": "Applier",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterLarge_Recevie",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffPoint",
+                                "MMFHENHCBGB": "Self"
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "Init"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_AvatarStateController"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_PlayerNotify"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_TuntController"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "AVATAR_ASTER_SCORE",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "NPHOOPNDCAC": "CurLocalAvatar",
+                    "triggerID": "StartChannelTrigger"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_SkillButtonController"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "AvatarInChannel"
+                }
+            ]
+        }
+    }
+]

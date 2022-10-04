@@ -1,0 +1,3480 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_ExtraAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ButtonHoldChargeMixin",
+                    "overtime": 10431,
+                    "DBKLMBJJHDP": 0.11999999731779099,
+                    "BLOPHAGIDDP": 0.11999999731779099,
+                    "CBGHBGNKMPO": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorInt",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 0,
+                                    "MOCGJNIDDAI": "ComboCount"
+                                }
+                            ],
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorInt",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 0,
+                                    "MOCGJNIDDAI": "ComboCount"
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 99.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        }
+                    ],
+                    "CGFPHLEJDMJ": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "PKNMLLHNOLA": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging",
+                            "value": true
+                        }
+                    ],
+                    "NFPDHLMEPGB": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "EGNJLDKPBMI": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "JBAKBEFIMBN": [
+                                        "ExtraAttack_Catalyst_Stamina_Cost",
+                                        "Sucrose_ExtraAttack_StaminaCost",
+                                        "Mul",
+                                        "Flexible_Stamina",
+                                        "Add"
+                                    ]
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 6.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "JBAKBEFIMBN": [
+                                        "ExtraAttack_Catalyst_Stamina_Cost",
+                                        "Sucrose_ExtraAttack_StaminaCost",
+                                        "Mul",
+                                        "Flexible_Stamina",
+                                        "Add"
+                                    ]
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 1.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        }
+                    ],
+                    "KBDIHBMGNBC": [
+                        "Attack01",
+                        "Attack02",
+                        "Attack03",
+                        "ExtraAttack_BS",
+                        "ExtraAttack_Charge",
+                        "ExtraAttack",
+                        "ExtraAttack_AS"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ExtraAttack"
+                    ],
+                    "GAIGOBCNNEE": "ExtraAttack_StaminaCost"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Sucrose_ExtraAttack_StaminaCost": 1.0,
+                "ExtraAttack_Catalyst_Stamina_Cost": 0.0,
+                "Flexible_Stamina": -2.0
+            },
+            "HNEIEGHMLKH": {
+                "ExtraAttack_StaminaCost": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarSkillStart",
+                            "overtime": 10003,
+                            "AFPAPIFKIHK": 1.0,
+                            "JFIJFCKLFCF": [
+                                "Sucrose_ExtraAttack_StaminaCost",
+                                "ExtraAttack_Catalyst_Stamina_Cost",
+                                "Mul"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_Attack01",
+            "EDDGGPMFDGK": {
+                "Sucrose_NormalAttack_01_Damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Sucrose_Attack01_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "RootNode",
+                                        "MMFHENHCBGB": "Self"
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_01",
+                                    "attenuationTag": "NormalAttack",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "Sucrose_NormalAttack_01_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 5.5
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        },
+                        {
+                            "$type": "ByEntityTypes",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "entityTypes": [
+                                "EnvAnimal"
+                            ],
+                            "GDLDGAGGKPN": true
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Sucrose_Attack01_Handler"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2999999523162842,
+                            "PHDCJAHHIOG": 5.0
+                        }
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        },
+                        {
+                            "$type": "ByEntityTypes",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "entityTypes": [
+                                "EnvAnimal"
+                            ],
+                            "GDLDGAGGKPN": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "RootNode"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_Attack02",
+            "EDDGGPMFDGK": {
+                "Sucrose_NormalAttack_02_Damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Sucrose_Attack02_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "RootNode",
+                                        "MMFHENHCBGB": "Self"
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_02",
+                                    "attenuationTag": "NormalAttack",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "Sucrose_NormalAttack_02_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 7.699999809265137
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        },
+                        {
+                            "$type": "ByEntityTypes",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "entityTypes": [
+                                "EnvAnimal"
+                            ],
+                            "GDLDGAGGKPN": true
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Sucrose_Attack02_Handler"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2999999523162842,
+                            "PHDCJAHHIOG": 5.0
+                        }
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        },
+                        {
+                            "$type": "ByEntityTypes",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "entityTypes": [
+                                "EnvAnimal"
+                            ],
+                            "GDLDGAGGKPN": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "RootNode"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_Attack03",
+            "EDDGGPMFDGK": {
+                "Sucrose_NormalAttack_03_Damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Sucrose_Attack03_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "RootNode",
+                                        "MMFHENHCBGB": "Self"
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_03",
+                                    "attenuationTag": "NormalAttack",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "Sucrose_NormalAttack_03_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 8.75
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1"
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        },
+                        {
+                            "$type": "ByEntityTypes",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "entityTypes": [
+                                "EnvAnimal"
+                            ],
+                            "GDLDGAGGKPN": true
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Sucrose_Attack03_Handler"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2999999523162842,
+                            "PHDCJAHHIOG": 5.0
+                        }
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        },
+                        {
+                            "$type": "ByEntityTypes",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "entityTypes": [
+                                "EnvAnimal"
+                            ],
+                            "GDLDGAGGKPN": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "RootNode"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_Attack04_Pre",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "KillGadget",
+                    "LBGGIBBMCMF": {
+                        "APIAFGPIIHE": 41043001
+                    }
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelectedPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.800000011920929,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    },
+                    "CABLIPAKCGB": 41043001,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2999999523162842,
+                            "PHDCJAHHIOG": 5.0
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 41043001,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_Attack04_Gadget",
+            "EDDGGPMFDGK": {
+                "Sucrose_NormalAttack_04_Damage": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_02_Hit_Pre"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_NormalAttack_02_Hit"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "NPHOOPNDCAC": "OriginOwner",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 2.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "NormalAttack_04",
+                            "attenuationTag": "NormalAttack",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Sucrose_NormalAttack_04_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 16.899999618530273
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV1"
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_Attack04",
+            "EDDGGPMFDGK": {
+                "Sucrose_NormalAttack_04_Damage": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAbility",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 41043001
+                    },
+                    "abilityName": "Avatar_Sucrose_Attack04_Gadget"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_WindBlackHole",
+            "HNEIEGHMLKH": {
+                "WindBlackHole_Gadget_ReviveEnergy_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_WindBlackHole_Gadget_ReviveEnergy_Detect_Hanlder"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_WindBlackHole_Gadget_ReviveEnergy_Detect_Hanlder": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.4000000059604645,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "GenerateElemBall",
+                            "APIAFGPIIHE": 2021,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 5.0
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 12.0
+                        }
+                    ]
+                },
+                "WindBlackHole_Gadget_Reject_Push": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "RejectAttackMixin",
+                            "attackTag": "Sucrose_WindBlackHole"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "WindBlackHole_Gadget_ReviveEnergy_Detect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "ACOKKHADPOJ": true,
+                    "overtime": 10432,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 5.0
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 41043002,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 5.0
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 41043002,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                    "GAIGOBCNNEE": "WindBlackHole_Gadget_Reject_Push"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_WindBlackHole_Gadget",
+            "EDDGGPMFDGK": {
+                "WindBlackHole_Gadget_Damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "WindBlackHole_Gadget_Pre": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.47999998927116394,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_WindBlackHole_Pre"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "WindBlackHole_Gadget_Handler"
+                        }
+                    ]
+                },
+                "WindBlackHole_Gadget_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "WindBlackHole_Gadget_WindZone"
+                        },
+                        {
+                            "$type": "TriggerAttackTargetMapEvent",
+                            "NPHOOPNDCAC": "OriginOwner",
+                            "CGPCJNEJOEH": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -3.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 6.0,
+                                    "ICGFCBOFFDI": 6.0
+                                },
+                                "OAJAAMIHJME": {
+                                    "Enemy": {
+                                        "attackTag": "Elemental_Art",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": "WindBlackHole_Gadget_Damage",
+                                            "damagePercentageRatio": 0.0,
+                                            "elementType": "Wind",
+                                            "elementDurability": 25.0,
+                                            "strikeType": "Default",
+                                            "enBreak": 150.0
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "default",
+                                            "hitImpulseType": "LV7",
+                                            "retreatType": "ByHitDirectionInverse",
+                                            "hitHaltTimeScale": 0.05000000074505806
+                                        }
+                                    },
+                                    "Alliance": {
+                                        "attackTag": "Sucrose_WindBlackHole",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": 0.0,
+                                            "damagePercentageRatio": 0.0,
+                                            "elementType": "Wind",
+                                            "elementDurability": 50.0,
+                                            "strikeType": "Default",
+                                            "enBreak": 110.0
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "default",
+                                            "hitImpulseType": "LV7",
+                                            "retreatType": "ByHitDirectionInverse",
+                                            "hitHaltTimeScale": 0.05000000074505806
+                                        },
+                                        "canBeModifiedBy": "OriginOwner"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "WindBlackHole_Gadget_WindZone": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR6",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "BHELOIADOLH": 4.0,
+                            "HBBLBBPBLGE": 2.0,
+                            "IPDEDFHPHPO": 1.0,
+                            "OJIFKEOCJGB": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "GDLDGAGGKPN": true
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "WindBlackHole_Gadget_Pre"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_DemiHurricane",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Sucrose_DemiHurricane"
+                    ],
+                    "GAIGOBCNNEE": "Elemental_Burst_IsGhostToEnemy"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Sucrose_DemiHurricane"
+                    ],
+                    "GAIGOBCNNEE": "Elemental_Burst_Invincible"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Sucrose_DemiHurricane",
+                    "GAIGOBCNNEE": "Sucrose_DemiHurricane_Flusk_Material",
+                    "MMHONEIBHNP": 0.41200000047683716
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Sucrose_DemiHurricane",
+                        "Sucrose_DemiHurricane_AS"
+                    ],
+                    "GAIGOBCNNEE": "Sucrose_DemiHurricane_WeaponFade"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Elemental_Burst_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Elemental_Burst_IsGhostToEnemy": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 11002
+                        }
+                    ]
+                },
+                "Sucrose_DemiHurricane_Flusk_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Flusk"
+                        }
+                    ]
+                },
+                "Sucrose_DemiHurricane_WeaponFade": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACOKKHADPOJ": true,
+                            "FLCNICMDANB": [
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "ACOKKHADPOJ": true,
+                    "overtime": 10435,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41043005,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.019999999552965164,
+                            "KAAPLGBEDPM": 1.2369999885559082,
+                            "PHDCJAHHIOG": 0.5
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_DemiHurricane_Flusk",
+            "HNEIEGHMLKH": {
+                "DemiHurricane_Flusk_Trigger": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger",
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Flusk_Bullet"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Start"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2000000476837158,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    },
+                    "CABLIPAKCGB": 41043003,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_DemiHurricane_Gadget",
+            "EDDGGPMFDGK": {
+                "Sucrose_DemiHurricane_Gadget_LifeTimeBonus": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "DemiHurricane_Damage_Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "DemiHurricane_Damage"
+                        }
+                    ]
+                },
+                "DemiHurricane_WindZone": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 12.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR15",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "RootNode"
+                            },
+                            "BHELOIADOLH": 4.0,
+                            "HBBLBBPBLGE": 2.0,
+                            "IPDEDFHPHPO": 3.0,
+                            "OJIFKEOCJGB": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_DemiHurricane_BeHit",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "GDLDGAGGKPN": true
+                                },
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "IHCNHDLDFKC": 100.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ]
+                },
+                "DemiHurricane_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": [
+                        4.599999904632568,
+                        "Sucrose_DemiHurricane_Gadget_LifeTimeBonus",
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Strike",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "DemiHurricane_Damage_Trigger_Delay"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Avatar_Sucrose_DemiHurricane_Dissipate"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Burst"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "IHCNHDLDFKC": 100.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "DemiHurricane_Drag"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Strike",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "DemiHurricane_Damage_Trigger_Delay"
+                        }
+                    ]
+                },
+                "DemiHurricane_Damage_Trigger_Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.4000000059604645,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Avatar_Sucrose_DemiHurricane_Damage"
+                        }
+                    ]
+                },
+                "DemiHurricane_Drag": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_DemiHurricane_BeHit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_DemiHurricane_BeHit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DemiHurricane_WindZone"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DemiHurricane_Damage_Delay"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_DemiHurricane_Damage",
+            "EDDGGPMFDGK": {
+                "Sucrose_DemiHurricane_Gadget_Damage": 0.0,
+                "Sucrose_DemiHurricane_Gadget_Mix_Damage": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "KECPGHFBFMA": 0.5,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -2.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 5.0,
+                            "ICGFCBOFFDI": 8.0,
+                            "BACAAAFIHEI": "Clockwise"
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Sucrose_DemiHurricane_Gadget_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 25.0,
+                                "enBreak": 150.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV7",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {},
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Fire",
+                            "value": 1.0
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "KECPGHFBFMA": 0.5,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -2.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 5.0,
+                            "ICGFCBOFFDI": 8.0,
+                            "BACAAAFIHEI": "Clockwise"
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Sucrose_DemiHurricane_Gadget_Mix_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 25.0,
+                                "enBreak": 0.0
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Water",
+                            "value": 1.0
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "KECPGHFBFMA": 0.5,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -2.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 5.0,
+                            "ICGFCBOFFDI": 8.0,
+                            "BACAAAFIHEI": "Clockwise"
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Sucrose_DemiHurricane_Gadget_Mix_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 25.0,
+                                "enBreak": 0.0
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Electric",
+                            "value": 1.0
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "KECPGHFBFMA": 0.5,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -2.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 5.0,
+                            "ICGFCBOFFDI": 8.0,
+                            "BACAAAFIHEI": "Clockwise"
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Sucrose_DemiHurricane_Gadget_Mix_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 25.0,
+                                "enBreak": 0.0
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Ice",
+                            "value": 1.0
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -2.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 5.0,
+                            "ICGFCBOFFDI": 8.0,
+                            "BACAAAFIHEI": "Clockwise"
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Sucrose_DemiHurricane_Gadget_Mix_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Ice",
+                                "elementDurability": 25.0,
+                                "enBreak": 0.0
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Strike"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Fire",
+                            "value": 1.0
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Strike_Fire"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Water",
+                            "value": 1.0
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Strike_Water"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Electric",
+                            "value": 1.0
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Strike_Electric"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Ice",
+                            "value": 1.0
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Strike_Ice"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_DemiHurricane_Mix",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ElementHittingOtherPredicatedMixin",
+                    "PNHIJMDBJMN": [
+                        {
+                            "$type": "ByAttackTags",
+                            "NMJGDKCDFOJ": [
+                                "Hurricane_Mix_Detect"
+                            ]
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "OJANHMKJHFG": [
+                        {
+                            "BIDJFKDIPOB": [
+                                "Fire"
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Fire",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Hurricane_Mix_Fire"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "BIDJFKDIPOB": [
+                                "Water"
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Water",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Hurricane_Mix_Water"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "BIDJFKDIPOB": [
+                                "Electric"
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Electric",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Hurricane_Mix_Electric"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "BIDJFKDIPOB": [
+                                "Ice",
+                                "Frozen"
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Ice",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Hurricane_Mix_Ice"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Sucrose_DemiHurricane_Gadget_Mix_AddHurtDelta": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Hurricane_Mix_Start": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Hurricane_Mix_Handler"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Hurricane_Mix_Detect_Pre"
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Hurricane_Mix_Detect_Pre": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Hurricane_IsMixed",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "Hurricane_Mix_Detect"
+                            ]
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": -1.0
+                                        },
+                                        "KJNJNKLLNCN": "RootNode"
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 2.5,
+                                        "KAAPLGBEDPM": 5.0,
+                                        "PHDCJAHHIOG": 2.5
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Hurricane_Mix_Detect",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "AntiFire",
+                                        "elementDurability": 1.0,
+                                        "enBreak": 0.0
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "All"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Fire": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 16.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Hurricane_Mix_Fire_Material"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "NPHOOPNDCAC": "OriginOwner",
+                                    "GFIJPNMCOGJ": "Avatar_Sucrose_Contellation_6"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Hurricane_Mix_Fire_Enhancement_Handler"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Fire_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Get_Fire",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Fire_Enhancement_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Fire_Enhancement"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Fire_Enhancement"
+                        }
+                    ]
+                },
+                "UNIQUE_Hurricane_Mix_Fire_Enhancement": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Sucrose_DemiHurricane_Gadget_Mix_AddHurtDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "Hurricane_Mix_Water": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 16.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Hurricane_Mix_Water_Material"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "NPHOOPNDCAC": "OriginOwner",
+                                    "GFIJPNMCOGJ": "Avatar_Sucrose_Contellation_6"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Hurricane_Mix_Water_Enhancement_Handler"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Water_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Get_Water",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Water_Enhancement_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Water_Enhancement"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Water_Enhancement"
+                        }
+                    ]
+                },
+                "UNIQUE_Hurricane_Mix_Water_Enhancement": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_WaterAddHurtDelta": "Sucrose_DemiHurricane_Gadget_Mix_AddHurtDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "Hurricane_Mix_Electric": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 16.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Hurricane_Mix_Electric_Material"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "NPHOOPNDCAC": "OriginOwner",
+                                    "GFIJPNMCOGJ": "Avatar_Sucrose_Contellation_6"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Hurricane_Mix_Electric_Enhancement_Handler"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Electric_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Get_Electric",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Electric_Enhancement_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Electric_Enhancement"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Electric_Enhancement"
+                        }
+                    ]
+                },
+                "UNIQUE_Hurricane_Mix_Electric_Enhancement": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElecAddHurtDelta": "Sucrose_DemiHurricane_Gadget_Mix_AddHurtDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "Hurricane_Mix_Ice": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 16.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Hurricane_Mix_Ice_Material"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "NPHOOPNDCAC": "OriginOwner",
+                                    "GFIJPNMCOGJ": "Avatar_Sucrose_Contellation_6"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Hurricane_Mix_Ice_Enhancement_Handler"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Ice_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Get_Ice",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Main"
+                        }
+                    ]
+                },
+                "Hurricane_Mix_Ice_Enhancement_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Ice_Enhancement"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Hurricane_Mix_Ice_Enhancement"
+                        }
+                    ]
+                },
+                "UNIQUE_Hurricane_Mix_Ice_Enhancement": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_IceAddHurtDelta": "Sucrose_DemiHurricane_Gadget_Mix_AddHurtDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Hurricane_Mix_Start"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_DemiHurricane_Dissipate",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 1.0
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Dissipate"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Fire",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Dissipate_Fire"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Water",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Dissipate_Water"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Electric",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Dissipate_Electric"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Hurricane_IsMixed_Ice",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Sucrose_DemiHurricane_Dissipate_Ice"
+                },
+                {
+                    "$type": "KillSelf"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_FallingAnthem",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AvatarChangeSkillMixin",
+                    "CNPIEDBKHII": 5043010,
+                    "CLJNFKPHGEO": 5043010
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_Material"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_Loop_Low"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_LoopDamage"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_VelocityForce_Initialize"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Height_Detect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_01"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Inertia"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_OverHead_Camera"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_ClearVelocityForce"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_Loop_Low",
+                        "FallingAnthem_AS_1"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Attach_SelfEffect"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_AS_1"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Remove_SelfEffect"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_SetVisible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1"
+                    ],
+                    "GAIGOBCNNEE": "HideWeapon"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "FallingAnthem_Normal_Loop_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+                "FallingAnthem_Altitude_Lv0": 20.0,
+                "FallingAnthem_Altitude_Lv1": 40.0,
+                "FallingAnthem_Altitude_Lv2": 60.0,
+                "FallingAnthem_Altitude_Lv3": 100.0,
+                "FallingAnthem_Altitude_Lv4": 200.0,
+                "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+                "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+                "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+                "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+                "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+                "FallingAnthem_FallingDamageRatio": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "HideWeapon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACOKKHADPOJ": true,
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_SetVisible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_BS_Wind"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_BSCameraRadialBlur"
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_VelocityForce_Initialize": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -2.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_LoopDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 0.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 5.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ClearGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv0"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv0"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv1"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv0"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv1"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv2"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv1"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv2"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv3"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv2"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv3"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv3"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv4"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_02"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_ABILITY_FallingAttack_Altitude",
+                            "OGAHELLALBB": "FallingAnthem_FallingDamageRatio"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_03"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_03": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+                    }
+                },
+                "Inertia": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyInertiaVelocityMixin",
+                            "DOOIAANMOKN": false,
+                            "PJACACNPMJA": false
+                        }
+                    ]
+                },
+                "FallingAnthem_Height_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 5.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 4.5,
+                                "ENPKPCGKDDH": 0.20000000298023224,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera_Remover": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "FallingAnthem_Landed_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 6.0,
+                                "ENPKPCGKDDH": 0.10000000149011612,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_ClearVelocityForce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType",
+                                "InertiaType"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_Attach_SelfEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_Self_Wind"
+                        }
+                    ]
+                },
+                "FallingAnthem_Remove_SelfEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_Attach_SelfEffect"
+                        }
+                    ]
+                },
+                "FallingAnthem_BSCameraRadialBlur": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CameraBlurMixin",
+                            "JDLOKNCEKAE": {
+                                "NPOJMKDPDHI": 0.30000001192092896,
+                                "HMBJAKBLION": 0.15000000596046448
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV3",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.23999999463558197,
+                                "shakeTime": 0.11999999731779099,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.23999999463558197,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.5,
+                                "shakeTime": 0.20000000298023224,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0,
+                                    "_z": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.4000000059604645,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_Strike_01_Wind"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_Strike_02_Wind"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_PermanentSkill_Catalysa",
+            "EDDGGPMFDGK": {
+                "Sucrose_PermanentSkill_Catalysa_Duration": 0.0,
+                "Sucrose_PermanentSkill_Catalysa_ElemMasteryDelta": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Avatar_Sucrose_PermanentSkill_Catalysa_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "SwirlFire"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Fire"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAvatarElementType",
+                                            "elementType": "Fire"
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Fire"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "SwirlWater"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Water"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAvatarElementType",
+                                            "elementType": "Water"
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Water"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "SwirlIce"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Ice"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAvatarElementType",
+                                            "elementType": "Ice"
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Ice"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "SwirlElectric"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Electric"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAvatarElementType",
+                                            "elementType": "Electric"
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Electric"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Fire": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Sucrose_PermanentSkill_Catalysa_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemMasteryDelta": "Sucrose_PermanentSkill_Catalysa_ElemMasteryDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Water": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Sucrose_PermanentSkill_Catalysa_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemMasteryDelta": "Sucrose_PermanentSkill_Catalysa_ElemMasteryDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Ice": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Sucrose_PermanentSkill_Catalysa_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemMasteryDelta": "Sucrose_PermanentSkill_Catalysa_ElemMasteryDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Avatar_Sucrose_PermanentSkill_Catalysa_Electric": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Sucrose_PermanentSkill_Catalysa_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemMasteryDelta": "Sucrose_PermanentSkill_Catalysa_ElemMasteryDelta"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "Avatar_Sucrose_PermanentSkill_Catalysa_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_PermanentSkill_NetherWind",
+            "EDDGGPMFDGK": {
+                "Sucrose_PermanentSkill_NetherWind_Duration": 0.0,
+                "Sucrose_PermanentSkill_NetherWind_Factor": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Avatar_Sucrose_PermanentSkill_NetherWind_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art",
+                                        "Elemental_Burst"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_NetherWind_Buff"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetType",
+                                            "GAIGNEFHDBL": false
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_PermanentSkill_NetherWind_Buff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Avatar_Sucrose_PermanentSkill_NetherWind_Buff": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Sucrose_PermanentSkill_NetherWind_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemMasteryExtraDelta": [
+                            "Sucrose_PermanentSkill_NetherWind_Factor",
+                            "FIGHT_PROP_NONEXTRA_ELEMENT_MASTERY",
+                            "Mul"
+                        ]
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Avatar_Sucrose_PermanentSkill_NetherWind_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Sucrose_NormalAttack_DamageHandler",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "NormalAttack_01"
+                    ],
+                    "bonusCriticalHurt": "Sucrose_NormalAttack_01_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "NormalAttack_02"
+                    ],
+                    "bonusCriticalHurt": "Sucrose_NormalAttack_02_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "NormalAttack_03"
+                    ],
+                    "bonusCriticalHurt": "Sucrose_NormalAttack_03_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "NormalAttack_04"
+                    ],
+                    "bonusCriticalHurt": "Sucrose_NormalAttack_04_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "ExtraAttack"
+                    ],
+                    "bonusCriticalHurt": "Sucrose_ExtraAttack_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Sucrose_NormalAttack_01_DamagePercentage": 0.0,
+                "Sucrose_NormalAttack_02_DamagePercentage": 0.0,
+                "Sucrose_NormalAttack_03_DamagePercentage": 0.0,
+                "Sucrose_NormalAttack_04_DamagePercentage": 0.0,
+                "Sucrose_ExtraAttack_DamagePercentage": 0.0,
+                "Sucrose_Paranoid_ReduceColdDown": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_PARANOID_COUNT",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                6.5,
+                                7.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Sucrose_Paranoid_Blank",
+                                "Sucrose_Paranoid_Handler"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_PARANOID_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_ABILITY_PARANOID_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid_AddCount"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid_AddCount": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_PARANOID_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 7.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Sucrose_Paranoid_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Sucrose_Paranoid_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid_ReduceColdDown"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_ABILITY_PARANOID_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid_ReduceColdDown": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetRandomOverrideMapValue",
+                            "MOCGLDDNLKO": -1.0,
+                            "DMNANPGJBJH": -7.0,
+                            "OGAHELLALBB": "Sucrose_Paranoid_ReduceColdDown"
+                        },
+                        {
+                            "$type": "ModifyAvatarSkillCD",
+                            "overtime": 10432,
+                            "KHBEPNBNHOI": "Sucrose_Paranoid_ReduceColdDown"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "predicates": [
+                        {
+                            "$type": "ByUnlockTalentParam",
+                            "GFIJPNMCOGJ": "Avatar_Sucrose_Contellation_4"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "ACOKKHADPOJ": true,
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "Avatar_Sucrose_Contellation_4"
+                                }
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_Sucrose_NormalAttack_DamageHandler_Paranoid"
+                }
+            ]
+        }
+    }
+]

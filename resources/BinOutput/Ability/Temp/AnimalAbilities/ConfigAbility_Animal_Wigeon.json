@@ -1,0 +1,349 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_AIStateInitial",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        1
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                202
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        2
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                101,
+                                102,
+                                103,
+                                104,
+                                201
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_Random",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FlyDown",
+                        "TakeOff",
+                        "FlyUp",
+                        "Disappear"
+                    ],
+                    "GAIGOBCNNEE": "Random_MoveSpeedRatio"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "RandomSpeed": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Random_MoveSpeedRatio": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_MoveSpeedRatio": "RandomSpeed"
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetRandomOverrideMapValue",
+                    "MOCGLDDNLKO": 0.10000000149011612,
+                    "DMNANPGJBJH": -0.10000000149011612,
+                    "OGAHELLALBB": "RandomSpeed"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_FlyDown",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FlyDown"
+                    ],
+                    "GAIGOBCNNEE": "FlyState_Down"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Land"
+                    ],
+                    "GAIGOBCNNEE": "FlyDown_Land"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "FlyState_Down": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "FlyState",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "FlyState"
+                        }
+                    ]
+                },
+                "FlyDown_Land": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -1.9900000095367432
+                    }
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "FlyState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_FlyUp",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "FlyState",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_ToWander",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "NormalMove"
+                    ],
+                    "GAIGOBCNNEE": "NormalMove_Effect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Run"
+                    ],
+                    "GAIGOBCNNEE": "Run_Effect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NormalMove_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Animal_Wigeon_Ripple_Walk"
+                        }
+                    ]
+                },
+                "Run_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Animal_Wigeon_Ripple_Run"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "WanderState",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_ToIdle",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "NormalIdle",
+                        "Personality_101",
+                        "Personality_102",
+                        "Personality_103",
+                        "ToWander",
+                        "ToIdle",
+                        "Aware",
+                        "Alert",
+                        "SurroundAction"
+                    ],
+                    "GAIGOBCNNEE": "NormalIdle_Effect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NormalIdle_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Animal_Wigeon_Ripple_Standby"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "WanderState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_Flee",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Run"
+                    ],
+                    "GAIGOBCNNEE": "FleeState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "FleeState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "FleeState"
+                        }
+                    ]
+                },
+                "BeHitDetect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "FleeState",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "BeHitDetect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "FleeState",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_Disappear",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Disappear"
+                    ],
+                    "GAIGOBCNNEE": "DisappearTimer"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DisappearTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "StartDither",
+                            "duration": 4.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Disappear",
+                            "value": true
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "duration": 3.5,
+                            "BEKKIHBPHGD": true,
+                            "EOIGEKNINFE": true,
+                            "PGGBJIDIINM": "Disappear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Wigeon_FlyEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Animal_Common_Feather",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,259 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Hili_Grass_PlantThorns",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42101002,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.30000001192092896,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Hili_Grass_PlantThorns_Loop",
+            "HNEIEGHMLKH": {
+                "GrassMaterial": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Undead_01_Plant_Thorns"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "GrassMaterial"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Hili_Grass_PlantGrasping",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    },
+                    "CABLIPAKCGB": 42101008,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "All"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Hili_Grass_PlantGrasping_Element",
+            "HNEIEGHMLKH": {
+                "PlantGraspingElement": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementType": "Grass",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Undead_01_Plant_Grasping"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "PlantGraspingElement"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Hili_Grass_Heal",
+            "EDDGGPMFDGK": {
+                "healHPRatio": 0.10000000149011612,
+                "healHPRatioRetain": 0.019999999552965164
+            },
+            "HNEIEGHMLKH": {
+                "HealHPModifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementType": "Grass",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Undead_01_Plant_Heal"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Grass_HealRetain"
+                        },
+                        {
+                            "$type": "HealHP",
+                            "ACOKKHADPOJ": true,
+                            "AJAHODOGLMH": "healHPRatio",
+                            "MDALFAAHHJA": true
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "HealHP",
+                            "ACOKKHADPOJ": true,
+                            "AJAHODOGLMH": "healHPRatioRetain",
+                            "MDALFAAHHJA": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "DJLKFLJENEG": 1,
+                        "JBKKOJLJHDK": "CircleR10",
+                        "ONPOPLLHJLE": "Alliance",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "HealHPModifier"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_WoodenClub_Grass_Effect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToPredicateMixin",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_IS_CLUB_",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Grass_Effect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Grass_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Grass_WeaponElement"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Poison"
+                        }
+                    ]
+                },
+                "Poison": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementType": "Grass",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Slime_Grass_Poison_Dot"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.20000000298023224,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Grass",
+                                    "elementDurability": 30.0,
+                                    "strikeType": "Default"
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "",
+                                    "hitImpulseType": ""
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Hili_Grass_PlantSteer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "ThrowAttack"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ]
+        }
+    }
+]

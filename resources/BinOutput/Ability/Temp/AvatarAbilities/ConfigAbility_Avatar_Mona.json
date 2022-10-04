@@ -1,0 +1,4104 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Liquid_TriggerAbility",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SkillButtonHoldChargeMixin",
+                    "overtime": 10413,
+                    "FBKEKCDNBGA": "NextLoopTrigger",
+                    "FPOECNCOANG": "EndHoldTrigger",
+                    "DALGCIDCLHM": [
+                        "LiquidStrike_BS"
+                    ],
+                    "DPOLLOHHCHN": [
+                        "LiquidStrike_BS1",
+                        "LiquidStrike_Move",
+                        "LiquidStrike_MoveStandby"
+                    ],
+                    "FDBPIFFNAND": [
+                        0.009999999776482582,
+                        60.0
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_Move"
+                    ],
+                    "GAIGOBCNNEE": "LiquidStrike_SetAnimatorTrigger"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "StaminaStartCost": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "LiquidStrike_SetAnimatorTrigger": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "JBAKBEFIMBN": 1.0
+                                }
+                            ],
+                            "triggerID": "EndHoldTrigger"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "overtime": 10413,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": "StaminaStartCost"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_LiquidStrike",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AvatarSteerByCameraMixin",
+                    "stateIDs": [
+                        "LiquidStrike_BS_0",
+                        "LiquidStrike_BS",
+                        "LiquidStrike_BS1",
+                        "LiquidStrike_Move",
+                        "LiquidStrike_MoveStandby"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_BS1",
+                        "LiquidStrike_Move",
+                        "LiquidStrike_FatalMove"
+                    ],
+                    "GAIGOBCNNEE": "MoveLoop"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_BS",
+                        "LiquidStrike_BS1",
+                        "LiquidStrike_Move",
+                        "LiquidStrike_MoveStandby"
+                    ],
+                    "GAIGOBCNNEE": "MoveLoop_SetVisible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_MoveStandby"
+                    ],
+                    "GAIGOBCNNEE": "MoveStandby_CostStamina"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_AS",
+                        "LiquidStrike_AS_OnWater"
+                    ],
+                    "GAIGOBCNNEE": "Water_Bloom"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_AS",
+                        "LiquidStrike_AS_OnWater"
+                    ],
+                    "GAIGOBCNNEE": "SetAnimatorFloat"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_Move",
+                        "LiquidStrike_FatalMove"
+                    ],
+                    "GAIGOBCNNEE": "Move_Eff"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_MoveStandby",
+                        "LiquidStrike_FatalStandby"
+                    ],
+                    "GAIGOBCNNEE": "MoveStandby_Eff"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_Move",
+                        "LiquidStrike_MoveStandby",
+                        "LiquidStrike_FatalMove",
+                        "LiquidStrike_FatalStandby"
+                    ],
+                    "GAIGOBCNNEE": "LiquidStrike_CloseCollider"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "LiquidStrike_MoveSpeedRatio": 0.0,
+                "Water_Bloom_Radius": 2.0,
+                "StaminaCost": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "MoveLoop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CostStaminaMixin",
+                            "MBNKHAGNAFE": "StaminaCost",
+                            "GAKLCFHFOLB": [
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "triggerID": "EndHoldTrigger"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "MoveStateMixin"
+                        }
+                    ]
+                },
+                "MoveStandby_CostStamina": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CostStaminaMixin",
+                            "MBNKHAGNAFE": 0.10000000149011612,
+                            "GAKLCFHFOLB": [
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "triggerID": "EndHoldTrigger"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "MoveLoop_SetVisible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                },
+                "Move_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_MoveSpeedRatio": "LiquidStrike_MoveSpeedRatio"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Spray"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "MoveStandby_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Idle"
+                        }
+                    ]
+                },
+                "Water_Bloom": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.10000000149011612
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": "Water_Bloom_Radius"
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Mona_LiquidStrike",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "enBreak": 0.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "cameraShake": {}
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "WaterModifier"
+                        }
+                    ]
+                },
+                "WaterModifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 4.0,
+                    "elementType": "Water",
+                    "elementDurability": 25.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Barbara_WetShield_Collision_Self"
+                        }
+                    ]
+                },
+                "SetAnimatorFloat": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "@FallToGroundRun",
+                            "value": 1.0
+                        }
+                    ]
+                },
+                "LiquidStrike_CloseCollider": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "PCAEPAFKFNA": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerSetPassThrough",
+                    "ACOKKHADPOJ": true,
+                    "CFIPAGENGPE": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_EndLiquidStrike",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "triggerID": "NextSkillTrigger"
+                },
+                {
+                    "$type": "SetAnimatorInt",
+                    "intID": "SkillID",
+                    "value": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_ExtraAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ButtonHoldChargeMixin",
+                    "overtime": 10411,
+                    "DBKLMBJJHDP": 0.10000000149011612,
+                    "BLOPHAGIDDP": 0.10000000149011612,
+                    "CBGHBGNKMPO": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorInt",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 0,
+                                    "MOCGJNIDDAI": "ComboCount"
+                                }
+                            ],
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorInt",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 0,
+                                    "MOCGJNIDDAI": "ComboCount"
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 99.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        }
+                    ],
+                    "CGFPHLEJDMJ": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "PKNMLLHNOLA": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging",
+                            "value": true
+                        }
+                    ],
+                    "NFPDHLMEPGB": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "EGNJLDKPBMI": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "JBAKBEFIMBN": [
+                                        "ExtraAttack_Catalyst_Stamina_Cost",
+                                        "Mona_ExtraAttack_StaminaCost",
+                                        "Mul",
+                                        "Flexible_Stamina",
+                                        "Add"
+                                    ]
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 6.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "JBAKBEFIMBN": [
+                                        "ExtraAttack_Catalyst_Stamina_Cost",
+                                        "Mona_ExtraAttack_StaminaCost",
+                                        "Mul",
+                                        "Flexible_Stamina",
+                                        "Add"
+                                    ]
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 1.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        }
+                    ],
+                    "KBDIHBMGNBC": [
+                        "Attack01",
+                        "Attack02",
+                        "Attack03",
+                        "ExtraAttack_BS",
+                        "ExtraAttack_Charge",
+                        "ExtraAttack",
+                        "ExtraAttack_AS"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ExtraAttack_Charge"
+                    ],
+                    "GAIGOBCNNEE": "ExtraAttack_StaminaCost"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Mona_ExtraAttack_StaminaCost": 1.0,
+                "ExtraAttack_Catalyst_Stamina_Cost": 0.0,
+                "Flexible_Stamina": -2.0
+            },
+            "HNEIEGHMLKH": {
+                "ExtraAttack_StaminaCost": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarSkillStart",
+                            "overtime": 10003,
+                            "AFPAPIFKIHK": 1.0,
+                            "JFIJFCKLFCF": [
+                                "Mona_ExtraAttack_StaminaCost",
+                                "ExtraAttack_Catalyst_Stamina_Cost",
+                                "Mul"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_ExtraAttack_FX",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ExtraAttack_Charge",
+                        "ExtraAttack"
+                    ],
+                    "GAIGOBCNNEE": "ExtraAttack_FX"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ExtraAttack_FX": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasAttackTarget"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "HJJEAOMEOFI": "_ABILITY_MONA_EXTRAATTACK_POS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 5.0
+                                },
+                                "JBPCKOKLHEB": true
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ],
+                            "HJJEAOMEOFI": "_ABILITY_MONA_EXTRAATTACK_POS",
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Pre",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "GDENJEFPMGC": "_ABILITY_MONA_EXTRAATTACK_POS",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_ExtraAttack_Damage",
+            "EDDGGPMFDGK": {
+                "AS_Mona_ExtraAttack_Damge": 0.0,
+                "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "JBPCKOKLHEB": true,
+                        "GDENJEFPMGC": "_ABILITY_MONA_EXTRAATTACK_POS",
+                        "MICIJLHMIIH": ""
+                    }
+                },
+                {
+                    "$type": "SetGlobalValueToOverrideMap",
+                    "NPHOOPNDCAC": "Caster",
+                    "BPCFCANOMNH": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
+                    "OGAHELLALBB": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp"
+                },
+                {
+                    "$type": "ClearGlobalValue",
+                    "NPHOOPNDCAC": "Caster",
+                    "HJJEAOMEOFI": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Caster",
+                    "GAIGOBCNNEE": "UNIQUE_Talent_LiquidStrike_Move_ExtraAttackDamageUp_Duration"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "NPHOOPNDCAC": "Caster",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_ABILITY_MONA_EXTRAATTACK_POS",
+                                "MICIJLHMIIH": ""
+                            },
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "ExtraAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "AS_Mona_ExtraAttack_Damge",
+                                "damagePercentageRatio": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp",
+                                "elementType": "Water",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 26.145000457763672
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Hit",
+                                "hitImpulseType": "LV3",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.11999999731779099,
+                                "shakeTime": 0.36000001430511475,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": -1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.7200000286102295,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_01",
+            "EDDGGPMFDGK": {
+                "AS_Mona_NormalAttack_01": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Mona_NormalAttack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "RootNode",
+                                        "MMFHENHCBGB": "Self"
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_01",
+                                    "attenuationTag": "Mona_Water_Damage",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_01",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 7.650000095367432
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_01_Hit",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "GAIGOBCNNEE": "Mona_NormalAttack"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_01_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 5.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_02",
+            "EDDGGPMFDGK": {
+                "AS_Mona_NormalAttack_02": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Mona_NormalAttack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "RootNode",
+                                        "MMFHENHCBGB": "Self"
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_02",
+                                    "attenuationTag": "Mona_Water_Damage",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_02",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 7.349999904632568
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_02_Hit",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "GAIGOBCNNEE": "Mona_NormalAttack"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_02_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 5.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_03_BS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "HHFIHBEAPAP": "Is_NormalAttack_Blink_Back",
+                    "value": true
+                },
+                {
+                    "$type": "Predicated",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "DJLKFLJENEG": 1,
+                        "AKMLOIFOBPO": "Nearest",
+                        "JBKKOJLJHDK": "CircleR15",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "GMFCOCAJBDM": "GreaterOrEqual",
+                            "value": 7.5
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Is_NormalAttack_Blink_Back"
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Is_NormalAttack_Blink_Back",
+                            "value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_03_Blink",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Attack03_Forward",
+                        "Attack03_Back"
+                    ],
+                    "GAIGOBCNNEE": "Blink"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Blink": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.2199999988079071,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Attack_HideSpark"
+                        },
+                        {
+                            "$type": "TriggerSetVisible"
+                        },
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "PCAEPAFKFNA": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TurnDirection",
+                            "IFDAEDLACJO": "OnlyTarget"
+                        },
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Attack_ShowSpark"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "triggerID": "Attack"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_03",
+            "EDDGGPMFDGK": {
+                "AS_Mona_NormalAttack_03": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Mona_NormalAttack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "RootNode",
+                                        "MMFHENHCBGB": "Self"
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_03",
+                                    "attenuationTag": "Mona_Water_Damage",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_03",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 9.149999618530273
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_03_Hit",
+                                        "hitImpulseType": "LV1"
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "GAIGOBCNNEE": "Mona_NormalAttack"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_03_Hit",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 5.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_04",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelectedPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    },
+                    "CABLIPAKCGB": 41041004,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2000000476837158,
+                            "PHDCJAHHIOG": 5.0
+                        },
+                        "JBPCKOKLHEB": true
+                    },
+                    "CABLIPAKCGB": 41041004,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_NormalAttack_04_Hit",
+            "EDDGGPMFDGK": {
+                "Radius": 2.0,
+                "AS_Mona_NormalAttack_04": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Attack04_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.41999998688697815,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "OriginOwner",
+                            "ACOKKHADPOJ": true,
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": "Radius"
+                                },
+                                "attackInfo": {
+                                    "attackTag": "NormalAttack_04",
+                                    "attenuationTag": "Mona_Water_Damage",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "AS_Mona_NormalAttack_04",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 11.850000381469727
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "cameraShake": {
+                                        "shakeRange": 0.23999999463558197,
+                                        "shakeTime": 0.18000000715255737,
+                                        "shakeDistance": 30.0
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Attack04_Timer"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_NormalAttack_04_Hit"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Phantom_BS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ClearGlobalValue",
+                    "HJJEAOMEOFI": "_MONA_PHANTOM_IS_BLINK"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Phantom_Blink_BS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONA_PHANTOM_IS_BLINK",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Phantom",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SkillButtonHoldChargeMixin",
+                    "overtime": 10412,
+                    "FBKEKCDNBGA": "NextLoopTrigger",
+                    "FPOECNCOANG": "EndHoldTrigger",
+                    "DALGCIDCLHM": [
+                        "Mona_Phantom_CheckIsBlink"
+                    ],
+                    "DPOLLOHHCHN": [
+                        "Mona_Phantom_BS",
+                        "Mona_Phantom_Blink_BS"
+                    ],
+                    "FDBPIFFNAND": [
+                        0.30000001192092896
+                    ]
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "KillGadget",
+                    "LBGGIBBMCMF": {
+                        "APIAFGPIIHE": 41041005
+                    }
+                },
+                {
+                    "$type": "AvatarSkillStart",
+                    "overtime": 10412,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                },
+                {
+                    "$type": "SetGlobalPos",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "HJJEAOMEOFI": "_ABILITY_MONA_PHANTOM_POS",
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "CreateGadget",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget"
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": -0.800000011920929
+                        },
+                        "JBPCKOKLHEB": true,
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget"
+                        },
+                        "GDENJEFPMGC": "_ABILITY_MONA_PHANTOM_POS",
+                        "MICIJLHMIIH": ""
+                    },
+                    "CABLIPAKCGB": 41041005,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ]
+                        }
+                    ],
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 5.0
+                        },
+                        "JBPCKOKLHEB": true,
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        }
+                    },
+                    "CABLIPAKCGB": 41041005,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Phantom_Blink",
+            "HNEIEGHMLKH": {
+                "Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.25,
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Blink_End": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.25,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Show"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Show_Door"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "triggerID": "Attack"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByAttackTarget"
+                                },
+                                "GDENJEFPMGC": "_ABILITY_MONA_PHANTOM_POS",
+                                "MICIJLHMIIH": ""
+                            },
+                            "CABLIPAKCGB": 41041005,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "KillGadget",
+                    "LBGGIBBMCMF": {
+                        "APIAFGPIIHE": 41041005
+                    }
+                },
+                {
+                    "$type": "AvatarSkillStart",
+                    "overtime": 10412,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Rush_Hide",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        }
+                    }
+                },
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "_ABILITY_MONA_PHANTOM_POS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        }
+                    },
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Blink_End"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invincible"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Phantom_Blink_SetVisible",
+            "HNEIEGHMLKH": {
+                "SetVisible_End": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.3400000035762787,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true
+                        },
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerSetPassThrough",
+                    "ACOKKHADPOJ": true,
+                    "PCAEPAFKFNA": true
+                },
+                {
+                    "$type": "TriggerSetVisible"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "SetVisible_End"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Phantom_AS_HideWeapon",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_Phantom_Blink_BS",
+                        "Mona_Phantom_Blink",
+                        "Mona_Phantom_BS",
+                        "Mona_Phantom"
+                    ],
+                    "GAIGOBCNNEE": "Mona_Phantom_HideWeapon"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Mona_Phantom_HideWeapon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_MonaGadgetSkill_Phantom",
+            "EDDGGPMFDGK": {
+                "AS_Mona_Phantom_ThinkDamageRate": 0.0,
+                "AS_Mona_Phantom_LastDamageRate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "ShowEffect_Phantom_Area": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.21999979019165,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Phantom_Attack"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Phantom"
+                        }
+                    ]
+                },
+                "Phantom": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_MaxHPDelta": 999999.0,
+                        "Actor_DefenceDelta": 999999.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Area"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Disappear"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_SkillObj_BeHit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.399999976158142,
+                                    "PHDCJAHHIOG": 0.44999998807907104
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Phantom_Attack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONA_PHANTOM_THINK_TIMES",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONA_PHANTOM_THINK_TIMES",
+                                    "value": 4.0,
+                                    "EODMLMGMLNP": true,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Phantom_Attack_Think"
+                        }
+                    ]
+                },
+                "Phantom_Attack_Think": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_ThinkAttack",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "GadgetPos",
+                                "MICIJLHMIIH": ""
+                            },
+                            "LALONNAHJDN": 0.699999988079071
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "GadgetPos",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "ICGFCBOFFDI": 5.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Art",
+                                    "attenuationTag": "Elemental_Art",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "AS_Mona_Phantom_ThinkDamageRate",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 40.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "cameraShake": {},
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "Taunt_SelectTarget_01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Taunt_SelectTarget_02"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Taunt_SelectTarget_02"
+                        }
+                    ]
+                },
+                "Taunt_SelectTarget_02": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasAbilityState",
+                                            "MFKFDKDKKNJ": "MuteTaunt"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Taunted"
+                        }
+                    ]
+                },
+                "Taunted": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ambor_Dummy_Taunted"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Taunted"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONA_PHANTOM",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Taunt_SelectTarget_01"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "ShowEffect_Phantom_Area"
+                },
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "GadgetPos",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        }
+                    }
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Phantom"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Burst",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "GDENJEFPMGC": "GadgetPos",
+                        "MICIJLHMIIH": ""
+                    },
+                    "LALONNAHJDN": 0.75
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    },
+                    "CABLIPAKCGB": 41041007,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_MonaGadgetSkill_PhantomLastAttack",
+            "EDDGGPMFDGK": {
+                "AS_Mona_Phantom_LastDamageRate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "DummyElementBall": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Ball"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Ball": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "GenerateElemBall",
+                            "APIAFGPIIHE": 2018,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 9.0
+                        },
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": 0.33000001311302185,
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "GenerateElemBall",
+                                    "APIAFGPIIHE": 2018,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ratio": 1.0,
+                                    "GJNDGIAENMI": 3.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "GadgetPos",
+                                "MICIJLHMIIH": ""
+                            },
+                            "ICGFCBOFFDI": 5.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Art",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "AS_Mona_Phantom_LastDamageRate",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 150.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV3",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DummyElementBall"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_StarChart_Camera",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart",
+                        "Mona_StarChart_AS"
+                    ],
+                    "GAIGOBCNNEE": "Tornado_Eff"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart"
+                    ],
+                    "GAIGOBCNNEE": "isGhost"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart"
+                    ],
+                    "GAIGOBCNNEE": "Mona_StarChart_HideWeapon"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart"
+                    ],
+                    "GAIGOBCNNEE": "invincible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart",
+                        "Mona_StarChart_AS"
+                    ],
+                    "GAIGOBCNNEE": "camera"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart"
+                    ],
+                    "GAIGOBCNNEE": "camera_extra"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Mona_StarChart",
+                    "GAIGOBCNNEE": "SetEmission",
+                    "AAIFCLGLOMO": 0.1599999964237213,
+                    "MMHONEIBHNP": 0.949999988079071
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "isGhost": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 11002
+                        }
+                    ]
+                },
+                "invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Tornado_Eff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR2",
+                            "BHELOIADOLH": -2.0,
+                            "HBBLBBPBLGE": 0.0,
+                            "IPDEDFHPHPO": 0.0,
+                            "OJIFKEOCJGB": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "IHCNHDLDFKC": 100.0
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "GDLDGAGGKPN": true
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 0.5,
+                                                "PHDCJAHHIOG": 0.0
+                                            }
+                                        },
+                                        "secondHeight": 2.0,
+                                        "ICGFCBOFFDI": 1.0
+                                    },
+                                    "AKDGLEOGNGO": true
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackBox",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": -5.730000019073486,
+                                                "KAAPLGBEDPM": 8.8100004196167,
+                                                "PHDCJAHHIOG": -5.260000228881836
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByEntity",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": -50.0,
+                                                    "KAAPLGBEDPM": 20.299999237060547,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "AEAAJCIDPED": 5.0,
+                                            "KAAPLGBEDPM": 20.200000762939453,
+                                            "PHDCJAHHIOG": 5.0
+                                        }
+                                    },
+                                    "AKDGLEOGNGO": true
+                                },
+                                {
+                                    "$type": "ByAvatarInWaterDepth",
+                                    "ONPJJFKDCED": "LessAndEqual",
+                                    "KPLJIGIPGMH": 0.5
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Self_BS"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "AttachEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Self_BS_Thirdparty"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TriggerWeatherMixin",
+                            "type": "Skill",
+                            "IHMBDACJNDO": "Weather_Mona_StarChart",
+                            "DPEJLHDNMOK": 0.6000000238418579,
+                            "duration": 2.5
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ControlEmotion",
+                            "DBOPCOMLILO": false,
+                            "CBIALJFEDDJ": false,
+                            "LCLBKEALNOO": false
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "LFIHLDLEOCI": "Weapon",
+                            "weight": -1.0,
+                            "duration": 0.30000001192092896
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "AvatarExitCameraShot"
+                        }
+                    ],
+                    "NPEJFLBOAAN": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "LFIHLDLEOCI": "Weapon",
+                            "weight": -1.0,
+                            "duration": 0.30000001192092896
+                        },
+                        {
+                            "$type": "AvatarCameraParam",
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 4.300000190734863
+                            }
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "camera_extra": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 4.300000190734863,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "SetEmission": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "LFIHLDLEOCI": "Weapon",
+                            "weight": 15.0,
+                            "duration": 0.30000001192092896
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "LFIHLDLEOCI": "Weapon",
+                            "weight": -1.0,
+                            "duration": 0.6000000238418579
+                        }
+                    ]
+                },
+                "Mona_StarChart_HideWeapon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AvatarExitCameraShot"
+                },
+                {
+                    "$type": "AvatarEnterCameraShot",
+                    "predicates": [
+                        {
+                            "$type": "ByAttackNotHitScene",
+                            "attackPattern": {
+                                "$type": "ConfigAttackCircle",
+                                "lifeTime": "TriggerNoRepeat",
+                                "NGDMCBABOJA": {
+                                    "$type": "ConfigBornBySelf",
+                                    "offset": {
+                                        "AEAAJCIDPED": 0.0,
+                                        "KAAPLGBEDPM": 1.2000000476837158,
+                                        "PHDCJAHHIOG": 0.0
+                                    }
+                                },
+                                "secondHeight": 0.20000000298023224,
+                                "BDAPFCGNBKA": 30.0,
+                                "ICGFCBOFFDI": 0.800000011920929
+                            }
+                        }
+                    ],
+                    "LOOLBLCGLBM": "Camera_Mona_StarChart"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_StarChart",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Mona_StarChart",
+                        "Mona_StarChart_AS"
+                    ],
+                    "GAIGOBCNNEE": "Invincible"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "AS_Mona_StarChart_Bubble_Duration": 0.0,
+                "AS_Mona_StarChart_Bubble_RemovedDamage": 0.0,
+                "AS_Mona_StarChart_RemovedDamage_HurtUp_DamageRate": -1.0,
+                "AS_Mona_StarChart_HurtUp_DamageRate": 0.0,
+                "AS_Mona_StarChart_HurtUp_Duration": 0.0,
+                "AS_Mona_Talent_ElementReactionUp_Electric": 0.0,
+                "AS_Mona_Talent_ElementReactionUp_Steam": 0.0,
+                "AS_Mona_Talent_ElementReactionUp_SwirlWater": 0.0,
+                "AS_Mona_Talent_ElementReactionUp_Freeze": 0.0,
+                "AS_Mona_Talent_ElementReactionUp_Time": 0.0,
+                "AS_Mona_Talent_AntiCritical": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "StarChart_Area_Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.7000000476837158,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "TriggerAttack_Event"
+                        }
+                    ]
+                },
+                "Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.5,
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "TriggerAttack_Event": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "ACOKKHADPOJ": true,
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "ICGFCBOFFDI": 10.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Elemental_Burst",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 50.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "cameraShake": {},
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "ACOKKHADPOJ": true,
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "ICGFCBOFFDI": 10.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Burst_Trigger",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 0.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV0",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "cameraShake": {},
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Burst_Trigger"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar",
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ACOKKHADPOJ": true,
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByTargetWeight",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "IHCNHDLDFKC": 100.0
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "ApplyModifier",
+                                            "NPHOOPNDCAC": "Target",
+                                            "ACOKKHADPOJ": true,
+                                            "GAIGOBCNNEE": "Debuff_Bubble_Struggle"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Debuff_Bubble_RemoveDamage"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Debuff_Bubble_Struggle": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "AS_Mona_StarChart_Bubble_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -2.0
+                    },
+                    "state": "Struggle"
+                },
+                "UNIQUE_Debuff_Bubble_RemoveDamage": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "AS_Mona_StarChart_Bubble_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_SubHurtDelta": "AS_Mona_StarChart_HurtUp_DamageRate",
+                        "Actor_AntiCriticalDelta": "AS_Mona_Talent_AntiCritical"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_HurtUp"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Bubble"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Debuff_Bubble_Struggle"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Bubble_AS"
+                        },
+                        {
+                            "$type": "DamageByAttackValue",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "attackInfo": {
+                                "attackTag": "Elemental_Burst",
+                                "attenuationTag": "Elemental_Burst",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": "AS_Mona_StarChart_Bubble_RemovedDamage",
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Water",
+                                    "elementDurability": 50.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 200.0,
+                                    "damageExtra": 0.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV1",
+                                    "hitHaltTimeScale": 0.009999999776482582
+                                }
+                            }
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_HurtUp"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_HurtUp"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitImpulse",
+                                    "DJNJFCLGCMM": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_Bubble_RemoveDamage"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_Bubble_RemoveDamage"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Debuff_HurtUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "AS_Mona_StarChart_HurtUp_Duration",
+                        0.20000000298023224,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_SubHurtDelta": "AS_Mona_StarChart_HurtUp_DamageRate",
+                        "Actor_AntiCriticalDelta": "AS_Mona_Talent_AntiCritical"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Caster",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "Avatar_Mona_Talent_Talent_StarChart_ElementReactionUp"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Talent_ElementReactionUp_AttackLandedEvent_01"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_HurtUp"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "Is_Mona_StarChart_HurtUp",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_HurtUp_AS"
+                        },
+                        {
+                            "$type": "ClearGlobalValue",
+                            "HJJEAOMEOFI": "Is_Mona_StarChart_HurtUp"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "Talent_ElementReactionUp_AttackLandedEvent_01": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": [
+                        "AS_Mona_StarChart_HurtUp_Duration",
+                        0.05000000074505806,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent_TeamHandle"
+                        }
+                    ]
+                },
+                "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent_TeamHandle": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "AS_Mona_StarChart_HurtUp_Duration",
+                        0.05000000074505806,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent"
+                        }
+                    ]
+                },
+                "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "AS_Mona_StarChart_HurtUp_Duration",
+                        0.05000000074505806,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Other",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "Is_Mona_StarChart_HurtUp",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "GAIGOBCNNEE": "UNIQUE_Avatar_Mona_StarChart_Talent_ElementReactionUp_TeamHandle"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Avatar_Mona_StarChart_Talent_ElementReactionUp_TeamHandle": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "AS_Mona_Talent_ElementReactionUp_Time",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_Talent_ElementAddHurt"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_Talent_ElementAddHurt"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_Debuff_Talent_ElementReactionUp_AttackLandedEvent_TeamHandle"
+                        }
+                    ]
+                },
+                "UNIQUE_Talent_ElementAddHurt": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "AS_Mona_Talent_ElementReactionUp_Time",
+                        "AS_Mona_StarChart_HurtUp_Duration",
+                        "Add",
+                        "AS_Mona_StarChart_Bubble_Duration",
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemReactElectricDelta": "AS_Mona_Talent_ElementReactionUp_Electric",
+                        "Actor_ElemReactSteamDelta": "AS_Mona_Talent_ElementReactionUp_Steam",
+                        "Actor_ElemReactSwirlWaterDelta": "AS_Mona_Talent_ElementReactionUp_SwirlWater",
+                        "Actor_ElemReactFreezeDelta": "AS_Mona_Talent_ElementReactionUp_Freeze"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Talent_ReactionUp"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_StarChart_Talent_ReactionUp_AS"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "overtime": 10415,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "TriggerAttack_Event"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "JBKKOJLJHDK": "CircleR11",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "GAIGOBCNNEE": "UNIQUE_Debuff_Bubble_RemoveDamage"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invincible"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "StarChart_Area_Delay"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Talent_LiquidStriket_Phantom",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_BS_0",
+                        "LiquidStrike_BS",
+                        "LiquidStrike_BS1",
+                        "LiquidStrike_Move",
+                        "LiquidStrike_MoveStandby"
+                    ],
+                    "GAIGOBCNNEE": "MoveLoop_Talent_Phantom"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Timer": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "MoveLoop_Talent_Phantom": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Timer",
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "DJLKFLJENEG": 1,
+                                "OOOFAPPEOJK": [
+                                    "Monster",
+                                    "Gadget"
+                                ],
+                                "AKMLOIFOBPO": "HigherScore",
+                                "JBKKOJLJHDK": "CircleR15",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByIsCombat"
+                                }
+                            ],
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Gadget",
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "GAIGOBCNNEE": "LiquidPhantom"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "LiquidPhantom": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByEntity"
+                                }
+                            },
+                            "CABLIPAKCGB": 41041006,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Talent_MonaGadgetSkill_LiquidPhantom",
+            "EDDGGPMFDGK": {
+                "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Duration": 0.0,
+                "AS_Mona_Talent_LiquidStrike_LiquidPhantom_DamageRate": 0.0,
+                "AS_Mona_Phantom_LastDamageRate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Phantom": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "AS_Mona_Talent_LiquidStrike_LiquidPhantom_Duration",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_MaxHPDelta": 999999.0,
+                        "Actor_DefenceDelta": 999999.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_LiquidStrike_Phantom"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Disappear"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_Burst"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "ICGFCBOFFDI": 5.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Art_Extra",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": [
+                                            "AS_Mona_Phantom_LastDamageRate",
+                                            "AS_Mona_Talent_LiquidStrike_LiquidPhantom_DamageRate",
+                                            "Mul"
+                                        ],
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 150.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV3",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Phantom_SkillObj_BeHit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.399999976158142,
+                                    "PHDCJAHHIOG": 0.44999998807907104
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Taunting": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR6",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasAbilityState",
+                                            "MFKFDKDKKNJ": "MuteTaunt"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Taunted_FX"
+                        }
+                    ]
+                },
+                "Taunted_FX": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ambor_Dummy_Taunted"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Taunted_FX"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONA_PHANTOM",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Taunting"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Phantom"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Talent_ChargeEfficiencyToWaterAddHurt",
+            "EDDGGPMFDGK": {
+                "AS_Mona_Talent_WaterHurtAddRate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "ChargeEfficiencyToWaterAddHurt": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Caster",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
+                                            "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                                    "HJJEAOMEOFI": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                                    "KHAHOELDONA": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
+                                },
+                                {
+                                    "$type": "AttachModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Caster",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
+                                            "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                                    "HJJEAOMEOFI": "Mona_Talent_ChargeEfficiencyToWaterAddHurt_Efficiency",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                                    "KHAHOELDONA": "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY"
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
+                                },
+                                {
+                                    "$type": "AttachModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_ChargeEfficiencyToWaterAddHurt_AddValue": {
+                    "FGJPBKGPNJJ": "Overlap",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_WaterAddHurtExtraDelta": [
+                            "FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY",
+                            "AS_Mona_Talent_WaterHurtAddRate",
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "ChargeEfficiencyToWaterAddHurt"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Talent_LiquidStrike_ExtraAttakDamageUp",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LiquidStrike_BS_0",
+                        "LiquidStrike_BS",
+                        "LiquidStrike_BS1",
+                        "LiquidStrike_Move",
+                        "LiquidStrike_MoveStandby"
+                    ],
+                    "GAIGOBCNNEE": "MoveLoop_Talent_ExtraAttakDamageUp"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkTime": 0.0,
+                "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkValue": 0.0,
+                "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_MaxValue": 0.0,
+                "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_Time": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "MoveLoop_Talent_ExtraAttakDamageUp": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkTime",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_MaxValue",
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_ThinkValue",
+                            "HJJEAOMEOFI": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_MaxValue",
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Talent_LiquidStrike_Move_ExtraAttackDamageUp_Duration"
+                        }
+                    ]
+                },
+                "UNIQUE_Talent_LiquidStrike_Move_ExtraAttackDamageUp_Duration": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp_Time",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ClearGlobalValue",
+                            "HJJEAOMEOFI": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp"
+                        }
+                    ],
+                    "ONGKIIJLFCG": 10007
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_Talent_AutoExtraAttack",
+            "EDDGGPMFDGK": {
+                "AS_Mona_ExtraAttack_Damge": 0.0,
+                "AS_Mona_Talent_AutoExtraAttack_Rate": 0.0,
+                "AS_Mona_Talent_AutoExtraAttack_DamageRate": 0.0,
+                "AS_Mona_Talent_AutoExtraAttack_CD": 0.0,
+                "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "NormalAttack_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "PLKDGIELEEF": "AS_Mona_Talent_AutoExtraAttack_Rate",
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "ApplyModifier",
+                                            "GAIGOBCNNEE": "Talent_AutoExtraAttack_Handle"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Talent_AutoExtraAttack_Handle": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "AS_Mona_Talent_AutoExtraAttack_CD",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "Talent_AutoExtraAttack_DoAttack"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_Talent_AutoExtraAttack"
+                        }
+                    ]
+                },
+                "Talent_AutoExtraAttack_DoAttack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.699999988079071,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Pre",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true
+                            }
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "NPHOOPNDCAC": "Caster",
+                            "BPCFCANOMNH": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp",
+                            "OGAHELLALBB": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp"
+                        },
+                        {
+                            "$type": "ClearGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "HJJEAOMEOFI": "Mona_Talent_LiquidStrike_Move_ExtraAttackDamageUp"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "Caster",
+                            "GAIGOBCNNEE": "UNIQUE_Talent_LiquidStrike_Move_ExtraAttackDamageUp_Duration"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "Talent_AutoExtraAttack_Damage"
+                        }
+                    ]
+                },
+                "Talent_AutoExtraAttack_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "Caster",
+                            "ACOKKHADPOJ": true,
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "ICGFCBOFFDI": 3.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "ExtraAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": [
+                                            "AS_Mona_ExtraAttack_Damge",
+                                            "AS_Mona_Talent_AutoExtraAttack_DamageRate",
+                                            "Mul"
+                                        ],
+                                        "damagePercentageRatio": "AS_Mona_Talent_LiquidStrike_ExtraAttackDamageUp",
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 26.145000457763672
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "Eff_Avatar_Girl_Catalyst_Mona_ExtraAttack_Hit",
+                                        "hitImpulseType": "LV3",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeType": "CustomVector",
+                                        "shakeRange": 0.11999999731779099,
+                                        "shakeTime": 0.36000001430511475,
+                                        "shakeDistance": 30.0,
+                                        "shakeDir": {
+                                            "_y": -1.0
+                                        },
+                                        "extension": {
+                                            "baseCycle": 0.7200000286102295,
+                                            "cycleDamping": 0.0,
+                                            "rangeAttenuation": 0.30000001192092896
+                                        }
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "NormalAttack_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Mona_FallingAnthem",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AvatarChangeSkillMixin",
+                    "CNPIEDBKHII": 5041010,
+                    "CLJNFKPHGEO": 5041010
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_Material"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_Loop_Low"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_LoopDamage"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_VelocityForce_Initialize"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Height_Detect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_01"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Inertia"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_OverHead_Camera"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_ClearVelocityForce"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_Loop_Low",
+                        "FallingAnthem_AS_1"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Attach_SelfEffect"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_AS_1"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Remove_SelfEffect"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_SetVisible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1"
+                    ],
+                    "GAIGOBCNNEE": "HideWeapon"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "FallingAnthem_Normal_Loop_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+                "FallingAnthem_Altitude_Lv0": 20.0,
+                "FallingAnthem_Altitude_Lv1": 40.0,
+                "FallingAnthem_Altitude_Lv2": 60.0,
+                "FallingAnthem_Altitude_Lv3": 100.0,
+                "FallingAnthem_Altitude_Lv4": 200.0,
+                "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+                "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+                "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+                "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+                "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+                "FallingAnthem_FallingDamageRatio": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "HideWeapon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_SetVisible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_BS_Water"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_BSCameraRadialBlur"
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_VelocityForce_Initialize": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -2.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_LoopDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 0.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 5.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ClearGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv0"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv0"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv1"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv0"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv1"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv2"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv1"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv2"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv3"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv2"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv3"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv3"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv4"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_02"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_ABILITY_FallingAttack_Altitude",
+                            "OGAHELLALBB": "FallingAnthem_FallingDamageRatio"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_03"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_03": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+                    }
+                },
+                "Inertia": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyInertiaVelocityMixin",
+                            "DOOIAANMOKN": false,
+                            "PJACACNPMJA": false
+                        }
+                    ]
+                },
+                "FallingAnthem_Height_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 5.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 4.5,
+                                "ENPKPCGKDDH": 0.20000000298023224,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera_Remover": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "FallingAnthem_Landed_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 6.0,
+                                "ENPKPCGKDDH": 0.10000000149011612,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_ClearVelocityForce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType",
+                                "InertiaType"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_Attach_SelfEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_Self_Water"
+                        }
+                    ]
+                },
+                "FallingAnthem_Remove_SelfEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_Attach_SelfEffect"
+                        }
+                    ]
+                },
+                "FallingAnthem_BSCameraRadialBlur": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CameraBlurMixin",
+                            "JDLOKNCEKAE": {
+                                "NPOJMKDPDHI": 0.30000001192092896,
+                                "HMBJAKBLION": 0.15000000596046448
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV3",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.23999999463558197,
+                                "shakeTime": 0.11999999731779099,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.23999999463558197,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.5,
+                                "shakeTime": 0.20000000298023224,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0,
+                                    "_z": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.4000000059604645,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_Strike_01_Water"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Catalyst_FallAnthem_Strike_02_Water"
+                }
+            ]
+        }
+    }
+]

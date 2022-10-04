@@ -1,0 +1,193 @@
+{
+	"common": {
+		"effectAttachShape": {
+			"$type": "ConfigEffectAttachMesh",
+			"mesh": "EffectMesh"
+		},
+		"mass": 10
+	},
+	"headControl": {
+		"$type": "ConfigAvatarHeadControl",
+		"useHeadControl": true
+	},
+	"equipController": {
+		"sheathPoint": "WeaponBackPut",
+		"dissolveSheathFadeDelay": 0.075,
+		"dissolveSheathFadeTime": 0.3,
+		"attachPoints": {
+			"equip00": "WeaponBackPut",
+			"equip01": "WeaponR",
+			"equip02": "WeaponL"
+		}
+	},
+	"stateLayers": {
+		"defaultLayer": {
+			"$type": "ConfigNormalStateLayer",
+			"stateIds": {
+				"ShowCharacter": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Show01": [
+							"Manekin_Layla_Show01",
+							"Audio_Girl_Sword_Layla_StandbyShow_01_UI"
+						],
+						"Show02": [
+							"Manekin_Layla_Show02",
+							"Audio_Girl_Sword_Layla_StandbyShow_02_UI"
+						],
+						"ShowCharacter": []
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowFlycloak": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowFlycloak": []
+					},
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowRelic": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowRelic": [
+							"Emo_Avatar_Common_Manekin_RelicShowLoop"
+						],
+						"ShowRelic_AS": [
+							"Emo_Avatar_Common_Manekin_RelicShowAS"
+						]
+					},
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowRelic_BS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowRelic_BS": [
+							"Emo_Avatar_Common_Manekin_RelicShowBS"
+						]
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowWeapon": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowWeapon": [],
+						"ShowWeapon_AS": [
+							"Girl_Sword_ShowWeapon_AS"
+						]
+					},
+					"cameraParam": {},
+					"battouOnStart": true
+				},
+				"ShowWeapon_BS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowWeapon_BS": [
+							"Girl_Sword_ShowWeapon_BS"
+						]
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"Skill": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Skill": []
+					},
+					"cameraParam": {}
+				},
+				"Skill_AS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Skill_AS": []
+					},
+					"cameraParam": {}
+				},
+				"Skill_BS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Skill_BS": []
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"Story": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Story": []
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				}
+			}
+		}
+	},
+	"audio": {
+		"animAudio": {
+			"onTransitionIn": [
+				{
+					"currentStateName": "ShowWeapon_BS",
+					"audioEvent": {
+						"text": "Play_ui_menu_weapon_show_layla"
+					}
+				},
+				{
+					"currentStateName": "ShowRelic_BS",
+					"audioEvent": {
+						"text": "Play_ui_menu_relic_show"
+					}
+				}
+			],
+			"onTransitionOut": [
+				{
+					"currentStateName": "ShowWeapon_BS",
+					"audioEvent": {
+						"text": "Stop_ui_menu_weapon_show_putAway_appear_short"
+					}
+				},
+				{
+					"currentStateName": "Show01",
+					"audioEvent": {
+						"text": "Stop_ui_standbyShow_layla_01"
+					}
+				},
+				{
+					"currentStateName": "Show02",
+					"audioEvent": {
+						"text": "Stop_ui_standbyShow_layla_02"
+					}
+				}
+			]
+		},
+		"listenerLiftup": 1.5,
+		"surfaceProberLiftup": 1.5
+	}
+}

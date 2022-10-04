@@ -1,0 +1,230 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Oil_Interact",
+            "HNEIEGHMLKH": {
+                "NormalModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 5.0,
+                    "DDLOLBGNLEF": false,
+                    "onBeingHit": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Burning"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "On_Burning"
+                        }
+                    ]
+                },
+                "On_Burning": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Delay"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Water"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Check_Fire"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Ice"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Check_Fire"
+                        }
+                    ]
+                },
+                "Check_Fire": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "On_Burning"
+                        }
+                    ]
+                },
+                "Check_Around": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DamageByAttackValue",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "attackInfo": {
+                                        "attackTag": "",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": 0.10000000149011612,
+                                            "damagePercentageRatio": 0.0,
+                                            "elementType": "Fire",
+                                            "elementDurability": 40.0,
+                                            "strikeType": "Default"
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "default",
+                                            "hitImpulseType": "",
+                                            "overrideHitImpulse": {
+                                                "hitLevel": "Air",
+                                                "HPOPMELEPEB": 0.0,
+                                                "hitImpulseY": 420.0
+                                            },
+                                            "hitHaltTimeScale": 0.009999999776482582
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 4.5,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 3.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "SelfCamp",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "GAIGOBCNNEE": "Check_Around"
+                        }
+                    ]
+                },
+                "Burning": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2000000476837158,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "SelfCamp",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.10000000149011612,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Fire",
+                                    "elementDurability": 40.0,
+                                    "strikeType": "Default"
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "",
+                                    "overrideHitImpulse": {
+                                        "hitLevel": "Air",
+                                        "HPOPMELEPEB": 0.0,
+                                        "hitImpulseY": 420.0
+                                    },
+                                    "hitHaltTimeScale": 0.009999999776482582
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "NormalModifier"
+                }
+            ]
+        }
+    }
+]

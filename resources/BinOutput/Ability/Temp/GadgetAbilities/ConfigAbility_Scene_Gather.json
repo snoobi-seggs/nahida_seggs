@@ -1,0 +1,2388 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Default_Ore",
+            "HNEIEGHMLKH": {
+                "Gather_Ore": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 10.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "state": "Limbo",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Gather_Ore"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Default_Mithril",
+            "HNEIEGHMLKH": {
+                "Gather_Mithril": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 10.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "state": "Limbo",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Gather_Mithril"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Small_Shining_Mushroom",
+            "HNEIEGHMLKH": {
+                "mushroom": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ShiningSparkle_02"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "mushroom"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ElectricRock02_Interact",
+            "HNEIEGHMLKH": {
+                "ElectricElementModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Electric",
+                    "elementDurability": 25.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Delay"
+                        }
+                    ]
+                },
+                "Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "ElectricElementModifier"
+                        }
+                    ]
+                },
+                "ElementElectric": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ElectricRock_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ElementElectric"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 30.0,
+                                        "strikeType": "Default"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV0",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "AllExceptSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElementElectric"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElectricElementModifier"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Ljxs_Property_Prop_OreDulinsBlood_01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Appear"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Disppear"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Appear": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 10.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_OreDulinsBlood_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "DropSubfield",
+                            "OAKHEJLOPGA": "Dulins_Blood"
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_OreDulinsBlood_02"
+                        }
+                    ]
+                },
+                "Disppear": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 15.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_FireFlower02_Interact",
+            "HNEIEGHMLKH": {
+                "FireElementModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "IKKMDDLDLIN": 4.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_IN_FIRE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireFlower_01_Idle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Delay"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Fireflower_01_BaseBurst",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "attachPoint2"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 3.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Fire",
+                                        "elementDurability": 30.0,
+                                        "strikeType": "Default",
+                                        "ignoreLevelDiff": true
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Light",
+                                            "HPOPMELEPEB": 0.0,
+                                            "hitImpulseY": 0.0
+                                        },
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "AllExceptSelf"
+                        }
+                    ]
+                },
+                "Delay": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "FireElementModifier"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Delay"
+                        }
+                    ]
+                },
+                "ElementFire": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Fireflower_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_IS_IN_FIRE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireFlower_01_Hit"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "FireAttack"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "FireElementModifier"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Ice"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ElementFire"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Water"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ElementFire"
+                        }
+                    ]
+                },
+                "HitMonitor": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "BurningDamage"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "triggerID": "NormalAttack"
+                        }
+                    ]
+                },
+                "Ani_Control": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_IS_IN_FIRE",
+                                    "value": 0.0
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_IS_IN_FIRE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "ElementFire"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "HitMonitor"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "FireElementModifier"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Ani_Control"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_BURNING_IGNITE_ONLY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_IceFlower02_Interact",
+            "HNEIEGHMLKH": {
+                "IceElementModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Frozen",
+                    "elementDurability": 25.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Delay"
+                        }
+                    ]
+                },
+                "Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "IceElementModifier"
+                        }
+                    ]
+                },
+                "ElementIce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 4.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_IceFlower_01_Idle"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_IceFlower_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_IceFlower_01_Hit"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "FireAttack"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "IceElementModifier"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ElementIce"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_IceFlower_01_BaseBurst",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "attachPoint2"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 3.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 30.0,
+                                        "strikeType": "Default",
+                                        "ignoreLevelDiff": true
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Light",
+                                            "HPOPMELEPEB": 0.0,
+                                            "hitImpulseY": 0.0
+                                        },
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "AllExceptSelf"
+                        }
+                    ]
+                },
+                "HitMonitor": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "BurningDamage"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "triggerID": "NormalAttack"
+                        }
+                    ]
+                },
+                "Ani_Control": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Frozen"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Frozen"
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "ElementIce"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "HitMonitor"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "IceElementModifier"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Ani_Control"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_CAN_BE_REVIVE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Advance_Ore_Interact",
+            "HNEIEGHMLKH": {
+                "NormalModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "state": "Limbo",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "NormalModifier"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Advance_Ore_Shining",
+            "HNEIEGHMLKH": {
+                "NormalModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ShiningSparkle_01"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "NormalModifier"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_MagicOre_Interact",
+            "HNEIEGHMLKH": {
+                "NormalModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "state": "Limbo",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "NormalModifier"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_WaterFlower01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Idle"
+                    ],
+                    "GAIGOBCNNEE": "HitMonitor"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ElementWater": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Water",
+                    "elementDurability": 10.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_IceFlower_01_Idle"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_IceFlower_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "CABLIPAKCGB": 70270002,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "All"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Amber_Water_Hit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.30000001192092896,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "FireAttack"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Delay"
+                        }
+                    ]
+                },
+                "Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ElectricRock_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "ElementWater"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Water"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Delay"
+                        }
+                    ]
+                },
+                "HitMonitor": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "NormalAttack"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "ElementWater"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Dandelion",
+            "HNEIEGHMLKH": {
+                "Dandelion": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_DandelionBundle01"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_DANDELION_ALIVE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "WindHit"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_DANDELION_ALIVE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalDir",
+                                    "NPHOOPNDCAC": "Target",
+                                    "HJJEAOMEOFI": "_ABILITY_DANDELION_HIT",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByLookAtEntity",
+                                            "LGPBCMEFEJB": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 180.0,
+                                                "PHDCJAHHIOG": 0.0
+                                            }
+                                        }
+                                    },
+                                    "OGADOPDNBMM": false
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalDir",
+                                    "NPHOOPNDCAC": "TargetOriginOwner",
+                                    "HJJEAOMEOFI": "_ABILITY_DANDELION_HIT",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByHitPoint",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByBackToHitBoxCenter",
+                                            "LGPBCMEFEJB": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 180.0,
+                                                "PHDCJAHHIOG": 0.0
+                                            }
+                                        }
+                                    },
+                                    "OGADOPDNBMM": false
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Wind"
+                                }
+                            ],
+                            "NGAAOMEHOGE": 70510010,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByGlobalValue",
+                                    "MICIJLHMIIH": "_ABILITY_DANDELION_HIT"
+                                },
+                                "KJNJNKLLNCN": "flyPoint1"
+                            }
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Wind"
+                                }
+                            ],
+                            "NGAAOMEHOGE": 70510010,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByGlobalValue",
+                                    "MICIJLHMIIH": "_ABILITY_DANDELION_HIT"
+                                },
+                                "KJNJNKLLNCN": "flyPoint2"
+                            }
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Wind"
+                                }
+                            ],
+                            "NGAAOMEHOGE": 70510010,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByGlobalValue",
+                                    "MICIJLHMIIH": "_ABILITY_DANDELION_HIT"
+                                },
+                                "KJNJNKLLNCN": "flyPoint3"
+                            }
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Wind"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Dandelion"
+                        }
+                    ]
+                },
+                "HitMonitor": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHitElement",
+                                            "GOMLPAOIKJA": "Wind"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "BurningDamage"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "triggerID": "Hit"
+                        }
+                    ]
+                },
+                "Ani_Control": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_DANDELION_ALIVE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_DANDELION_ALIVE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Dandelion"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "HitMonitor"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Ani_Control"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Gather_Clue",
+            "HNEIEGHMLKH": {
+                "Born": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Active"
+                        }
+                    ]
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Born"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_RockCrystal_Fly_Gather",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_RockCrystal_Smash"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_WindCrystal_Fly_Gather",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_WindCrystal_Smash"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Mimosa",
+            "HNEIEGHMLKH": {
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Mimosa_Close": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 15.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 1
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_FlyRace_Goal_Marker_Ambor"
+                }
+            ],
+            "KJKECFBMHKH": [
+                {
+                    "$type": "KillSelf"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_FireFlower03",
+            "HNEIEGHMLKH": {
+                "ElementFire": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 50.0,
+                    "IHKKILDGHFP": true,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireFlower_01_Idle"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Fireflower_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "JFOEGBAHFAC": 1
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                                    "value": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Delay"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "FireAttack"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Water"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_REACTION_TYPE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Ice"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_REACTION_TYPE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Wind"
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_REACTION_TYPE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireFlower_01_Hit"
+                        }
+                    ]
+                },
+                "HitMonitor": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "NormalAttack"
+                        }
+                    ]
+                },
+                "Ani_Control": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                }
+                            ],
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "ElementFire"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "HitMonitor"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Ani_Control"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_BURNING_IGNITE_ONLY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ElectricRock03",
+            "HNEIEGHMLKH": {
+                "ElementElectric": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Electric",
+                    "elementDurability": 50.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ElectricRock_01_Base"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "DropSubfield",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "OAKHEJLOPGA": "ElectricRock_Destroy"
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                                    "value": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                                    "value": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_REACTION_TYPE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHitElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_REACTION_TYPE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 30.0,
+                                        "strikeType": "Default"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV0",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "All"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElementElectric"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -5.0,
+                    "HJJEAOMEOFI": "_REACTION_TYPE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14004
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ElementRock_Broken_Eff",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_SceneObj_ElementRock_01_Break",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "hiteffPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ElementRock_Gather_Eff",
+            "HNEIEGHMLKH": {
+                "CoreEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ElementRock_01_Open",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "corePoint"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "CoreEff"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ElementRock",
+            "HNEIEGHMLKH": {
+                "Controller": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToElementDurabilityMixin",
+                            "CMEDACODLEA": [
+                                0.5,
+                                50.0,
+                                100.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "ElmentRockPhase2",
+                                "ElmentRockPhase1"
+                            ]
+                        },
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "ElmentRockPhase3"
+                        }
+                    ]
+                },
+                "ElmentRockPhase1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                },
+                "ElmentRockPhase2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ElementRock_01_Break_Pre"
+                        }
+                    ]
+                },
+                "ElmentRockPhase3": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 203
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 1
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Controller"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Ginseng",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Gear_Platform_WindSlime"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 1.7999999523162842
+                        },
+                        "attackInfo": {
+                            "attackTag": "GinsengBullet",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 0.0,
+                                "strikeType": "Default",
+                                "enBreak": 300.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV2",
+                                "overrideHitImpulse": {
+                                    "hitLevel": "Light",
+                                    "HPOPMELEPEB": 300.0,
+                                    "hitImpulseY": 0.0
+                                },
+                                "hitHaltTimeScale": 0.05000000074505806
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "All"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Ginseng_Stable",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Drop_Ginseng"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                },
+                "Drop_Ginseng": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Normal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_Ginseng_Ground",
+            "HNEIEGHMLKH": {
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Normal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_GlazedLily",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToDayNightMixin",
+                    "GAIGOBCNNEE": "LilyDay"
+                },
+                {
+                    "$type": "AttachToDayNightMixin",
+                    "EJILBAEBENJ": "Night",
+                    "GAIGOBCNNEE": "LilyNight"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "LilyDay": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "LilyNight": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ImitationGrass",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Normal"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 102,
+                    "GAIGOBCNNEE": "ImitationGrass_Disappear"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "ApplyDelay",
+                            "value": 1.0
+                        }
+                    ]
+                },
+                "ImitationGrass_Disappear": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "ApplyDelay",
+                            "value": 1.0
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ImitationMonster",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "ImitationGrass_Disappear"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ImitationGrass_Disappear": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_GamblingRock_Broken_Eff",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_SceneObj_GambingRock_Destory",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "hiteffPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_GamblingRock_Gather_Eff",
+            "HNEIEGHMLKH": {
+                "CoreEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_GambingRock_Halo",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "hiteffPoint"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_GambingRock_Destory",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "hiteffPoint"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "CoreEff"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_GamblingRock",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "Controller"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Controller": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "SetAniPhase1"
+                        }
+                    ]
+                },
+                "SetAniPhase1": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "Phase",
+                            "value": 2.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_SceneObj_Common_AppearMask_02"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Chest_Wendy_Sword",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "EffectActivation"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle_Little",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        }
+                    ]
+                },
+                "EffectActivation": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock_Little",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Quest_Wind_Leaves01",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_SceneObj_Item_Wind_Leaves_01"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Ljxs_Property_Prop_DropDulinsBlood_01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Normal"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 10.0,
+                    "elementType": "Fire",
+                    "elementDurability": 10.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_DropDulinsBlood_03"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gather_ElectricCrystal_Fly_Gather",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_SceneObj_ElectricCrystal_Smash"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Common_Property_Prop_Cherrypetals_01",
+            "HNEIEGHMLKH": {
+                "ReceiveElectric": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "onBeingHit": [
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Electric"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Contract"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR1.5",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByAny",
+                                            "predicates": [
+                                                {
+                                                    "$type": "ByHasElement",
+                                                    "GOMLPAOIKJA": "Electric"
+                                                },
+                                                {
+                                                    "$type": "ByTargetGlobalValue",
+                                                    "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF",
+                                                    "value": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "AttachModifier",
+                                            "GAIGOBCNNEE": "Contract"
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "ApplyModifier",
+                                            "predicates": [
+                                                {
+                                                    "$type": "ByTargetGlobalValue",
+                                                    "NPHOOPNDCAC": "Self",
+                                                    "HJJEAOMEOFI": "canSpread",
+                                                    "value": 1.0
+                                                }
+                                            ],
+                                            "GAIGOBCNNEE": "Spread"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "canSpread",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cherrypetals_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "ReceiveElectric"
+                        }
+                    ]
+                },
+                "Spread": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "canSpread",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cherrypetals_01_Spread",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Normal"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "ReceiveElectric"
+                        }
+                    ]
+                },
+                "Contract": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "canSpread",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cherrypetals_01_Contract",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Hint_01_Big",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Spread"
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Normal"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,1581 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_Standy_Effect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        1001,
+                        1002,
+                        1011,
+                        1012,
+                        1021,
+                        1022,
+                        1031,
+                        1032
+                    ],
+                    "GAIGOBCNNEE": "StandbyEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "StandbyEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_Standby_01"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_BeHitEffect",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Regisvine_Ice_BeHitEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByHitBoxName",
+                                    "EACGOCFODIC": [
+                                        "HitBox_Core_Critical"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_REGISVINE_CORE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_REGISVINE_CORE_ISSHATTERED",
+                                    "value": 1.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_Hit_Weakness",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByHitPoint",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByBackToHitBoxCenter"
+                                        }
+                                    }
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_Hit_Weakness_NoEffect",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByHitPoint"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Regisvine_Ice_BeHitEffect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_MissileAttack_Effect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "MissileAttack_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Effect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Shader_Skill_MissileAttack_Loop",
+                            "value": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_MissileAttack_02"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Shader_Skill_MissileAttack_Loop"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_MissileAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "MissileAttack_Loop"
+                    ],
+                    "GAIGOBCNNEE": "MissileAttack_Ring01"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "MissileAttack_Loop"
+                    ],
+                    "GAIGOBCNNEE": "MissileAttack_Ring02"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "MissileAttack_Loop"
+                    ],
+                    "GAIGOBCNNEE": "MissileAttack_Ring03"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "MissileAttack_Ring01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "MissileAttack_Ring02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.2000000476837158,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Repeated",
+                            "JGBAKAECJOD": 1,
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "HAGMNJAHNLG": {
+                                            "$type": "BornRandomFromCenter",
+                                            "LJCNOPEIJEF": 16.0,
+                                            "MFBOELKCPDP": 25.0
+                                        },
+                                        "JBPCKOKLHEB": true,
+                                        "DIJBGJEFBKA": 0.20000000298023224
+                                    },
+                                    "JCAMCEOBIFG": true,
+                                    "CABLIPAKCGB": 42602006,
+                                    "DOLAJLACEDF": 4001
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Repeated",
+                            "JGBAKAECJOD": 1,
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "CreateGadget",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsByShape",
+                                        "DJLKFLJENEG": 1,
+                                        "JBKKOJLJHDK": "CircleR15",
+                                        "ONPOPLLHJLE": "Enemy",
+                                        "CJJABKCAIEB": 1.0
+                                    },
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "GreaterOrEqual",
+                                            "value": 8.0
+                                        },
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_ABILITY_REGISVINE_ICE_MISSILEATTACK_HIT",
+                                            "value": 0.0,
+                                            "ONPJJFKDCED": "NoneOrEqual"
+                                        }
+                                    ],
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByPredicatePoint",
+                                        "HAGMNJAHNLG": {
+                                            "$type": "BornRandomFromCenter",
+                                            "LJCNOPEIJEF": 0.0,
+                                            "MFBOELKCPDP": 1.0
+                                        },
+                                        "JBPCKOKLHEB": true,
+                                        "DIJBGJEFBKA": 0.20000000298023224,
+                                        "BIOOFAHEGLA": 0.5
+                                    },
+                                    "JCAMCEOBIFG": true,
+                                    "CABLIPAKCGB": 42602006,
+                                    "DOLAJLACEDF": 4001
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "MissileAttack_Ring03": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.699999988079071,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Repeated",
+                            "JGBAKAECJOD": 1,
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "CreateGadget",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsByShape",
+                                        "DJLKFLJENEG": 1,
+                                        "JBKKOJLJHDK": "CircleR25",
+                                        "ONPOPLLHJLE": "Enemy",
+                                        "CJJABKCAIEB": 1.0
+                                    },
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        },
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "GreaterOrEqual",
+                                            "value": 15.0
+                                        },
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_ABILITY_REGISVINE_ICE_MISSILEATTACK_HIT",
+                                            "value": 0.0,
+                                            "ONPJJFKDCED": "NoneOrEqual"
+                                        }
+                                    ],
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByPredicatePoint",
+                                        "HAGMNJAHNLG": {
+                                            "$type": "BornRandomFromCenter",
+                                            "LJCNOPEIJEF": 0.0,
+                                            "MFBOELKCPDP": 1.0
+                                        },
+                                        "JBPCKOKLHEB": true,
+                                        "DIJBGJEFBKA": 0.20000000298023224,
+                                        "BIOOFAHEGLA": 0.5
+                                    },
+                                    "JCAMCEOBIFG": true,
+                                    "CABLIPAKCGB": 42602006,
+                                    "DOLAJLACEDF": 4001
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_BlizzardSpit_BlizzardBegin",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BlizzardSpit_BS",
+                        "BlizzardSpit_Fire",
+                        "BlizzardSpit_Reverse_Fire"
+                    ],
+                    "GAIGOBCNNEE": "BlizzardDuration"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BlizzardSpit_Fire"
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_CreateIceFog"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BlizzardSpit_Reverse_Fire"
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_CreateIceFog_Reverse"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BlizzardDuration": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_WATCHER_82081_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Blizzard"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_WATCHER_82081_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Blizzard"
+                        }
+                    ]
+                },
+                "UNIQUE_CreateIceFog": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.25,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_HitGround"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 12.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "KJNJNKLLNCN": "BulletSourceCore"
+                            },
+                            "JCAMCEOBIFG": true,
+                            "CABLIPAKCGB": 42602015,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 12.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "KJNJNKLLNCN": "BulletSourceCore"
+                            },
+                            "JCAMCEOBIFG": true,
+                            "CABLIPAKCGB": 42602015,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                },
+                "UNIQUE_CreateIceFog_Reverse": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.25,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_Reverse_HitGround"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 12.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "KJNJNKLLNCN": "BulletSourceCore"
+                            },
+                            "JCAMCEOBIFG": true,
+                            "CABLIPAKCGB": 42602015,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 12.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "KJNJNKLLNCN": "BulletSourceCore"
+                            },
+                            "JCAMCEOBIFG": true,
+                            "CABLIPAKCGB": 42602015,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                },
+                "UNIQUE_Blizzard": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "BlizzardEffect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "RemoveBlizzardEffect"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Regisvine_BlizzardSpitPushColliderOff"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "MLOEFNBPCCH": "Both",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": -0.25,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": -4.75
+                                        },
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByAttachPoint",
+                                            "LGPBCMEFEJB": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 0.0,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "KJNJNKLLNCN": "BulletSourceCore"
+                                        },
+                                        "KJNJNKLLNCN": "BulletSourceCore"
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 4.0,
+                                        "KAAPLGBEDPM": 8.0,
+                                        "PHDCJAHHIOG": 30.0
+                                    },
+                                    "KHMHAACCLDD": true
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 200.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "forceCameraShake": true,
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "RemoveBlizzardEffect"
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_BlizzardSpit"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "BlizzardEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_Blizzard"
+                        }
+                    ]
+                },
+                "RemoveBlizzardEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Die"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Deactivate"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "BlizzardEffect"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Blizzard"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "SendEffectTrigger",
+                    "MOCGJNIDDAI": "Disappear",
+                    "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_HitGround"
+                },
+                {
+                    "$type": "SendEffectTrigger",
+                    "MOCGJNIDDAI": "Disappear",
+                    "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_Reverse_HitGround"
+                },
+                {
+                    "$type": "KillGadget",
+                    "LBGGIBBMCMF": {
+                        "APIAFGPIIHE": 42602015
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_BlizzardSpit_BlizzardEnd",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Blizzard"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_BlizzardSpit_Hit",
+            "HNEIEGHMLKH": {
+                "BlizzardSpit_Hit": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "BlizzardSpit_Hit"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Regisvine_BlizzardSpit_IceFog",
+            "HNEIEGHMLKH": {
+                "Ice_Fog": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 5.199999809265137
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Group1",
+                                    "attenuationGroup": "Regisvine_Common",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.30000001192092896,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 25.0,
+                                        "enBreak": 0.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 5.199999809265137
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Group1",
+                                    "attenuationGroup": "Regisvine_Common",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.30000001192092896,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 25.0,
+                                        "enBreak": 0.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Ice_Fog"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_BlizzardSpit_Activity_BlizzardBegin",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BlizzardSpit_Activity_BS",
+                        "BlizzardSpit_Activity_Fire",
+                        "BlizzardSpit_Activity_AS"
+                    ],
+                    "GAIGOBCNNEE": "BlizzardDuration_Activity"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BlizzardSpit_Activity_Fire"
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Blizzard_Activity_Fire"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "MeleeAttackCombo_Wait",
+                        "MeleeAttack01_03"
+                    ],
+                    "GAIGOBCNNEE": "Regisvine_Ice_Activity_MeleeAttackComboSpecial"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BlizzardDuration_Activity": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                205,
+                                241
+                            ]
+                        },
+                        {
+                            "$type": "ShowReminder",
+                            "angularVelocityThreshold": 400022
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 6.0,
+                            "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Blizzard_Activity_Fire": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 5.0,
+                            "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_Activity_Storm"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_BlizzardSpit_Activity_Storm_AS"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "Circle_Regisvine_Ice_ActivityR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_IS_IN_SHIELD_AREA",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DamageByAttackValue",
+                                    "NPHOOPNDCAC": "Target",
+                                    "attackInfo": {
+                                        "attackTag": "Blizzard",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": 1.0,
+                                            "damagePercentageRatio": 0.0,
+                                            "elementType": "Ice",
+                                            "elementDurability": 50.0,
+                                            "strikeType": "Blunt",
+                                            "enBreak": 1.0
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "",
+                                            "hitImpulseType": "LV1"
+                                        },
+                                        "forceCameraShake": true,
+                                        "cameraShake": {
+                                            "shakeRange": 1.5,
+                                            "shakeTime": 0.4000000059604645,
+                                            "shakeDistance": 50.0
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "NPHOOPNDCAC": "Target",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_IS_IN_SHIELD_AREA",
+                                            "value": 0.0,
+                                            "ONPJJFKDCED": "NoneOrEqual"
+                                        }
+                                    ],
+                                    "JBHFPDMBFHN": "Eff_Monster_Regisvine_Ice_SpecialAttack_DamageOnce",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "KJNJNKLLNCN": "Neck"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_MeleeAttackComboSpecial": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                                    "value": 6.0
+                                }
+                            ],
+                            "value": 4.0,
+                            "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                412
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Regisvine_Ice_Activity_CombatPhaseManager",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTERAFFIX_Regisvine_Ice_ActivityBoss",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Blank",
+                        "UNIQUE_Regisvine_Ice_Activity_CombatPhaseManager"
+                    ]
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        2,
+                        3
+                    ],
+                    "GAIGOBCNNEE": "1stPhaseInvicible"
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        2,
+                        3
+                    ],
+                    "GAIGOBCNNEE": "1stPhaseDenyLockOn"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Regisvine_Ice_Activity_CombatPhaseManager": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                1.5,
+                                10.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Regisvine_NoSensing",
+                                "Regisvine_HasSensing"
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5,
+                                6.5,
+                                7.5,
+                                8.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Regisvine_Ice_Activity_Phase0",
+                                "Regisvine_Ice_Activity_Phase1",
+                                "Regisvine_Ice_Activity_Phase2",
+                                "Regisvine_Ice_Activity_Phase3",
+                                "Regisvine_Ice_Activity_Phase4",
+                                "Regisvine_Ice_Activity_Phase5",
+                                "Regisvine_Ice_Activity_Phase6",
+                                "Regisvine_Ice_Activity_Phase7",
+                                "Regisvine_Ice_Activity_Phase8"
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_SERVER_REGISVINE_ICE_ACTIVITY_FLAG_PHASE01",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "Regisvine_Ice_Activity_SetPhase1"
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_SERVER_REGISVINE_ICE_ACTIVITY_FLAG_PHASE02",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "Regisvine_Ice_Activity_SetPhase2"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "IsActivityBoss",
+                            "value": true
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_SetPhase1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_SetPhase2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                                    "value": 1.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase"
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "MonsterPhaseOneCheck",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NJEOPILMKCN": true,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true
+                            },
+                            "JCAMCEOBIFG": true,
+                            "CABLIPAKCGB": 42602029,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "Enemy",
+                            "CEBMHIFOHJM": true
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 1
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "MonsterPhaseTwoCheck",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DestoryIceShieldActivated",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DistoryIceShield",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "CreateIceStorm",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "StartMonsterTide",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 2
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_MONSTER_REGISVINE_FRUIT_BEGIN_DISABLEDONTALERT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Regisvine_Fruit_Begin"
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase3": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DestoryIceStorm",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "PauseMonsterTide",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "KillAllMonsters",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Regisvine_Ice_Activity_CreateIceShield_Delayed"
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 3
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DestoryIceShieldActivated",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DistoryIceShield",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase4": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "CreateIceShield",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 4
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase5": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 5
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                412
+                            ]
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase6": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DestoryIceShieldActivated",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase7": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42602029
+                            },
+                            "GAIGOBCNNEE": "Regisvine_Ice_DropIce_Activity_KillSelf"
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DestoryIceShieldActivated",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DistoryIceShield",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 7
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_Phase8": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActivityCombatPhase",
+                            "weight": 8
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DestoryIceShieldActivated",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "PDFANJKMFNK": "DistoryIceShield",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_Ice_Activity_CreateIceShield_Delayed": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 12.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_Regisvine_Ice_ActivityBoss",
+                                    "value": 1.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "value": 4.0,
+                            "HJJEAOMEOFI": "_SERVER_REGISVINE_ICE_ACTIVITY_PHASE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_NoSensing": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "NoSensing",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAIHitFeeling"
+                        },
+                        {
+                            "$type": "ResetAIThreatBroadcastRange",
+                            "EJDGOICAAHB": 0.0
+                        }
+                    ]
+                },
+                "Regisvine_HasSensing": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "NoSensing"
+                        },
+                        {
+                            "$type": "SetAIHitFeeling",
+                            "enable": true
+                        },
+                        {
+                            "$type": "ResetAIThreatBroadcastRange",
+                            "EJDGOICAAHB": 12.0
+                        }
+                    ]
+                },
+                "1stPhaseInvicible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "1stPhaseDenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                },
+                "Regisvine_Ice_DropIce_Activity_KillSelf": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Test_ShieldTag",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_IS_IN_SHIELD_AREA",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_IN_SHIELD_AREA",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_IS_IN_SHIELD_AREA",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,4516 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Monster_LupiBoreas",
+            "HNEIEGHMLKH": {
+                "OperatorEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Wolf_LupiBoreas_Scene_Operator"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "OperatorEffect"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "SendEffectTrigger",
+                    "MOCGJNIDDAI": "Disappear",
+                    "JBHFPDMBFHN": "Eff_Monster_Wolf_LupiBoreas_Scene_Operator"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_DragonNest_Seal",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Gear_Stop"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_Seal01_Active_01_Top"
+                        }
+                    ]
+                },
+                "Gear_Stop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectAttach"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectAttach"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementDungeon_Operator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Active",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Lock"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Gear_Operator_Close",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectAttach"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Gear_Operator_Open",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ]
+                },
+                "Lock": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 202.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14005
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Normal_Operator_TowerDefense",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Lock"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Gear_Operator_Close",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectAttach"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Gear_Operator_Open",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                },
+                "Lock": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 202.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14005
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Mamolu",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Die"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "DieAuto"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Finish"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "Die"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireDieEff"
+                        }
+                    ]
+                },
+                "DieAuto": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "Die"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireDieEff"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                },
+                "FireDieEff": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.059999942779541,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_MonsterTarget_Destory"
+                        }
+                    ]
+                },
+                "Finish": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MonsterTarget_Finish"
+                        }
+                    ]
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Mamolu_ThunderStorm",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "DefaultModifier"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Start"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "DieAuto"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Finish"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DefaultModifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 901
+                        }
+                    ]
+                },
+                "Start": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Mamolu_ThunderySky_Stage_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "StormPoint"
+                            }
+                        }
+                    ]
+                },
+                "DieAuto": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "Die"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FireDieEff"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Mamolu_ThunderySky_Stage_03_Disappear",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "StormPoint"
+                            }
+                        },
+                        {
+                            "$type": "ChangeEnviroWeather",
+                            "height": 2004,
+                            "DPEJLHDNMOK": 2.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                },
+                "FireDieEff": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.059999942779541,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_MonsterTarget_Destory"
+                        }
+                    ]
+                },
+                "Finish": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MonsterTarget_Finish"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Mamolu_ThunderySky_Stage_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "StormPoint"
+                            }
+                        },
+                        {
+                            "$type": "ChangeEnviroWeather",
+                            "height": 2004,
+                            "DPEJLHDNMOK": 2.0
+                        }
+                    ]
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Mamolu_ThunderySky_Stage_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "StormPoint"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Mamolu_ThunderySky_Stage_02_Loop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "StormPoint"
+                            }
+                        },
+                        {
+                            "$type": "ChangeEnviroWeather",
+                            "height": 2004,
+                            "OGFOAMPCPNO": 4,
+                            "DPEJLHDNMOK": 2.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Mamolu_Entity",
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "PBOCKLHAEKI": "Ability_TauntLevel_2",
+                            "GIMODGBFNIA": 30.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_SCENEOBJ_PROTECTTARGET",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Qingce_Entity",
+            "HNEIEGHMLKH": {
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 8.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "GIMODGBFNIA": 17.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_QINGCE_ENTITY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_FireController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElecController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_IceController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_WindController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_WaterController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_GrassController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_RockController_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "GadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_DungeonRewardPoint",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 401,
+                    "GAIGOBCNNEE": "GearStart"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableGadgetIntee"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientCrone_01_Enabled"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_DungeonRewardPoint_Thunder",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 401,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "GearStop"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Effect"
+                    ],
+                    "GAIGOBCNNEE": "AttachLightEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "AttachLightEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_WorldTree_Thunder_01"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_DungeonRewardPoint_Fire",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 401,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "GearStop"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Effect"
+                    ],
+                    "GAIGOBCNNEE": "AttachLightEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "AttachLightEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_WorldTree_Fire_01"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_DungeonRewardPoint_Ice",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 401,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "GearStop"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Effect"
+                    ],
+                    "GAIGOBCNNEE": "AttachLightEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "AttachLightEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_WorldTree_Ice_01"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_DungeonRewardPoint_Water",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 401,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "GearStop"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Effect"
+                    ],
+                    "GAIGOBCNNEE": "AttachLightEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        }
+                    ]
+                },
+                "AttachLightEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_WorldTree_Water_01"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Jigsaw_Operator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -3.0,
+                            "HJJEAOMEOFI": "JigsawCount",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR20",
+                                "ONPOPLLHJLE": "Alliance",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetForwardAndSelfPosition",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "value": 30.0
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "Is_Jigsaw",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "JigsawCount",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 3.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "JigsawCount",
+                                    "value": 3.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Bow_Venti_WIndBlade"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -3.0,
+                    "HJJEAOMEOFI": "JigsawCount",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_WaterTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Water"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_FireTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Fire"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_IceTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_IceTablet_Gadget_Active",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "IS_SPECIAL_ICE_BULLET",
+                                            "value": 1.0,
+                                            "ONPJJFKDCED": "MoreThanAndEqual"
+                                        },
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "NPHOOPNDCAC": "OriginOwner",
+                                            "HJJEAOMEOFI": "IS_SPECIAL_ICE_BULLET",
+                                            "value": 1.0,
+                                            "ONPJJFKDCED": "MoreThanAndEqual"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ExecuteGadgetLua",
+                                    "JFOEGBAHFAC": 201
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "IS_SPECIAL_ICE_BULLET",
+                                            "value": 1.0,
+                                            "ONPJJFKDCED": "MoreThanAndEqual"
+                                        },
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "NPHOOPNDCAC": "OriginOwner",
+                                            "HJJEAOMEOFI": "IS_SPECIAL_ICE_BULLET",
+                                            "value": 1.0,
+                                            "ONPJJFKDCED": "MoreThanAndEqual"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ExecuteGadgetLua",
+                                    "JFOEGBAHFAC": 902
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_IceTablet_Follow",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Follow"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Follow"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Follow"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Follow"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Follow"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Ice_Follow"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElectricTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Electric"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_GrassTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Grass"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_RockTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ElemMaterial": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        }
+                    ]
+                },
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Rock"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "CYJY_RockTablet_Logic_Handle",
+            "HNEIEGHMLKH": {
+                "Logic_Handle": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "ChalcedonyBulletDamage",
+                                        "ChalcedonyBulletDamageBig"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ExecuteGadgetLua",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGadgetState",
+                                            "NPHOOPNDCAC": "Self",
+                                            "IJNIFFOPHNJ": 901
+                                        }
+                                    ],
+                                    "JFOEGBAHFAC": 902
+                                },
+                                {
+                                    "$type": "ExecuteGadgetLua",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAny",
+                                            "predicates": [
+                                                {
+                                                    "$type": "ByTargetGadgetState",
+                                                    "NPHOOPNDCAC": "Self"
+                                                },
+                                                {
+                                                    "$type": "ByTargetGadgetState",
+                                                    "NPHOOPNDCAC": "Self",
+                                                    "IJNIFFOPHNJ": 203
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "JFOEGBAHFAC": 201
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Logic_Handle"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_WindTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default_0"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "Action01"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 902,
+                    "GAIGOBCNNEE": "Action02"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "NoneElement"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoneElement": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 203.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind"
+                        }
+                    ]
+                },
+                "Default_0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind"
+                        }
+                    ]
+                },
+                "Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 901.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 901,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind"
+                        }
+                    ]
+                },
+                "Action02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 902.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 902,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind_Active"
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind_Active"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "gadgetState",
+                            "type": "Int",
+                            "weight": 202,
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Wind"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_BlankTablet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "GearStart"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Interact_Forbid"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "GearStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 201.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Elem_Blank"
+                        }
+                    ]
+                },
+                "Interact_Forbid": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "gadgetState",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_LockIdle"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Item_SpecialTreasureBox_Unlock"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Mora",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "ShowEff"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Die"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ShowEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_Normal_01"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_01_Env"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_Normal_01_Disapear"
+                        }
+                    ]
+                },
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ExecuteGadgetLua",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGadgetState"
+                        }
+                    ],
+                    "JFOEGBAHFAC": 204
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Weapon",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "ShowEff"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Die"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ShowEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_Normal_02"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_02_Env"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_Normal_02_Disapear"
+                        }
+                    ]
+                },
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ExecuteGadgetLua",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGadgetState"
+                        }
+                    ],
+                    "JFOEGBAHFAC": 204
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Temple_Mora",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "ShowEff"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Die"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Challenge"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ShowEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_01"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_01_Env"
+                        }
+                    ]
+                },
+                "Challenge": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_01_Disappear"
+                        }
+                    ]
+                },
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ExecuteGadgetLua",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGadgetState"
+                        }
+                    ],
+                    "JFOEGBAHFAC": 204
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Temple_Weapon",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 204,
+                    "GAIGOBCNNEE": "ShowEff"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Die"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Challenge"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ShowEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_02"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_02_Env"
+                        }
+                    ]
+                },
+                "Challenge": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_02"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Block_02_Disappear"
+                        }
+                    ]
+                },
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ExecuteGadgetLua",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGadgetState"
+                        }
+                    ],
+                    "JFOEGBAHFAC": 204
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_AsterSmall_01",
+            "HNEIEGHMLKH": {
+                "Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterSmall_01_Idle"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Effect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Property_Area_Common_Prop_AsterMiddle_01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Success"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 901,
+                    "GAIGOBCNNEE": "KillSelf"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterMiddle_Fire"
+                        }
+                    ]
+                },
+                "Success": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterMiddle_Success"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Success"
+                        }
+                    ]
+                },
+                "KillSelf": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DebugLog",
+                            "CBEDAJEGJBM": "1234"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Property_Area_Common_Prop_AsterMiddle_02",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Success"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterMiddle_Electric"
+                        }
+                    ]
+                },
+                "Success": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterMiddle_Success"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Property_Area_Common_Prop_AsterMiddle_03",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Success"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterMiddle_Ice"
+                        }
+                    ]
+                },
+                "Success": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AsterMiddle_Success"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_AsterLarge_Operator"
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Dragon",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "ShowEff"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Die"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ShowEff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_DragonspineStart_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_DragonspineDisapear_01"
+                        }
+                    ]
+                },
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Hero",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Die"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Default"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_HeroTreasure_Sword_01_Disappear"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_HeroTreasure_Sword_01_Disappear"
+                        }
+                    ]
+                },
+                "Default": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_HeroTreasure_Sword_01_Disappear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_ElementBlock_Hero_Ice",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "IS_WARM_POINT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_SceneObj_HeroTreasure_Sword_01_Disappear"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_Invisible_Operator"
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Level_Common_Property_Prop_Portal_01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Phase2"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Phase1"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Phase1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Phase2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_TowerPortal_01_Active"
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Md_Property_Prop_NoChestChallenge_01_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "PhaseNormal"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "PhaseReWard"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "PhaseBattle"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "PhaseNormal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                                    "value": 201.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_SuccessOpen"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Hint_03"
+                        },
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": true
+                        },
+                        {
+                            "$type": "ChangeEnviroWeather",
+                            "DPEJLHDNMOK": 2.0
+                        }
+                    ]
+                },
+                "PhaseBattle": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                                    "value": 0.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_Disappear"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                                    "value": 201.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_Success_Disappear"
+                        },
+                        {
+                            "$type": "EnableGadgetIntee"
+                        },
+                        {
+                            "$type": "ChangeEnviroWeather",
+                            "OGFOAMPCPNO": 1,
+                            "DPEJLHDNMOK": 2.0
+                        }
+                    ]
+                },
+                "PhaseReWard": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 201.0,
+                            "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_Success"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Hint_03"
+                        },
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": true
+                        },
+                        {
+                            "$type": "ChangeEnviroWeather",
+                            "DPEJLHDNMOK": 2.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Stages_Property_Ani_Prop_OceanidSpecialBornBS_01_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Active"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Active": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_OceanidChest_Disappear"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_MistTrial_Time_Operator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "DefaultState"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "ActiveState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DefaultState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 102
+                        }
+                    ]
+                },
+                "ActiveState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01_Disappear",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 102
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_MistTrial_Revive_Operator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "DefaultState"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "ActiveState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DefaultState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 100
+                        }
+                    ]
+                },
+                "ActiveState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01_Disappear",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 100
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_MistTrial_Attack_Operator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "DefaultState"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "ActiveState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DefaultState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 101
+                        }
+                    ]
+                },
+                "ActiveState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01_Disappear",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 101
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Gear_Operator_MistTrial_Turbo_Operator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "DefaultState"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "ActiveState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DefaultState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 103
+                        }
+                    ]
+                },
+                "ActiveState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_MistChallengeStarter_01_Disappear",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            },
+                            "LGJILDHOPGH": 103
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Dq_Property_Prop_StealInteractPoint_01",
+            "HNEIEGHMLKH": {
+                "Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Normal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Dq_Property_Prop_StealInteractPoint_01_Intee",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "WidgetMpSupportMixin",
+                    "DOGJEJOLCOK": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "predicates": [
+                        {
+                            "$type": "ByIsCombat",
+                            "NPHOOPNDCAC": "Other"
+                        }
+                    ]
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "ActiveState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ActiveState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Dq_Property_Prop_HumanLever_01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Close"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Open"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Close": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Open": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Property_Stages_Prop_Challengestarter_PursinaActivity_02",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "PhaseNormal"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "PhaseReWard"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "PhaseBattle"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "PhaseNormal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                                    "value": 201.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_SuccessOpen"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Hint_03"
+                        },
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": true
+                        }
+                    ]
+                },
+                "PhaseBattle": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                                    "value": 0.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_Disappear"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                                    "value": 201.0
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_Success_Disappear"
+                        },
+                        {
+                            "$type": "EnableGadgetIntee"
+                        }
+                    ]
+                },
+                "KillSelf": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "PhaseReWard": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 201.0,
+                            "HJJEAOMEOFI": "_ABILITY_Floor_GadgetState",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_NoChestChallenge_01_Success"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Hint_03"
+                        },
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": true
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

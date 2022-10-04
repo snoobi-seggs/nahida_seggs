@@ -1,0 +1,273 @@
+{
+    "GuideAvatarFlyPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_MOVEFORWARD_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "Move"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideForceAvatarMoveAction",
+                "CAFIMDFEHPB": 1.0
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "MoveEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "CanFly"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarFly_Step02PS"
+            }
+        ]
+    },
+    "GuideAvatarFly_Step02PS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLY_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "TriggerSkill4Event"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ]
+        ]
+    },
+    "GuideAvatarFlyInWindPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLYINWIND_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 10.0
+                }
+            ]
+        ]
+    },
+    "GuideFlyStartPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyStartCondition",
+                    "secondHeight": 10.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyFailPS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyFinishPS"
+            }
+        ]
+    },
+    "GuideFlyFailPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyFailCondition"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyFinishPS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartPS"
+            }
+        ]
+    },
+    "GuideFlyFinishPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLY_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyFinishCondition",
+                    "EKAIBDFAODH": 1.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyFailPS"
+            },
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartPS"
+            },
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND",
+                "value": true
+            }
+        ]
+    }
+}

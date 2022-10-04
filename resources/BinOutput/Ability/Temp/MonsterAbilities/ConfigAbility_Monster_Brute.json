@@ -1,0 +1,138 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_None_Turn",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "TurnRight"
+                    ],
+                    "EOOBFBGMGLD": 0.27000001072883606,
+                    "IMHBEGIKDKB": 0.7799999713897705,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "TurnLeft"
+                    ],
+                    "EOOBFBGMGLD": 0.15000000596046448,
+                    "IMHBEGIKDKB": 0.7099999785423279,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_None_Alert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Sleep"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Sit"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_None_RushAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "RushAttack_BS"
+                    ],
+                    "EOOBFBGMGLD": 0.75,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushAttack_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttackHittingSceneMixin",
+                    "HOAPIHIBOCB": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "CrashTrigger"
+                        }
+                    ],
+                    "MIMLCECCJAL": [
+                        "ShieldRush_HitScene"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Rush": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_None_NoWeapon_RushAttack_Dust"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "AHLLKFIGNAO": true
+                                }
+                            ],
+                            "triggerID": "NextSkillTrigger"
+                        }
+                    ]
+                },
+                "RushAttack_Roar": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.4000000059604645,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.10000000149011612,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.03999999910593033,
+                                "shakeTime": 0.23999999463558197,
+                                "shakeDir": {
+                                    "_y": 1.0,
+                                    "_z": 0.5
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "RushAttack_Roar"
+                }
+            ]
+        }
+    }
+]

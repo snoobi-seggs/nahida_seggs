@@ -1,0 +1,322 @@
+{
+    "GuideAvatarFly": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/InputController/MoveJoystick_H4",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_MOVEFORWARD",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "HFMOLCOLLBN": "Black",
+                        "type": "Blink",
+                        "HGKAEOAJLEO": 0.5,
+                        "IOFJIGCMFOL": 0.5,
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideForceAvatarMoveAction",
+                "CAFIMDFEHPB": 1.0
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "CanFly"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarFly_Step02"
+            }
+        ]
+    },
+    "GuideAvatarFly_Step02": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/GrpSkill/Skill4",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLY",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "HFMOLCOLLBN": "Black",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideDelayDoAction",
+                "ILDBPJLBBEK": 0.800000011920929,
+                "OAEEBLALAPO": [
+                    {
+                        "$type": "ConfigGuideAddTaskAction",
+                        "JILJHNGKJAB": "GuideAvatarFly_Step03"
+                    }
+                ]
+            }
+        ]
+    },
+    "GuideAvatarFly_Step03": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/InputController/MoveJoystick_H4",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_MOVE",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "HFMOLCOLLBN": "Black",
+                        "type": "Blink",
+                        "HGKAEOAJLEO": 0.5,
+                        "IOFJIGCMFOL": 0.5,
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "TryToMove"
+                }
+            ]
+        ]
+    },
+    "GuideAvatarFlyInWind": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/GrpSkill/Skill4",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLYINWIND",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 10.0
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarFlyInWindPC"
+            }
+        ]
+    },
+    "GuideFlyStartiOS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyStartCondition",
+                    "secondHeight": 10.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyFailiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyFinishiOS"
+            }
+        ]
+    },
+    "GuideFlyFailiOS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyFailCondition"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyFinishiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartiOS"
+            }
+        ]
+    },
+    "GuideFlyFinishiOS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "iOS",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/GrpSkill/Skill4",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLY",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyFinishCondition",
+                    "EKAIBDFAODH": 1.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyFailiOS"
+            },
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartiOS"
+            },
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND",
+                "value": true
+            }
+        ]
+    }
+}

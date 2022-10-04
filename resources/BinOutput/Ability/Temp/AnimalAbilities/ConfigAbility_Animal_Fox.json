@@ -1,0 +1,226 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_AIStateInitial",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        1
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                103,
+                                202
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        2
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                101,
+                                102,
+                                201
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_Random",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Run",
+                        "Disappear"
+                    ],
+                    "GAIGOBCNNEE": "Random_MoveSpeedRatio"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "RandomSpeed": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Random_MoveSpeedRatio": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_MoveSpeedRatio": "RandomSpeed"
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetRandomOverrideMapValue",
+                    "MOCGLDDNLKO": 0.25,
+                    "OGAHELLALBB": "RandomSpeed"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_GetUp",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "WanderState",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_GetDown",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "WanderState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_Disappear",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Disappear",
+                        "Disappear2"
+                    ],
+                    "GAIGOBCNNEE": "DisappearTimer"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "DisappearTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "StartDither",
+                            "duration": 3.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Disappear",
+                            "value": true
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "duration": 2.5,
+                            "BEKKIHBPHGD": true,
+                            "EOIGEKNINFE": true,
+                            "PGGBJIDIINM": "Disappear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_AwareTigger",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        101
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 5.0
+                                }
+                            ],
+                            "triggerID": "AwareTrigger"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_02_GoToMHPoint",
+            "HNEIEGHMLKH": {
+                "Animal_Fox_02_CheckPlayerArround": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetNeuronEnable",
+                                    "EPADBCOELIH": "SURROUND",
+                                    "enable": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Animal_Fox_02_CheckPlayerArround"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Fox_02_Alert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetNeuronEnable",
+                    "EPADBCOELIH": "SURROUND",
+                    "enable": true
+                }
+            ]
+        }
+    }
+]

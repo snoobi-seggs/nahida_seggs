@@ -1,0 +1,155 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Team_TeamChargeMark",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_Ability_TeamChargeMark",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        19.5,
+                        20.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Blank"
+                    ],
+                    "PGDAAKDDCOD": [
+                        [
+                            {
+                                "$type": "AddGlobalValue",
+                                "value": 1.0,
+                                "HJJEAOMEOFI": "_Ability_TeamFullChargeMark",
+                                "EODOIECEPEF": true,
+                                "JDHHMBHOOEC": 1.0,
+                                "KHAHOELDONA": 0.0
+                            },
+                            {
+                                "$type": "AddGlobalValue",
+                                "value": -20.0,
+                                "HJJEAOMEOFI": "_Ability_TeamChargeMark",
+                                "EODOIECEPEF": true,
+                                "JDHHMBHOOEC": 20.0,
+                                "KHAHOELDONA": 0.0
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_Ability_TeamFullChargeMark",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Blank",
+                        "Blank"
+                    ],
+                    "PGDAAKDDCOD": [
+                        [
+                            {
+                                "$type": "RemoveModifier",
+                                "NPHOOPNDCAC": "CurTeamAvatars",
+                                "ACOKKHADPOJ": true,
+                                "GAIGOBCNNEE": "TeamFullChargeEffect"
+                            }
+                        ],
+                        [
+                            {
+                                "$type": "ApplyModifier",
+                                "NPHOOPNDCAC": "CurLocalAvatar",
+                                "GAIGOBCNNEE": "TeamFullChargeEffect"
+                            }
+                        ]
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_Ability_AvatarFullChargeMark",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Blank",
+                        "Blank"
+                    ],
+                    "PGDAAKDDCOD": [
+                        [
+                            {
+                                "$type": "RemoveModifier",
+                                "NPHOOPNDCAC": "CurTeamAvatars",
+                                "ACOKKHADPOJ": true,
+                                "GAIGOBCNNEE": "AvatarFullChargeEffect"
+                            }
+                        ],
+                        [
+                            {
+                                "$type": "ApplyModifier",
+                                "NPHOOPNDCAC": "CurTeamAvatars",
+                                "ACOKKHADPOJ": true,
+                                "GAIGOBCNNEE": "AvatarFullChargeEffect"
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0
+                },
+                "TeamChargeMark_Decay": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_Ability_TeamChargeMark",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 20.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "TeamFullChargeEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": "Eff_Avatar_WhiteBox_TeamChargeMark"
+                        }
+                    ]
+                },
+                "AvatarFullChargeEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": ""
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "TeamChargeMark_Decay"
+                }
+            ]
+        }
+    }
+]

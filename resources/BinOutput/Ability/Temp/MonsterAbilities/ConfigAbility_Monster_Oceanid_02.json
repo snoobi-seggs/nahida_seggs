@@ -1,0 +1,4090 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_SetVisible",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Summon_BS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_SetVisibleFalse",
+                    "AAIFCLGLOMO": 0.800000011920929
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Summon_AS"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_SetVisibleTrue"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_OCEANID_SUMMON_UNDERWATER",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.0,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_NotUnderWater",
+                        "Oceanid_UnderWater"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Summon_UnderWater"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_SetVisible"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_SetVisibleFalse": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Monster_Oceanid_02_SetVisibleTrue": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_NotUnderWater": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "UnderWater"
+                        }
+                    ]
+                },
+                "Oceanid_UnderWater": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "UnderWater",
+                            "value": true
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_SetVisible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_OCEANID_SUMMON_UNDERWATER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "HideUIBillBoard",
+                            "COCENMAFJGD": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushColliderHand",
+                                "PushColliderTail"
+                            ]
+                        },
+                        {
+                            "$type": "TriggerSetVisible"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBoxBody",
+                                "HitBoxLeftHand",
+                                "HitBoxRightHand",
+                                "HitBoxHead"
+                            ]
+                        },
+                        {
+                            "$type": "EnableAIStealthy",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_OCEANID_SUMMON_UNDERWATER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "HideUIBillBoard"
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushColliderHand",
+                                "PushColliderTail"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBoxBody",
+                                "HitBoxLeftHand",
+                                "HitBoxRightHand",
+                                "HitBoxHead"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableAIStealthy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_OCEANID_SUMMON_UNDERWATER",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_AddPlayerFallAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToHPPercentMixin",
+                    "CMEDACODLEA": [
+                        0.009999999776482582
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_RemoveAddPlayerFallAttackEmpty",
+                        "Oceanid_RemoveAddPlayerFallAttack"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_AddPlayerFallAttack": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "GAIGOBCNNEE": "UNIQUE_AddPlayerFallAttack_ToOceanidCrab"
+                        }
+                    ]
+                },
+                "UNIQUE_AddPlayerFallAttack_ToOceanidCrab": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "FallingAttack"
+                            ],
+                            "damagePercentageRatio": 5.0,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_CRAB_FEARFALLATK",
+                                    "value": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Oceanid_RemoveAddPlayerFallAttackEmpty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_RemoveAddPlayerFallAttack": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "GAIGOBCNNEE": "UNIQUE_AddPlayerFallAttack_ToOceanidCrab"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_AddPlayerFallAttack"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_SummonEffect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Summon_Standby"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_SummonEffectBS"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_SummonEffectBS": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_SecondSummonBS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_SummonBullet": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 1
+                            },
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_Summon_BulletAS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 3
+                            },
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_Summon_BulletAS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 7
+                            },
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_Summon_BulletAS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 9
+                            },
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_Summon_BulletAS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_SummonBullet"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_Steer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AnimatorRotationCompensateMixin",
+                    "MPOEADACOHO": [
+                        "TurnLeftPunch"
+                    ],
+                    "JIGEBCGNFFD": -90.0,
+                    "OEEFCEOJJNH": 180.0
+                },
+                {
+                    "$type": "AnimatorRotationCompensateMixin",
+                    "MPOEADACOHO": [
+                        "TurnRightPunch"
+                    ],
+                    "OEEFCEOJJNH": 180.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "TailAttack"
+                    ],
+                    "IMHBEGIKDKB": 0.23000000417232513,
+                    "HENDIIJFPCI": 300.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "SmashLeft"
+                    ],
+                    "EOOBFBGMGLD": 0.05000000074505806,
+                    "IMHBEGIKDKB": 0.15000000596046448,
+                    "HENDIIJFPCI": 700.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "SmashRight"
+                    ],
+                    "EOOBFBGMGLD": 0.05000000074505806,
+                    "IMHBEGIKDKB": 0.15000000596046448,
+                    "HENDIIJFPCI": 700.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "EnergyBurstAtk_BS"
+                    ],
+                    "HENDIIJFPCI": 250.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "EnergyBurstAtk_ChargeAS"
+                    ],
+                    "EOOBFBGMGLD": 0.3499999940395355,
+                    "IMHBEGIKDKB": 0.699999988079071,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Dodge_BS"
+                    ],
+                    "HENDIIJFPCI": 300.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Dodge_AS"
+                    ],
+                    "HENDIIJFPCI": 300.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "TraceWaterBall_StandBy"
+                    ],
+                    "IMHBEGIKDKB": 0.07999999821186066,
+                    "HENDIIJFPCI": 720.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "PowerRushAtk_Prepare"
+                    ],
+                    "HENDIIJFPCI": 720.0,
+                    "NCAENFOANAG": ""
+                },
+                {
+                    "$type": "SteerAttackTraceMixin",
+                    "EHNAPMMMNFI": [
+                        "RushAtk"
+                    ],
+                    "IMHBEGIKDKB": 0.27000001072883606,
+                    "HENDIIJFPCI": 300.0,
+                    "NCAENFOANAG": ""
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_WaterLaser_ChasingTarget",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_WATERLASER_DIE",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_WaterLaser_DieEmpty",
+                        "Oceanid_WaterLaser_Die"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Oceanid_WaterLaser_HitDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.100000023841858,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Oceanid_WaterLaser_Hit"
+                        }
+                    ]
+                },
+                "Oceanid_WaterLaser_Hit": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.099999904632568,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_WaterLaserAOE",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "JBPCKOKLHEB": true,
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByGroundNormal"
+                                },
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -2.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 5.0,
+                                    "ICGFCBOFFDI": 6.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 0.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "none",
+                                        "hitImpulseType": "LV1"
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "Oceanid_WaterLaser_DieEmpty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_WaterLaser_Die": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Oceanid_WaterLaser_Hit"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Oceanid_WaterLaser_HitDelay"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -3.0,
+                    "HJJEAOMEOFI": "_WATERLASER_DIE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_WaterLaser",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "EnergyBurstAtk_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_LaunchLaser"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "EnergyBurstAtk_ChargeAS",
+                        "EnergyBurstAtk_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_SetAttackTarget"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "EnergyBurstAtk_BS",
+                        "EnergyBurstAtk_ChargeLoop",
+                        "EnergyBurstAtk_ChargeAS"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_WaterLaserChargeEffect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "EnergyBurstAtk_BS",
+                        "EnergyBurstAtk_ChargeLoop"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_LockTarget"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "EnergyBurstAtk_ChargeLoop",
+                        "EnergyBurstAtk_ChargeAS",
+                        "EnergyBurstAtk_Loop",
+                        "MustKillAtk_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_HidePushCollider"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_SetAttackTarget": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_SetPartControlTarget"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42005024
+                            },
+                            "abilityName": "Monster_Oceanid_02_LockTargetGadget"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetPartControlTarget",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42005013
+                            },
+                            "JEBAOIKDKPN": [
+                                "LaserPoint"
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_LaunchLaser": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_WaterLaser_Loop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "LaserPoint"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnablePartControl",
+                            "JEBAOIKDKPN": [
+                                "LaserPoint"
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_SetPartControlTarget": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnablePartControl",
+                            "JEBAOIKDKPN": [
+                                "LaserPoint"
+                            ],
+                            "enable": true
+                        },
+                        {
+                            "$type": "SetPartControlTarget",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42005013
+                            },
+                            "JEBAOIKDKPN": [
+                                "LaserPoint"
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_WaterLaserChargeEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_WaterLaserCharge"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_Clear_LockTarget": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_LockTarget": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42005024
+                            },
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_Clear_LockTarget"
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005024,
+                            "JCAMCEOBIFG": true
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_LockTargetEffectHandler"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_LockTargetEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 7.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_02_WaterLaser_LockTarget"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_LockTargetEffectHandler": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 7.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_LockTargetEffect"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_HidePushCollider": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushColliderTail",
+                                "PushColliderHand"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushColliderTail",
+                                "PushColliderHand"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "EnablePartControl",
+                    "JEBAOIKDKPN": [
+                        "LaserPoint"
+                    ]
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "AddGlobalValue",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 42005013
+                    },
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_WATERLASER_DIE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_LaunchLaser"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_WaterLaserDamage"
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_LockTargetGadget",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_WATERLASER_TARGET",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "_LOCKTARGET_LASERBORN",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.5
+                        }
+                    },
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "CopyGlobalValue",
+                    "IGKNCNDCLOO": "Owner",
+                    "KNAELFCJEPL": "Self",
+                    "DHPMANPAAFN": "_MONSTER_OCEANID_02_CHASINGTARGET_LOCKY_1",
+                    "CGMMPCHEGIH": "_LOCKTARGET_LASERBORN_1"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42005013,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "JBPCKOKLHEB": true,
+                        "ANAGBFPADIE": true,
+                        "GDENJEFPMGC": "_LOCKTARGET_LASERBORN",
+                        "MICIJLHMIIH": ""
+                    },
+                    "IBGEDNNBIOF": "Owner",
+                    "ENJEPFDLDDF": "Self",
+                    "JCAMCEOBIFG": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_CreateElevatorButtom",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "EnergyBurstAtk_BS"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_CreateElevatorButtom"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_CreateElevatorButtom": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42005019
+                            },
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_LaserRemovePlatformDamage"
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                801
+                            ]
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "HJJEAOMEOFI": "_OCEANID_LASERBORN",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_BLINKPOS_CHECKNUM",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsBySelfGroup",
+                                        "POCPPGDMDEA": "XOR",
+                                        "weight": 4
+                                    },
+                                    "HJJEAOMEOFI": "_OCEANID_ELEVATOR_CREATE_POS",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget"
+                                    },
+                                    "OGADOPDNBMM": false
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "GDENJEFPMGC": "_OCEANID_ELEVATOR_CREATE_POS",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 42005014,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "ShowReminder",
+                                    "angularVelocityThreshold": 31020015
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsBySelfGroup",
+                                        "POCPPGDMDEA": "XOR",
+                                        "weight": 6
+                                    },
+                                    "HJJEAOMEOFI": "_OCEANID_ELEVATOR_CREATE_POS",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget"
+                                    },
+                                    "OGADOPDNBMM": false
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "GDENJEFPMGC": "_OCEANID_ELEVATOR_CREATE_POS",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 42005014,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "ShowReminder",
+                                    "angularVelocityThreshold": 31020015
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_CHASINGTARGET_LOCKY",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_LaserRemovePlatformDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_ElevatorButtomGadget",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_CreateElevatorButtomEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_ElevatorMask"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_ElevatorMaskDisappear",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_ElevatorDieTimer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 11.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                                    "value": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_CreateElevatorButtomEffect"
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                                    "value": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Oceanid_02_CreateElevatorButtom": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateMovingPlatform",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 42005015,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "Enemy",
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_ElevatorEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 10.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_ElevatorUp"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_ElevatorDie",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_CreateElevatorButtomEffect"
+                        }
+                    ]
+                },
+                "Oceanid_02_ElevatorTriggerDelay": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.4000000059604645,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TryTriggerPlatformStartMove",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                                            "value": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "EKFNPACNCOL": true
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                                            "value": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_ElevatorEffect"
+                        },
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                                            "value": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "FMHEBAPHGMP": 20050402,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 5.0
+                                }
+                            },
+                            "summonTag": 20050402,
+                            "DMMHIIKIPFB": true
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_ElevatorWatcherOne": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0
+                },
+                "Monster_Oceanid_02_CreateElevatorButtomEffectDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.6000000238418579,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_CreateElevatorButtomEffect"
+                        }
+                    ]
+                },
+                "Monster_Affix_DeathExplode_Delay_Animal": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_ANIMAL_DEATHEXPLODE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsByShape",
+                                        "JBKKOJLJHDK": "CircleR50",
+                                        "ONPOPLLHJLE": "AllExceptSelf",
+                                        "CJJABKCAIEB": 1.0
+                                    },
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Monster"
+                                            ]
+                                        }
+                                    ],
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_ANIMAL_DEATHEXPLODE",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Affix_HealUp_Delay_Animal": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsByShape",
+                                        "JBKKOJLJHDK": "CircleR50",
+                                        "ONPOPLLHJLE": "AllExceptSelf",
+                                        "CJJABKCAIEB": 1.0
+                                    },
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Monster"
+                                            ]
+                                        }
+                                    ],
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "MLOEFNBPCCH": "OnlyHitScene",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 4.0,
+                                "KAAPLGBEDPM": 4.0,
+                                "PHDCJAHHIOG": 4.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 5000.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4"
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "All"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_TRIGGERELEVATOR",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_CreateElevatorButtomEffectDelay"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Oceanid_02_CreateElevatorButtom"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_ElevatorDieTimer"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Avatar"
+                            ]
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Oceanid_02_ElevatorTriggerDelay"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_ElevatorWatcherOne"
+                        },
+                        {
+                            "$type": "ServerMonsterLog",
+                            "NPHOOPNDCAC": "Owner",
+                            "LOAPFCCFBDF": [
+                                3,
+                                1,
+                                0
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Monster_Affix_DeathExplode_Delay_Animal"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Monster_Affix_HealUp_Delay_Animal"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_ResetElevator",
+            "HNEIEGHMLKH": {
+                "Oceanid_ElevatorButtom_KillSelfDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryTriggerPlatformStartMove",
+                    "BHMEBDAFEOP": true
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Oceanid_ElevatorButtom_KillSelfDelay"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_Elevator",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_COMMON_MOVING_PLATFORM_ACTIVE",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_Elevator_OnGround",
+                        "UNIQUE_Oceanid_ElevatorUpGround"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Oceanid_Elevator_OnGround": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Oceanid_ElevatorUpGround": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_ELEVATOLIFETRIGGER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "NPHOOPNDCAC": "Owner",
+                            "abilityName": "Monster_Oceanid_02_ResetElevator"
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "duration": 0.15000000596046448
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_ElevatorLifeTime": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 11.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_ELEVATOLIFETRIGGER",
+                                    "value": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_COMMON_MOVING_PLATFORM_ACTIVE",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_ElevatorLifeTime"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_ELEVATOLIFETRIGGER",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_BeingHit",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_BeingHit": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalDir",
+                                    "NPHOOPNDCAC": "Target",
+                                    "HJJEAOMEOFI": "_OCEANID_BEINGHIT_DIR_",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByLookAtEntity"
+                                        }
+                                    },
+                                    "OGADOPDNBMM": false
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalDir",
+                                    "NPHOOPNDCAC": "TargetOriginOwner",
+                                    "HJJEAOMEOFI": "_OCEANID_BEINGHIT_DIR_",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByLookAtEntity"
+                                        }
+                                    },
+                                    "OGADOPDNBMM": false
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_02_BeHit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByHitPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByGlobalValue",
+                                    "MICIJLHMIIH": "_OCEANID_BEINGHIT_DIR_"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_BeingHit"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_RushAtk",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "RushAtk",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_RushAtk",
+                    "AAIFCLGLOMO": 0.33000001311302185,
+                    "MMHONEIBHNP": 0.4399999976158142
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "PowerRushAtk_Loop",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_RushAtk"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_RushAtk": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -0.5,
+                                            "PHDCJAHHIOG": 0.5
+                                        }
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 3.0,
+                                        "KAAPLGBEDPM": 3.0,
+                                        "PHDCJAHHIOG": 5.0
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "Regisvine_Common",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 100.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV5",
+                                        "retreatType": "ByTangent",
+                                        "canBeDefenceHalt": true
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_SmashLeftAddAttack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -1.2000000476837158,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 4.0
+                        }
+                    },
+                    "CABLIPAKCGB": 42005016,
+                    "DOLAJLACEDF": 4001
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_SmashRightAddAttack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 1.2000000476837158,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 4.0
+                        }
+                    },
+                    "CABLIPAKCGB": 42005016,
+                    "DOLAJLACEDF": 4001
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_SmashAddAttackGadget",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_SmashAddAttackDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_SmashAddAttack",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -2.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 5.0,
+                                    "ICGFCBOFFDI": 1.2999999523162842
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 1000.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV7",
+                                        "canBeDefenceHalt": true
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Oceanid_SmashAddAttackWarning",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf"
+                    }
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_SmashAddAttackDamage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_TailAttackAddAttack",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_TailAdd_Challenge": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 15.0
+                                }
+                            },
+                            "CABLIPAKCGB": 42005016,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 7.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 12.0
+                                }
+                            },
+                            "CABLIPAKCGB": 42005016,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -7.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 12.0
+                                }
+                            },
+                            "CABLIPAKCGB": 42005016,
+                            "DOLAJLACEDF": 4001
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 9.0
+                        }
+                    },
+                    "CABLIPAKCGB": 42005016,
+                    "DOLAJLACEDF": 4001
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 3.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 8.0
+                        }
+                    },
+                    "CABLIPAKCGB": 42005016,
+                    "DOLAJLACEDF": 4001
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -3.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 8.0
+                        }
+                    },
+                    "CABLIPAKCGB": 42005016,
+                    "DOLAJLACEDF": 4001
+                },
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_SKILLUP",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_TailAdd_Challenge"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_RushAtkSetTimes",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "PowerRushAtk_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_AddRushTimes"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "RushAtk",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_RushEffect",
+                    "AAIFCLGLOMO": 0.33000001311302185,
+                    "MMHONEIBHNP": 0.4300000071525574
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "PowerRushAtk_ASStandBy"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_ResetValue"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "RushTimesPlus": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_RushAtk_WatchTimes": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_MONSTER_OCEANID_02_RUSHTIMES",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                4.900000095367432,
+                                11.0
+                            ],
+                            "MIEPCOONDEM": [
+                                "Oceanid_Empty",
+                                "Oceanid_RushTimesOver"
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_RushAtk_WatchTimes_Challenge": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_MONSTER_OCEANID_02_RUSHTIMES",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                6.900000095367432,
+                                11.0
+                            ],
+                            "MIEPCOONDEM": [
+                                "Oceanid_Empty",
+                                "Oceanid_RushTimesOver"
+                            ]
+                        }
+                    ]
+                },
+                "Oceanid_Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerRushAtkOver"
+                        }
+                    ]
+                },
+                "Oceanid_RushTimesOver": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerRushAtkOver",
+                            "value": true
+                        }
+                    ]
+                },
+                "Monster_Oceanid_AddRushTimes": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_RUSHADD",
+                            "EODOIECEPEF": true,
+                            "FACHGOPKJKE": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_MONSTER_OCEANID_02_RUSHADD",
+                            "OGAHELLALBB": "RushTimesPlus"
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_SKILLUP",
+                                    "value": 3.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": "RushTimesPlus",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_RUSHTIMES",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 7.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": "RushTimesPlus",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_RUSHTIMES",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 5.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_RushAtk"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_ResetValue": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_RUSHTIMES",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_RushEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_RushAtk"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_RushBodyEffect"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_RushBodyEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_RushAtkBody"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_RUSHTIMES",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 5.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_SKILLUP",
+                            "value": 3.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_RushAtk_WatchTimes_Challenge"
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_RushAtk_WatchTimes"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Oceanid_TraceWaterBall_Explode",
+            "HNEIEGHMLKH": {
+                "Oceanid_TraceWaterBall_Explode_Tail": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_TraceWaterBall"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_TraceWaterBallTail"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_TraceWaterBallExplode",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "ANAGBFPADIE": true
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Oceanid_TraceWaterBall_Explode_OpenColliderDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger",
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Oceanid_TraceWaterBall_Explode_Tail"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Oceanid_TraceWaterBall_Explode_OpenColliderDelay"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Oceanid_TraceWaterBall_Explode_Tail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "SnowBallAttack",
+                            "attenuationTag": "SnowBall_Damage",
+                            "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.2000000476837158,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Oceanid_TraceWaterBallExplode",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "ANAGBFPADIE": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Oceanid_DelayWaterBall_Explode",
+            "HNEIEGHMLKH": {
+                "Oceanid_DelayWaterBall_Explode_Tail": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_DelayWaterBall"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_DelayWaterBallTail"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_DelayWaterBallExplode",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "ANAGBFPADIE": true
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Oceanid_DelayWaterBall_Explode_OpenColliderDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger",
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Oceanid_DelayWaterBall_Explode_Tail"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Oceanid_DelayWaterBall_Explode_OpenColliderDelay"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Oceanid_DelayWaterBall_Explode_Tail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "ICGFCBOFFDI": 1.7999999523162842
+                        },
+                        "attackInfo": {
+                            "attackTag": "SnowBallAttack",
+                            "attenuationTag": "SnowBall_Damage",
+                            "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Oceanid_DelayWaterBallExplode",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "ANAGBFPADIE": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_DodgeBack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_OCEANID_02_DODGESTATE",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.0,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_DodgeEmpty",
+                        "Oceanid_DodgeOver"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Dodge_BS"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_DodgeBackHandler"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "DelayWaterBallAtk",
+                        "PowerDelayWaterBallAtk",
+                        "EnergyBurstAtk_BS",
+                        "MustKillAtk_BS"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_DodgeResetValue"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "EnergyBurstAtk_BlinkBS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_SetBlinkPos"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "MustKillAtk_BlinkBS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_MustKillSetBlinkPos"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Oceanid_DodgeEmpty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "DodgeIsOver"
+                        }
+                    ]
+                },
+                "Oceanid_DodgeOver": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "DodgeIsOver",
+                            "value": true
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_DodgeBackHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_DodgeBackDuring"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_DodgeBackMoving"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_DodgeBackDuring": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushColliderHand",
+                                "PushColliderTail"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_DODGESTATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider",
+                                "PushColliderHand",
+                                "PushColliderTail"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_DodgeBackMoving": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2999999523162842,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_SPDODGE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "FixedMonsterRushMove",
+                                    "FJCBIPKOKMF": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_MONSTER_OCEANID_02_BLINKPOS",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "FPIJACIKJKL": 1.0,
+                                    "GLALMCMAFJF": 100.0,
+                                    "MPOEADACOHO": [
+                                        "EnergyBurstAtk_BlinkBS",
+                                        "DelayWaterBallAtk_BlinkBS"
+                                    ],
+                                    "AGIKEIFOMLO": "",
+                                    "POGPMFFDEMG": true
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "Predicated",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_SPDODGE",
+                                            "value": 2.0
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "FixedMonsterRushMove",
+                                            "FJCBIPKOKMF": {
+                                                "$type": "ConfigBornByGlobalValue",
+                                                "GDENJEFPMGC": "_MONSTER_OCEANID_02_BLINKPOS",
+                                                "MICIJLHMIIH": ""
+                                            },
+                                            "FPIJACIKJKL": 1.0,
+                                            "GLALMCMAFJF": 100.0,
+                                            "MPOEADACOHO": [
+                                                "MustKillAtk_BlinkBS"
+                                            ],
+                                            "AGIKEIFOMLO": "",
+                                            "POGPMFFDEMG": true
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "FixedMonsterRushMove",
+                                            "FJCBIPKOKMF": {
+                                                "$type": "ConfigBornBySelf",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": -15.0
+                                                }
+                                            },
+                                            "FPIJACIKJKL": 1.0,
+                                            "GLALMCMAFJF": 15.0,
+                                            "MPOEADACOHO": [
+                                                "EnergyBurstAtk_BlinkBS",
+                                                "DelayWaterBallAtk_BlinkBS"
+                                            ],
+                                            "AGIKEIFOMLO": "",
+                                            "POGPMFFDEMG": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_DodgeEffectLoop"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_DodgeResetValue": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_DODGESTATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_SPDODGE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Monster_Oceanid_DodgeEffectLoop": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_DodgeLoop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "JBPCKOKLHEB": true,
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_SetBlinkPos": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_BLINKPOS_CHECKNUM",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_SPDODGE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": 0.5,
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsBySelfGroup",
+                                        "POCPPGDMDEA": "XOR",
+                                        "weight": 6
+                                    },
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_BLINKPOS",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget"
+                                    },
+                                    "OGADOPDNBMM": false
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_BLINKPOS_CHECKNUM",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "GILFKOBKGLI": {
+                                        "$type": "SelectTargetsBySelfGroup",
+                                        "POCPPGDMDEA": "XOR",
+                                        "weight": 4
+                                    },
+                                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_BLINKPOS",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget"
+                                    },
+                                    "OGADOPDNBMM": false
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Oceanid_MustKillSetBlinkPos": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_SPDODGE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 5
+                            },
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_BLINKPOS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_BulletTriggerDelayWaterBall",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_DelayTriggerWaterBall": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.399999976158142,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_TriggerCreateDelayWaterBall"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_DELAYWATERBALL_TRIGGERDIE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_TriggerCreateDelayWaterBall": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerBullet",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_DELAYWATERBALL_TRIGGERDIE",
+                                    "value": 0.0
+                                }
+                            ],
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.2999999523162842,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_DelayTriggerWaterBall"
+                },
+                {
+                    "$type": "SetSelfAttackTarget",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "JBKKOJLJHDK": "CircleR50",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Avatar"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_DELAYWATERBALL_TRIGGERDIE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_CreateDelayWaterBall",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_CreateDelayWaterBall_Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.399999976158142,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 2.559999942779541,
+                                    "KAAPLGBEDPM": 3.1700000762939453,
+                                    "PHDCJAHHIOG": 1.6100000143051147
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -4.610000133514404,
+                                    "KAAPLGBEDPM": 5.460000038146973,
+                                    "PHDCJAHHIOG": -1.1399999856948853
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_DELAYWATERBALL_BORNPOS",
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_CreateDelayWaterBall_Delay"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_CreateDelayWaterBallPower",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2999999523162842,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 2.559999942779541,
+                                    "KAAPLGBEDPM": 3.1700000762939453,
+                                    "PHDCJAHHIOG": 1.6100000143051147
+                                }
+                            }
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay2"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay2": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.36000001430511475,
+                                    "KAAPLGBEDPM": 6.920000076293945,
+                                    "PHDCJAHHIOG": 3.6700000762939453
+                                }
+                            }
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay3"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay3": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.05000000074505806,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -0.9200000166893005,
+                                    "KAAPLGBEDPM": 6.659999847412109,
+                                    "PHDCJAHHIOG": -1.3200000524520874
+                                }
+                            }
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay4"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay4": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -4.610000133514404,
+                                    "KAAPLGBEDPM": 5.460000038146973,
+                                    "PHDCJAHHIOG": -1.1399999856948853
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "_MONSTER_OCEANID_02_DELAYWATERBALL_BORNPOS",
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_CreateDelayWaterBallPower_Delay"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_CreateTraceWaterBall",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42005018,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 2.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_CreateTraceWaterBallPower",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_CreateTraceWaterBallDelayTwo": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42005018,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 2.0,
+                                    "PHDCJAHHIOG": 2.0
+                                }
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_SKILLUP",
+                                    "value": 2.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "TriggerBullet",
+                                    "NGAAOMEHOGE": 42005018,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 3.0,
+                                            "KAAPLGBEDPM": 2.0,
+                                            "PHDCJAHHIOG": 2.0
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "TriggerBullet",
+                                    "NGAAOMEHOGE": 42005018,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": -3.0,
+                                            "KAAPLGBEDPM": 2.0,
+                                            "PHDCJAHHIOG": 2.0
+                                        }
+                                    }
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "TriggerBullet",
+                                    "NGAAOMEHOGE": 42005018,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 2.0,
+                                            "PHDCJAHHIOG": 2.0
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_CreateTraceWaterBallDelayTwo"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_MustKillHandler",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "MustKillAtk_AS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillDamageHandler",
+                    "AAIFCLGLOMO": 0.1599999964237213
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "MustKillAtk_BS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillEffectHandler",
+                    "AAIFCLGLOMO": 0.05000000074505806,
+                    "MMHONEIBHNP": 0.800000011920929
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "MustKillAtk_AS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillDamageEffectHandler"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_MustKillHandler": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42005019
+                            },
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_RemovePlatformDamage"
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_MUSTKILL_ELEVATOR",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "PLKDGIELEEF": 0.30000001192092896,
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "CreateGadget",
+                                            "NJEOPILMKCN": true,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByGlobalValue",
+                                                "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSONE",
+                                                "MICIJLHMIIH": ""
+                                            },
+                                            "CABLIPAKCGB": 42005014,
+                                            "DOLAJLACEDF": 1001,
+                                            "ONPOPLLHJLE": "Enemy"
+                                        },
+                                        {
+                                            "$type": "CreateGadget",
+                                            "NJEOPILMKCN": true,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByGlobalValue",
+                                                "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSTHREE",
+                                                "MICIJLHMIIH": ""
+                                            },
+                                            "CABLIPAKCGB": 42005014,
+                                            "DOLAJLACEDF": 1001,
+                                            "ONPOPLLHJLE": "Enemy"
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "Randomed",
+                                            "PLKDGIELEEF": 0.5,
+                                            "NCNDEAPMKCP": [
+                                                {
+                                                    "$type": "CreateGadget",
+                                                    "NJEOPILMKCN": true,
+                                                    "NGDMCBABOJA": {
+                                                        "$type": "ConfigBornByGlobalValue",
+                                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSTWO",
+                                                        "MICIJLHMIIH": ""
+                                                    },
+                                                    "CABLIPAKCGB": 42005014,
+                                                    "DOLAJLACEDF": 1001,
+                                                    "ONPOPLLHJLE": "Enemy"
+                                                },
+                                                {
+                                                    "$type": "CreateGadget",
+                                                    "NJEOPILMKCN": true,
+                                                    "NGDMCBABOJA": {
+                                                        "$type": "ConfigBornByGlobalValue",
+                                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSFOUR",
+                                                        "MICIJLHMIIH": ""
+                                                    },
+                                                    "CABLIPAKCGB": 42005014,
+                                                    "DOLAJLACEDF": 1001,
+                                                    "ONPOPLLHJLE": "Enemy"
+                                                }
+                                            ],
+                                            "BMIOBLGLPIM": [
+                                                {
+                                                    "$type": "CreateGadget",
+                                                    "NJEOPILMKCN": true,
+                                                    "NGDMCBABOJA": {
+                                                        "$type": "ConfigBornByGlobalValue",
+                                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSONE",
+                                                        "MICIJLHMIIH": ""
+                                                    },
+                                                    "CABLIPAKCGB": 42005014,
+                                                    "DOLAJLACEDF": 1001,
+                                                    "ONPOPLLHJLE": "Enemy"
+                                                },
+                                                {
+                                                    "$type": "CreateGadget",
+                                                    "NJEOPILMKCN": true,
+                                                    "NGDMCBABOJA": {
+                                                        "$type": "ConfigBornByGlobalValue",
+                                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSFOUR",
+                                                        "MICIJLHMIIH": ""
+                                                    },
+                                                    "CABLIPAKCGB": 42005014,
+                                                    "DOLAJLACEDF": 1001,
+                                                    "ONPOPLLHJLE": "Enemy"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSONE",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 42005014,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSTWO",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 42005014,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSTHREE",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 42005014,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NJEOPILMKCN": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_OCEANID_MUSTKILL_POSFOUR",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 42005014,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ShowReminder",
+                            "angularVelocityThreshold": 31020015
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillDamageHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillDamageDuring"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                502
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.100000023841858,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR60H3",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "attackInfo": {
+                                "attackTag": "Oceanid_02_MustKill",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 2.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Water",
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Blunt",
+                                    "enBreak": 101.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV4"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillSetPosDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 1
+                            },
+                            "HJJEAOMEOFI": "_OCEANID_MUSTKILL_POSONE",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 3
+                            },
+                            "HJJEAOMEOFI": "_OCEANID_MUSTKILL_POSTWO",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 7
+                            },
+                            "HJJEAOMEOFI": "_OCEANID_MUSTKILL_POSTHREE",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsBySelfGroup",
+                                "POCPPGDMDEA": "XOR",
+                                "weight": 9
+                            },
+                            "HJJEAOMEOFI": "_OCEANID_MUSTKILL_POSFOUR",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillEffectHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillEffect"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.699999809265137,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_MustKillAtkCoreLoop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_OCEANID_MUSTKILL_EFFECTPOS",
+                                "MICIJLHMIIH": ""
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_MustKillAtkCoreEarthLoop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_OCEANID_MUSTKILL_EFFECTPOS",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_RemovePlatformDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillWatcher": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0
+                },
+                "Monster_Oceanid_MustKillEffectController": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "MustKillAttack",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_MustKillAtkCoreLoop"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillDamageEffectHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_MustKillEffectController"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_MustKillDamageEffect"
+                        }
+                    ]
+                },
+                "Monster_Oceanid_MustKillDamageEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_MustKillAtkCoreAS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_OCEANID_MUSTKILL_EFFECTPOS",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_MustKillDamageDuring": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillDamage"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Oceanid_02_MustKill"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Target",
+                                    "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillWatcher"
+                                },
+                                {
+                                    "$type": "ServerMonsterLog",
+                                    "LOAPFCCFBDF": [
+                                        3,
+                                        0,
+                                        1
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillSetPosDelay"
+                },
+                {
+                    "$type": "SetGlobalPos",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsBySelfGroup",
+                        "POCPPGDMDEA": "XOR",
+                        "weight": 5
+                    },
+                    "HJJEAOMEOFI": "_OCEANID_MUSTKILL_EFFECTPOS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget"
+                    },
+                    "OGADOPDNBMM": false
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_MustKillHandler"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "AddGlobalValue",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 42005019
+                    },
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_PLATFORM_DAMAGE_DIE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_CreatePlatFormAOE",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "PlatformControl01",
+                        "Summon_BS",
+                        "RushAtk",
+                        "PowerRushAtk_Prepare"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_CreatePlatFormAOE_Effect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_CreatePlatFormAOE_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_WalkLoop_Trail_Bone_L_Finger_02"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_WalkLoop_Trail_Bone_R_Finger_02"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_PLATFORMDAMAGE_SUM_UP",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsBySelfGroup",
+                        "POCPPGDMDEA": "XOR",
+                        "ONPJJFKDCED": "Greater"
+                    },
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGadgetState",
+                            "IJNIFFOPHNJ": 201
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "Target",
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_PLATFORMDAMAGEPOS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "SetGlobalDir",
+                            "NPHOOPNDCAC": "Target",
+                            "HJJEAOMEOFI": "_MONSTER_OCEANID_02_PLATFORMDAMAGEDIR",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByEntity",
+                                    "LGPBCMEFEJB": {
+                                        "AEAAJCIDPED": 0.0,
+                                        "KAAPLGBEDPM": 60.0,
+                                        "PHDCJAHHIOG": 0.0
+                                    }
+                                }
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_MONSTER_OCEANID_02_PLATFORMDAMAGEPOS",
+                                "MICIJLHMIIH": "_MONSTER_OCEANID_02_PLATFORMDAMAGEDIR"
+                            },
+                            "JCAMCEOBIFG": true,
+                            "CABLIPAKCGB": 42005019,
+                            "DOLAJLACEDF": 4001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_PlatformDamage",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_PLATFORM_DAMAGE_DIE",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_PlatformDamageDieEmpty",
+                        "Oceanid_PlatformDamageDie"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_PlatformDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_PlatformDamageLoop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -0.20000000298023224,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "KJNJNKLLNCN": "RootNode"
+                                    },
+                                    "secondHeight": 2.5,
+                                    "ICGFCBOFFDI": 7.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.20000000298023224,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 100.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 0.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV0"
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "Oceanid_PlatformDamageDieEmpty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_PlatformDamageDie": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_PlatformDamage"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_PlatformDamage"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -2.0,
+                    "HJJEAOMEOFI": "_PLATFORM_DAMAGE_DIE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_ChangePoses",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "SGV_Oceanid_State",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.0,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_02_ServerStateEmpty",
+                        "Oceanid_02_ServerStateOne",
+                        "Oceanid_02_ServerStateTwo",
+                        "Oceanid_02_ServerStateThree"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "SGV_Oceanid_HP",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.0,
+                        39.0,
+                        49.0,
+                        59.0,
+                        69.0,
+                        79.0,
+                        81.0
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_02_StateTwoHP0",
+                        "Oceanid_02_StateTwoHP1",
+                        "Oceanid_02_StateTwoHP2",
+                        "Oceanid_02_StateTwoHP3",
+                        "Oceanid_02_StateTwoHP4",
+                        "Oceanid_02_StateTwoHP5"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToHPPercentMixin",
+                    "CMEDACODLEA": [
+                        0.8100000023841858
+                    ],
+                    "MIEPCOONDEM": [
+                        "Oceanid_02_StateOneEmpty",
+                        "Oceanid_02_StateOneExit"
+                    ]
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Summon_Standby",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_StateStartSummon",
+                    "AAIFCLGLOMO": 0.5
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        901,
+                        902,
+                        903
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_Escape"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_02_Pose1Limbo": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_HpThresholdRatio": 0.800000011920929
+                    },
+                    "state": "Limbo"
+                },
+                "Oceanid_02_StateOneEmpty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_02_StateOneExit": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_SERVERLUACALL_TIMES",
+                                    "value": 0.0
+                                }
+                            ],
+                            "MINNFFNDCJH": "FromGroup",
+                            "GHGADIKFEGC": [
+                                133102112
+                            ],
+                            "PDFANJKMFNK": "SLC_Stage_To_2",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SERVERLUACALL_TIMES",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 99.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Oceanid_02_ServerStateEmpty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_02_ServerStateOne": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerMonsterLog",
+                            "LOAPFCCFBDF": [
+                                1,
+                                0,
+                                0
+                            ]
+                        }
+                    ]
+                },
+                "Oceanid_02_ServerStateTwo": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "LockHP",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SERVERLUACALL_TIMES",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 99.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "StateID",
+                            "weight": 2
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_Pose1Limbo"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_Pose2Denylockon"
+                        },
+                        {
+                            "$type": "ServerMonsterLog",
+                            "LOAPFCCFBDF": [
+                                2,
+                                0,
+                                0
+                            ]
+                        }
+                    ]
+                },
+                "Oceanid_02_ServerStateThree": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "StateID",
+                            "weight": 3
+                        },
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                601,
+                                602
+                            ]
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Monster_Oceanid_02_Pose2Denylockon"
+                        },
+                        {
+                            "$type": "ServerMonsterLog",
+                            "LOAPFCCFBDF": [
+                                3,
+                                0,
+                                0
+                            ]
+                        }
+                    ]
+                },
+                "Oceanid_02_StateTwoHP0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Oceanid_02_StateTwoHP1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "LoseHP",
+                            "AJAHODOGLMH": 0.05000000074505806
+                        }
+                    ]
+                },
+                "Oceanid_02_StateTwoHP2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "LoseHP",
+                            "AJAHODOGLMH": 0.05000000074505806
+                        }
+                    ]
+                },
+                "Oceanid_02_StateTwoHP3": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "LoseHP",
+                            "AJAHODOGLMH": 0.05000000074505806
+                        }
+                    ]
+                },
+                "Oceanid_02_StateTwoHP4": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "LoseHP",
+                            "AJAHODOGLMH": 0.05000000074505806
+                        }
+                    ]
+                },
+                "Oceanid_02_StateTwoHP5": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Monster_Oceanid_02_StateStartSummon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_SERVERLUACALL_SUMMON_TIMES",
+                                    "value": 0.0
+                                }
+                            ],
+                            "MINNFFNDCJH": "FromGroup",
+                            "GHGADIKFEGC": [
+                                133102112
+                            ],
+                            "PDFANJKMFNK": "SLC_Summon_Start",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SERVERLUACALL_SUMMON_TIMES",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Monster_Oceanid_02_Pose2Denylockon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                },
+                "Monster_Oceanid_02_Escape": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "FromGroup",
+                            "GHGADIKFEGC": [
+                                133102112
+                            ],
+                            "PDFANJKMFNK": "SLC_Boss_Escape",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_02_Pose1Limbo"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_SERVERLUACALL_TIMES",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 99.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -3.0,
+                    "HJJEAOMEOFI": "_SERVERLUACALL_SUMMON_TIMES",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 2.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_02_Element",
+            "HNEIEGHMLKH": {
+                "UNIQUE_ElementState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Water",
+                    "elementDurability": 100.0,
+                    "DDLOLBGNLEF": false,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ElementState"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "LOBIDJEHBGH": [
+                        "ElementWet",
+                        "ElementFrozen",
+                        "ElementPetrifaction",
+                        "ElementFreeze"
+                    ]
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_ANIMALSELECT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    }
+]

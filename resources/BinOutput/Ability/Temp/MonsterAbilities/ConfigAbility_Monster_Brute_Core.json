@@ -1,0 +1,2317 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_NoWeapon_OutOfSit",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        401
+                    ],
+                    "GAIGOBCNNEE": "Monster_Brute_NoWeapon_OutOfSit"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Brute_NoWeapon_OutOfSit": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Sit"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Ice_ResetBool",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "HHFIHBEAPAP": "SkillHitState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_KillSoundEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Brute_Rock_SoundEffect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_Die",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Brute_Rock_CoreOn"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Ice_JudgeDistanceToTarget",
+            "HNEIEGHMLKH": {
+                "JudgeDistance": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "NextSkillTrigger"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "GMFCOCAJBDM": "Lesser",
+                            "ONPJJFKDCED": "XYZ",
+                            "value": 5.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "JudgeDistance"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_PowerSmash_RockWave",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 1.5,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 10.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -1.5,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": -10.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_EarthWavePointAttack",
+            "HNEIEGHMLKH": {
+                "Brute_RockWave_DelayRock": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Brute_RockWave_NormalExplode"
+                        }
+                    ]
+                },
+                "Brute_RockWave_NormalExplode": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.20000000298023224,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_ThumpAttack_Explode",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -1.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 3.0,
+                                    "ICGFCBOFFDI": 2.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "ThumpEarth_Damage",
+                                    "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Rock",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 100.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV6",
+                                        "retreatType": "ByHitDirection",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_ThumpAttackFinal_Explode",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf"
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -1.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 4.0,
+                            "ICGFCBOFFDI": 2.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "ThumpEarth_Damage",
+                            "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Rock",
+                                "elementDurability": 25.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV6",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Brute_RockWave_DelayRock"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_EarthWavePointAttack_Final",
+            "HNEIEGHMLKH": {
+                "Brute_RockWave_FinalExplode": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.15000000596046448,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_ThumpAttackFinal_Explode",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -1.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 2.5,
+                                    "ICGFCBOFFDI": 4.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "ThumpEarth_Damage",
+                                    "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.5,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Rock",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 100.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV6",
+                                        "retreatType": "ByHitDirection",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Brute_RockWave_FinalExplode"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_EarthWaveAttack",
+            "HNEIEGHMLKH": {
+                "RockWave_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_ThumpAttack_Explode"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "RockWave_Effect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "ThumpEarth_Damage",
+                            "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Rock",
+                                "elementDurability": 25.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV6",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_EarthWaveAttackFinal",
+            "HNEIEGHMLKH": {
+                "RockWave_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_ThumpAttackFinal_Explode"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "RockWave_Effect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "ThumpEarth_Damage",
+                            "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Rock",
+                                "elementDurability": 25.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV8",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Ice_JudgeDistanceToTarget2",
+            "HNEIEGHMLKH": {
+                "JudgeDistance": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.009999999776482582,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "NextSkillTrigger"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "GMFCOCAJBDM": "LesserOrEqual",
+                            "ONPJJFKDCED": "XYZ",
+                            "value": 5.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "JudgeDistance"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Ice_Turn",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        111,
+                        113,
+                        114,
+                        115
+                    ],
+                    "GAIGOBCNNEE": "NoWeapon_Steer"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NoWeapon_Steer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "NormalIdle"
+                            ],
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "NormalMove"
+                            ],
+                            "HENDIIJFPCI": 150.0,
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "TurnRight"
+                            ],
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 100.0,
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "TurnRight"
+                            ],
+                            "EOOBFBGMGLD": 0.15000000596046448,
+                            "IMHBEGIKDKB": 0.6000000238418579,
+                            "HENDIIJFPCI": 250.0,
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "TurnLeft"
+                            ],
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 100.0,
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "TurnLeft"
+                            ],
+                            "EOOBFBGMGLD": 0.15000000596046448,
+                            "IMHBEGIKDKB": 0.6000000238418579,
+                            "HENDIIJFPCI": 250.0,
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "Smash"
+                            ],
+                            "IMHBEGIKDKB": 0.30000001192092896,
+                            "HENDIIJFPCI": 700.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 2.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "BurstStrike"
+                            ],
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 400.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 2.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "SmashHeavy"
+                            ],
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 400.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 2.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "SmashHeavy_BS"
+                            ],
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 400.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 2.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "RushCombo1_DoubleSmash",
+                                "DoubleSmash",
+                                "PowerDoubleSmash"
+                            ],
+                            "EOOBFBGMGLD": 0.20000000298023224,
+                            "IMHBEGIKDKB": 0.3400000035762787,
+                            "HENDIIJFPCI": 150.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 2.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "RushCombo1_DoubleSmash",
+                                "DoubleSmash",
+                                "PowerDoubleSmash"
+                            ],
+                            "EOOBFBGMGLD": 0.5199999809265137,
+                            "IMHBEGIKDKB": 0.5699999928474426,
+                            "HENDIIJFPCI": 200.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 2.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "RushCombo1_JumpAttack"
+                            ],
+                            "IMHBEGIKDKB": 0.15000000596046448,
+                            "HENDIIJFPCI": 250.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "JumpAttack"
+                            ],
+                            "IMHBEGIKDKB": 0.15000000596046448,
+                            "HENDIIJFPCI": 400.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "JumpAttack2to4"
+                            ],
+                            "IMHBEGIKDKB": 0.09000000357627869,
+                            "HENDIIJFPCI": 500.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "ThumpEarth"
+                            ],
+                            "EOOBFBGMGLD": 0.10000000149011612,
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 600.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "ThumpEarth2to4"
+                            ],
+                            "EOOBFBGMGLD": 0.10000000149011612,
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 300.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "ThrowBigSlime"
+                            ],
+                            "IMHBEGIKDKB": 0.1599999964237213,
+                            "HENDIIJFPCI": 360.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "ThrowSmallSlime"
+                            ],
+                            "IMHBEGIKDKB": 0.1599999964237213,
+                            "HENDIIJFPCI": 360.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "RushAttack_BS"
+                            ],
+                            "IMHBEGIKDKB": 0.20000000298023224,
+                            "HENDIIJFPCI": 300.0,
+                            "NCAENFOANAG": "",
+                            "BBHBLAIEHAJ": 10.0
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "RushCombo1_Rush_BS"
+                            ],
+                            "EOOBFBGMGLD": 0.30000001192092896,
+                            "HENDIIJFPCI": 250.0,
+                            "NCAENFOANAG": ""
+                        },
+                        {
+                            "$type": "SteerAttackMixin",
+                            "EHNAPMMMNFI": [
+                                "RushCombo3_Rush_Loop"
+                            ],
+                            "EOOBFBGMGLD": 0.25,
+                            "IMHBEGIKDKB": 0.699999988079071,
+                            "HENDIIJFPCI": 300.0,
+                            "NCAENFOANAG": ""
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_Core",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        901,
+                        902,
+                        903
+                    ],
+                    "GAIGOBCNNEE": "Monster_Brute_Rock_ExitBattle"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Monster_Brute_Rock_PowerStateOff",
+                        "Monster_Brute_Rock_PowerStateOn"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Brute_Rock_ExitBattle": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Brute_Rock_CoreOn"
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                1
+                            ]
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "NPHOOPNDCAC": "Caster",
+                            "intID": "CoreState"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -3.0,
+                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POSE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAISkillGCD",
+                            "weight": 7.0
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ExitPower"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Brute_Rock_CoreOn": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 90.0,
+                    "elementType": "Rock",
+                    "elementDurability": 500.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "NPHOOPNDCAC": "Caster",
+                            "intID": "CoreState",
+                            "weight": 1
+                        },
+                        {
+                            "$type": "SetAISkillGCD",
+                            "NPHOOPNDCAC": "Caster",
+                            "weight": 1.7000000476837158
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POSE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Brute_Rock_SoundEffect"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ExitPower",
+                            "value": true
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "DoWatcherSystemAction",
+                            "GPGMPHIIAMD": 82017,
+                            "LNGKALMLMGN": true
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Brute_Rock_SoundEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_PowerSound",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Brute_Rock_CoreOn_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2799999713897705,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Brute_Rock_CoreOn_ForSure"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                                            "value": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Brute_Rock_CoreOn"
+                        },
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeRange": 8.0,
+                                "shakeTime": 0.4000000059604645,
+                                "shakeDistance": 40.0,
+                                "extension": {}
+                            },
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Brute_Rock_CoreOn_ForSure": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                                            "value": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Brute_Rock_CoreOn"
+                        }
+                    ],
+                    "HNOLIHHLCOO": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                                            "value": 1.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Brute_Rock_CoreOn"
+                        }
+                    ]
+                },
+                "Monster_Brute_Rock_PowerStateOff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerState"
+                        }
+                    ],
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerState"
+                        }
+                    ],
+                    "HNOLIHHLCOO": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerState"
+                        }
+                    ]
+                },
+                "Monster_Brute_Rock_PowerStateOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerState",
+                            "value": true
+                        }
+                    ],
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerState",
+                            "value": true
+                        }
+                    ],
+                    "HNOLIHHLCOO": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerState",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Brute_Rock_CoreOn_Handler"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_ExitPower",
+            "HNEIEGHMLKH": {
+                "Monster_Brute_Rock_ExitPower_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Brute_Rock_ExitPower_ForSure"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Brute_Rock_ExitPower"
+                        }
+                    ]
+                },
+                "Monster_Brute_Rock_ExitPower_ForSure": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Brute_Rock_ExitPower"
+                        }
+                    ],
+                    "HNOLIHHLCOO": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Brute_Rock_ExitPower"
+                        }
+                    ]
+                },
+                "Monster_Brute_Rock_ExitPower": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "NPHOOPNDCAC": "Caster",
+                            "intID": "CoreState"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -3.0,
+                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POSE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAISkillGCD",
+                            "weight": 7.0
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ExitPower"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POWER_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Brute_Rock_ExitPower_Handler"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Ice_Core",
+            "HNEIEGHMLKH": {
+                "Core_Ice_Element": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Ice",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Shield_ShieldBroken"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetPoseInt",
+                    "NPHOOPNDCAC": "Owner",
+                    "intID": "CoreState"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_CORE_IS_BREAK",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Core_Ice_Element"
+                }
+            ],
+            "POCIJLIJCIE": [
+                {
+                    "$type": "SetPoseInt",
+                    "NPHOOPNDCAC": "Owner",
+                    "intID": "CoreState",
+                    "weight": 1
+                },
+                {
+                    "$type": "DamageByAttackValue",
+                    "NPHOOPNDCAC": "Target",
+                    "attackInfo": {
+                        "attackTag": "",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 0.0,
+                            "damagePercentageRatio": 0.0,
+                            "elementDurability": 100.0,
+                            "strikeType": "Default",
+                            "enBreak": 1000.0
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV4",
+                            "hitHaltTimeScale": 0.05000000074505806
+                        }
+                    }
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 0.20000000298023224,
+                        "shakeTime": 0.15000000596046448,
+                        "shakeDistance": 25.0,
+                        "shakeDir": {
+                            "_y": 1.0,
+                            "_z": 0.5
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Ice_CoreSheild",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        111
+                    ],
+                    "GAIGOBCNNEE": "Brute_Ice_AddCoreSheild"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Brute_Ice_AddCoreSheild": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_PowerJumpAttack_RockWave",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -2.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 2.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": -45.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 2.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 2.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 45.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 2.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": -2.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 135.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -2.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": -2.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": -135.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_JumpRange",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "GMFCOCAJBDM": "LesserOrEqual",
+                            "value": 5.0
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "TryFindBlinkPointByBorn",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTargetLinearPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "FOILCBGLNDF": -2.0,
+                                "CMIMPOFEKOL": false,
+                                "JBNMHNDDJJC": 0.0,
+                                "GCJBBHLBLLG": 20.0
+                            },
+                            "GIEHOPEJIMK": "BlinkHitSceneTestByThreeSegments",
+                            "ILELFGNFDLO": 2.5
+                        },
+                        {
+                            "$type": "FixedMonsterRushMove",
+                            "FJCBIPKOKMF": {
+                                "$type": "ConfigBornByTeleportToPoint"
+                            },
+                            "FPIJACIKJKL": 0.8100000023841858,
+                            "MPOEADACOHO": [
+                                "JumpAttack",
+                                "JumpAttack2",
+                                "PowerJumpAttack",
+                                "PowerJumpAttackFirst",
+                                "PowerJumpAttackSecond",
+                                "PowerJumpAttackThird",
+                                "PowerJumpAttackFourth"
+                            ],
+                            "AGIKEIFOMLO": "",
+                            "POGPMFFDEMG": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_JumpAttack_Alert",
+            "HNEIEGHMLKH": {
+                "JumpAttackAlertEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 5.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_JumpAttack_Alert",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 3.1500000953674316
+                                        }
+                                    }
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_JumpAttack_Alert",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByRushToPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "JumpCollider": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.800000011920929,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetCastShadow"
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetCastShadow",
+                            "BGJPIMFBHDP": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "JumpAttackAlertEffect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "JumpCollider"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_JumpAttack_Damage",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "JumpAttack"
+                    ],
+                    "GAIGOBCNNEE": "SetJumpAttackHit"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "SetJumpAttackHit": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "SkillHitState",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 2.0
+                                }
+                            },
+                            "secondHeight": 2.5,
+                            "ICGFCBOFFDI": 4.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV8",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 5.0,
+                                "shakeTime": 0.20000000298023224,
+                                "shakeDistance": 35.0,
+                                "shakeDir": {
+                                    "_y": 2.0
+                                },
+                                "extension": {}
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_GoEmptyPose",
+            "HNEIEGHMLKH": {
+                "Brute_Rock_GoEmptyPose": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "NPHOOPNDCAC": "Caster",
+                            "intID": "CoreState",
+                            "weight": 2
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POSE",
+                                    "value": 0.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetPoseInt",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "intID": "CoreState"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetPoseInt",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "intID": "CoreState",
+                                    "weight": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -3.0,
+                    "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_POSE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 2.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Brute_Rock_GoEmptyPose"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_RushComboAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushCombo1_Rush_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushCombo2_Rush_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushCombo3_Rush_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttackHittingSceneMixin",
+                    "HOAPIHIBOCB": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "CrashTrigger"
+                        }
+                    ],
+                    "MIMLCECCJAL": [
+                        "ShieldRush_HitScene"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Rush": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_RushAttack_Rush"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "AHLLKFIGNAO": true
+                                }
+                            ],
+                            "triggerID": "SkillHitTrigger"
+                        }
+                    ]
+                },
+                "RushAttack_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2000000476837158,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.4000000059604645
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "RushAttack_Damage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Ice_RushComboAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushCombo1_Rush_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushCombo2_Rush_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RushCombo3_Rush_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Rush"
+                },
+                {
+                    "$type": "AttackHittingSceneMixin",
+                    "HOAPIHIBOCB": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "CrashTrigger"
+                        }
+                    ],
+                    "MIMLCECCJAL": [
+                        "ShieldRush_HitScene"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Rush": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_None_RushAttack_Rush"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "AHLLKFIGNAO": true
+                                }
+                            ],
+                            "triggerID": "SkillHitTrigger"
+                        }
+                    ]
+                },
+                "RushAttack_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2000000476837158,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.4000000059604645
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "RushAttack_Damage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_ChangeShader",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "HHFIHBEAPAP": "SkinTrigger",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_ThumpEarth_Attack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "_MONSTER_BRUTE_ROCK_THUMPEARTH_POS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 15.0
+                        }
+                    },
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 5.0,
+                        "shakeTime": 0.20000000298023224,
+                        "shakeDistance": 25.0,
+                        "shakeDir": {
+                            "_y": 2.0
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 0.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 1.7000000476837158,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 30.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -1.7000000476837158,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": -30.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_CloseShader",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "HHFIHBEAPAP": "SkinTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_ThumpEarth_AttackFinal",
+            "HNEIEGHMLKH": {
+                "ActCameraShakeDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 5.0,
+                                "shakeTime": 0.20000000298023224,
+                                "shakeDistance": 25.0,
+                                "shakeDir": {
+                                    "_y": 2.0
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ActCameraShakeDelay"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102008,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 1.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 0.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102008,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.5,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 30.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102008,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -0.5,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": -30.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_CreateSlime",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeRange": 8.0,
+                        "shakeTime": 0.30000001192092896
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_ThrowBigSlime",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102009,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.10000000149011612,
+                            "PHDCJAHHIOG": 1.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Rock_ThrowSmallSlime",
+            "HNEIEGHMLKH": {
+                "Brute_ThrowSmallSlime_Two": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42102010,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.10000000149011612,
+                                    "PHDCJAHHIOG": 1.0
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Brute_ThrowSmallSlime_Three": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42102010,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.10000000149011612,
+                                    "PHDCJAHHIOG": 1.0
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102010,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.10000000149011612,
+                            "PHDCJAHHIOG": 1.0
+                        }
+                    }
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Brute_ThrowSmallSlime_Two"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Brute_ThrowSmallSlime_Three"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_BigSlime_Explode",
+            "HNEIEGHMLKH": {
+                "Trail": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_ThrowBig_Bullet"
+                        }
+                    ]
+                },
+                "OpenColliderDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger",
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Trail"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "OpenColliderDelay"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Trail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 4.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.25,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Rock",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV6",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeRange": 5.0,
+                                "shakeTime": 0.10000000149011612,
+                                "shakeDistance": 25.0,
+                                "extension": {
+                                    "rangeAttenuation": 0.8999999761581421
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_ThrowBig_Explode",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint",
+                        "ANAGBFPADIE": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Rock_SmallSlime_Explode",
+            "HNEIEGHMLKH": {
+                "Trail": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_ThrowSmall_Bullet"
+                        }
+                    ]
+                },
+                "OpenColliderDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger",
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Trail"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "OpenColliderDelay"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Trail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Rock",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV4",
+                                "retreatType": "ByHitDirection",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeRange": 0.20000000298023224,
+                                "shakeTime": 0.30000001192092896,
+                                "shakeDistance": 25.0,
+                                "extension": {
+                                    "rangeAttenuation": 0.8999999761581421
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Rock_ThrowSmall_Explode",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint",
+                        "ANAGBFPADIE": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_TowerDefence_Affix_PowerUp",
+            "HNEIEGHMLKH": {
+                "Monster_Brute_TowerDefence_Affix_PowerUp": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Predicated",
+                            "CFIPAGENGPE": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_BRUTE_TOWER_POWERUP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "UseSkillEliteSet",
+                                    "AFIOIAPCKEJ": 2
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "UseSkillEliteSet",
+                                    "AFIOIAPCKEJ": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTERAFFIX_BRUTE_TOWER_POWERUP",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Brute_TowerDefence_Affix_PowerUp"
+                }
+            ]
+        }
+    }
+]

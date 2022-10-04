@@ -1,0 +1,352 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Human_Male_Pole_ResetBackSprintCD",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "GroupAttack01",
+                        "GroupAttack02"
+                    ],
+                    "MCFCEOACJEB": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                401
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "TestFixedCombatMove",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "ACOKKHADPOJ": true,
+                    "HJJEAOMEOFI": "_ABILITY_Millelith_Target_Pos",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget"
+                    },
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "SetCombatFixedMovePoint",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 4.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 30.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        },
+                        "GDENJEFPMGC": "_ABILITY_Millelith_Target_Pos",
+                        "MICIJLHMIIH": ""
+                    }
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Surround",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Human_Male_Pole_ResetSurroundPosition",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -10.0,
+                    "HJJEAOMEOFI": "_ABILITY_Millelith_SorroundPositionID",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -10.0,
+                    "HJJEAOMEOFI": "_ABILITY_Millelith_SorroundPositionID",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Human_Male_Pole_TurnToSurround",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "TurnToSurround"
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Surround",
+                            "value": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Human_Male_Pole_WaitState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "Wait"
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Human_Male_Pole_ResetSurroundPosition"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Wait",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Surround"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "WaitTimer"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR25",
+                                "ONPOPLLHJLE": "AllExceptSelf",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Count_WaitingSoldiers",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "WaitTimer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Wait"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Human_Male_Pole_SetSurroundPosition",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Millelith_SorroundPositionID",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "T",
+                        "T",
+                        "T",
+                        "T"
+                    ],
+                    "PGDAAKDDCOD": [
+                        [
+                            {
+                                "$type": "SetCombatFixedMovePoint",
+                                "GDIJEIEOGEK": false
+                            }
+                        ],
+                        [
+                            {
+                                "$type": "SetGlobalPos",
+                                "NPHOOPNDCAC": "SelfAttackTarget",
+                                "ACOKKHADPOJ": true,
+                                "HJJEAOMEOFI": "_ABILITY_Millelith_Target_Pos",
+                                "NGDMCBABOJA": {
+                                    "$type": "ConfigBornByTarget",
+                                    "offset": {
+                                        "AEAAJCIDPED": 2.4000000953674316,
+                                        "KAAPLGBEDPM": 0.0,
+                                        "PHDCJAHHIOG": 1.5
+                                    }
+                                },
+                                "OGADOPDNBMM": false
+                            },
+                            {
+                                "$type": "SetCombatFixedMovePoint",
+                                "FJCBIPKOKMF": {
+                                    "$type": "ConfigBornByGlobalValue",
+                                    "GDENJEFPMGC": "_ABILITY_Millelith_Target_Pos",
+                                    "MICIJLHMIIH": ""
+                                }
+                            }
+                        ],
+                        [
+                            {
+                                "$type": "SetGlobalPos",
+                                "NPHOOPNDCAC": "SelfAttackTarget",
+                                "ACOKKHADPOJ": true,
+                                "HJJEAOMEOFI": "_ABILITY_Millelith_Target_Pos",
+                                "NGDMCBABOJA": {
+                                    "$type": "ConfigBornByTarget",
+                                    "offset": {
+                                        "AEAAJCIDPED": -2.4000000953674316,
+                                        "KAAPLGBEDPM": 0.0,
+                                        "PHDCJAHHIOG": 1.5
+                                    }
+                                },
+                                "OGADOPDNBMM": false
+                            },
+                            {
+                                "$type": "SetCombatFixedMovePoint",
+                                "FJCBIPKOKMF": {
+                                    "$type": "ConfigBornByGlobalValue",
+                                    "GDENJEFPMGC": "_ABILITY_Millelith_Target_Pos",
+                                    "MICIJLHMIIH": ""
+                                }
+                            }
+                        ],
+                        [
+                            {
+                                "$type": "SetGlobalPos",
+                                "NPHOOPNDCAC": "SelfAttackTarget",
+                                "ACOKKHADPOJ": true,
+                                "HJJEAOMEOFI": "_ABILITY_Millelith_Target_Pos",
+                                "NGDMCBABOJA": {
+                                    "$type": "ConfigBornByTarget",
+                                    "offset": {
+                                        "AEAAJCIDPED": 0.0,
+                                        "KAAPLGBEDPM": 0.0,
+                                        "PHDCJAHHIOG": -3.0
+                                    }
+                                },
+                                "OGADOPDNBMM": false
+                            },
+                            {
+                                "$type": "SetCombatFixedMovePoint",
+                                "FJCBIPKOKMF": {
+                                    "$type": "ConfigBornByGlobalValue",
+                                    "GDENJEFPMGC": "_ABILITY_Millelith_Target_Pos",
+                                    "MICIJLHMIIH": ""
+                                }
+                            }
+                        ]
+                    ],
+                    "GMOHJLJMBGN": false
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "T": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Millelith_TurnToOrdered",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "TurnToOrdered"
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_OrderedState"
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_OrderedState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Ordered",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Ordered"
+                        },
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                201,
+                                202
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Millelith_OutOfOrdered",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_OrderedState"
+                }
+            ]
+        }
+    }
+]

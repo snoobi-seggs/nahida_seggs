@@ -1,0 +1,514 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_Squirrel_Escape",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "EscapeBS",
+                    "GAIGOBCNNEE": "Monster_Oceanid_Squirrel_Escape",
+                    "AAIFCLGLOMO": 0.18000000715255737,
+                    "MMHONEIBHNP": 0.5
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_Squirrel_Escape": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "HJJEAOMEOFI": "_OCEANID_SQUIRREL_ESCAPEPOINT",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -7.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TurnDirectionToPos",
+                            "FJCBIPKOKMF": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 0.0,
+                                    "MFBOELKCPDP": 5.0
+                                },
+                                "GDENJEFPMGC": "_OCEANID_SQUIRREL_ESCAPEPOINT",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_Squirrel_RangeAttack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42005022,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.5,
+                            "PHDCJAHHIOG": 1.5
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Oceanid_Squirrel_WaterWaveEffect",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Oceanid_Squirrel_SweepWaterWave"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Water",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV2",
+                                "retreatType": "ByHitDirection"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_Squirrel_JumpAttack",
+            "HNEIEGHMLKH": {
+                "Monster_Oceanid_Squirrel_JumpAttack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_Squirrel_JumpAtkDLCDamage"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_MONSTER_OCEANID_SQUIRREL_JUMPATTACKPOINT",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "secondHeight": 3.0,
+                                    "ICGFCBOFFDI": 2.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Squirrel_JumpAttack",
+                                    "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.800000011920929,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Water",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 101.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseY": 800.0,
+                                        "hitImpulseType": "LV2"
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_OCEANID_ANIMAL_SP",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "HJJEAOMEOFI": "_MONSTER_OCEANID_SQUIRREL_JUMPATTACKPOINT",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf"
+                    }
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Oceanid_Squirrel_JumpAttack"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_Squirrel_Steer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Turn"
+                    ],
+                    "IMHBEGIKDKB": 0.6000000238418579,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 1.5
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Scratch1"
+                    ],
+                    "IMHBEGIKDKB": 0.47999998927116394,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 1.5
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Scratch2"
+                    ],
+                    "IMHBEGIKDKB": 0.47999998927116394,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 1.5
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Sweep1"
+                    ],
+                    "IMHBEGIKDKB": 0.33000001311302185,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 1.5
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Sweep2"
+                    ],
+                    "IMHBEGIKDKB": 0.33000001311302185,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 1.5
+                },
+                {
+                    "$type": "SteerAttackTraceMixin",
+                    "EHNAPMMMNFI": [
+                        "Scratch_Rush"
+                    ],
+                    "IMHBEGIKDKB": 3.0,
+                    "HENDIIJFPCI": 90.0,
+                    "NCAENFOANAG": "Rush_Stop",
+                    "BBHBLAIEHAJ": 5.0
+                },
+                {
+                    "$type": "SteerAttackTraceMixin",
+                    "EHNAPMMMNFI": [
+                        "Sweep_Rush"
+                    ],
+                    "IMHBEGIKDKB": 3.0,
+                    "HENDIIJFPCI": 90.0,
+                    "NCAENFOANAG": "Rush_Stop",
+                    "BBHBLAIEHAJ": 5.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_Squirrel_HealHp",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_HEALHP_STATE_",
+                    "FEGIOIGELHB": 1.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Empty",
+                        "UNIQUE_Oceanid_Water_HealHp"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "HealHP": 0.03750000149011612,
+                "HealHPHigh": 0.15000000596046448
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Oceanid_Water_HealHp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.5,
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "SGV_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAny",
+                                            "predicates": [
+                                                {
+                                                    "$type": "ByHitElement",
+                                                    "GOMLPAOIKJA": "Fire"
+                                                },
+                                                {
+                                                    "$type": "ByTargetGlobalValue",
+                                                    "HJJEAOMEOFI": "_OCEANID_ANIMAL_SP",
+                                                    "value": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "HealHP_Pause_AffixUp"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAny",
+                                            "predicates": [
+                                                {
+                                                    "$type": "ByHitElement",
+                                                    "GOMLPAOIKJA": "Fire"
+                                                },
+                                                {
+                                                    "$type": "ByTargetGlobalValue",
+                                                    "HJJEAOMEOFI": "_OCEANID_ANIMAL_SP",
+                                                    "value": 1.0
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "HealHP_Pause"
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "SGV_MONSTERAFFIX_OCEANID_02_ANIMALHEAL_UP",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "HealHP",
+                                    "PMHINCGOKCF": "HealHPHigh"
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Oceanid_Squirrel_Heal"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "HealHP",
+                                    "PMHINCGOKCF": "HealHP"
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Oceanid_Squirrel_Heal"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "HealHP_Pause": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_HEALHP_STATE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_HEALHP_STATE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ]
+                },
+                "HealHP_Pause_AffixUp": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_HEALHP_STATE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_HEALHP_STATE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ]
+                },
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Oceanid_Squirrel_ElementState",
+            "HNEIEGHMLKH": {
+                "UNIQUE_ElementState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Water",
+                    "elementDurability": 100.0,
+                    "DDLOLBGNLEF": false
+                },
+                "Monster_Oceanid_Squirrel_CommonEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Oceanid_Squirrel_CommonEffectLoop"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_ElementState"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "LOBIDJEHBGH": [
+                        "ElementWet",
+                        "Struggle"
+                    ]
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_ANIMAL_SPMASK",
+                                    "value": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_OCEANID_ANIMAL_FOOTEFFECT_OFF",
+                                    "value": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Monster_Oceanid_Squirrel_CommonEffect"
+                }
+            ]
+        }
+    }
+]

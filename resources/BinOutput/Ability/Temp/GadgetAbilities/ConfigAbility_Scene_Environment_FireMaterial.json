@@ -1,0 +1,1422 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_ImmortalFire",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Fire_Action01"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ImmortalFire_01_Fire"
+                        }
+                    ]
+                },
+                "Fire_Action01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ImmortalFire_01_Fire"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Common_Property_Ani_Prop_ImmortalFireOnly_01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ImmortalFire_01_Fire"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_Ceremony_Fires",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Fire_Camp_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_FireBasin_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_FireBasinSnowMountain_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_FireBasinSnowMountain_HideSeek",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 60.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_FireBasinSnowMountain_Interact_02",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_02"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_Torch01_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.20000000298023224
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_BornFires_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_BornFires_Interact_SnowMountain",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_Bornfires_HideSeek_SnowMountain",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 60.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.4000000059604645
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_CookingPot_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.10000000149011612
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_01_Fire"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_01_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_CookingPotSnowMountain_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.10000000149011612
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_01_Fire"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_01_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_CookingPot02_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.10000000149011612
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_01_Fire"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_02_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_CookingPotSnowMountain02_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.10000000149011612
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_01_Fire"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Cooking_02_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "RootNode"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "IS_WARM_POINT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_CookingPot_NoLight",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.10000000149011612
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_FireCook_01NoLight"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_FireMaterial_LYG_YGriller_01_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Fire_Off"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Fire_On"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 25.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TileComplexMixin",
+                            "GBLOOEEEHOF": "TileAttack_FireSource",
+                            "KJNJNKLLNCN": "attachPoint",
+                            "shape": {
+                                "$type": "SphereTileShapeInfo",
+                                "BPLAKLDAHHD": 0.10000000149011612
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Griller_FireCook_01"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "FireBasin_Smoke",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "attachPoint"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

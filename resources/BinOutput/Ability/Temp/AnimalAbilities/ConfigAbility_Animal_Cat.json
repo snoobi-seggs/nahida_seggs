@@ -1,0 +1,437 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_SitDown",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ActionState",
+                    "weight": 1
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_Prone",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ActionState",
+                    "weight": 2
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_StandUp",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseInt",
+                    "intID": "ActionState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_AIStateInitial",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        1
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                102,
+                                103
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        101
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                112,
+                                113
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        2,
+                        12
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                201,
+                                202,
+                                203
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        201
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                211,
+                                212,
+                                213
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        3,
+                        13
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                301,
+                                302
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        301
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                311,
+                                312
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Invincible"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DenyLockOn"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 11001
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_BeHit",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        1,
+                        2,
+                        3,
+                        101,
+                        201,
+                        202,
+                        301,
+                        302,
+                        12,
+                        13
+                    ],
+                    "GAIGOBCNNEE": "BeHitCount"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Disappear"
+                    ],
+                    "GAIGOBCNNEE": "Disappear"
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        5,
+                        501
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "FleeCountDown"
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BeHitCount": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "DodgeWeight",
+                            "NPDHFAKOCJC": true,
+                            "JDGCMDOIDDI": 0.0,
+                            "KGAKOONKNAD": 1.0
+                        },
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar",
+                                        "Monster",
+                                        "Gadget",
+                                        "Bullet"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "triggerID": "BeHitTrigger"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetPoseBool",
+                                    "HHFIHBEAPAP": "FleeState",
+                                    "value": true
+                                },
+                                {
+                                    "$type": "SetAnimatorBool",
+                                    "HHFIHBEAPAP": "FleeState",
+                                    "value": true
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ActionState"
+                        }
+                    ]
+                },
+                "Disappear": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "StartDither",
+                            "duration": 3.0
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "duration": 2.0,
+                            "BEKKIHBPHGD": true,
+                            "EOIGEKNINFE": true,
+                            "PGGBJIDIINM": "Disappear"
+                        }
+                    ]
+                },
+                "FleeCountDown": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "FleeState"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "FleeState"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_CautiousRunning",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        402
+                    ],
+                    "GAIGOBCNNEE": "CautiousRunSpeedModifier"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Disappear_Cautious"
+                    ],
+                    "GAIGOBCNNEE": "Disappear_Cautious"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "CautiousRunSpeedModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "MoveSpeedRatio",
+                            "value": 1.5
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "FleeState",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "FleeState",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "DisappearCautious",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "MoveSpeedRatio",
+                            "value": 1.0
+                        }
+                    ]
+                },
+                "Disappear_Cautious": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "StartDither",
+                            "duration": 5.0
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "duration": 1.0,
+                            "BEKKIHBPHGD": true,
+                            "EOIGEKNINFE": true,
+                            "PGGBJIDIINM": "Disappear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_TurnToSurround",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Surround",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_OutOfSurround",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Surround"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Animal_Cat_CatFeedPointRegister",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "HungryAction",
+                        "HungryAfterAction"
+                    ],
+                    "GAIGOBCNNEE": "CatFeedPointRegister"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "CatFeedPointRegister": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RegisterAIActionPoint",
+                            "pointType": "CatFeedPoint"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ReleaseAIActionPoint",
+                            "pointType": "CatFeedPoint"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "ReleaseAIActionPoint",
+                            "pointType": "CatFeedPoint"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

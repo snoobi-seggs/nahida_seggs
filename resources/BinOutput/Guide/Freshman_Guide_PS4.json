@@ -1,0 +1,1298 @@
+{
+    "GuideCameraMovePS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MOVE_CAMERA"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_CAMERA_ROTATE_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "ChangeView"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 12.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MOVE_CAMERA",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarMovePS"
+            }
+        ]
+    },
+    "GuideAvatarMovePS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MOVE"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_MOVE_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "Move"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarActionCondition"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 8.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MOVE",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarSprintPS"
+            }
+        ]
+    },
+    "GuideAvatarSprintPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_SPRINT"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "JOLBODJLNNK": [
+                            {
+                                "JKANEFEALGC": "UI_GUIDE_INFO_SPRINT_PS",
+                                "GHDJNBMMEFJ": [
+                                    "SprintOrSkill3"
+                                ]
+                            },
+                            {
+                                "JKANEFEALGC": "UI_GUIDE_INFO_SPRINT_HOLD_PS",
+                                "GHDJNBMMEFJ": [
+                                    "SprintOrSkill3"
+                                ]
+                            }
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "TriggerSkill3Event"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 10.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_SPRINT",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarJumpPS"
+            }
+        ]
+    },
+    "GuideAvatarJumpPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_JUMP"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_JUMP_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "TriggerSkill4Event"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 8.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_JUMP",
+                "value": true
+            }
+        ]
+    },
+    "GuideAvatarAttackPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ATTACK"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ATTACK_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "Skill1"
+                        ],
+                        "OCAPCKHKIAH": -0.699999988079071,
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "TriggerSkill1Event"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 15.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ATTACK",
+                "value": true
+            }
+        ]
+    },
+    "GuideInteractionPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_INTERACTION_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "TalkOrPick"
+                        ],
+                        "OCAPCKHKIAH": 0.699999988079071,
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 5.0
+                }
+            ]
+        ]
+    },
+    "GuideElementSkillPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ELEMENT_SKILL_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "Skill2"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "TriggerSkill2Event"
+                }
+            ]
+        ]
+    },
+    "GuideElementSkillHoldPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ELEMENT_SKILL_HOLD_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "Skill2"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "TriggerSkill2Event",
+                    "NBPKEBANCFD": "ReleaseSkill2Event",
+                    "type": "Charge",
+                    "weight": 1.0
+                }
+            ]
+        ]
+    },
+    "GuideElementSkillBurstPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ELEMENT_SKILL_BURST_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "Skill5"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "TriggerSkill5Event"
+                }
+            ]
+        ]
+    },
+    "GuideAsterPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ACTIVITY_SKILL_ASTER"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/GrpSkill/Charge",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_ASTER",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "JoypadExtraSelect/Content/4/ActionBtn_Charge",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_ASTER",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "L",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenStateCondition",
+                    "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ACTIVITY_SKILL_ASTER",
+                    "value": true
+                }
+            ]
+        ]
+    },
+    "GuideChooseAmborPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChooseAmborPSStep3"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChooseAmborPSReal"
+            }
+        ]
+    },
+    "GuideChooseAmborPSReal": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_SWITCH_CHARACTER2_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "DPadRight"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarChangeCondition",
+                    "APIAFGPIIHE": 10000021
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideChooseAmborPSStep3"
+            },
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideChooseAmborPSStep2"
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAmbor1AimPS"
+            }
+        ]
+    },
+    "GuideChooseAmborPSStep2": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "KCFAOMKBKPL": "InLevelVirtualDialDialog"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "DPadRightEvent"
+                ],
+                "IJMJJADJBNG": [
+                    "ToAvatar2Event"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                    "enable": false
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChooseAmborPSStep3"
+            }
+        ]
+    },
+    "GuideChooseAmborPSStep3": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "DPadRightEvent"
+                ],
+                "IJMJJADJBNG": [
+                    "ToAvatar2Event"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "KCFAOMKBKPL": "InLevelVirtualDialDialog"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChooseAmborPSStep2"
+            }
+        ]
+    },
+    "GuideAmbor1AimPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ENTER_AIMING1_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "LeftTrigger"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "EnterFocusModeEvent",
+                    "ToggleAttackModeEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckAimCondition",
+                    "value": true
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAmbor3KillSlimPS"
+            }
+        ]
+    },
+    "GuideAmbor3KillSlimPS": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "JOLBODJLNNK": [
+                            {
+                                "JKANEFEALGC": "UI_GUIDE_INFO_ENTER_AIMING2_PS",
+                                "GHDJNBMMEFJ": [
+                                    "ChangeView"
+                                ]
+                            },
+                            {
+                                "JKANEFEALGC": "UI_GUIDE_INFO_ENTER_AIMING3_PS",
+                                "GHDJNBMMEFJ": [
+                                    "Skill2"
+                                ]
+                            }
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "ChangeViewEvent",
+                    "TriggerSkill2Event",
+                    "ReleaseSkill2Event"
+                ],
+                "EMGBMLIMIIP": [
+                    10,
+                    20,
+                    20
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckTaskFinishCondition",
+                    "FADPODJNDFL": 35404
+                }
+            ]
+        ]
+    },
+    "GuideRaidarPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_RADAR1_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "LeftShoulder"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "NewbiePanel/Key/Content/Key",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_RADAR2_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_RADAR2_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "BELCHBHDHGP": "CenterVirtualDial",
+                        "weight": 15.0,
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 12.0
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideCenterVirtualDialActionCondition",
+                    "HOEKPACIHKE": 15
+                }
+            ]
+        ]
+    },
+    "GuideTransportPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_RADAR1_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "LeftShoulder"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "NewbiePanel/Key/Content/Key",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_RADAR3_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_RADAR3_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "BELCHBHDHGP": "CenterVirtualDial",
+                        "weight": 15.0,
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpMap/MarkContainer/Layer1/10",
+                        "KCFAOMKBKPL": "InLevelMapPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_TRANSPORT",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideMapClickCondition",
+                    "CHHADHBBONB": 10,
+                    "LHPAFCOOJPG": false
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 30.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "INILPFKPNMD": 2050702
+            }
+        ]
+    },
+    "GuideViewHotkeyPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_VIEW_PAIMON1_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "OpenPaimon"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpProfile/Left/Panel/BtnSetting/Content",
+                        "KCFAOMKBKPL": "PlayerProfilePage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_VIEW_PAIMON2_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "BR",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 15.0
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "HFEJJCGGDBP": "GrpProfile/Left/Panel/BtnSetting/Content",
+                    "KCFAOMKBKPL": "PlayerProfilePage"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "INILPFKPNMD": 2050901
+            }
+        ]
+    },
+    "GuideViewHelpPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ADVENTURE_CARD"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "LeftShoulder"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "NewbiePanel/Key/Content/Key",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "BELCHBHDHGP": "CenterVirtualDial",
+                        "weight": 17.0,
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "HFEJJCGGDBP": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                    "KCFAOMKBKPL": "InLevelVirtualDialDialog"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "KCFAOMKBKPL": "AdventureHandbookPage"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "IABJDAMEBOC": "HelpEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 30.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
+                "value": true
+            }
+        ]
+    },
+    "GuideAdventureDailyTaskPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "LeftShoulder"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "NewbiePanel/Key/Content/Key",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "BELCHBHDHGP": "CenterVirtualDial",
+                        "weight": 17.0,
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
+                        "KCFAOMKBKPL": "AdventureHandbookPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "HFEJJCGGDBP": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
+                    "KCFAOMKBKPL": "AdventureHandbookPage"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 30.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
+                "value": true
+            }
+        ]
+    },
+    "GuideAdventureDungeonPS": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON"
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "PS4",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PS",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "LeftShoulder"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "NewbiePanel/Key/Content/Key",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON1_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "InLevelVirtualDialDialog",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON1_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "BELCHBHDHGP": "CenterVirtualDial",
+                        "weight": 17.0,
+                        "ELCLIBPMPDB": "",
+                        "HJOOBFPBNIJ": 1
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpAdventureHandbook/GrpHandbook/Menu/BtnDungeon/Content",
+                        "KCFAOMKBKPL": "AdventureHandbookPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "B",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/DungeonList/Abyssus/GrpAction_PS4/BtnCheck_PS4/Content/Touch",
+                        "KCFAOMKBKPL": "AdventureHandbookPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON2_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "BELCHBHDHGP": "DynUIItem",
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/DungeonList/Abyssus/GrpAction_PS4/BtnHelp_PS4/Content/Touch",
+                        "KCFAOMKBKPL": "AdventureHandbookPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON_TIPS_PS",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "L",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "HFEJJCGGDBP": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/DungeonList/Abyssus/GrpAction_PS4/BtnHelp_PS4/Content",
+                    "KCFAOMKBKPL": "AdventureHandbookPage"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 30.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
+                "value": true
+            }
+        ]
+    }
+}

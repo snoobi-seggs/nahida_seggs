@@ -1,0 +1,231 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Dvalin_S00_StateController",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "StageReadyMixin",
+                    "DLEFDCFBLDE": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "STAGE_ALREADY_BEGIN",
+                                    "value": 1.0
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Init"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "STAGE_ALREADY_BEGIN",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Init": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 12.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DvalinS01PathEffsMixin",
+                            "KIOFNNMBGGF": 4,
+                            "MPDPBJCICMM": 3,
+                            "CNIAOPOIFHG": [
+                                {
+                                    "effectName": "Eff_Monster_Dvalin_S01_Cloud01",
+                                    "facingMoveMinAvoidanceVelecity": 0.0,
+                                    "obstacleDetectRange": 0.0,
+                                    "CNFLHINKJJN": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "PROCESS_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "DFM_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 2.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "STAGE_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42901048
+                            },
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "AIRFLOW_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 2.0
+                        },
+                        {
+                            "$type": "ShowReminder",
+                            "angularVelocityThreshold": 20010031
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "S00"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "SetShootCamera"
+                        }
+                    ]
+                },
+                "S00": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DvalinS01PathEffsMixin",
+                            "KIOFNNMBGGF": 4,
+                            "MPDPBJCICMM": 3,
+                            "CNIAOPOIFHG": [
+                                {
+                                    "effectName": "Eff_Monster_Dvalin_S01_Cloud01",
+                                    "facingMoveMinAvoidanceVelecity": 0.0,
+                                    "obstacleDetectRange": 0.0,
+                                    "CNFLHINKJJN": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "HPBAR_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 2.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "DFM_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 2.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "S01"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Dvalin_HitBlood",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByHitPoint"
+                            }
+                        }
+                    ]
+                },
+                "S01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DvalinS01PathEffsMixin",
+                            "KIOFNNMBGGF": 4,
+                            "MPDPBJCICMM": 3,
+                            "CNIAOPOIFHG": [
+                                {
+                                    "effectName": "Eff_Monster_Dvalin_S01_Cloud01",
+                                    "facingMoveMinAvoidanceVelecity": 0.0,
+                                    "obstacleDetectRange": 0.0,
+                                    "CNFLHINKJJN": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "DFM_STATE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Dvalin_HitBlood",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByHitPoint"
+                            }
+                        }
+                    ]
+                },
+                "SetShootCamera": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "AVATAR_SHOOT_MODE",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Dvalin_S00_ResetSkyBox",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ResetEnviroEular"
+                }
+            ]
+        }
+    }
+]

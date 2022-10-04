@@ -1,0 +1,1808 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_State",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        212,
+                        222
+                    ],
+                    "GAIGOBCNNEE": "ElectricState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ElectricAxeState": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Electric",
+                    "elementDurability": 75.0,
+                    "ONDNPIMNAOC": true,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "ElectricAxe",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "ElectricAxeTag",
+                            "value": true
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_ElectricAxe"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_Electric"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "ElectricAxe"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "ElectricAxeTag"
+                        },
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                602
+                            ]
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "ElectricAxeState"
+                        }
+                    ]
+                },
+                "ElectricState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ReplaceEventPatternMixin",
+                            "LELEMIDJLMK": [
+                                "Monster_Brute_Axe_Attack01",
+                                "Monster_Brute_Axe_Attack02",
+                                "Monster_Brute_Axe_Attack03",
+                                "Monster_Brute_Axe_Attack04",
+                                "Monster_Brute_Axe_Whirl_Loop",
+                                "Monster_Brute_Axe_Whirl_AS",
+                                "Monster_Brute_Axe_JumpAttack"
+                            ],
+                            "ECCHFNODIPH": [
+                                "Monster_Brute_Electric_Axe_Attack01",
+                                "Monster_Brute_Electric_Axe_Attack02",
+                                "Monster_Brute_Electric_Axe_Attack03",
+                                "Monster_Brute_Electric_Axe_Attack04",
+                                "Monster_Brute_Electric_Axe_Whirl_Loop",
+                                "Monster_Brute_Electric_Axe_Whirl_AS",
+                                "Monster_Brute_Electric_Axe_JumpAttack"
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.800000011920929
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAISkillGCD",
+                            "weight": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAISkillGCD",
+                            "weight": 5.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip01"
+                        ]
+                    },
+                    "GAIGOBCNNEE": "ElectricAxeState"
+                },
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip01"
+                        ]
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_OnElectric",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "Blade"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_WeatherState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierByNeuronMixin",
+                    "MAHCPCDBLON": [
+                        "WEATHER_STORM"
+                    ],
+                    "GAIGOBCNNEE": "Weather_Storm"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Weather_Storm": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "WeatherStorm",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "WeatherStorm"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_Steer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Attack01"
+                    ],
+                    "EOOBFBGMGLD": 0.11999999731779099,
+                    "IMHBEGIKDKB": 0.20000000298023224,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Attack02"
+                    ],
+                    "EOOBFBGMGLD": 0.1599999964237213,
+                    "IMHBEGIKDKB": 0.41999998688697815,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Attack03"
+                    ],
+                    "EOOBFBGMGLD": 0.18000000715255737,
+                    "IMHBEGIKDKB": 0.27000001072883606,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Attack04"
+                    ],
+                    "EOOBFBGMGLD": 0.25,
+                    "IMHBEGIKDKB": 0.5,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Whirl_BS",
+                        "Whirl_Loop"
+                    ],
+                    "EOOBFBGMGLD": 0.6000000238418579,
+                    "IMHBEGIKDKB": 10.0,
+                    "HENDIIJFPCI": 60.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "CrashAttack"
+                    ],
+                    "EOOBFBGMGLD": 0.10000000149011612,
+                    "IMHBEGIKDKB": 0.23000000417232513,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 3.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "CrashAttack"
+                    ],
+                    "EOOBFBGMGLD": 0.33000001311302185,
+                    "IMHBEGIKDKB": 0.41999998688697815,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 3.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "PickUp01",
+                        "PickUp02"
+                    ],
+                    "IMHBEGIKDKB": 0.10999999940395355,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "PickUp01",
+                        "PickUp02"
+                    ],
+                    "EOOBFBGMGLD": 0.800000011920929,
+                    "IMHBEGIKDKB": 0.8999999761581421,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Throw"
+                    ],
+                    "EOOBFBGMGLD": 0.25,
+                    "IMHBEGIKDKB": 0.44999998807907104,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "CastAndThrow"
+                    ],
+                    "EOOBFBGMGLD": 0.5799999833106995,
+                    "IMHBEGIKDKB": 0.699999988079071,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_Whirl",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Whirl_Loop"
+                    ],
+                    "GAIGOBCNNEE": "WhirlLoop"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "WhirlEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_None_Axe_Whirl_Loop"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_Whirl_Loop_Big"
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_Whirl"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_Whirl"
+                            ]
+                        }
+                    ]
+                },
+                "WhirlLoop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementFrozen",
+                                "ElementPetrifaction"
+                            ],
+                            "GDLDGAGGKPN": true,
+                            "GAIGOBCNNEE": "WhirlEffect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_Whirl_Loop_Big_Last"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_None_Axe_Whirl_Loop_Last"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 1.5
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 5.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 100.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 200.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV6"
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeRange": 0.1599999964237213,
+                                        "shakeTime": 0.11999999731779099,
+                                        "shakeDistance": 25.0
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Lesser",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 1.5
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 4.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 100.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 200.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV6"
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeRange": 0.05999999865889549,
+                                        "shakeTime": 0.11999999731779099
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "AHLLKFIGNAO": true
+                                }
+                            ],
+                            "triggerID": "NextSkillTrigger"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_PickUp01",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "PickUp01",
+                        "PickUp02",
+                        "CastAndThrow",
+                        "Throw"
+                    ],
+                    "GAIGOBCNNEE": "HoldSlime"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "PickUp01_Manager": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.9599999785423279,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.03999999910593033,
+                                "shakeTime": 0.09000000357627869,
+                                "shakeDir": {
+                                    "_y": -1.0
+                                }
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.03999999910593033,
+                                "shakeTime": 0.09000000357627869,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Brute_Electric_Axe_ElectricSlimeInHand"
+                        }
+                    ]
+                },
+                "HoldSlime": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand_Positive"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_SLIMETYPE_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "PickUp01_Manager"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_PickUp02",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        212,
+                        222
+                    ],
+                    "GAIGOBCNNEE": "ResetSlimeType"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "PickUp02_Manager": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.9599999785423279,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.03999999910593033,
+                                "shakeTime": 0.09000000357627869,
+                                "shakeDir": {
+                                    "_y": -1.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": 0.5,
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_SLIMETYPE_",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ActCameraShake",
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.03999999910593033,
+                                "shakeTime": 0.09000000357627869,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_SLIMETYPE_",
+                                    "value": 0.0
+                                }
+                            ],
+                            "abilityName": "Monster_Brute_Electric_Axe_ElectricSlimeInHand"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_SLIMETYPE_",
+                                    "value": 1.0
+                                }
+                            ],
+                            "abilityName": "Monster_Brute_Electric_Axe_ElectricSlimeInHand_Positive"
+                        }
+                    ]
+                },
+                "ResetSlimeType": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_SLIMETYPE_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_SLIMETYPE_",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "PickUp02_Manager"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_ElectricSlimeInHand",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Brute_Axe_ElectricSlimeInHand": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_ElectricSlime"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_ElectricSlimeInHand_Positive",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Brute_Axe_ElectricSlimeInHand_Positive": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_ElectricSlime_Positive"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand_Positive"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_ThrowSlime",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand_Positive"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_SLIMETYPE_",
+                            "value": 0.0
+                        }
+                    ],
+                    "NGAAOMEHOGE": 42102017,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 2.0
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_SLIMETYPE_",
+                            "value": 1.0
+                        }
+                    ],
+                    "NGAAOMEHOGE": 42102018,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 2.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_CastAndThrowSlime",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Brute_Axe_ElectricSlimeInHand"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42102016,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 2.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Electric_Axe_ElectricSlime_Explode_Small",
+            "HNEIEGHMLKH": {
+                "ElectricSlime_Trail": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Electric",
+                    "elementDurability": 20.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_Trail"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElectricSlime_Trail"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "ElectricSlime_Trail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.75,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 25.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 50.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {
+                                "shakeRange": 0.05999999865889549,
+                                "shakeTime": 0.30000001192092896,
+                                "extension": {
+                                    "baseCycle": 0.07999999821186066,
+                                    "cycleDamping": 0.03999999910593033,
+                                    "rangeAttenuation": 0.8999999761581421
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_ExplodeSmall",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Electric_Axe_ElectricSlime_Explode",
+            "HNEIEGHMLKH": {
+                "ElectricSlime_Trail": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Electric",
+                    "elementDurability": 50.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_Trail"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElectricSlime_Trail"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "ElectricSlime_Trail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 2.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.25,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeRange": 0.20000000298023224,
+                                "shakeTime": 0.30000001192092896,
+                                "shakeDistance": 25.0,
+                                "extension": {
+                                    "baseCycle": 0.07999999821186066,
+                                    "cycleDamping": 0.03999999910593033,
+                                    "rangeAttenuation": 0.8999999761581421
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_Explode",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Electric_Axe_ElectricSlime_Explode_Positive",
+            "HNEIEGHMLKH": {
+                "ElectricSlime_Trail": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Electric",
+                    "elementDurability": 50.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_Trail_Positive"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElectricSlime_Trail"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "ElectricSlime_Trail"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 2.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 75.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeRange": 0.20000000298023224,
+                                "shakeTime": 0.30000001192092896,
+                                "shakeDistance": 25.0,
+                                "extension": {
+                                    "baseCycle": 0.07999999821186066,
+                                    "cycleDamping": 0.03999999910593033,
+                                    "rangeAttenuation": 0.8999999761581421
+                                }
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_SlimeThrow_Explode_Positive",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint",
+                        "ANAGBFPADIE": true
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_LightningRod",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LightningRod_Loop_01"
+                    ],
+                    "GAIGOBCNNEE": "LightningRodLoop01_Handler"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LightningRod_Loop_02"
+                    ],
+                    "GAIGOBCNNEE": "LightningRodLoop02_Handler"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LightningRod_Loop_03"
+                    ],
+                    "GAIGOBCNNEE": "LightningRodLoop03_Handler"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "LightningRod_BS",
+                        "LightningRod_Loop_01",
+                        "LightningRod_Loop_02",
+                        "LightningRod_Loop_03"
+                    ],
+                    "GAIGOBCNNEE": "Brute_Electric_Axe_LightningRod"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "LightningRodLoop01_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_LightningRod_Lightning"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "LightningRod01_Damage"
+                        }
+                    ]
+                },
+                "LightningRodLoop02_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_LightningRod_Lightning"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "LightningRod02_Damage"
+                        }
+                    ]
+                },
+                "LightningRodLoop03_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_LightningRod_Lightning"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "LightningRod03_Damage"
+                        }
+                    ]
+                },
+                "LightningRod01_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Brute_Electric_Axe_LightningRod_Damage"
+                        }
+                    ]
+                },
+                "LightningRod02_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Brute_Electric_Axe_LightningRod_Damage"
+                        }
+                    ]
+                },
+                "LightningRod03_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Brute_Electric_Axe_LightningRod_Damage"
+                        }
+                    ]
+                },
+                "Brute_Electric_Axe_LightningRod": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_WATCHER_82108_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_WATCHER_82108_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Brute_Electric_Axe_LightningRod"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_WATCHER_82108_",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DoWatcherSystemAction",
+                                    "GPGMPHIIAMD": 82108,
+                                    "KLCNAOOJHNO": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_LightningRod_Damage",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 4.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "Brute_Electric_Axe_LightningRod",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 100.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0,
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5"
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_Axe_LightningRod_Damage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_JumpAttack_Alert",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "JumpAttack",
+                    "GAIGOBCNNEE": "JumpAttack_Collider",
+                    "AAIFCLGLOMO": 0.2199999988079071,
+                    "MMHONEIBHNP": 0.3799999952316284
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "JumpAttack"
+                    ],
+                    "EOOBFBGMGLD": 0.07999999821186066,
+                    "IMHBEGIKDKB": 0.12999999523162842,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "JumpAttack_Collider": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0
+                        }
+                    ],
+                    "HHFIHBEAPAP": "EliteTag",
+                    "value": true
+                },
+                {
+                    "$type": "SetAnimatorBool",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "HHFIHBEAPAP": "EliteTag"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Brute_None_Axe_JumpAttack_Alert",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByRushToPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.25
+                        }
+                    }
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 0.05999999865889549,
+                        "shakeTime": 0.15000000596046448,
+                        "shakeDir": {
+                            "_y": 1.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_JumpAttack_Lightning",
+            "HNEIEGHMLKH": {
+                "JumpAttack_CreateLightningArea": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 6.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 6.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 6.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -6.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -6.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 6.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -6.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -6.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                },
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 222.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "JumpAttack_CreateLightningArea"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Brute_Electric_Axe_LightningArea",
+            "HNEIEGHMLKH": {
+                "LightningArea_Actions": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_None_JumpAttack_LightningAlert",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "LCDFJLIEENG": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 6.0,
+                                    "ICGFCBOFFDI": 1.75
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 1.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV3",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Brute_Electric_None_JumpAttack_Lightning",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "LightningArea_Actions"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_CrashAttack_Lightning",
+            "HNEIEGHMLKH": {
+                "CrashAttack_CreateLightningArea": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 8.5
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 6.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -3.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": -6.5,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -3.5
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                },
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 222.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "CrashAttack_CreateLightningArea"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Brute_Electric_Axe_Attack02_Lightning",
+            "HNEIEGHMLKH": {
+                "Attack02_CreateLightningArea_01": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 5.5
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Attack02_CreateLightningArea_02"
+                        }
+                    ]
+                },
+                "Attack02_CreateLightningArea_02": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 9.0
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Attack02_CreateLightningArea_03"
+                        }
+                    ]
+                },
+                "Attack02_CreateLightningArea_03": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 14.5
+                                },
+                                "JBPCKOKLHEB": true,
+                                "CGHFADKHNKK": true
+                            },
+                            "CABLIPAKCGB": 42102027,
+                            "DOLAJLACEDF": 4001
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 212.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                },
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 222.0,
+                                    "MOCGJNIDDAI": "PoseID"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Attack02_CreateLightningArea_01"
+                }
+            ]
+        }
+    }
+]

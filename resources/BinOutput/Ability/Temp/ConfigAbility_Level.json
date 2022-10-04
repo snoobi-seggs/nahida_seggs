@@ -1,0 +1,2328 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "AI_LeaveCombat_Reset",
+            "HNEIEGHMLKH": {
+                "AI_Reset_HP": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "HealHP",
+                            "NPHOOPNDCAC": "Target",
+                            "AJAHODOGLMH": 1.0,
+                            "MDALFAAHHJA": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "AI_Reset_HP"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Gadget_Level_Paimon_Apple",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPaimonLookAtAvatar",
+                    "GILCKGAMMGM": "Task",
+                    "LIBIGGAPJBH": true,
+                    "poseID": 2.200000047683716,
+                    "maxTime": 2.200000047683716
+                },
+                {
+                    "$type": "PaimonAction",
+                    "GILCKGAMMGM": "Task",
+                    "AGNGDEBFIDB": "Hope"
+                },
+                {
+                    "$type": "SetPaimonTempOffset",
+                    "GILCKGAMMGM": "Task",
+                    "CLBOLBJHPON": {
+                        "_x": 0.25,
+                        "_y": 1.149999976158142,
+                        "_z": 3.049999952316284
+                    },
+                    "EKAIBDFAODH": 3.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Gadget_Level_Paimon_Stamina",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPaimonLookAtCamera",
+                    "GILCKGAMMGM": "Task",
+                    "LIBIGGAPJBH": true,
+                    "poseID": 2.5,
+                    "maxTime": 2.5
+                },
+                {
+                    "$type": "PaimonAction",
+                    "GILCKGAMMGM": "Task",
+                    "AGNGDEBFIDB": "Guide"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Apply_Switch_SneakBtn",
+            "HNEIEGHMLKH": {
+                "UNIQUE_WatchingCurAvatarModifier": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_SwtichBtnModifier"
+                        }
+                    ]
+                },
+                "UNIQUE_SwtichBtnModifier": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddAvatarSkillInfo",
+                            "overtime": 10035
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "SwithBtnModifier"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "SwithBtnModifier"
+                        },
+                        {
+                            "$type": "RemoveAvatarSkillInfo",
+                            "overtime": 10035
+                        }
+                    ]
+                },
+                "SwithBtnModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "SwitchSkillIDMixin",
+                            "priority": "Quest",
+                            "GIELLBOFOCE": 1,
+                            "overtime": 10035
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_WatchingCurAvatarModifier"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Remove_Switch_SneakBtn",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_WatchingCurAvatarModifier"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Player_RunBomber",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Avatar_Start_RunBomber": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAnimatorStateIDMixin",
+                            "stateIDs": [
+                                "Run"
+                            ],
+                            "GAIGOBCNNEE": "Avatar_Start_RunBomber"
+                        }
+                    ]
+                },
+                "Avatar_Start_RunBomber": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 40000174,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.5,
+                                    "PHDCJAHHIOG": 0.10000000149011612
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_Start_RunBomber"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Test_FlyingBomber",
+            "HNEIEGHMLKH": {
+                "Avatar_Player_CamCtrl_Modifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAbility",
+                            "ACOKKHADPOJ": true,
+                            "abilityName": "Avatar_Player_CamCtrl"
+                        }
+                    ]
+                },
+                "UNIQUE_WatchingCurAvatarModifier_Flying": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_SwtichBtnModifier_Flying"
+                        },
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Avatar_Player_CamCtrl_Modifier"
+                        },
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "Avatar_Player_SetFlyState_Modifier"
+                        }
+                    ]
+                },
+                "UNIQUE_SwtichBtnModifier_Flying": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddAvatarSkillInfo",
+                            "ACOKKHADPOJ": true,
+                            "overtime": 10037
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "SwithBtnModifier_Flying"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "SwithBtnModifier_Flying"
+                        },
+                        {
+                            "$type": "RemoveAvatarSkillInfo",
+                            "overtime": 10037
+                        }
+                    ]
+                },
+                "SwithBtnModifier_Flying": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AvatarChangeSkillMixin",
+                            "JEHKGIHLNIE": 1,
+                            "priority": "Quest",
+                            "CNPIEDBKHII": 10037,
+                            "CLJNFKPHGEO": 10037
+                        }
+                    ]
+                },
+                "Avatar_Player_SetFlyState_Modifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FlyBackSpeedMaxRatio": 1.0,
+                        "Actor_FlyHorizontalSpeedMaxRatio": 3.0,
+                        "Actor_FlyRotationAngularVelocityRatio": 1.0,
+                        "Actor_FlyDownSpeedRatio": -0.6100000143051147,
+                        "Actor_FlyForwardSpeedMaxRatio": 0.33000001311302185
+                    }
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_WatchingCurAvatarModifier_Flying"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Remove_Avatar_Test_FlyingBomber",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_WatchingCurAvatarModifier_Flying"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Apply_Switch_FindCatBtn",
+            "HNEIEGHMLKH": {
+                "UNIQUE_WatchingCurAvatarModifier_FindCat": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_SwtichBtnModifier_FindCat"
+                        }
+                    ]
+                },
+                "UNIQUE_SwtichBtnModifier_FindCat": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddAvatarSkillInfo",
+                            "overtime": 10384
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "SwithBtnModifier"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "SwithBtnModifier"
+                        },
+                        {
+                            "$type": "RemoveAvatarSkillInfo",
+                            "overtime": 10384
+                        }
+                    ]
+                },
+                "SwithBtnModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "SwitchSkillIDMixin",
+                            "priority": "Quest",
+                            "GIELLBOFOCE": 1,
+                            "overtime": 10384
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_WatchingCurAvatarModifier_FindCat"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Remove_Switch_FindCatBtn",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_WatchingCurAvatarModifier_FindCat"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "LevelBuff_ReviveElemEnergyMinusCD",
+            "HNEIEGHMLKH": {
+                "UNIQUE_LevelBuff_ReviveElemEnergy_Check": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_LevelBuff_ReviveElemEnergy"
+                        }
+                    ]
+                },
+                "UNIQUE_LevelBuff_ReviveElemEnergy": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 120.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ReviveElemEnergyMixin",
+                            "KPBMABEIBHE": 1.0,
+                            "HMHDCLAJCLB": 10.0,
+                            "ratio": 1.0
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_SkillCDMinusRatio": 0.4000000059604645
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_MQ1002_XueyueBuff"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_LevelBuff_ReviveElemEnergy_Check"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "LevelBuff_Remove_ReviveElemEnergyMinusCD",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_LevelBuff_ReviveElemEnergy_Check"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_FallingDamageImmune",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Avatar_FallingDamage": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": -1.0
+                    }
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_FallingDamage"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Remove_FallingDamageImmune",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_FallingDamage"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Player_StaminaReduced",
+            "HNEIEGHMLKH": {
+                "UNIQUE_StaminaReduced_Team": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixin",
+                            "GAIGOBCNNEE": "UNIQUE_Avatar_StaminaReduced"
+                        }
+                    ]
+                },
+                "UNIQUE_Avatar_StaminaReduced": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Fly"
+                            ],
+                            "GAIGOBCNNEE": "Avatar_Flying_StaminaReduced"
+                        },
+                        {
+                            "$type": "AttachToAnimatorStateIDMixin",
+                            "stateIDs": [
+                                "Run"
+                            ],
+                            "GAIGOBCNNEE": "Avatar_Flying_StaminaReduced"
+                        }
+                    ]
+                },
+                "Avatar_Flying_StaminaReduced": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_MaxStaminaDelta": 100.0,
+                        "Actor_CostStaminaRatio": -999.0,
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 11002
+                        },
+                        {
+                            "$type": "SetAvatarHitBuckets",
+                            "FJAAOJKKHMA": {
+                                "KGAKHBEALIL": 4
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_StaminaReduced_Team"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Level_Remove_Avatar_Player_StaminaReduced",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_StaminaReduced"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Electric_Alter",
+            "HNEIEGHMLKH": {
+                "Electric_Alter": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_ELECTRIC_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_ELECTRIC_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Electric_Alter"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Swirl_Fire_Alter",
+            "HNEIEGHMLKH": {
+                "Swirl_Fire_Alter": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_FIRE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_FIRE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Swirl_Fire_Alter"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Swirl_Electric_Alter",
+            "HNEIEGHMLKH": {
+                "Swirl_Electric": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_ELECTRIC_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_ELECTRIC_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Swirl_Electric"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Swirl_Water_Alter",
+            "HNEIEGHMLKH": {
+                "Swirl_Water": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_WATER_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_WATER_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Swirl_Water"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Swirl_Ice_Alter",
+            "HNEIEGHMLKH": {
+                "Swirl_Ice": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_ICE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_SWRIL_ICE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Swirl_Ice"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Explode_Alter",
+            "HNEIEGHMLKH": {
+                "Explode_Alter": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_EXPLODE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_EXPLODE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Explode_Alter"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Superconductor_Alter",
+            "HNEIEGHMLKH": {
+                "Superconductor_Alter": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_SUPERCONDUCTOR_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_SUPERCONDUCTOR_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Superconductor_Alter"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Burning_Alter",
+            "HNEIEGHMLKH": {
+                "Burning_Alter": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_BURNING_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_BURNING_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Burning_Alter"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Freeze_Alter",
+            "HNEIEGHMLKH": {
+                "Freeze_Alter": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_IS_FREEZE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Caster",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_IS_FREEZE_ALTER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Freeze_Alter"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneAbility_Monster_GenerateElemBall",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "MonsterReadyMixin",
+                    "EAECIFGFPKF": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_GenerateElemBall"
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Monster_GenerateElemBall": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "ExplodeDamage"
+                                            ]
+                                        },
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "SuperconductorDamage"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Monster_GenerateElemBall_Timer"
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_GenerateElemBall_Timer": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "GenerateElemBall",
+                            "BAFEPDDJNEP": "ForceDrop",
+                            "APIAFGPIIHE": 2024,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ratio": 4.0,
+                            "GJNDGIAENMI": 2.0
+                        },
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": 0.5,
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "GenerateElemBall",
+                                    "BAFEPDDJNEP": "ForceDrop",
+                                    "APIAFGPIIHE": 2024,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ratio": 2.0,
+                                    "GJNDGIAENMI": 2.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "LevelAbility_Challenge_RecoverAllState",
+            "HNEIEGHMLKH": {
+                "RecoverAllState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ReviveDeadAvatar",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 12.0
+                                }
+                            ],
+                            "AJAHODOGLMH": 1.0,
+                            "AFPAPIFKIHK": 1.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 12.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "RecoverHpElemEnergy"
+                        }
+                    ]
+                },
+                "RecoverHpElemEnergy": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.100000023841858,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ReviveElemEnergyMixin",
+                            "KPBMABEIBHE": 1.0,
+                            "HMHDCLAJCLB": 20.0,
+                            "ratio": 1.0
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "HealHP",
+                            "ACOKKHADPOJ": true,
+                            "AJAHODOGLMH": 1.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "RecoverAllState"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_WindFlora_Dungeon_Load",
+            "HNEIEGHMLKH": {
+                "Avatar_Ready": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "StageReadyMixin",
+                            "DLEFDCFBLDE": [
+                                {
+                                    "$type": "ServerLuaCall",
+                                    "NPHOOPNDCAC": "Team",
+                                    "MINNFFNDCJH": "SpecificGroup",
+                                    "GAIGNEFHDBL": true,
+                                    "GHGADIKFEGC": [
+                                        235800001
+                                    ],
+                                    "PDFANJKMFNK": "action_player_ready_to_go_single",
+                                    "LIOGECEPJAH": 0.0,
+                                    "FDDPMCCJIKN": 0.0,
+                                    "KNJMHMKNCKF": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Avatar_Ready"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_UGC_Dungeon_Ray",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByRayTagMixin",
+                    "FEMNLPHLGAG": [
+                        "Down"
+                    ],
+                    "PNKNNJKIDMD": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "KINJNDIGPJC": [
+                        "UNIQUE_Team_Fire",
+                        "UNIQUE_Team_Water",
+                        "UNIQUE_Team_Ice",
+                        "UNIQUE_Team_Elec",
+                        "UNIQUE_Team_RocketJump"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToGlobalValueMixin",
+                    "IEOFBCGJGEK": true,
+                    "ADMJDEELAPK": "Team",
+                    "BPCFCANOMNH": "GV_UGC_AvatarCanRocketJump",
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        999.0
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_UGC_DisableRocketJump",
+                        "UNIQUE_UGC_EnableRocketJump"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToGlobalValueMixin",
+                    "IEOFBCGJGEK": true,
+                    "ADMJDEELAPK": "Team",
+                    "BPCFCANOMNH": "SGV_UGCDungeon_Immune",
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        20.0
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_UGC_DisableImmune",
+                        "UNIQUE_UGC_EnableImmune"
+                    ]
+                },
+                {
+                    "$type": "StageReadyMixin",
+                    "DLEFDCFBLDE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "GV_UGC_AvatarCanRocketJump",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 999.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_PlayerTrig": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "UGC_Triggered",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "UGC_Triggered",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_LockHp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": -1.0
+                    },
+                    "state": "LockHP"
+                },
+                "UNIQUE_Team_Fire": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_FireCubeElem"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_FireCubeElem"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_Water": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_WaterCubeElem"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_WaterCubeElem"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_Ice": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_IceCubeElem"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_IceCubeElem"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_Elec": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_ElecCubeElem"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_ElecCubeElem"
+                        }
+                    ]
+                },
+                "UNIQUE_Team_RocketJump": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.6000000238418579,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "GV_UGC_AvatarCanRocketJump",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 999.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "GV_UGC_AvatarCanRocketJump",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 999.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_FireCubeElem": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_UGC_WaterCubeElem": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_UGC_IceCubeElem": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_UGC_ElecCubeElem": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_UGC_EnableRocketJump": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_ROCKETJUMP"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_ROCKETJUMP"
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_ROCKETJUMP": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Jump"
+                            ],
+                            "GAIGOBCNNEE": "UGC_RocketJumpEffect"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_JumpUp_01_Buff"
+                        },
+                        {
+                            "$type": "EnableRocketJump",
+                            "CFIPAGENGPE": true,
+                            "type": "DungeonJump",
+                            "enable": true,
+                            "MJIDJNMCKCP": {
+                                "IMLKBGMCLLH": 3.0,
+                                "HFBNHJBODPH": 5.0
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableRocketJump",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "ACOKKHADPOJ": true,
+                            "type": "DungeonJump"
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_DisableRocketJump": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UGC_RocketJumpEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Stages_Level_Common_Jumpplatform_01_Active"
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_EnableImmune": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_Immune"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_UGC_Immune"
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_DisableImmune": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_UGC_Immune": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "EntityDitherMixin",
+                            "predicates": [
+                                {
+                                    "$type": "ByIsLocalAvatar"
+                                }
+                            ],
+                            "MHPCDOIILCO": 0.5,
+                            "HILDBGAJACB": 0.10000000149011612,
+                            "OPJILLKKCNL": 0.20000000298023224
+                        }
+                    ],
+                    "state": "Invincible"
+                },
+                "UNIQUE_UGC_ElectricCorePlay": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "OOOFAPPEOJK": [
+                                    "Gadget"
+                                ],
+                                "JBKKOJLJHDK": "CircleR15H30",
+                                "ONPOPLLHJLE": "All",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Gadget"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_IS_ELECTRIC_CORE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "NPHOOPNDCAC": "CurTeamAvatars",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "GV_ShowTAbility",
+                                    "JDHHMBHOOEC": 10.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "GV_ShowTAbility",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_UGC_ShowTAbility"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "HJJEAOMEOFI": "GV_ShowTAbility",
+                                    "value": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_UGC_ShowTAbility"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "GV_ShowTAbility",
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_UGC_ShowTAbility": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ShowExtraAbility",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "ACOKKHADPOJ": true,
+                            "overtime": 20008
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ShowExtraAbility",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "GAIGOBCNNEE": "UNIQUE_UGC_LockHp"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "GAIGOBCNNEE": "UNIQUE_UGC_ElectricCorePlay"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "GV_ShowTAbility",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "GV_LightCoreNums",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "NPHOOPNDCAC": "Team",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "GV_UGC_AvatarCanRocketJump",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 999.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "ALFIFBFCGGG": [
+                {
+                    "$type": "DebugLog",
+                    "ACOKKHADPOJ": true,
+                    "CBEDAJEGJBM": "##UGC: RAY TRIGGERED"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "UNIQUE_PlayerTrig"
+                },
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "GS_UGC_Vanish",
+                            "value": 1.0
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "NPHOOPNDCAC": "Target",
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_UGC_Dungeon_Skill",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToGlobalValueMixin",
+                    "ADMJDEELAPK": "Team",
+                    "BPCFCANOMNH": "SGV_UGCDungeon_ForbidSkill",
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UGC_Normal",
+                        "UGC_ForbidSkill"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UGC_Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ChangePlayMode",
+                            "ACOKKHADPOJ": true,
+                            "POKMJEIDNJF": true
+                        }
+                    ]
+                },
+                "UGC_ForbidSkill": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ReviveElemEnergyMixin",
+                            "KPBMABEIBHE": 1.0,
+                            "HMHDCLAJCLB": -20.0,
+                            "ratio": 1.0
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ChangePlayMode",
+                            "ACOKKHADPOJ": true,
+                            "POKMJEIDNJF": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "SGV_UGCDungeon_ForbidSkill",
+                                    "value": 1.0
+                                }
+                            ],
+                            "KDNEFEJINAA": "UGCForbidSkill"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ChangePlayMode",
+                            "ACOKKHADPOJ": true,
+                            "POKMJEIDNJF": true
+                        }
+                    ]
+                }
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "ChangePlayMode",
+                    "ACOKKHADPOJ": true,
+                    "POKMJEIDNJF": true
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "ChangePlayMode",
+                    "ACOKKHADPOJ": true,
+                    "POKMJEIDNJF": true
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Team_UGC_Electric_Fairy",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToGlobalValueMixin",
+                    "ADMJDEELAPK": "Team",
+                    "BPCFCANOMNH": "GV_UGC_Electric_Fairy",
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        100.0
+                    ],
+                    "MIEPCOONDEM": [
+                        "UGC_Electric_Fairy_Blank",
+                        "UGC_Electric_Fairy_Attach"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UGC_Electric_Fairy_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "UGC_Electric_Fairy_Attach": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "Team",
+                            "GAIGOBCNNEE": "UNIQUE_Electric_Fairy_Skill_Lv3"
+                        }
+                    ]
+                },
+                "UNIQUE_Electric_Fairy_Skill_Lv3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "FollowAttachPointEffectMixin",
+                            "GAIGOBCNNEE": "UNIQUE_Electric_Fairy_Skill_Init_Lv1",
+                            "LBCJDGDFIBC": "FollowPet",
+                            "NBMHCGMKGND": true
+                        },
+                        {
+                            "$type": "FollowAttachPointEffectMixin",
+                            "GAIGOBCNNEE": "UNIQUE_Electric_Fairy_Skill_OnTeam_Lv3",
+                            "LBCJDGDFIBC": "ThemePlay",
+                            "NBMHCGMKGND": true
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 6.0,
+                            "HJJEAOMEOFI": "_ABILITY_SceneObj_Electric_Fairy_Immunity_Time",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Electric_Fairy_Skill_Init_Lv1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 6.0,
+                            "HJJEAOMEOFI": "_ABILITY_SceneObj_Electric_Fairy_Immunity_Time",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_SceneObj_Electric_Fairy_AutoAttack_Time",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Electric_Fairy_Skill_OnTeam_Lv3": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "UNIQUE_Electric_Fairy_Skill_OnAvatar_Lv3"
+                        },
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_SceneObj_Electric_Fairy_Immunity_Time",
+                            "FEGIOIGELHB": 1.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                100.0
+                            ],
+                            "MIEPCOONDEM": [
+                                "Electric_Fairy_Immunity_OnTeam",
+                                "Electric_Fairy_Immunity_OnTeam"
+                            ],
+                            "PGDAAKDDCOD": [
+                                [
+                                    {
+                                        "$type": "ApplyModifier",
+                                        "NPHOOPNDCAC": "CurLocalAvatar",
+                                        "GAIGOBCNNEE": "Electric_Fairy_Immunity_OnAvatar_LastHit"
+                                    },
+                                    {
+                                        "$type": "RemoveModifier",
+                                        "NPHOOPNDCAC": "CurLocalAvatar",
+                                        "GAIGOBCNNEE": "UNIQUE_Electric_Fairy_Skill_Lv3"
+                                    }
+                                ],
+                                []
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Electric_Fairy_Effect_Lv1"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Electric_Fairy_Effect_Hit_Lv1"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Electric_Fairy_ReviveEnergy"
+                        }
+                    ]
+                },
+                "UNIQUE_Electric_Fairy_Skill_OnAvatar_Lv3": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Electric_Fairy_Electric_Block_Lv1"
+                        }
+                    ]
+                },
+                "Electric_Fairy_Electric_Block_Lv1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DynamicCollisionMixin",
+                            "tags": [
+                                "LEVEL1"
+                            ],
+                            "LINPLFNONMI": true
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Electric_Fairy_Block_Handle_Level",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Electric_Fairy_Block_Handle_Level",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Electric_Fairy_Effect_Hit_Lv1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_SceneObj_Electric_Fairy_Immunity_Time",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank",
+                                "Blank",
+                                "Blank",
+                                "Blank",
+                                "Blank",
+                                "Blank"
+                            ],
+                            "PGDAAKDDCOD": [
+                                [
+                                    {
+                                        "$type": "FireEffect",
+                                        "JBHFPDMBFHN": "Eff_SceneObj_ElectricFairy_Shield_Hit_Last"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "$type": "FireEffect",
+                                        "JBHFPDMBFHN": "Eff_SceneObj_ElectricFairy_Shield_Hit"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "$type": "FireEffect",
+                                        "JBHFPDMBFHN": "Eff_SceneObj_ElectricFairy_Shield_Hit"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "$type": "FireEffect",
+                                        "JBHFPDMBFHN": "Eff_SceneObj_ElectricFairy_Shield_Hit"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "$type": "FireEffect",
+                                        "JBHFPDMBFHN": "Eff_SceneObj_ElectricFairy_Shield_Hit"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "$type": "FireEffect",
+                                        "JBHFPDMBFHN": "Eff_SceneObj_ElectricFairy_Shield_Hit"
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "Electric_Fairy_ReviveEnergy": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ReviveElemEnergy",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "predicates": [
+                                {
+                                    "$type": "ByEnergyRatio",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "ratio": 0.5
+                                },
+                                {
+                                    "$type": "ByAvatarElementType",
+                                    "elementType": "Electric"
+                                }
+                            ],
+                            "value": 2.0
+                        }
+                    ]
+                },
+                "Electric_Fairy_Immunity_OnAvatar_LastHit": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "RejectAttackMixin",
+                            "attackTag": "Inazuma_Environment_Damage"
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Electric_Fairy_Effect_Lv1": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 1.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "Electric_Fairy_Effect_Move_Handler"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_01"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddElementDurability",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF_Team",
+                                    "value": 1.0
+                                }
+                            ],
+                            "value": 1.0,
+                            "GAIGOBCNNEE": "Electric_Fairy_Effect_Lv1",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF_Team",
+                                    "value": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Electric_Fairy_RemoveEffect"
+                        }
+                    ]
+                },
+                "Electric_Fairy_RemoveEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_01"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_02"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 203,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_03"
+                        }
+                    ]
+                },
+                "Electric_Fairy_Effect_Move_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAnimatorStateIDMixin",
+                            "stateIDs": [
+                                "Standby",
+                                "RunToIdle",
+                                "WalkToIdle",
+                                "SprintToIdle",
+                                "StandbyShow_01",
+                                "StandbyShow_02"
+                            ],
+                            "GAIGOBCNNEE": "Electric_Fairy_Effect_DoStandBy"
+                        },
+                        {
+                            "$type": "AttachToAnimatorStateIDMixin",
+                            "stateIDs": [
+                                "Run",
+                                "Sprint"
+                            ],
+                            "GAIGOBCNNEE": "Electric_Fairy_Effect_DoMove"
+                        }
+                    ]
+                },
+                "Electric_Fairy_Effect_DoStandBy": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_01"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_02"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_03"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_01"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_02"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_03"
+                        }
+                    ]
+                },
+                "Electric_Fairy_Effect_DoMove": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_01"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_02"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "NPHOOPNDCAC": "Team",
+                            "MOCGJNIDDAI": "State",
+                            "type": "Int",
+                            "weight": 201,
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeed_03"
+                        }
+                    ]
+                },
+                "Electric_Fairy_Immunity_OnTeam": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "CurLocalAvatarMixinV2",
+                            "GAIGOBCNNEE": "Electric_Fairy_Immunity_OnAvatar"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Electric_Fairy_Mark"
+                        }
+                    ]
+                },
+                "Electric_Fairy_Mark": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF_Team",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF_Team",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF_Team",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "NPHOOPNDCAC": "Team",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "GV_UGC_Electric_Fairy",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    }
+]

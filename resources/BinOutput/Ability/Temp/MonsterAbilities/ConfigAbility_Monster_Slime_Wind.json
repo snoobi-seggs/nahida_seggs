@@ -1,0 +1,961 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_02_GravityAdjust",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "HitThrow"
+                    ],
+                    "GAIGOBCNNEE": "GravityAdjust"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "GravityAdjust": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.375,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -18.0
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_GravityAdjust",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "HitThrow"
+                    ],
+                    "GAIGOBCNNEE": "GravityAdjust"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "GravityAdjust": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.6000000238418579,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -20.0
+                    }
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_02_InAir",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "HitThrowDrop",
+                        "HitThrowDrop_BlowUp",
+                        "HitThrowDrop_InAir"
+                    ],
+                    "GAIGOBCNNEE": "BlowUpState"
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "BlowUp"
+                    ],
+                    "HENDIIJFPCI": 90.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BlowUpState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToPoseIDMixin",
+                            "poseIDs": [
+                                2,
+                                102
+                            ],
+                            "GAIGOBCNNEE": "InAirState"
+                        }
+                    ]
+                },
+                "InAirState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -1.899999976158142
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RetreatAirType"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitImpulse",
+                                    "DJNJFCLGCMM": 0.0
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_InAir",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "HitThrowDrop",
+                        "HitThrowDrop_BlowUp",
+                        "HitThrowDrop_InAir",
+                        "HitThrowDrop_InAir_Long"
+                    ],
+                    "GAIGOBCNNEE": "BlowUpState"
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "JumpAttack",
+                        "BlowUp"
+                    ],
+                    "EOOBFBGMGLD": 0.8600000143051147,
+                    "HENDIIJFPCI": 90.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BlowUpState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToPoseIDMixin",
+                            "poseIDs": [
+                                2,
+                                102
+                            ],
+                            "GAIGOBCNNEE": "InAirState"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                }
+                            ],
+                            "HHFIHBEAPAP": "Elite_Modifier",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "EnableAirAtk"
+                        }
+                    ]
+                },
+                "InAirState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RetreatAirType"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitImpulse",
+                                    "DJNJFCLGCMM": 0.0
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_HitThrowToGround",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "EnableAirAtk",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_Die_Dither",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "StartDither",
+                    "duration": 0.5
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_02_Die",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_DieInAir"
+                },
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_DieInAir_Trail"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget"
+                    },
+                    "CABLIPAKCGB": 42001010,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "All"
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 0.05999999865889549,
+                        "shakeTime": 0.15000000596046448,
+                        "shakeDir": {
+                            "_y": 1.0,
+                            "_z": 0.5
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_02_Die_WindZone",
+            "HNEIEGHMLKH": {
+                "WindZone": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR4",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "BHELOIADOLH": -10.0,
+                            "HBBLBBPBLGE": 1.0,
+                            "IPDEDFHPHPO": 0.0,
+                            "OJIFKEOCJGB": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "IHCNHDLDFKC": 100.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "WindZone"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_Die",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_DieInAir_Trail"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_DieInAir"
+                },
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget"
+                    },
+                    "CABLIPAKCGB": 42001011,
+                    "DOLAJLACEDF": 4001,
+                    "ONPOPLLHJLE": "All"
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 0.1599999964237213,
+                        "shakeTime": 0.15000000596046448,
+                        "shakeDir": {
+                            "_y": 1.0,
+                            "_z": 0.5
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_Die_WindZone",
+            "HNEIEGHMLKH": {
+                "WindZone": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR8",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "BHELOIADOLH": -15.0,
+                            "HBBLBBPBLGE": 3.0,
+                            "IPDEDFHPHPO": 0.0,
+                            "OJIFKEOCJGB": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "IHCNHDLDFKC": 100.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ]
+                },
+                "Airflow": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AirFlowMixin",
+                            "CABLIPAKCGB": 42001016,
+                            "ONPOPLLHJLE": "All",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "JBPCKOKLHEB": true
+                            }
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_Airflow"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "WindZone"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Airflow"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_02_CompressAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "CompressAttack_BS"
+                    ],
+                    "GAIGOBCNNEE": "CompressAtk_BlowUp"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "CompressAttack",
+                        "CompressAttack_AS"
+                    ],
+                    "GAIGOBCNNEE": "CompressAtk_Effect"
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "CompressAttack"
+                    ],
+                    "IMHBEGIKDKB": 0.25,
+                    "HENDIIJFPCI": 240.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "CompressAtk_BlowUp": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "BlowUpDie",
+                            "value": true
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitImpulse",
+                                    "DJNJFCLGCMM": 0.0
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "CompressAtk_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_CompressAtk_Trail"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "CompressAtk_Effect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_CompressAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "CompressAttack_BS"
+                    ],
+                    "GAIGOBCNNEE": "CompressAtk_BlowUp"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "CompressAttack",
+                        "CompressAttack_AS"
+                    ],
+                    "GAIGOBCNNEE": "CompressAtk_Effect"
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "CompressAttack"
+                    ],
+                    "IMHBEGIKDKB": 0.4000000059604645,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "CompressAtk_BlowUp": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_InAir"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "BlowUpDie",
+                            "value": true
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitImpulse",
+                                    "DJNJFCLGCMM": 0.0
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "CompressAtk_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_CompressAtk_Trail"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "CompressAtk_Effect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_TargetAltitude_Charge",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetAltitude",
+                            "GMFCOCAJBDM": "GreaterOrEqual",
+                            "value": 4.0
+                        }
+                    ],
+                    "HHFIHBEAPAP": "HitInAir",
+                    "value": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_BlowUpToGround",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "JumpAttack_BlowUp",
+                        "HitThrowDrop_BlowUp",
+                        "HitThrowDrop_InAir"
+                    ],
+                    "GAIGOBCNNEE": "BlowUpEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BlowUpEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_BlowUpState"
+                        },
+                        {
+                            "$type": "HideUIBillBoard",
+                            "COCENMAFJGD": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "HideUIBillBoard"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "HitInAir"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_AirAtk_Tirgger",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "predicates": [
+                        {
+                            "$type": "ByAnimatorFloat",
+                            "GMFCOCAJBDM": "Equal",
+                            "value": 102.0,
+                            "MOCGJNIDDAI": "PoseID"
+                        }
+                    ],
+                    "triggerID": "AirAtk",
+                    "IFJLLJJCLNC": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_AirAtk",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByAnimatorFloat",
+                            "GMFCOCAJBDM": "Equal",
+                            "value": 102.0,
+                            "MOCGJNIDDAI": "PoseID"
+                        }
+                    ],
+                    "NGAAOMEHOGE": 42001007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "KAAPLGBEDPM": 0.25,
+                            "PHDCJAHHIOG": 1.75
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "IHHIKIACOML": "Horizontal"
+                        },
+                        "KJNJNKLLNCN": "RootNode"
+                    }
+                },
+                {
+                    "$type": "TriggerAudio",
+                    "predicates": [
+                        {
+                            "$type": "ByAnimatorFloat",
+                            "GMFCOCAJBDM": "Equal",
+                            "value": 102.0,
+                            "MOCGJNIDDAI": "PoseID"
+                        }
+                    ],
+                    "POCPPGDMDEA": {
+                        "$type": "ConfigAudioEventOp",
+                        "POCPPGDMDEA": {
+                            "text": "Play_sfx_monster_slime_03_wind_jumpAtk_attack"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_AirAtk_Explode",
+            "HNEIEGHMLKH": {
+                "AirAtk_Loop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Slime_Wind_AirAtk_Missile"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "AirAtk_Loop"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 50.0,
+                                "strikeType": "Pierce",
+                                "enBreak": 80.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV3",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {
+                                "shakeRange": 0.05999999865889549,
+                                "shakeTime": 0.09000000357627869
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "AirAtk_Loop"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_03_JumpAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "JumpAttack"
+                    ],
+                    "GAIGOBCNNEE": "JumpAttack_InAir"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "JumpAttack_InAir": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "SkillInAir",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "SkillInAir"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Slime_Wind_AnimationSteer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Turn"
+                    ],
+                    "IMHBEGIKDKB": 0.5400000214576721,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "NormalAttack"
+                    ],
+                    "IMHBEGIKDKB": 0.25,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "JumpAttack"
+                    ],
+                    "IMHBEGIKDKB": 0.5,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ]
+        }
+    }
+]

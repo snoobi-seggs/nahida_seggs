@@ -1,0 +1,4309 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_LowHPAddExtraAttackEndura",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToPredicateMixin",
+                    "PDPENHIADJD": "HP",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetHPRatio",
+                            "NPHOOPNDCAC": "Self",
+                            "GMFCOCAJBDM": "LesserOrEqual",
+                            "BCJJBMJKHED": "HPRate"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_LowHPAddExtraAttackEndura_Handler"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "HPRate": 0.0,
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_LowHPAddExtraAttackEndura_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "ExtraAttack",
+                                "ExtraAttack1",
+                                "ExtraAttack2",
+                                "ExtraAttack3"
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_LowHPAddExtraAttackEndura"
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_LowHPAddExtraAttackEndura": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "ExtraAttack"
+                            ],
+                            "damagePercentageRatio": "Rate"
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.5
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_DamageUpToEnemy",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_DamageUpToEnemy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "BNNAFHAMNJG": true,
+                            "damagePercentageRatio": "Rate",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Electric"
+                                        },
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_DamageUpToEnemy_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_HealAmountHPonEnemyKilled",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByKillingMixin",
+                    "AJPHDMLEOGE": 0.6000000238418579,
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Other",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "HealHP",
+                                    "AJAHODOGLMH": "HealAmount"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "HealAmount": 0.0
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_AttacktUpAfterReaction",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_AttacktUpAfterReaction_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "Explode",
+                                "Stream",
+                                "Burning",
+                                "Melt",
+                                "SwirlFire"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_AttacktUpAfterReaction"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AttacktUpAfterReaction": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 12.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_AttacktUpAfterReaction_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_NormalAttackExtraDamageAfterSkill",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_NormalAttackExtraDamageAfterSkill",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_NormalAttackExtraDamageAfterSkill_CD",
+                        "UNIQUE_Claymore_NormalAttackExtraDamageAfterSkill_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Time": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_NormalAttackExtraDamageAfterSkill_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "OnAvatarUseSkillMixin",
+                            "MPNINPNOPPE": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_NormalAttackExtraDamageAfterSkill",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ],
+                            "CAHFPMLJFAK": 0.20000000298023224
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_NormalAttackExtraDamageAfterSkill_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_NormalAttackExtraDamage"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 10.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBuffValue",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBlast",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_NormalAttackExtraDamageAfterSkill",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_NormalAttackExtraDamage": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "state": "AttackUp",
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBlast",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBlast",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "NPHOOPNDCAC": "Target",
+                                    "JBHFPDMBFHN": "Eff_Weapon_Blast_R30",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByHitPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByEntity",
+                                            "LGPBCMEFEJB": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 0.0,
+                                                "PHDCJAHHIOG": 0.0
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "TriggerAttackEvent",
+                                    "DMCJDGELKBC": {
+                                        "attackPattern": {
+                                            "$type": "ConfigAttackCircle",
+                                            "lifeTime": "TriggerNoRepeat",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByHitPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                },
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByEntity",
+                                                    "LGPBCMEFEJB": {
+                                                        "AEAAJCIDPED": 0.0,
+                                                        "KAAPLGBEDPM": 0.0,
+                                                        "PHDCJAHHIOG": 0.0
+                                                    }
+                                                }
+                                            },
+                                            "ICGFCBOFFDI": 3.0
+                                        },
+                                        "attackInfo": {
+                                            "attackTag": "WeaponSkill",
+                                            "attenuationTag": "",
+                                            "attenuationGroup": "default",
+                                            "attackProperty": {
+                                                "bonusCriticalHurt": "Rate",
+                                                "damagePercentageRatio": 0.0,
+                                                "elementDurability": 100.0,
+                                                "strikeType": "Default",
+                                                "enBreak": 50.0
+                                            },
+                                            "hitPattern": {
+                                                "onHitEffectName": "default",
+                                                "hitImpulseType": "LV2",
+                                                "hitHaltTimeScale": 0.009999999776482582
+                                            }
+                                        }
+                                    },
+                                    "OJIFKEOCJGB": "Enemy"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Weapon_Claymore_MinusGlobalValue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Weapon_Claymore_MinusGlobalValue": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBuffValue",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBuffValue",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_NormalAttackExtraDamage"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBuffValue",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AttackBlast",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_NormalAttackExtraDamage"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_AttackUpBuff",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_AttackUpBuff_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_ApplyBuff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_ApplyBuff": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_AttackUp"
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AttackUp": {
+                    "FGJPBKGPNJJ": "MultipleAllRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 4.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_AttackUpBuff_Handler"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_AttackUp"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_GenerateBallWhenCritic",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_GenerateBallWhenCritic_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Randomed",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitCritical"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112401
+                                }
+                            ],
+                            "PLKDGIELEEF": "Rate",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_GenerateBallWhenCritic"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_GenerateBallWhenCritic": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 112401
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_ExtraElementBall"
+                        },
+                        {
+                            "$type": "GenerateElemBall",
+                            "APIAFGPIIHE": 2024,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -1.0
+                                },
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 0.0,
+                                    "MFBOELKCPDP": 0.5
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 6.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_GenerateBallWhenCritic_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_GetShieldBeingHit",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Claymore_GetShieldBeingHit",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_GetShieldBeingHit_CD",
+                        "UNIQUE_Claymore_GetShieldBeingHit_Handler"
+                    ]
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "BNNAFHAMNJG": true,
+                    "damagePercentageRatio": "Dmg_Rate",
+                    "predicates": [
+                        {
+                            "$type": "ByHasShield",
+                            "NPHOOPNDCAC": "Self",
+                            "type": "All"
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "CDTime": 0.0,
+                "Dmg_Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_GetShieldBeingHit_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112402
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ],
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_GetShieldBeingHit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": -1.0,
+                            "KHAHOELDONA": -1.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_GetShieldBeingHit_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 112402
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_GetShieldBeingHit_Shield"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_GetShieldBeingHit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_GetShieldBeingHit_Shield": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "EliteShieldMixin",
+                            "ONOFEELAHJK": "default",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": "Rate",
+                            "HBNBIBFHBKM": "",
+                            "FMAPKFDKKPB": "INFO_ELITE_DEFENCE",
+                            "BOCNCNPHCFL": [
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_GetShieldBeingHit_Shield"
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Properties_Shield"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Properties_Shield_AS"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByHitEnBreak",
+                                    "DCBBLJKHKCA": 0.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Claymore_GetShieldBeingHit_HitEffect"
+                                }
+                            ]
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_GetShieldBeingHit_Shield"
+                        }
+                    ]
+                },
+                "Claymore_GetShieldBeingHit_HitEffect": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Properties_Shield_Hit_Invalid",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_ResetCDWhenSkillHit",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Claymore_ResetCDWhenSkillHit",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_ResetCDWhenSkillHit_CD",
+                        "UNIQUE_Claymore_ResetCDWhenSkillHit_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_ResetCDWhenSkillHit_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112403
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_ResetCDWhenSkillHit_SanCheck"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_ResetCDWhenSkillHit_SanCheck": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 3.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.899999976158142,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": "Rate",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_ResetCDWhenSkillHit",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_ResetCDWhenSkillHit_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_ResetCD"
+                        },
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 112403
+                        },
+                        {
+                            "$type": "ModifyAvatarSkillCD",
+                            "CDBCHJIFPKA": [
+                                2
+                            ],
+                            "AFPAPIFKIHK": -1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_ResetCDWhenSkillHit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_AtkDefUpWhenExtraAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Claymore_AtkDefUpWhenExtraAttack",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_AtkDefUpWhenExtraAttack_CD",
+                        "UNIQUE_Claymore_AtkDefUpWhenExtraAttack_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_AtkDefUpWhenExtraAttack_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112404
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_AtkDefUpWhenExtraAttack",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AtkDefUpWhenExtraAttack_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 20.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": 20.0,
+                            "DAGGLMBBODJ": 112404
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_AtkDefUpWhenExtraAttack"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_AtkDefUpWhenExtraAttack",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AtkDefUpWhenExtraAttack": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate",
+                        "Actor_DefenceRatio": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_CritUpWhenHitNoCrit",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_CritUpWhenHitNoCrit_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHitCritical"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_CritUpWhenHitNoCrit_CD"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByHitCritical"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "RemoveModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_CritUpWhenHitNoCrit"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_CritUpWhenHitNoCrit_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_CritUpWhenHitNoCrit"
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_CritUpWhenHitNoCrit": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 5.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_CriticalDelta": "Rate"
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_CritUpWhenHitNoCrit_Handler"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "RemoveModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_CritUpWhenHitNoCrit"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_DamageUpToElectricEnemy",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_DamageUpToElectricEnemy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "BNNAFHAMNJG": true,
+                            "damagePercentageRatio": "Rate",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Electric"
+                                        },
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_DamageUpToElectricEnemy_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_AOEDamage",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_AOEDamage",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_AOEDamage_CD",
+                        "UNIQUE_Claymore_AOEDamage_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "C_Rate": 0.0,
+                "D_Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_AOEDamage_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112406
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "NPHOOPNDCAC": "Target",
+                                    "PLKDGIELEEF": "C_Rate",
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "FireEffect",
+                                            "NPHOOPNDCAC": "Target",
+                                            "JBHFPDMBFHN": "Eff_Weapon_Blast_R30",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByHitPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                },
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByEntity"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "$type": "TriggerAttackEvent",
+                                            "DMCJDGELKBC": {
+                                                "attackPattern": {
+                                                    "$type": "ConfigAttackCircle",
+                                                    "lifeTime": "TriggerNoRepeat",
+                                                    "NGDMCBABOJA": {
+                                                        "$type": "ConfigBornByHitPoint",
+                                                        "offset": {
+                                                            "AEAAJCIDPED": 0.0,
+                                                            "KAAPLGBEDPM": 0.0,
+                                                            "PHDCJAHHIOG": 0.0
+                                                        },
+                                                        "NHPNHKBMAEO": {
+                                                            "$type": "ConfigDirectionByEntity"
+                                                        }
+                                                    },
+                                                    "ICGFCBOFFDI": 3.0
+                                                },
+                                                "attackInfo": {
+                                                    "attackTag": "WeaponSkill",
+                                                    "attenuationTag": "",
+                                                    "attenuationGroup": "default",
+                                                    "attackProperty": {
+                                                        "bonusCriticalHurt": "D_Rate",
+                                                        "damagePercentageRatio": 0.0,
+                                                        "elementDurability": 100.0,
+                                                        "strikeType": "Default",
+                                                        "enBreak": 100.0
+                                                    },
+                                                    "hitPattern": {
+                                                        "onHitEffectName": "default",
+                                                        "hitImpulseType": "LV2",
+                                                        "hitHaltTimeScale": 0.009999999776482582
+                                                    }
+                                                }
+                                            },
+                                            "OJIFKEOCJGB": "Enemy"
+                                        },
+                                        {
+                                            "$type": "AddGlobalValue",
+                                            "value": -1.0,
+                                            "HJJEAOMEOFI": "_ABILITY_Claymore_AOEDamage",
+                                            "EODOIECEPEF": true,
+                                            "JDHHMBHOOEC": -1.0,
+                                            "KHAHOELDONA": -1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AOEDamage_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 15.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": 15.0,
+                            "DAGGLMBBODJ": 112406
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AOEDamage",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_AttackGainAKTDEFBuff",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_AttackGainAKTDEFBuff_COUNT",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5,
+                        4.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff1",
+                        "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff2",
+                        "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff3",
+                        "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff4"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_AttackGainAKTDEFBuff_CD"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AttackGainAKTDEFBuff_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_AttackGainAKTDEFBuff_Timer"
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_AttackGainAKTDEFBuff_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate",
+                        "Actor_DefenceRatio": "Rate"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack1"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_DefenceRatio": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack2"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_DefenceRatio": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack3"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_AttackGainAKTDEFBuff_Buff4": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_DefenceRatio": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack4"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_AttackGainAKTDEFBuff_Handler"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_AttackGainAKTDEFBuff_COUNT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Blackrock",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_WEAPON_Blackrock_COUNT",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_Blackrock_Buff1",
+                        "UNIQUE_Claymore_Blackrock_Buff2",
+                        "UNIQUE_Claymore_Blackrock_Buff3"
+                    ]
+                },
+                {
+                    "$type": "DoActionByKillingMixin",
+                    "AJPHDMLEOGE": 0.6000000238418579,
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Other",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_Blackrock_Timer_Ind"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_WEAPON_Blackrock_COUNT",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 3.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Dua": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_Blackrock_Timer_Ind": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 3.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dua",
+                    "elementDurability": 100.0,
+                    "state": "AttackUp",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_WEAPON_Blackrock_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_Blackrock_Buff1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Blackrock1_Claymore"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_Blackrock_Buff2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Blackrock2_Claymore"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_Blackrock_Buff3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Blackrock3_Claymore"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_WEAPON_Blackrock_COUNT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Berserker",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5,
+                        4.5,
+                        5.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_BerserkerResetTimer",
+                        "UNIQUE_Claymore_BerserkerBuff0",
+                        "UNIQUE_Claymore_BerserkerBuff1",
+                        "UNIQUE_Claymore_BerserkerBuff2",
+                        "UNIQUE_Claymore_BerserkerBuff3",
+                        "UNIQUE_Claymore_BerserkerBuff4",
+                        "UNIQUE_Claymore_BerserkerBuff5"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Interval": 0.0,
+                "Rate": 0.0,
+                "HurtRate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_Berserker_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_BerserkerResetCD"
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_BerserkerResetCD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": -1.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_BerserkerResetTimer": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_BerserkerBuff0": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "Interval",
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_BerserkerBuff1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "Interval",
+                    "FFOHEEFOELN": {
+                        "Actor_AddHurtDelta": "Rate",
+                        "Actor_SubHurtDelta": [
+                            0.0,
+                            "HurtRate",
+                            "Sub"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack1"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_BerserkerBuff2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "Interval",
+                    "FFOHEEFOELN": {
+                        "Actor_AddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_SubHurtDelta": [
+                            0.0,
+                            "HurtRate",
+                            2.0,
+                            "Mul",
+                            "Sub"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack2"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_BerserkerBuff3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "Interval",
+                    "FFOHEEFOELN": {
+                        "Actor_AddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_SubHurtDelta": [
+                            0.0,
+                            "HurtRate",
+                            3.0,
+                            "Mul",
+                            "Sub"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack3"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_BerserkerBuff4": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "Interval",
+                    "FFOHEEFOELN": {
+                        "Actor_AddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_SubHurtDelta": [
+                            0.0,
+                            "HurtRate",
+                            4.0,
+                            "Mul",
+                            "Sub"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack4"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Claymore_BerserkerBuff5": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddHurtDelta": [
+                            "Rate",
+                            5.0,
+                            "Mul"
+                        ],
+                        "Actor_SubHurtDelta": [
+                            0.0,
+                            "HurtRate",
+                            5.0,
+                            "Mul",
+                            "Sub"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Attack_Stack5"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_Berserker_Handler"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_Berserker_AttackBuffLevel",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Liyue",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByTeamStatusMixin",
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByBigTeamHasFeatureTag",
+                                    "MPBIPJFBKFO": 1002,
+                                    "EAMAPOKFADD": 4,
+                                    "GMFCOCAJBDM": "GreaterOrEqual"
+                                }
+                            ],
+                            "value": 4.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Liyue_Num",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByBigTeamHasFeatureTag",
+                                    "MPBIPJFBKFO": 1002,
+                                    "EAMAPOKFADD": 3,
+                                    "GMFCOCAJBDM": "Equal"
+                                }
+                            ],
+                            "value": 3.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Liyue_Num",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByBigTeamHasFeatureTag",
+                                    "MPBIPJFBKFO": 1002,
+                                    "EAMAPOKFADD": 2,
+                                    "GMFCOCAJBDM": "Equal"
+                                }
+                            ],
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Liyue_Num",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 2.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByBigTeamHasFeatureTag",
+                                    "MPBIPJFBKFO": 1002,
+                                    "EAMAPOKFADD": 1,
+                                    "GMFCOCAJBDM": "Equal"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Liyue_Num",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByBigTeamHasFeatureTag",
+                                    "MPBIPJFBKFO": 1002,
+                                    "GMFCOCAJBDM": "LesserOrEqual"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Liyue_Num",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "ACOKKHADPOJ": true,
+                            "BPCFCANOMNH": "_ABILITY_Claymore_Liyue_Num",
+                            "OGAHELLALBB": "Claymore_Liyue_Num"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_LiyueBuff"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_LiyueBuff"
+                        }
+                    ],
+                    "IALICHIPLFB": 20.0,
+                    "KPOJDIIHHEE": true,
+                    "LNKBICEPIJK": true
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Crit": 0.0,
+                "Claymore_Liyue_Num": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_LiyueBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            "Claymore_Liyue_Num",
+                            "Mul"
+                        ],
+                        "Actor_CriticalDelta": [
+                            "Crit",
+                            "Claymore_Liyue_Num",
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_Liyue_Num",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Dragonfell",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_Dragonfell",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_Dragonfell_CD",
+                        "UNIQUE_Claymore_Dragonfell_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ChanceProb": 0.0,
+                "Rate": 0.0,
+                "RateToIce": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_Dragonfell_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 112411
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Dragonfell",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_Dragonfell_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Randomed",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112411
+                                }
+                            ],
+                            "PLKDGIELEEF": "ChanceProb",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "NPHOOPNDCAC": "Target",
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Dragonfell_Pos",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByHitPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "OGADOPDNBMM": false
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_ABILITY_Weapon_Dragonfell_Pos",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 40020005,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Dragonfell",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Dragonfell_Gadget",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "WeaponSkill"
+                    ],
+                    "bonusCriticalHurt": "RateToIce",
+                    "damagePercentageRatio": 0.0,
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster"
+                            ]
+                        },
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Ice"
+                                },
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Frozen"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "RateToIce": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Dragonfell_Appear": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.4000000059604645,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Dragonfell_Gadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -1.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 2.0,
+                                    "ICGFCBOFFDI": 3.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "WeaponSkill",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "Rate",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "enBreak": 20.0,
+                                        "attackType": "Range"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Heavy",
+                                            "HPOPMELEPEB": 500.0,
+                                            "hitImpulseY": 0.0
+                                        },
+                                        "retreatType": "ByHitDirection",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Dragonfell_Appear"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Legend_Dvalin",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "OnAvatarUseSkillMixin",
+                    "MLBANMCFDAF": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_Legend_Dvalin"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": "Count",
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "Count",
+                            "KHAHOELDONA": "Count"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin_AttackBlast",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "CAHFPMLJFAK": 0.20000000298023224
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "DamageUp": 0.0,
+                "D_Rate": 0.0,
+                "Time": 0.0,
+                "Count": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_Legend_Dvalin": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Dvalin_Claymore"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin_AttackBlast",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin_AttackBlast",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 1.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "TriggerBullet",
+                                    "NGAAOMEHOGE": 40010002,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 1.2000000476837158,
+                                            "PHDCJAHHIOG": 0.5
+                                        }
+                                    }
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "Weapon_Claymore_MinusGlobalValue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Weapon_Claymore_MinusGlobalValue": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_Legend_Dvalin"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Dvalin_AttackBlast",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_AttackWave_Bullet",
+            "EDDGGPMFDGK": {
+                "D_Rate": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "MonsterEquip"
+                            ]
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "NPHOOPNDCAC": "Target",
+                            "attackInfo": {
+                                "attackTag": "WeaponSkill",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": "D_Rate",
+                                    "damagePercentageRatio": 0.0,
+                                    "elementDurability": 100.0,
+                                    "enBreak": 50.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV2",
+                                    "hitHaltTimeScale": 0.05000000074505806
+                                },
+                                "canBeModifiedBy": "OriginOwner"
+                            }
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByCollisionPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 0.10000000149011612,
+                                        "KAAPLGBEDPM": 0.10000000149011612,
+                                        "PHDCJAHHIOG": 0.10000000149011612
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "WeaponSkill",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "D_Rate",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 100.0,
+                                        "enBreak": 50.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_AttackWave_Bullet_Material",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_AttackWave"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Legend_Wolfmound",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_Legend_Wolfmound",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_Legend_Wolfmound_CD",
+                        "UNIQUE_Claymore_Legend_Wolfmound_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "AttackUp": 0.0,
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_Legend_Wolfmound_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetHPRatio",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "BCJJBMJKHED": 0.30000001192092896
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112502
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Weapon_Wolfmound_Head"
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_Legend_Wolfmound"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_Legend_Wolfmound"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Wolfmound",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_Legend_Wolfmound_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": 30.0,
+                            "DAGGLMBBODJ": 112502
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Legend_Wolfmound",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_Legend_Wolfmound": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 12.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Widsith",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Claymore_Widsith_Check",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Weapon_Claymore_Widsith_CD",
+                        "UNIQUE_Weapon_Claymore_Widsith_Handler"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Claymore_Widsith",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5,
+                        100.0
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Weapon_Claymore_Widsith_0",
+                        "UNIQUE_Weapon_Claymore_Widsith_1",
+                        "UNIQUE_Weapon_Claymore_Widsith_2",
+                        "UNIQUE_Weapon_Claymore_Widsith_3",
+                        "UNIQUE_Weapon_Claymore_Widsith_Full"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "TriggerCD": 0.0,
+                "Dura": 0.0,
+                "ClaymoreBuff": 0.0,
+                "CommonBuff": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_Claymore_Widsith_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith_Check",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112503
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Widsith_AddGlobalvalue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_AddGlobalvalue": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "TriggerCD",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Widsith_Timer"
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith",
+                                    "value": 4.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "EquipAffixStart",
+                                    "ACOKKHADPOJ": true,
+                                    "GPKNEFCCKGN": "CDTime",
+                                    "DAGGLMBBODJ": 112503
+                                },
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith_Check",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "ACOKKHADPOJ": true,
+                                    "JBHFPDMBFHN": "Eff_Weapon_Widsith_Bow_Burst"
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Widsith_CommonBuff"
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Widsith_ClaymoreBuff"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Widsith_CommonBuff"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Widsith_ClaymoreBuff"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "AllPlayerAvatars",
+                                    "ACOKKHADPOJ": true,
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetPositionToSelfPosition",
+                                            "GMFCOCAJBDM": "LesserOrEqual",
+                                            "value": 40.0
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Widsith_BuffEffect"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith",
+                                    "value": 3.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_0": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": "Eff_Weapon_EnergyPoem_Stack1"
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": "Eff_Weapon_EnergyPoem_Stack2"
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": "Eff_Weapon_EnergyPoem_Stack3"
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_Full": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Weapon_Widsith_CommonBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "CommonBuff"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true,
+                    "ONGKIIJLFCG": 10001
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_ClaymoreBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_AttackSpeedRatio": "ClaymoreBuff"
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Widsith_BuffEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Widsith_Common_TeamBuff"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Widsith_Claymore_TeamBuff"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Widsith_Check",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Kunwu_DamageUpWithShield",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_Kunwu_IsHasShield",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff",
+                        "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToPredicateMixin",
+                    "type": "Current",
+                    "predicates": [
+                        {
+                            "$type": "ByHasShield",
+                            "type": "All"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Kunwu_CheckShield"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Shield_Up": 0.0,
+                "Dmg_Rate": 0.0,
+                "Timer": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_Claymore_Kunwu_DamageUpWithShield_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Kunwu_AddCount"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_CheckShield": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Kunwu_IsHasShield",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Kunwu_IsHasShield",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_AddCount": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Kunwu_BuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Kunwu_BuffTimer"
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_BuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Timer",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Kunwu_BuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Claymore_Kunwu_BuffLevel",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Blank",
+                                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level01",
+                                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level02",
+                                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level03",
+                                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level04",
+                                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level05"
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level01": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Dmg_Rate"
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level02": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level03": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            3.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level04": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            4.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_NoShieldBuff_Level05": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            5.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Claymore_Kunwu_BuffLevel",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Blank",
+                                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level01",
+                                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level02",
+                                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level03",
+                                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level04",
+                                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level05"
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level01": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level02": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            4.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level03": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            6.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level04": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            8.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_HasShieldBuff_Level05": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            10.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Claymore_Kunwu_BuffEffHandler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Claymore_Kunwu_BuffLevel",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Weapon_Claymore_Kunwu_Eff_Blank",
+                                "Weapon_Claymore_Kunwu_Eff_1",
+                                "Weapon_Claymore_Kunwu_Eff_2",
+                                "Weapon_Claymore_Kunwu_Eff_3",
+                                "Weapon_Claymore_Kunwu_Eff_4",
+                                "Weapon_Claymore_Kunwu_Eff_5"
+                            ]
+                        }
+                    ]
+                },
+                "Weapon_Claymore_Kunwu_Eff_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Weapon_Claymore_Kunwu_Eff_1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_01"
+                        }
+                    ]
+                },
+                "Weapon_Claymore_Kunwu_Eff_2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_02"
+                        }
+                    ]
+                },
+                "Weapon_Claymore_Kunwu_Eff_3": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_03"
+                        }
+                    ]
+                },
+                "Weapon_Claymore_Kunwu_Eff_4": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_04"
+                        }
+                    ]
+                },
+                "Weapon_Claymore_Kunwu_Eff_5": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_05"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Kunwu_DamageUpWithShield_Handler"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Kunwu_BuffEffHandler"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_Kunwu_BuffLevel",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_Kunwu_IsHasShield",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Morax_HpToAtk",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByEventMixin",
+                    "PDPENHIADJD": "HP",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Morax_Last_MaxHp",
+                                    "value": "FIGHT_PROP_MAX_HP"
+                                }
+                            ]
+                        }
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": "FIGHT_PROP_MAX_HP",
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Morax_Last_MaxHp",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_Morax_HpToAtk_Buff"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_Morax_HpToAtk_Buff"
+                        }
+                    ],
+                    "LIINFCJLBOP": ""
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Hp_Rate": 0.0,
+                "HptoAtk_Factor": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_Morax_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Claymore_Morax_HpToAtk_Buff"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Morax_Last_MaxHp",
+                                    "value": "FIGHT_PROP_MAX_HP"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": "FIGHT_PROP_MAX_HP",
+                                    "HJJEAOMEOFI": "_ABILITY_Claymore_Morax_Last_MaxHp",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_Morax_HpToAtk_Buff"
+                                },
+                                {
+                                    "$type": "AttachModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Claymore_Morax_HpToAtk_Buff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_Morax_HpToAtk_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackExtraDelta": [
+                            "FIGHT_PROP_MAX_HP",
+                            "HptoAtk_Factor",
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": "FIGHT_PROP_MAX_HP",
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_Morax_Last_MaxHp",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_Morax_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_MillenniaTuna",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "Elemental_Burst"
+                    ],
+                    "damagePercentageRatio": "Rate"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Claymore_MillenniaTuna",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Claymore_MillenniaTuna_CD",
+                        "UNIQUE_Claymore_MillenniaTuna_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Chance": 0.0,
+                "AOE_Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Claymore_MillenniaTuna_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Burst"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112412
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "NPHOOPNDCAC": "Target",
+                                    "PLKDGIELEEF": "Chance",
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "FireEffect",
+                                            "NPHOOPNDCAC": "Target",
+                                            "JBHFPDMBFHN": "Eff_Weapon_MillenniaTuna",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByHitPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.20000000298023224,
+                                                    "PHDCJAHHIOG": 0.0
+                                                },
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByEntity"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "$type": "TriggerAttackEvent",
+                                            "DMCJDGELKBC": {
+                                                "attackPattern": {
+                                                    "$type": "ConfigAttackCircle",
+                                                    "lifeTime": "TriggerNoRepeat",
+                                                    "NGDMCBABOJA": {
+                                                        "$type": "ConfigBornByHitPoint",
+                                                        "offset": {
+                                                            "AEAAJCIDPED": 0.0,
+                                                            "KAAPLGBEDPM": 0.0,
+                                                            "PHDCJAHHIOG": 0.0
+                                                        },
+                                                        "NHPNHKBMAEO": {
+                                                            "$type": "ConfigDirectionByEntity"
+                                                        }
+                                                    },
+                                                    "ICGFCBOFFDI": 3.0
+                                                },
+                                                "attackInfo": {
+                                                    "attackTag": "WeaponSkill",
+                                                    "attenuationTag": "",
+                                                    "attenuationGroup": "default",
+                                                    "attackProperty": {
+                                                        "bonusCriticalHurt": "AOE_Rate",
+                                                        "damagePercentageRatio": 0.0,
+                                                        "elementDurability": 100.0,
+                                                        "strikeType": "Default",
+                                                        "enBreak": 100.0
+                                                    },
+                                                    "hitPattern": {
+                                                        "onHitEffectName": "default",
+                                                        "hitImpulseType": "LV2",
+                                                        "hitHaltTimeScale": 0.009999999776482582
+                                                    }
+                                                }
+                                            },
+                                            "OJIFKEOCJGB": "Enemy"
+                                        },
+                                        {
+                                            "$type": "AddGlobalValue",
+                                            "value": -1.0,
+                                            "HJJEAOMEOFI": "_ABILITY_Claymore_MillenniaTuna",
+                                            "EODOIECEPEF": true,
+                                            "JDHHMBHOOEC": -1.0,
+                                            "KHAHOELDONA": -1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Claymore_MillenniaTuna_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 112412
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_MillenniaTuna",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Claymore_MillenniaTuna_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Maria",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByTeamStatusMixin",
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "GetTeamTotalMaxEnergyToOverridemap",
+                            "ACOKKHADPOJ": true,
+                            "LEINAEHJFNA": "BigTeam",
+                            "OGAHELLALBB": "Claymore_Maria_TeamEnergy"
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": [
+                                "Claymore_Maria_TeamEnergy",
+                                "Ratio",
+                                "Mul",
+                                100.0,
+                                "Div"
+                            ],
+                            "HJJEAOMEOFI": "_ABILITY_Claymore_Maria_BuffValue",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "Max_Value",
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "ACOKKHADPOJ": true,
+                            "BPCFCANOMNH": "_ABILITY_Claymore_Maria_BuffValue",
+                            "OGAHELLALBB": "Claymore_Maria_BuffValue"
+                        }
+                    ],
+                    "IALICHIPLFB": 20.0,
+                    "KPOJDIIHHEE": true,
+                    "LNKBICEPIJK": true
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "Elemental_Burst"
+                    ],
+                    "damagePercentageRatio": "Claymore_Maria_BuffValue"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Ratio": 0.0,
+                "Max_Value": 0.0,
+                "Claymore_Maria_TeamEnergy": 0.0,
+                "Claymore_Maria_BuffValue": 0.0
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Claymore_Maria_BuffValue",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Bakufu",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "Elemental_Art",
+                        "Elemental_Art_Hold",
+                        "Elemental_Art_Extra"
+                    ],
+                    "damagePercentageRatio": "Rate"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "EnergyCost": 0.0,
+                "EnergyPerTime": 0.0,
+                "Dura": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_Claymore_Bakufu_CheckArtHit": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art",
+                                        "Elemental_Art_Hold",
+                                        "Elemental_Art_Extra"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 112414
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Bakufu_ReturnEnergy"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Claymore_Bakufu_ReturnEnergy": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "Dura",
+                        0.6000000238418579,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "ACOKKHADPOJ": true,
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 112414
+                        },
+                        {
+                            "$type": "ReviveElemEnergy",
+                            "ACOKKHADPOJ": true,
+                            "value": [
+                                0.0,
+                                "EnergyCost",
+                                "Sub"
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ReviveElemEnergy",
+                            "ACOKKHADPOJ": true,
+                            "value": "EnergyPerTime"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Claymore_Bakufu_CheckArtHit"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Itadorimaru",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "ExtraAttack",
+                        "NormalAttack_01",
+                        "NormalAttack_02",
+                        "NormalAttack_03",
+                        "NormalAttack_04",
+                        "NormalAttack_05",
+                        "NormalAttack_06"
+                    ],
+                    "damagePercentageRatio": 0.0,
+                    "damageExtra": [
+                        "DefToExtraRatio",
+                        "FIGHT_PROP_CUR_DEFENSE",
+                        "Mul"
+                    ],
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Itadorimaru_MaxExtraDamage",
+                            "value": [
+                                "DefToExtraRatio",
+                                "FIGHT_PROP_CUR_DEFENSE",
+                                "Mul"
+                            ],
+                            "ONPJJFKDCED": "MoreThan"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Itadorimaru_Zero",
+                            "value": [
+                                "DefToExtraRatio",
+                                "FIGHT_PROP_CUR_DEFENSE",
+                                "Mul"
+                            ],
+                            "ONPJJFKDCED": "LessAndEqual"
+                        }
+                    ]
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "ExtraAttack",
+                        "NormalAttack_01",
+                        "NormalAttack_02",
+                        "NormalAttack_03",
+                        "NormalAttack_04",
+                        "NormalAttack_05",
+                        "NormalAttack_06"
+                    ],
+                    "damagePercentageRatio": 0.0,
+                    "damageExtra": "MaxExtraDamage",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Itadorimaru_MaxExtraDamage",
+                            "value": [
+                                "DefToExtraRatio",
+                                "FIGHT_PROP_CUR_DEFENSE",
+                                "Mul"
+                            ],
+                            "ONPJJFKDCED": "LessAndEqual"
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "DefToExtraRatio": 0.0,
+                "MaxExtraDamage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Itadorimaru_QAcheck_ExtraDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": [
+                                "DefToExtraRatio",
+                                "FIGHT_PROP_CUR_DEFENSE",
+                                "Mul"
+                            ],
+                            "HJJEAOMEOFI": "Itadorimaru_QAcheck_ExtraDamage",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "value": "MaxExtraDamage",
+                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Itadorimaru_MaxExtraDamage",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Weapon_Claymore_Itadorimaru_Zero",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Itadorimaru_QAcheck_ExtraDamage"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Claymore_Narukami",
+            "FEFIHIEHDOM": true
+        }
+    }
+]

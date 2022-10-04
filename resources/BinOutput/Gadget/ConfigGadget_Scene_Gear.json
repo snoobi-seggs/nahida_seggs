@@ -1,0 +1,224 @@
+{
+    "Gear_ElectricBall": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "hitAutoRedirect": false,
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "animEvents": {
+                "ATK01": {
+                    "attackPattern": {
+                        "$type": "ConfigAttackBox",
+                        "lifeTime": "TriggerNoRepeat",
+                        "NGDMCBABOJA": {
+                            "$type": "ConfigBornByTarget"
+                        },
+                        "size": {
+                            "AEAAJCIDPED": 0.4000000059604645,
+                            "KAAPLGBEDPM": 0.4000000059604645,
+                            "PHDCJAHHIOG": 1.0
+                        }
+                    },
+                    "attackInfo": {
+                        "attackTag": "",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 0.5,
+                            "damagePercentageRatio": 0.0,
+                            "elementType": "Electric",
+                            "elementDurability": 50.0
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV2",
+                            "overrideHitImpulse": {
+                                "hitLevel": "Light",
+                                "HPOPMELEPEB": 120.0,
+                                "hitImpulseY": 0.0
+                            },
+                            "hitHaltTime": 0.11999999731779099,
+                            "hitHaltTimeScale": 0.009999999776482582
+                        }
+                    }
+                }
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Gear_ElectricBall",
+                "abilityName": "Gear_Electric_ElectricBall_Loop",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 2.5
+        },
+        "move": {
+            "$type": "ConfigLinerBulletMove",
+            "FMMJLOCHHLM": 15.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetDoAttackEvent",
+                    "DMCJDGELKBC": "ATK01"
+                }
+            ]
+        }
+    },
+    "Test_Rotation02": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "MNDEFJBNOGI": true,
+        "combat": {
+            "property": {
+                "HP": 99999.0,
+                "attack": 10.0,
+                "isLockHP": true,
+                "canTriggerBullet": true,
+                "BACKFJDBKFB": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "hitAutoRedirect": false,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "lockType": "Gadget_Lv1"
+            },
+            "die": {
+                "dieForceDisappearTime": 3.0,
+                "dieDisappearEffect": ""
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Ability_01",
+                "abilityName": "Test_Rotation02_Interact",
+                "abilityOverride": ""
+            }
+        ]
+    },
+    "WindDevice01": {
+        "$type": "ConfigGadget",
+        "combat": {
+            "property": {
+                "HP": 99999.0,
+                "attack": 20.0,
+                "w": 50.0,
+                "isInvincible": true,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "hitAutoRedirect": false,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Gadget_Lv1"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Ability_01",
+                "abilityName": "WindDevice01_Interact",
+                "abilityOverride": ""
+            }
+        ],
+        "stateLayers": {
+            "defaultLayer": {
+                "$type": "ConfigNormalStateLayer",
+                "JLAFELOFEGB": "",
+                "stateIDs": {
+                    "All": {
+                        "$type": "ConfigNormalStateIDInfo",
+                        "PINCPDEEFJI": {
+                            "WindDevice_On": [
+                                "Audio_SceneObj_Gear_WindDevice_On"
+                            ],
+                            "WindDevice_Off": []
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "SceneObj_Gear_WhiteBox_Weight": {
+        "$type": "ConfigGadget",
+        "combat": {
+            "property": {
+                "HP": 1.0,
+                "attack": 80.0,
+                "w": 80.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "hitAutoRedirect": false,
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Gadget_Lv1"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "SceneObj_Gear_WhiteBox_Weight",
+                "abilityName": "SceneObj_Gear_WhiteBox_Weight",
+                "abilityOverride": ""
+            }
+        ],
+        "field": {
+            "concernType": "CombatExcludeGWGO",
+            "shape": "",
+            "OIFFBJLEMDF": "",
+            "triggerInfinite": true,
+            "lifeInfinite": true,
+            "overwriteCampType": true,
+            "campType": "All",
+            "NKLJGKCFFID": "",
+            "MKBFGKPIGGN": ""
+        }
+    }
+}

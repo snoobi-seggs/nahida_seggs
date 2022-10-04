@@ -1,0 +1,350 @@
+{
+    "GuideAvatarFlyPC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_MOVEFORWARD_PC",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "MoveForward"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideForceAvatarMoveAction",
+                "CAFIMDFEHPB": 1.0
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "MoveEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "CanFly"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarFly_Step02PC"
+            }
+        ]
+    },
+    "GuideAvatarFly_Step02PC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLY_PC",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "TriggerSkill4Event"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideDelayDoAction",
+                "ILDBPJLBBEK": 0.800000011920929,
+                "OAEEBLALAPO": [
+                    {
+                        "$type": "ConfigGuideAddTaskAction",
+                        "JILJHNGKJAB": "GuideAvatarFly_Step03PC"
+                    }
+                ]
+            }
+        ]
+    },
+    "GuideAvatarFly_Step03PC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_MOVE_PC",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "MoveForward",
+                            "MoveBackward",
+                            "MoveLeft",
+                            "MoveRight"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "CAEELNCHFEP": [
+                    "MoveEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "TryToMove"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarFlyPS"
+            }
+        ]
+    },
+    "GuideAvatarFlyInWindPC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLYINWIND_PC",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 10.0
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarFlyInWindPS"
+            }
+        ]
+    },
+    "GuideFlyStartPC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyStartCondition",
+                    "secondHeight": 10.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyFailPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyFinishPC"
+            }
+        ]
+    },
+    "GuideFlyFailPC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyFailCondition"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyFinishPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartPC"
+            }
+        ]
+    },
+    "GuideFlyFinishPC": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "MCMDMNLBFPA": "Standalone",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "",
+                        "KCFAOMKBKPL": "",
+                        "JKANEFEALGC": "UI_GUIDE_INFO_FLY_PC",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "GHDJNBMMEFJ": [
+                            "JumpOrSkill4"
+                        ],
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideFlyFinishCondition",
+                    "EKAIBDFAODH": 1.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyFailPC"
+            },
+            {
+                "$type": "ConfigGuideEndTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartPC"
+            },
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND",
+                "value": true
+            }
+        ]
+    }
+}

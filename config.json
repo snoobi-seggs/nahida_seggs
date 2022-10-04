@@ -1,0 +1,143 @@
+{
+  "folderStructure": {
+    "resources": "./resources/",
+    "data": "./data/",
+    "packets": "./packets/",
+    "scripts": "./resources/Scripts/",
+    "plugins": "./plugins/"
+  },
+  "databaseInfo": {
+    "server": {
+      "connectionUri": "mongodb://localhost:27017",
+      "collection": "grasscutter"
+    },
+    "game": {
+      "connectionUri": "mongodb://localhost:27017",
+      "collection": "grasscutter"
+    }
+  },
+  "language": {
+    "language": "en_SG",
+    "fallback": "en_US",
+    "document": "EN"
+  },
+  "account": {
+    "autoCreate": true,
+    "EXPERIMENTAL_RealPassword": false,
+    "defaultPermissions": ["server.*","player.*"],
+    "maxPlayer": -1
+  },
+  "server": {
+    "debugWhitelist": [],
+    "debugBlacklist": [],
+    "runMode": "HYBRID",
+    "http": {
+      "bindAddress": "0.0.0.0",
+      "bindPort": 443,
+      "accessAddress": "127.0.0.1",
+      "accessPort": 0,
+      "encryption": {
+        "useEncryption": true,
+        "useInRouting": true,
+        "keystore": "./keystore.p12",
+        "keystorePassword": "123456"
+      },
+      "policies": {
+        "cors": {
+          "enabled": false,
+          "allowedOrigins": [
+            "*"
+          ]
+        }
+      },
+      "files": {
+        "indexFile": "./index.html",
+        "errorFile": "./404.html"
+      }
+    },
+    "game": {
+      "bindAddress": "0.0.0.0",
+      "bindPort": 22102,
+      "accessAddress": "127.0.0.1",
+      "accessPort": 0,
+      "loadEntitiesForPlayerRange": 100,
+      "enableScriptInBigWorld": false,
+      "enableConsole": true,
+      "kcpInterval": 20,
+      "logPackets": "ALL",
+      "gameOptions": {
+        "inventoryLimits": {
+          "weapons": 2000,
+          "relics": 2000,
+          "materials": 2000,
+          "furniture": 2000,
+          "all": 30000
+        },
+        "avatarLimits": {
+          "singlePlayerTeam": 40,
+          "multiplayerTeam": 40
+        },
+        "sceneEntityLimit": 10000,
+        "watchGachaConfig": false,
+        "enableShopItems": true,
+        "staminaUsage": false,
+        "energyUsage": false,
+        "fishhookTeleport": true,
+        "resinOptions": {
+          "resinUsage": false,
+          "cap": 160,
+          "rechargeTime": 480
+        },
+        "rates": {
+          "adventureExp": 1.0,
+          "mora": 1.0,
+          "leyLines": 1.0
+        }
+      },
+      "joinOptions": {
+        "welcomeEmotes": [
+          2007,
+          1002,
+          4010
+        ],
+        "welcomeMessage": "Welcome to nilou and cyno's asshole",
+        "welcomeMail": {
+          "title": "paimon has big nipples (real)",
+          "content": "come succ paimon off\nRUN NEW COMMAND /givenew or /gn to get the new items in 3.1!\n\nAlso use /prop um 1 to unlock desert region.",
+          "sender": "Paimon's Nipples",
+          "items": [
+            {
+              "itemId": 223,
+              "itemCount": 99999,
+              "itemLevel": 1
+            },
+            {
+              "itemId": 224,
+              "itemCount": 99999,
+              "itemLevel": 1
+            },
+            {
+              "itemId": 201,
+              "itemCount": 99999,
+              "itemLevel": 1
+            }
+          ]
+        }
+      },
+      "serverAccount": {
+        "avatarId": 10000070,
+        "nameCardId": 210133,
+        "adventureRank": 1,
+        "worldLevel": 0,
+        "nickName": "Paimon's Nipples",
+        "signature": "talk to me bitches"
+      }
+    },
+    "dispatch": {
+      "regions": [],
+      "defaultName": "Grasscutter",
+      "logRequests": "NONE"
+    }
+  },
+  "version": 4
+}

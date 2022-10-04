@@ -1,0 +1,916 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_IceBurst",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "NormalAttack",
+                        "NormalAttack_BS"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Shaman_Ice_WeaponEffectLoop"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Shaman_Ice_WeaponEffectLoop": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_WeaponLoop"
+                        }
+                    ]
+                },
+                "Shamam_Ice_IceBurt_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2000000476837158,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "NormalAttackOver"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_WeaponBS"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "secondHeight": 3.0,
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 101.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4"
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeRange": 1.0,
+                                        "shakeTime": 0.20000000298023224
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                                "MICIJLHMIIH": ""
+                            },
+                            "CABLIPAKCGB": 42103014,
+                            "DOLAJLACEDF": 4001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByPredicatePoint",
+                        "JBPCKOKLHEB": true,
+                        "ANAGBFPADIE": true,
+                        "BIOOFAHEGLA": 0.699999988079071
+                    },
+                    "OGADOPDNBMM": false
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_NormalAttack",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "JBPCKOKLHEB": true,
+                        "GDENJEFPMGC": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                        "MICIJLHMIIH": ""
+                    }
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Shamam_Ice_IceBurt_Damage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_ContinuousIceBurst",
+            "HNEIEGHMLKH": {
+                "Monster_Shaman_Ice_NormalAttackPowerDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2999999523162842,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByPredicatePoint",
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "BIOOFAHEGLA": 0.4000000059604645
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_NormalAttack",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "secondHeight": 3.0,
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 101.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4"
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeRange": 1.0,
+                                        "shakeTime": 0.20000000298023224
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_MONSTER_SHAMAN_ICE_ICEBURST_POS",
+                                "MICIJLHMIIH": ""
+                            },
+                            "CABLIPAKCGB": 42103014,
+                            "DOLAJLACEDF": 4001,
+                            "CEBMHIFOHJM": true
+                        }
+                    ]
+                },
+                "Monster_Shaman_Ice_NormalAttackPowerDamageDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 7.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.7000000476837158,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "NormalAttackOver"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Shaman_Ice_NormalAttackPowerDamage"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Shaman_Ice_NormalAttackPowerDamageDelay"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Shaman_NormalAttack_SlowDownArea",
+            "HNEIEGHMLKH": {
+                "SlowDownArea_ElementDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_NormalAttack_IceArea"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "secondHeight": 3.0,
+                                    "ICGFCBOFFDI": 1.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.30000001192092896,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 20.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2"
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "SlowDownArea_ElementDamage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_EscapeState",
+            "HNEIEGHMLKH": {
+                "Shaman_Escape": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "EscapeState",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "EscapeState"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Shaman_Escape"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_AnimationSteer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "NormalAttack_BS"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "SupportAttack_BS"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "MeleeAttack"
+                    ],
+                    "IMHBEGIKDKB": 0.15000000596046448,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Turn"
+                    ],
+                    "EOOBFBGMGLD": 0.20000000298023224,
+                    "IMHBEGIKDKB": 0.75,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_WeaponEffect"
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_ClearPillarOnHitThrow",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Shaman_Create_IcePillar"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_CreatePillar",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_SHAMAN_ICE_HASPILLAR",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Monster_Shaman_Ice_HasNoPillar",
+                        "Monster_Shaman_Ice_HasPillar"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Shaman_Ice_HasNoPillar": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "OnPillar"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "IcePillarSum",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "Monster_Shaman_Ice_HasPillar": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Shaman_Create_IcePillar"
+                        }
+                    ]
+                },
+                "UNIQUE_Shaman_Create_IcePillar": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NJEOPILMKCN": true,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "CABLIPAKCGB": 42103015,
+                            "DOLAJLACEDF": 4001,
+                            "CEBMHIFOHJM": true
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "OnPillar",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "IcePillarSum",
+                            "value": 1.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_WATCHER_82068_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_LifeOver",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42103015
+                            },
+                            "GAIGOBCNNEE": "Monster_Shaman_Ice_KillPillar"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "IcePillarSum",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "OnPillar"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_HASPILLAR",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "OnPillar"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "IcePillarSum",
+                            "value": 0.0
+                        }
+                    ]
+                },
+                "Monster_Shaman_Ice_KillPillar": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_HASPILLAR",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "DoWatcherSystemAction",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_WATCHER_82068_",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "GPGMPHIIAMD": 82068,
+                    "LNGKALMLMGN": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_CreatePillar_Effect",
+            "HNEIEGHMLKH": {
+                "Monster_Shaman_Ice_CreatePillarEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_WeaponLoop"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_CreateBS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Shaman_Ice_CreatePillarEffect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Shaman_IcePillar_Create",
+            "HNEIEGHMLKH": {
+                "IcePillar_Element": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Frozen",
+                    "elementDurability": 300.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Ice",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224,
+                            "BOCNCNPHCFL": [
+                                {
+                                    "$type": "SetPoseBool",
+                                    "NPHOOPNDCAC": "Owner",
+                                    "HHFIHBEAPAP": "OnPillar"
+                                },
+                                {
+                                    "$type": "RemoveModifier",
+                                    "GAIGOBCNNEE": "IcePillar_Element"
+                                }
+                            ],
+                            "HMLKELJFCKD": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "Target",
+                                            "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "TargetOriginOwner",
+                                            "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_BeHitFailed",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByGlobalValue",
+                                            "MICIJLHMIIH": "_MONSTER_SHAMAN_ICE_ELEMENTSHIELD_HIT"
+                                        }
+                                    }
+                                }
+                            ],
+                            "FFOEHJLIDFC": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "Target",
+                                            "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "TargetOriginOwner",
+                                            "HJJEAOMEOFI": "_MONSTER_SHAMAN_ICE_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_BeHitSuccess",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByGlobalValue",
+                                            "MICIJLHMIIH": "_MONSTER_SHAMAN_ICE_ELEMENTSHIELD_HIT"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToElementDurabilityMixin",
+                            "CMEDACODLEA": [
+                                0.0,
+                                150.0,
+                                301.0
+                            ],
+                            "MIEPCOONDEM": [
+                                "Monster_Shaman_Ice_PillarLowD",
+                                "Empty"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_Create",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_LifeOver",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "Watcher_82069"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "OnPillar"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "UNIQUE_Shaman_Create_IcePillar"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Monster_Shaman_Ice_PillarLowD": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Damaged",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_Create"
+                        }
+                    ]
+                },
+                "Watcher_82069": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DoWatcherSystemAction",
+                            "GPGMPHIIAMD": 82069,
+                            "LNGKALMLMGN": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "IcePillar_Element"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shaman_Ice_PillarAoe",
+            "HNEIEGHMLKH": {
+                "Ice_PillarAoeDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 4.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Shaman_Ice_PillarStorageEffect"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Monster_Shaman_Ice_PillarStorageEffect"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IcePillar_IceBurst",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "secondHeight": 1.0,
+                                    "ICGFCBOFFDI": 3.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.30000001192092896,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Blunt",
+                                        "enBreak": 20.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV3"
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Shaman_Ice_PillarStorageEffectDelay"
+                        }
+                    ]
+                },
+                "Monster_Shaman_Ice_PillarStorageEffect": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shaman_Ice_IceBurst_Storage",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                },
+                "Monster_Shaman_Ice_PillarStorageEffectDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Shaman_Ice_PillarStorageEffect"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Ice_PillarAoeDamage"
+                }
+            ]
+        }
+    }
+]

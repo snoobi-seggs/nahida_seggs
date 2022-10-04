@@ -1,0 +1,522 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_Bramble_Interact",
+            "HNEIEGHMLKH": {
+                "Bramble_Burning": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 30.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        },
+                        {
+                            "$type": "RejectAttackMixin",
+                            "attackTag": "_Bramble_Attack"
+                        },
+                        {
+                            "$type": "DoActionByEventMixin",
+                            "type": "Current",
+                            "PDKJAFAIDFL": [
+                                {
+                                    "MFKFDKDKKNJ": "ElementBurning",
+                                    "OAEEBLALAPO": [
+                                        {
+                                            "$type": "AttachModifier",
+                                            "GAIGOBCNNEE": "Burning_Effect"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "LDPHCDDGEBA": [
+                                {
+                                    "MFKFDKDKKNJ": "ElementBurning",
+                                    "OAEEBLALAPO": [
+                                        {
+                                            "$type": "RemoveModifier",
+                                            "GAIGOBCNNEE": "Burning_Effect"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "LIINFCJLBOP": ""
+                        }
+                    ],
+                    "state": "Limbo",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_BurnOut",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint1"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_BurnOut",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint2"
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Burning_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Burning"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 2.0,
+                    "HJJEAOMEOFI": "_CUSTOM_ATTACK_SHAPE_TYPE",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 2.0,
+                    "KHAHOELDONA": 2.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_BURNING_IGNITE_ONLY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Bramble_Burning"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_Bramble_Attack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "DamageByAttackValue",
+                    "NPHOOPNDCAC": "Target",
+                    "attackInfo": {
+                        "attackTag": "_Bramble_Attack",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 1.0,
+                            "damagePercentageRatio": 0.0,
+                            "elementType": "Grass",
+                            "elementDurability": 10.0,
+                            "strikeType": "Default",
+                            "enBreak": 100.0,
+                            "ignoreLevelDiff": true
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV4",
+                            "hitHaltTimeScale": 0.009999999776482582
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_WoodenObject_Interact",
+            "HNEIEGHMLKH": {
+                "WoodMaterial": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 30.0,
+                    "state": "Limbo",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Die_Effect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_WoodenObject_DeathType",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHitElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        },
+                                        {
+                                            "$type": "ByHitDamage",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "GOCKFJJFLHN": 0.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Fire"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_Broken"
+                                },
+                                {
+                                    "$type": "KillSelf"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Water"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHitDamage",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "GOCKFJJFLHN": 0.0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_Broken"
+                                },
+                                {
+                                    "$type": "KillSelf"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Die_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_WoodenObject_DeathType",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_BurnOut"
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_WoodenObject_DeathType",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "MoreThan"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "WoodMaterial"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_WoodenObject_DeathType",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_BURNING_IGNITE_ONLY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_FirewoodStacks_Interact",
+            "HNEIEGHMLKH": {
+                "NormalModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 50.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_LeafBlanket_01_Burnout",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint"
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "NormalModifier"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_BURNING_IGNITE_ONLY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_BrambleWorld_Interact",
+            "HNEIEGHMLKH": {
+                "Burning": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 30.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "state": "Limbo",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_BurnOut",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint1"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_BurnOut",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "AttachPoint2"
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Double_Attack"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Double_Attack"
+                        }
+                    ]
+                },
+                "Double_Attack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.75,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "ACOKKHADPOJ": true,
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.15000000596046448,
+                                            "KAAPLGBEDPM": 0.75,
+                                            "PHDCJAHHIOG": -0.5
+                                        }
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 4.400000095367432,
+                                        "KAAPLGBEDPM": 1.5,
+                                        "PHDCJAHHIOG": 0.800000011920929
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Grass",
+                                        "elementDurability": 10.0,
+                                        "strikeType": "Pierce",
+                                        "enBreak": 9999999.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Burning"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_ABILITY_BURNING_IGNITE_ONLY",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_BrambleWorld_Attack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "DamageByAttackValue",
+                    "NPHOOPNDCAC": "Target",
+                    "attackInfo": {
+                        "attackTag": "",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 1.0,
+                            "damagePercentageRatio": 0.0,
+                            "elementType": "Grass",
+                            "elementDurability": 10.0,
+                            "strikeType": "Default",
+                            "enBreak": 100.0,
+                            "ignoreLevelDiff": true
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV4",
+                            "hitHaltTimeScale": 0.009999999776482582
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Item_Moving_Trap_Attack",
+            "HNEIEGHMLKH": {
+                "test": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 100.0
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "DamageByAttackValue",
+                    "NPHOOPNDCAC": "Target",
+                    "attackInfo": {
+                        "attackTag": "",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 1.0,
+                            "damagePercentageRatio": 0.0,
+                            "elementType": "Fire",
+                            "elementDurability": 10.0,
+                            "strikeType": "Default",
+                            "enBreak": 100.0,
+                            "ignoreLevelDiff": true
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "",
+                            "hitImpulseType": "LV4",
+                            "hitHaltTimeScale": 0.009999999776482582
+                        }
+                    }
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "test"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Environment_WoodenMaterial_GinSengTree",
+            "KJKECFBMHKH": [
+                {
+                    "$type": "ExecuteGadgetLua"
+                }
+            ]
+        }
+    }
+]

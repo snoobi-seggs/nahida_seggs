@@ -1,0 +1,1186 @@
+{
+    "GuideWeaponChange": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_WEAPON_CHANGE_GUIDE"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "HGNNHDPBILC": [
+                    [
+                        11201
+                    ]
+                ]
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideWeaponChangePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideWeaponChangeiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideWeaponChangePS"
+            }
+        ]
+    },
+    "GuideWeaponUpgrade": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_WEAPON_PROMOTE_GUIDE"
+            }
+        ]
+    },
+    "GuideAvatarUpgrade": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_PLAYER_LVUP_GUIDE"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "HGNNHDPBILC": [
+                    [
+                        104002
+                    ],
+                    [
+                        104003
+                    ]
+                ]
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarUpgradePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarUpgradeiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAvatarUpgradePS"
+            }
+        ]
+    },
+    "GuideTalent": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_TALENT"
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_AVATAR_TALENT",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "KCFAOMKBKPL": "InLevelMainPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpCharacter/GrpTop/BtnTip",
+                        "KCFAOMKBKPL": "CharacterPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "AHOGFOAEJFA": [
+                            "TutorialDialog"
+                        ],
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "DANEOPFCIPK": "TalentInfo"
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpCharacter/GrpTab/Menu/Content/BtnTalent",
+                        "KCFAOMKBKPL": "CharacterPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "type": "Blink",
+                        "HGKAEOAJLEO": -0.5,
+                        "BELCHBHDHGP": "CharacterFuncBtn",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideTalent02"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenStateCondition",
+                    "IDHGEIMEKHB": "OPEN_STATE_GUIDE_TALENT",
+                    "value": true
+                }
+            ]
+        ]
+    },
+    "GuideTalent02": {
+        "name": "",
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "KCFAOMKBKPL": "CharacterPage",
+                "DANEOPFCIPK": "TalentInfo"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideShowTutorialAction",
+                "PKAAIDPILCH": 231
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "KCFAOMKBKPL": "TutorialDialog",
+                    "enable": false
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 2.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_TALENT",
+                "value": true
+            }
+        ]
+    },
+    "GuideRelic": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_RELIC"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "type": "Relic"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRelicPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideReliciOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRelicPS"
+            }
+        ]
+    },
+    "GuideWidget": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_WIDGET"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "BJAHMBOOMLK": [
+                    21
+                ],
+                "type": "Material"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideWidgetPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideWidgetiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideWidgetPS"
+            }
+        ]
+    },
+    "GuideFishRecipe": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FISH_RECIPE"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "HGNNHDPBILC": [
+                    [
+                        221035
+                    ]
+                ]
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFishRecipePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFishRecipeiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFishRecipePS"
+            }
+        ]
+    },
+    "GuideAdeptiAbode": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_HOMEWORLD_ADEPTIABODE"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "HGNNHDPBILC": [
+                    [
+                        220026
+                    ]
+                ]
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAdeptiAbodePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAdeptiAbodeiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideAdeptiAbodePS"
+            }
+        ]
+    },
+    "GuideHomeWorldFirstPlace": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_HOMEWORLD_DEPLOY"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideHomeWorldFirstPlacePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideHomeWorldFirstPlaceiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideHomeWorldFirstPlacePS"
+            }
+        ]
+    },
+    "GuideHomeMapList": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_HOMEWORLD_MAPLIST"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideHomeMapListPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideHomeMapListiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideHomeMapListPS"
+            }
+        ]
+    },
+    "GuideRelicPromote": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_RELIC_PROM"
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_RELIQUARY_UPGRADE",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpCharacter/GrpAvatarInfo/Relic/RelicCurrent/GrpAction/BtnPromote",
+                        "KCFAOMKBKPL": "CharacterPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    },
+                    {
+                        "AAPGLLLCGJG": "GrpEquip/GrpTop/BtnTip",
+                        "KCFAOMKBKPL": "EquipOverviewPage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "",
+                        "ODFAKCCPFNO": "",
+                        "AHOGFOAEJFA": [
+                            "TutorialDialog"
+                        ],
+                        "type": "Blink",
+                        "ELCLIBPMPDB": "",
+                        "DANEOPFCIPK": "RelicPromote"
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRelicPromote02"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenStateCondition",
+                    "IDHGEIMEKHB": "OPEN_STATE_GUIDE_RELIC_PROM",
+                    "value": true
+                }
+            ]
+        ]
+    },
+    "GuideRelicPromote02": {
+        "name": "",
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "KCFAOMKBKPL": "EquipOverviewPage",
+                "DANEOPFCIPK": "RelicPromote"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideShowTutorialAction",
+                "PKAAIDPILCH": 222
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "KCFAOMKBKPL": "TutorialDialog",
+                    "enable": false
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "ILDBPJLBBEK": 2.0
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_RELIC_PROM",
+                "value": true
+            }
+        ]
+    },
+    "GuideBag": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_BAG"
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "type": "Any",
+                "weight": 2.0
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBagPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBagiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBagPS"
+            }
+        ]
+    },
+    "GuideColdClimateEntry": {
+        "name": "",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideClimateTypeCondition",
+                "LFLNMOIEOGI": "Cold"
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_COLDCLIMATE"
+            }
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideColdClimateCoreiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideColdClimateSubiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideColdClimateCorePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideColdClimateSubPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideColdClimateCorePS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideColdClimateSubPS"
+            }
+        ]
+    },
+    "UnlockRecipe": {
+        "name": "",
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "UnlockRecipePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "UnlockRecipeiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "UnlockRecipePS"
+            }
+        ]
+    },
+    "UnlockRecipeGoldenCrab": {
+        "name": "",
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "UnlockRecipeGoldenCrabPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "UnlockRecipeGoldenCrabiOS"
+            }
+        ]
+    },
+    "GuideExitMultiplayer": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_EXITMULTIPLAYER"
+            },
+            {
+                "$type": "ConfigGuideMultiSinglePlayerCondition"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideExitMultiplayerios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideExitMultiplayerPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideExitMultiplayerPS"
+            }
+        ]
+    },
+    "GuideSeaLamp": {
+        "name": "",
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideSeaLampPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideSeaLampiOS"
+            }
+        ]
+    },
+    "GuideGguideHint": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_GGUIDE_HINT"
+            },
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 3
+            },
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 10,
+                "CIFGALMGOMM": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGguideHintPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGguideHintiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGguideHintPS"
+            }
+        ]
+    },
+    "GuideGguide": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_GGUIDE"
+            },
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 3
+            },
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 10,
+                "CIFGALMGOMM": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGguidePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGguideiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGguidePS"
+            }
+        ]
+    },
+    "GuildChessMissonCheck": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_CHESS_MISSION_CHECK"
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "KCFAOMKBKPL": "TheatreMechanicusInfoPage"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuildChessMissonCheckios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuildChessMissonCheckPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuildChessMissonCheckPS"
+            }
+        ]
+    },
+    "GuideChessBuild": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_CHESS_BUILD"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChessBuildios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChessBuildPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChessBuildPS"
+            }
+        ]
+    },
+    "GuideChessWindTowerCircle": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_CHESS_WIND_TOWER_CIRCLE"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChessWindTowerCircleios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChessWindTowerCirclePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideChessWindTowerCirclePS"
+            }
+        ]
+    },
+    "GuideGoddessMapUnlock": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 13,
+                "CIFGALMGOMM": true
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideAnchorUnlockCondition",
+                "KOMMBCKFCNO": 4
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGoddessMapUnlockPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGoddessMapUnlockiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideGoddessMapUnlockPS"
+            }
+        ]
+    },
+    "GuideFlyStart": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_FLY_SECOND"
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 13,
+                "CIFGALMGOMM": true
+            },
+            {
+                "$type": "ConfigGuideCheckQuestStateCondition",
+                "questId": 35606,
+                "KKDBOOPOADE": 3
+            },
+            {
+                "$type": "ConfigGuideDungeonIdCondition",
+                "GPCICPCHMGI": 2004,
+                "BKKNDFHGHMF": false
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartiOS"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideFlyStartPS"
+            }
+        ]
+    },
+    "GuideTransportAmbor": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_AMBORTRANSPORT"
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideAnchorUnlockCondition",
+                "KOMMBCKFCNO": 8,
+                "PBCNCEHCPIL": true
+            },
+            {
+                "$type": "ConfigGuideCheckQuestStateCondition",
+                "questId": 35802,
+                "KKDBOOPOADE": 3
+            },
+            {
+                "$type": "ConfigGuideCheckQuestStateCondition",
+                "questId": 30600,
+                "KKDBOOPOADE": 2
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideTransportAmborios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideTransportAmborPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideTransportAmborPS"
+            }
+        ]
+    },
+    "GuidePlayerLvInfo": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_PAIMON_LVINFO"
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_PAIMON_LVINFO",
+                "value": true
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideLevelCondition",
+                "LLEHJFKCFND": 13,
+                "CIFGALMGOMM": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "FDLHKPFDDGI": [
+                    {
+                        "AAPGLLLCGJG": "GrpProfile/Right/GrpPlayerCard/Layout/PlayerLevel/Layout/BtnInfo_PlayerLevel/Content",
+                        "KCFAOMKBKPL": "PlayerProfilePage",
+                        "JKANEFEALGC": "",
+                        "EFCOGEILDBF": "UI_GUIDE_PLAYERLEVEL_INFO",
+                        "ODFAKCCPFNO": "",
+                        "IKOFIAAJHPP": "T",
+                        "type": "Blink",
+                        "ELCLIBPMPDB": ""
+                    }
+                ],
+                "JNPNOFDGNLE": "",
+                "FHHBDOCHEME": "InLevelMainPage"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "HFEJJCGGDBP": "GrpProfile/Right/GrpPlayerCard/Layout/PlayerLevel/Layout/BtnInfo_PlayerLevel/Content",
+                    "KCFAOMKBKPL": "PlayerProfilePage"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_PAIMON_LVINFO",
+                "value": true
+            }
+        ]
+    },
+    "GuideSumoTeamSkill": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_SUMO_TEAM_SKILL"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideSumoTeamSkillios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideSumoTeamSkillPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideSumoTeamSkillPS"
+            }
+        ]
+    },
+    "GuideCrystalLink": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_CRYSTALLINK_BUFF"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideCrystalLinkios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideCrystalLinkPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideCrystalLinkPS"
+            }
+        ]
+    },
+    "GuideMusicSetting": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MUSIC_GAME_V3_SETTING"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicSettingios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicSettingPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicSettingPS"
+            }
+        ]
+    },
+    "GuideMusicUgc_01": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MUSIC_GAME_V3_REAL_TIME_EDIT"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicUgcios_01"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicUgcPC_01"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicUgcPS_01"
+            }
+        ]
+    },
+    "GuideMusicUgc_02": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_MUSIC_GAME_V3_TIMELINE_EDIT"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicUgcios_02"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicUgcPC_02"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideMusicUgcPS_02"
+            }
+        ]
+    },
+    "GuideRogueMap": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ROGUE_MAP"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRogueMapios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRogueMapPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRogueMapPS"
+            }
+        ]
+    },
+    "GuideRogueRune": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ROGUE_RUNE"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRogueRuneios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRogueRunePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRogueRunePS"
+            }
+        ]
+    },
+    "GuidePotionConfigure": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_POTION_CONFIGURE"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuidePotionConfigureios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuidePotionConfigurePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuidePotionConfigurePS"
+            }
+        ]
+    },
+    "GuideLanV2Firework": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_LANV2_FIREWORK"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideLanV2Fireworkios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideLanV2FireworkPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideLanV2FireworkPS"
+            }
+        ]
+    },
+    "GuideBartenderFormula": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_BARTENDER_FORMULA"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderFormulaios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderFormulaPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderFormulaPS"
+            }
+        ]
+    },
+    "GuideBartenderMix": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_BARTENDER_MIX"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderMixios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderMixPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderMixPS"
+            }
+        ]
+    },
+    "GuideBartenderCup": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_BARTENDER_CUP"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderCupios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderCupPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideBartenderCupPS"
+            }
+        ]
+    },
+    "GuideRobotGacha": {
+        "name": "",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "IDHGEIMEKHB": "OPEN_STATE_GUIDE_ROBOTGACHA"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRobotGachaios"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRobotGachaPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "JILJHNGKJAB": "GuideRobotGachaPS"
+            }
+        ]
+    }
+}

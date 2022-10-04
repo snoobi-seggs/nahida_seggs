@@ -1,0 +1,1072 @@
+{
+    "Thoarder_ThrowingKnife": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "DFOMHHEIEEC": 0.5,
+                "FGALCDKIDHJ": 0.5
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "isLockHP": true,
+                "ignorePurgeRate": false
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            },
+            "animEvents": {
+                "ATK01": {
+                    "attackPattern": {
+                        "$type": "ConfigAttackBox",
+                        "lifeTime": "TriggerNoRepeat",
+                        "NGDMCBABOJA": {
+                            "$type": "ConfigBornByCollisionPoint",
+                            "offset": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 0.0,
+                                "PHDCJAHHIOG": -0.5
+                            }
+                        },
+                        "size": {
+                            "AEAAJCIDPED": 0.10000000149011612,
+                            "KAAPLGBEDPM": 0.10000000149011612,
+                            "PHDCJAHHIOG": 1.0
+                        }
+                    },
+                    "attackInfo": {
+                        "attackTag": "",
+                        "attenuationTag": "",
+                        "attenuationGroup": "default",
+                        "attackProperty": {
+                            "bonusCriticalHurt": 0.5,
+                            "damagePercentageRatio": 0.0,
+                            "elementDurability": 100.0,
+                            "strikeType": "Pierce",
+                            "enBreak": 50.0
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitImpulseType": "LV2",
+                            "hitHaltTimeScale": 0.009999999776482582
+                        },
+                        "cameraShake": {
+                            "shakeRange": 0.05999999865889549,
+                            "shakeTime": 0.09000000357627869
+                        }
+                    }
+                }
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "ThrowingKnife_Effect",
+                "abilityName": "Thoarder_ThrowingKnife_Effect",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 8.0
+        },
+        "move": {
+            "$type": "ConfigLinerParabolaBulletMove",
+            "FMMJLOCHHLM": 30.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "KBKBGMEBOBM": 40.0,
+            "OOKNCMNOLHL": 10.0,
+            "BEOAIOIBIHG": 0.009999999776482582
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetDoAttackEvent",
+                    "DMCJDGELKBC": "ATK01"
+                }
+            ]
+        }
+    },
+    "Thoarder_Bomb": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Bomb_Loop",
+                "abilityName": "Thoarder_Bomb_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Bomb_Explode",
+                "abilityName": "Thoarder_Bomb_Explode",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 15.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 50.0,
+            "OOKNCMNOLHL": 30.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 0.75,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_Bomb_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_MolotovCocktail": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "MolotovCocktail_Loop",
+                "abilityName": "Thoarder_MolotovCocktail_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "MolotovCocktail_Explode",
+                "abilityName": "Thoarder_MolotovCocktail_Explode",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 15.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 30.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 1.5,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_MolotovCocktail_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_Bomb_Water_01": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Bomb_Water_01_Loop",
+                "abilityName": "Thoarder_Bomb_Water_01_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Bomb_Water_01_Explode",
+                "abilityName": "Thoarder_Bomb_Water_01_Explode",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 15.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 30.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 1.5,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_Bomb_Water_01_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_Bomb_Ice_01": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Bomb_Ice_01_Loop",
+                "abilityName": "Thoarder_Bomb_Ice_01_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Bomb_Ice_01_Explode",
+                "abilityName": "Thoarder_Bomb_Ice_01_Explode",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 15.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 30.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 1.5,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_Bomb_Ice_01_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_Bomb_Electric_01": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Bomb_Electric_01_Loop",
+                "abilityName": "Thoarder_Bomb_Electric_01_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Bomb_Electric_01_Explode",
+                "abilityName": "Thoarder_Bomb_Electric_01_Explode",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 15.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 30.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 1.5,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_Bomb_Electric_01_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_Bomb_ElementalEffect_Fire": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "ElementalEffect",
+                "abilityName": "Thoarder_Bomb_ElementalEffect_Fire",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 3.5
+        }
+    },
+    "Thoarder_Bomb_ElementalEffect_Water": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "ElementalEffect",
+                "abilityName": "Thoarder_Bomb_ElementalEffect_Water",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 3.5
+        }
+    },
+    "Thoarder_Bomb_ElementalEffect_Ice": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "ElementalEffect",
+                "abilityName": "Thoarder_Bomb_ElementalEffect_Ice",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 3.5
+        }
+    },
+    "Thoarder_Bomb_ElementalEffect_Electric": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "ElementalEffect",
+                "abilityName": "Thoarder_Bomb_ElementalEffect_Electric",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 3.5
+        }
+    },
+    "Thoarder_Shovel_MuddyBullet": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "MuddyBullet_Loop",
+                "abilityName": "Thoarder_MuddyBullet_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "MuddyBullet_OnHit",
+                "abilityName": "Thoarder_MuddyBullet_OnHit",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 20.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 36.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 0.75,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_MuddyBullet_OnHit"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_Fat_Shovel_MuddyBullet": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "MuddyBullet_Loop",
+                "abilityName": "Thoarder_StoneBullet_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "MuddyBullet_OnHit",
+                "abilityName": "Monster_Thoarder_Male_Fat_Shovel_MuddyBullet_OnHit",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 40.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 30.0,
+            "OOKNCMNOLHL": 20.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 5.0,
+                "OICALFLJDEA": 20.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Monster_Thoarder_Male_Fat_Shovel_MuddyBullet_OnHit"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_HatchetThrow": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "HatchetThrow_Loop",
+                "abilityName": "Thoarder_HatchetThrow_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "HatchetThrow_Damage",
+                "abilityName": "Thoarder_HatchetThrow_Damage",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 20.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 36.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 0.75,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 24.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "lifeTime": "TriggerNoRepeat",
+                "PENKNGDICGD": 0.10000000149011612,
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_HatchetThrow_Damage"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_HatchetThrow_Plus": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "HatchetThrow_Loop",
+                "abilityName": "Thoarder_HatchetThrow_Bullet",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "HatchetThrow_Damage",
+                "abilityName": "Thoarder_Female_Hatchet_Anego_ThrowPlus_Damage",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 20.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 36.0,
+            "OOKNCMNOLHL": 20.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 0.25,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 40.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_Female_Hatchet_Anego_ThrowPlus_Damage"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_HammerThrow": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "DFOMHHEIEEC": 2.0,
+                "FGALCDKIDHJ": 2.0,
+                "FGNLBMLCKLP": 0.800000011920929
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 10.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "HatchetThrow_Loop",
+                "abilityName": "Thoarder_HatchetThrow_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "HatchetThrow_Damage",
+                "abilityName": "Thoarder_HatchetThrow_Damage",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 50.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 5.0,
+            "OOKNCMNOLHL": 50.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 0.25,
+                "OICALFLJDEA": 15.0,
+                "LAOHLEAPNBF": 30.0,
+                "OGKIPNLKEJP": 50.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "lifeTime": "TriggerNoRepeat",
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_HatchetThrow_Damage"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Thoarder_Slippie_Fire_Arrow": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "DFOMHHEIEEC": 0.5,
+                "FGALCDKIDHJ": 0.5
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "isLockHP": true,
+                "ignorePurgeRate": false
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Damage",
+                "abilityName": "Thoarder_Male_Slippie_FireArrow_Damage",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 8.0
+        },
+        "move": {
+            "$type": "ConfigLinerParabolaBulletMove",
+            "FMMJLOCHHLM": 30.0,
+            "JMEOBDFCELF": true,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "KBKBGMEBOBM": 40.0,
+            "OOKNCMNOLHL": 10.0,
+            "BEOAIOIBIHG": 0.009999999776482582
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Enemy"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Thoarder_Male_Slippie_FireArrow_Damage"
+                }
+            ]
+        }
+    }
+}

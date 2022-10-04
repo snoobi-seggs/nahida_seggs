@@ -1,0 +1,103 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "WaterAmber_Mist",
+            "HNEIEGHMLKH": {
+                "Mist": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 25.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Amber_Water_Mist"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10",
+                                "ONPOPLLHJLE": "All",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Equip"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "SteamBangWet"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10",
+                                "ONPOPLLHJLE": "All",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "MonsterEquip"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "SteamBangWet"
+                        }
+                    ]
+                },
+                "SteamBangWet": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementType": "Water",
+                    "elementDurability": 30.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Mist"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "WindAmberField",
+            "HNEIEGHMLKH": {
+                "WindAmberField": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 18.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "WindField_Die",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "WindAmberField"
+                }
+            ]
+        }
+    }
+]

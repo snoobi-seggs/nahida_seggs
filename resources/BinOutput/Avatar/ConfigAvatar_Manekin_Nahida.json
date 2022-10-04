@@ -1,0 +1,257 @@
+{
+	"common": {
+		"effectAttachShape": {
+			"$type": "ConfigEffectAttachMesh",
+			"mesh": "EffectMesh"
+		},
+		"mass": 10
+	},
+	"headControl": {
+		"$type": "ConfigAvatarHeadControl",
+		"useHeadControl": true
+	},
+	"equipController": {
+		"sheathPoint": "WeaponBackPut",
+		"dissolveSheathFadeTime": 0.3,
+		"triggerToStates": [
+			{
+				"trigger": "Close"
+			},
+			{
+				"trigger": "Close",
+				"states": [
+					"ShowWeapon/ShowWeapon_AS"
+				]
+			},
+			{
+				"trigger": "Open",
+				"states": [
+					"ShowWeapon/ShowWeapon",
+					"ShowWeapon_BS"
+				]
+			}
+		],
+		"attachPoints": {
+			"equip01": "WeaponR",
+			"equip02": "WeaponL"
+		}
+	},
+	"stateLayers": {
+		"defaultLayer": {
+			"$type": "ConfigNormalStateLayer",
+			"stateIds": {
+				"Show01": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Show01_AS": [
+							"Audio_Loli_Catalyst_Nahida_StandbyShow_01_AS_UI",
+							"Emo_Avatar_Nahida_Skill_ElementalArt_Show_01AS"
+						],
+						"Show01_BS": [
+							"Manekin_Nahida_Show01",
+							"Audio_Loli_Catalyst_Nahida_StandbyShow_01_BS_UI",
+							"Emo_Avatar_Nahida_Skill_ElementalArt_Show_01BS"
+						],
+						"Show01_Loop": [
+							"Audio_Loli_Catalyst_Nahida_StandbyShow_01_Loop_UI",
+							"Emo_Avatar_Nahida_Skill_ElementalArt_Show_01Loop"
+						]
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowCharacter": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Show02": [
+							"Manekin_Nahida_Show02",
+							"Audio_Loli_Catalyst_Nahida_StandbyShow_02_UI",
+							"Emo_Avatar_Nahida_Skill_ElementalArt_Show_02"
+						],
+						"ShowCharacter": []
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowFlycloak": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowFlycloak": []
+					},
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowRelic": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowRelic": [
+							"Emo_Avatar_Common_Manekin_RelicShowLoop"
+						],
+						"ShowRelic_AS": [
+							"Emo_Avatar_Common_Manekin_RelicShowAS"
+						]
+					},
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowRelic_BS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowRelic_BS": [
+							"Emo_Avatar_Common_Manekin_RelicShowBS"
+						]
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"ShowWeapon": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowWeapon": [],
+						"ShowWeapon_AS": [
+							"Loli_Catalyst_ShowWeapon_AS",
+							"Emo_Avatar_Common_Loli_Catalyst_UI_ShowWeaponAS"
+						]
+					},
+					"cameraParam": {},
+					"battouOnStart": true
+				},
+				"ShowWeapon_BS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"ShowWeapon_BS": [
+							"Loli_Catalyst_ShowWeapon_BS",
+							"Emo_Avatar_Common_Loli_Catalyst_UI_ShowWeaponBS"
+						]
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"Skill": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Skill": [
+							"Emo_Avatar_Nahida_UI_Talent_Loop"
+						]
+					},
+					"cameraParam": {}
+				},
+				"Skill_AS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Skill_AS": [
+							"Emo_Avatar_Nahida_UI_Talent_AS"
+						]
+					},
+					"cameraParam": {}
+				},
+				"Skill_BS": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Skill_BS": [
+							"Emo_Avatar_Nahida_UI_Talent_BS"
+						]
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				},
+				"Story": {
+					"$type": "ConfigAvatarStateIDInfo",
+					"animatorStates": {
+						"Story": []
+					},
+					"setAnimatorBoolean": [
+						{
+							"name": "&GotoAnyState"
+						}
+					],
+					"cameraParam": {},
+					"sheatheOnStart": true
+				}
+			}
+		}
+	},
+	"audio": {
+		"animAudio": {
+			"onTransitionIn": [
+				{
+					"currentStateName": "ShowWeapon_BS",
+					"audioEvent": {
+						"text": "Play_ui_menu_weapon_show_nahida"
+					}
+				},
+				{
+					"currentStateName": "ShowRelic_BS",
+					"audioEvent": {
+						"text": "Play_ui_menu_relic_show"
+					}
+				},
+				{
+					"currentStateName": "Show01_BS",
+					"audioEvent": {
+						"text": "Play_ui_standbyShow_nahida_01_swing_lp"
+					}
+				}
+			],
+			"onTransitionOut": [
+				{
+					"currentStateName": "ShowWeapon_BS",
+					"audioEvent": {
+						"text": "Stop_ui_menu_weapon_show_putAway_appear_short"
+					}
+				},
+				{
+					"currentStateName": "Show01_BS",
+					"audioEvent": {
+						"text": "Stop_ui_standbyShow_nahida_01"
+					}
+				},
+				{
+					"currentStateName": "Show01_Loop",
+					"audioEvent": {
+						"text": "Stop_ui_standbyShow_nahida_01_swing_lp"
+					}
+				},
+				{
+					"currentStateName": "Show01_AS",
+					"audioEvent": {
+						"text": "Stop_ui_standbyShow_nahida_01_swing_disappear"
+					}
+				},
+				{
+					"currentStateName": "Show02",
+					"audioEvent": {
+						"text": "Stop_ui_standbyShow_nahida_02"
+					}
+				}
+			]
+		},
+		"listenerLiftup": 1.5,
+		"surfaceProberLiftup": 1.5
+	}
+}

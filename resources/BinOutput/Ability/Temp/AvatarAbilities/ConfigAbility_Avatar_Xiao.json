@@ -1,0 +1,3021 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_ExtraAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ButtonHoldChargeMixin",
+                    "overtime": 10261,
+                    "DBKLMBJJHDP": 0.11999999731779099,
+                    "BLOPHAGIDDP": 0.20000000298023224,
+                    "CBGHBGNKMPO": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAnimatorInt",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 0,
+                                            "MOCGJNIDDAI": "ComboCount"
+                                        },
+                                        {
+                                            "$type": "ByAnimatorInt",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 6,
+                                            "MOCGJNIDDAI": "ComboCount"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 99.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        }
+                    ],
+                    "CGFPHLEJDMJ": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "PKNMLLHNOLA": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging",
+                            "value": true
+                        }
+                    ],
+                    "NFPDHLMEPGB": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "EGNJLDKPBMI": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "JBAKBEFIMBN": [
+                                        "ExtraAttack_Pole_Stamina_Cost",
+                                        "Flexible_Stamina",
+                                        "Add"
+                                    ]
+                                }
+                            ],
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "JBAKBEFIMBN": [
+                                        "ExtraAttack_Pole_Stamina_Cost",
+                                        "Flexible_Stamina",
+                                        "Add"
+                                    ]
+                                }
+                            ],
+                            "intID": "SkillID",
+                            "value": 6.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "IsCharging"
+                        }
+                    ],
+                    "KBDIHBMGNBC": [
+                        "Attack01",
+                        "Attack02",
+                        "Attack03",
+                        "Attack04",
+                        "Attack05",
+                        "Run"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ExtraAttack"
+                    ],
+                    "GAIGOBCNNEE": "ExtraAttack_StaminaCost"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ExtraAttack_Pole_Stamina_Cost": 0.0,
+                "Flexible_Stamina": -2.0
+            },
+            "HNEIEGHMLKH": {
+                "ExtraAttack_StaminaCost": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarSkillStart",
+                            "overtime": 10002,
+                            "AFPAPIFKIHK": 1.0,
+                            "JFIJFCKLFCF": "ExtraAttack_Pole_Stamina_Cost"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_DevilDash_Handler",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AvatarChangeSkillMixin",
+                    "JEHKGIHLNIE": 1,
+                    "priority": "AvatarSpecial",
+                    "CNPIEDBKHII": 10263,
+                    "CLJNFKPHGEO": 10263
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "DevilDashAir",
+                        "DevilDashAir_AS"
+                    ],
+                    "GAIGOBCNNEE": "DevilDash_Air_LooseWeight"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDash",
+                    "GAIGOBCNNEE": "DevilDash_Dust_Material",
+                    "AAIFCLGLOMO": 0.3400000035762787,
+                    "MMHONEIBHNP": 0.5
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDash",
+                    "GAIGOBCNNEE": "DevilDash_CameraPullBack",
+                    "MMHONEIBHNP": 0.8999999761581421
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDashAir",
+                    "GAIGOBCNNEE": "DevilDash_CameraPullBack",
+                    "MMHONEIBHNP": 0.8999999761581421
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDashAir",
+                    "GAIGOBCNNEE": "DevilDash_ClearVelocityForce"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDash",
+                    "GAIGOBCNNEE": "DevilDash_ClearTrigger",
+                    "AAIFCLGLOMO": 0.4000000059604645,
+                    "MMHONEIBHNP": 0.800000011920929
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDashAir",
+                    "GAIGOBCNNEE": "DevilDash_ClearTrigger",
+                    "AAIFCLGLOMO": 0.4000000059604645,
+                    "MMHONEIBHNP": 0.800000011920929
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "DevilDash_Infinite_Handler_Reset"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_DevilDash_FallingAnthemCount",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.0,
+                        1.5,
+                        2.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "DevilDash_Infinite_FallingAnthemCount_Blank",
+                        "DevilDash_Infinite_Activator"
+                    ],
+                    "GMOHJLJMBGN": false
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "DevilDash_SoulReaper_Duration": 0.0,
+                "DevilDash_SoulReaper_MaxStack": 0.0,
+                "DevilDash_SoulReaper_DamageUp": 0.0,
+                "DevilDash_Infinite_Activator_Duration": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "DevilDash_DropBall_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 0.0,
+                                    "EODMLMGMLNP": true
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "DevilDash_DropBall_Base"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "DevilDash_DropBall_Base": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "GenerateElemBall",
+                            "ACOKKHADPOJ": true,
+                            "APIAFGPIIHE": 2021,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.5,
+                                    "PHDCJAHHIOG": -1.0
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 9.0
+                        }
+                    ]
+                },
+                "DevilDash_Dust_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_DevilDash_Dust"
+                        }
+                    ]
+                },
+                "DevilDash_Air_LooseWeight": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -2.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetVelocityIgnoreAirGY",
+                            "KBDLHDJCFDI": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetVelocityIgnoreAirGY",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "DevilDash_CameraPullBack": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 5.0,
+                                "ENPKPCGKDDH": 0.0,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "DevilDash_ClearVelocityForce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType",
+                                "InertiaType"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType"
+                            ]
+                        }
+                    ]
+                },
+                "DevilDash_SoulReaper_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.25,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "DevilDash_SoulReaper"
+                        }
+                    ]
+                },
+                "DevilDash_SoulReaper": {
+                    "FGJPBKGPNJJ": "MultipleAllRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": "DevilDash_SoulReaper_MaxStack"
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "DevilDash_SoulReaper_Duration",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "Elemental_Art"
+                            ],
+                            "damagePercentageRatio": "DevilDash_SoulReaper_DamageUp"
+                        }
+                    ]
+                },
+                "DevilDash_Infinite_FallingAnthemCount_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "DevilDash_Infinite_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "FallingAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitStrikeType",
+                                    "strikeType": "Blunt"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "GFIJPNMCOGJ": "Talent_DevilDash_Infinite"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_DevilDash_FallingAnthemCount",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 2.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "DevilDash_Infinite_Handler_Reset": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_DevilDash_FallingAnthemCount",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "DevilDash_Infinite_Activator": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": "DevilDash_Infinite_Activator_Duration",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ModifyAvatarSkillCD",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "BySkillReady",
+                                            "overtime": 10262
+                                        }
+                                    ]
+                                }
+                            ],
+                            "overtime": 10262,
+                            "AFPAPIFKIHK": -1.0
+                        },
+                        {
+                            "$type": "ModifyAvatarSkillCD",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "BySkillReady",
+                                            "overtime": 10263
+                                        }
+                                    ]
+                                }
+                            ],
+                            "overtime": 10263,
+                            "AFPAPIFKIHK": -1.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_DevilDash_Infinite_Flag",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_DevilDash_FallingAnthemCount",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -5.0,
+                            "HJJEAOMEOFI": "_ABILITY_DevilDash_Infinite_Flag",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "DevilDash_ClearTrigger": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ResetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_DevilDash_FallingAnthemCount",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_DevilDash_Infinite_Flag",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "DevilDash_DropBall_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "DevilDash_Infinite_Handler"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "triggerID": "DevilDash_Skin"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "DevilDash_DropBall_Base"
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41026001,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "RootNode"
+                    }
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByUnlockTalentParam",
+                            "GFIJPNMCOGJ": "Talent_DevilDash_SoulReaper"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "DevilDash_SoulReaper_Timer"
+                },
+                {
+                    "$type": "AvatarSkillStart",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_DevilDash_Infinite_Flag",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "overtime": 10262,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                },
+                {
+                    "$type": "AvatarSkillStart",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_DevilDash_Infinite_Flag",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "overtime": 10263,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_DevilDash_Bullet",
+            "EDDGGPMFDGK": {
+                "DevilDash_Damage": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "MonsterEquip"
+                            ]
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "NPHOOPNDCAC": "Target",
+                            "attackInfo": {
+                                "attackTag": "Elemental_Art",
+                                "attenuationTag": "Elemental_Art",
+                                "attenuationGroup": "Xiao_DevilDash",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": "DevilDash_Damage",
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Wind",
+                                    "elementDurability": 25.0,
+                                    "strikeType": "Slash",
+                                    "enBreak": 100.0,
+                                    "attackType": "Melee"
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV3",
+                                    "hitHaltTimeScale": 0.009999999776482582
+                                },
+                                "canBeModifiedBy": "OriginOwner"
+                            }
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "NPHOOPNDCAC": "OriginOwner",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "CFICIECHNKI": true,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByCollisionPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 0.800000011920929
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Art",
+                                    "attenuationTag": "Elemental_Art",
+                                    "attenuationGroup": "Xiao_DevilDash",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "DevilDash_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Slash",
+                                        "enBreak": 100.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV3",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_CloseCollider",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDash",
+                    "GAIGOBCNNEE": "Xiao_CloseCollider",
+                    "MMHONEIBHNP": 0.3240000009536743
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDashAir",
+                    "GAIGOBCNNEE": "Xiao_CloseCollider_Air",
+                    "MMHONEIBHNP": 0.3240000009536743
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDash",
+                    "GAIGOBCNNEE": "Xiao_Invisible",
+                    "MMHONEIBHNP": 0.3240000009536743
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "DevilDashAir",
+                    "GAIGOBCNNEE": "Xiao_Invisible_Air",
+                    "MMHONEIBHNP": 0.3240000009536743
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Xiao_CloseCollider"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Xiao_CloseCollider": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "PCAEPAFKFNA": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true
+                        }
+                    ]
+                },
+                "Xiao_Invisible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                },
+                "Xiao_CloseCollider_Air": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "PCAEPAFKFNA": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true
+                        }
+                    ]
+                },
+                "Xiao_Invisible_Air": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_FallingAnthem",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AvatarChangeSkillMixin",
+                    "CNPIEDBKHII": 10264,
+                    "CLJNFKPHGEO": 10264
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_Material"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_DamageHandler"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_LoopDamage"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_VelocityForce_Initialize"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Height_Detect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Inertia"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_OverHead_Camera"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_ClearVelocityForce"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "FallingAnthem_Normal_Loop_Damage": 0.0,
+                "FallingAnthem_HowlingSoul_Loop_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+                "FallingAnthem_HowlingSoul_Rank_1_Damage": 0.0,
+                "FallingAnthem_HowlingSoul_Rank_2_Damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "FallingAnthem_BS_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 0.0,
+                                    "EODMLMGMLNP": true,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Avatar_Pole_FallingAnthem_BS_Normal"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_FallingAnthem_BS_Howling"
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_VelocityForce_Initialize": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -2.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_DamageHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_HowlingSoul_Flag",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "FallingAnthem_Loop_Normal",
+                                "FallingAnthem_Loop_HowlingSoul"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_LoopDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 0.0,
+                                    "EODMLMGMLNP": true,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "overrideByWeapon": true,
+                                        "strikeType": "Slash",
+                                        "enBreak": 25.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_HowlingSoul_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 0.0,
+                                        "strikeType": "Slash",
+                                        "enBreak": 37.5,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 0.0,
+                                    "EODMLMGMLNP": true,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "overrideByWeapon": true,
+                                        "strikeType": "Slash",
+                                        "enBreak": 25.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_HowlingSoul_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Wind",
+                                        "elementDurability": 0.0,
+                                        "strikeType": "Slash",
+                                        "enBreak": 25.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": -1.0
+                    }
+                },
+                "FallingAnthem_Loop_Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_FallingAnthem_UseCamera",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "FallingAnthem_Loop_Normal_Rank_1",
+                                "FallingAnthem_Loop_Normal_Rank_2"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_Loop_Normal_Rank_1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Pole_FallingAnthem_Loop_01_Normal"
+                        }
+                    ]
+                },
+                "FallingAnthem_Loop_Normal_Rank_2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Pole_FallingAnthem_Loop_02_Normal"
+                        }
+                    ]
+                },
+                "FallingAnthem_Loop_HowlingSoul": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_FallingAnthem_UseCamera",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "FallingAnthem_Loop_HowlingSoul_Rank_1",
+                                "FallingAnthem_Loop_HowlingSoul_Rank_2"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_Loop_HowlingSoul_Rank_1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_FallingAnthem_Loop_01_HowlingSoul"
+                        }
+                    ]
+                },
+                "FallingAnthem_Loop_HowlingSoul_Rank_2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_FallingAnthem_Loop_02_HowlingSoul"
+                        }
+                    ]
+                },
+                "Inertia": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyInertiaVelocityMixin",
+                            "DOOIAANMOKN": false,
+                            "PJACACNPMJA": false
+                        }
+                    ]
+                },
+                "FallingAnthem_Height_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 5.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 4.5,
+                                "ENPKPCGKDDH": 0.20000000298023224,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera_Remover": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "FallingAnthem_Landed_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 6.0,
+                                "ENPKPCGKDDH": 0.10000000149011612,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_ClearVelocityForce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType",
+                                "InertiaType"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 25.0,
+                                "overrideByWeapon": true,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.23999999463558197,
+                                "shakeTime": 0.11999999731779099,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.23999999463558197,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 5.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 25.0,
+                                "overrideByWeapon": true,
+                                "strikeType": "Blunt",
+                                "enBreak": 150.0,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV7",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.5,
+                                "shakeTime": 0.20000000298023224,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.4000000059604645,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 4.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_HowlingSoul_Rank_1_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 25.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 150.0,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV7",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.23999999463558197,
+                                "shakeTime": 0.11999999731779099,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.23999999463558197,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 6.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_HowlingSoul_Rank_2_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Wind",
+                                "elementDurability": 25.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 225.0,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV7",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.5,
+                                "shakeTime": 0.20000000298023224,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0
+                                },
+                                "extension": {
+                                    "baseCycle": 0.4000000059604645,
+                                    "cycleDamping": 0.0,
+                                    "rangeAttenuation": 0.30000001192092896
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Pole_FallingAnthem_Strike_01_Normal"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Pole_FallingAnthem_Strike_02_Normal"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_FallingAnthem_Strike_01_HowlingSoul"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_FallingAnthem_Strike_02_HowlingSoul"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_HowlingSoul_CameraController",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Xiao_HowlingSoul"
+                    ],
+                    "GAIGOBCNNEE": "HowlingSoul_Camera_Protection_Ghost"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Xiao_HowlingSoul"
+                    ],
+                    "GAIGOBCNNEE": "HowlingSoul_Camera_Protection_Invincible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Xiao_HowlingSoul"
+                    ],
+                    "GAIGOBCNNEE": "HowlingSoul_Camera_Handler"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Xiao_HowlingSoul"
+                    ],
+                    "GAIGOBCNNEE": "HowlingSoul_Camera_Remover"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "HowlingSoul_Camera_Protection_Ghost": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 11002
+                        }
+                    ]
+                },
+                "HowlingSoul_Camera_Protection_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "HowlingSoul_Camera_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR3",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "BHELOIADOLH": -3.0,
+                            "HBBLBBPBLGE": 2.0,
+                            "IPDEDFHPHPO": 0.0,
+                            "OJIFKEOCJGB": "Enemy",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster",
+                                        "Grass"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "IHCNHDLDFKC": 250.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ]
+                },
+                "HowlingSoul_Camera_Remover": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ControlEmotion",
+                            "DBOPCOMLILO": false,
+                            "CBIALJFEDDJ": false,
+                            "LCLBKEALNOO": false
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "AvatarCameraParam",
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 5.0,
+                                "ENPKPCGKDDH": 0.10000000149011612,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHeadControl",
+                            "ACOKKHADPOJ": true,
+                            "enable": true
+                        },
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_HowlingSoul_Mask_Material": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Mask"
+                        }
+                    ]
+                },
+                "UNIQUE_HowlingSoul_Pre_Weather": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TriggerWeatherMixin",
+                            "type": "Skill",
+                            "IHMBDACJNDO": "Weather_Xiao_HowlingSoul_Pre",
+                            "DPEJLHDNMOK": 0.30000001192092896,
+                            "duration": 1.5
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "EnableHeadControl",
+                    "IKNLAEPLHHL": false
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Mask_Material_Remover"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Mask_Material"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Mask_Material"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Weather"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Pre_Weather"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Start"
+                },
+                {
+                    "$type": "AvatarEnterCameraShot",
+                    "predicates": [
+                        {
+                            "$type": "ByAttackNotHitScene",
+                            "attackPattern": {
+                                "$type": "ConfigAttackSphere",
+                                "lifeTime": "TriggerNoRepeat",
+                                "NGDMCBABOJA": {
+                                    "$type": "ConfigBornBySelf",
+                                    "offset": {
+                                        "AEAAJCIDPED": 0.0,
+                                        "KAAPLGBEDPM": 1.0,
+                                        "PHDCJAHHIOG": 0.20000000298023224
+                                    }
+                                },
+                                "ICGFCBOFFDI": 0.4000000059604645
+                            },
+                            "AKDGLEOGNGO": true
+                        },
+                        {
+                            "$type": "ByAvatarInWaterDepth",
+                            "ONPJJFKDCED": "LessAndEqual",
+                            "KPLJIGIPGMH": 0.5
+                        }
+                    ],
+                    "LOOLBLCGLBM": "Camera_Xiao_HowlingSoul"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_HowlingSoul",
+            "EDDGGPMFDGK": {
+                "HowlingSoul_LifeCostRatio": 0.0,
+                "HowlingSoul_Duration": 0.0,
+                "HowlingSoul_DamageUp": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_HowlingSoul_Main_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "HowlingSoul_Duration",
+                        0.800000011920929,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ReplaceEventPatternMixin",
+                            "LELEMIDJLMK": [
+                                "Xiao_Attack01",
+                                "Xiao_Attack02",
+                                "Xiao_Attack03",
+                                "Xiao_Attack04",
+                                "Xiao_Attack05",
+                                "Xiao_Attack06",
+                                "Xiao_ExtraAttack",
+                                "Audio_Boy_FallingAnthem_AS_1_Normal_Xiao",
+                                "Audio_Boy_Attack01_Xiao",
+                                "Audio_Boy_Attack02_Xiao",
+                                "Audio_Boy_Attack03_Xiao",
+                                "Audio_Boy_Attack04_Xiao",
+                                "Audio_Boy_Attack05_Xiao",
+                                "Audio_Boy_Attack06_Xiao",
+                                "Audio_Boy_ExtraAtk_Xiao"
+                            ],
+                            "ECCHFNODIPH": [
+                                "Xiao_Attack01_HowlingSoul",
+                                "Xiao_Attack02_HowlingSoul",
+                                "Xiao_Attack03_HowlingSoul",
+                                "Xiao_Attack04_HowlingSoul",
+                                "Xiao_Attack05_HowlingSoul",
+                                "Xiao_Attack06_HowlingSoul",
+                                "Xiao_ExtraAttack_HowlingSoul",
+                                "Audio_Boy_FallingAnthem_AS_1_HS_Xiao",
+                                "Audio_Boy_Attack01_HS_Xiao",
+                                "Audio_Boy_Attack02_HS_Xiao",
+                                "Audio_Boy_Attack03_HS_Xiao",
+                                "Audio_Boy_Attack04_HS_Xiao",
+                                "Audio_Boy_Attack05_HS_Xiao",
+                                "Audio_Boy_Attack06_HS_Xiao",
+                                "Audio_Boy_ExtraAtk_HowlingSoul_Xiao"
+                            ]
+                        },
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Jump"
+                            ],
+                            "GAIGOBCNNEE": "HowlingSoul_Jump_Material"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Jump",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Hard",
+                            "AAIFCLGLOMO": 0.17000000178813934,
+                            "MMHONEIBHNP": 0.30000001192092896
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForRun",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Hard",
+                            "AAIFCLGLOMO": 0.17000000178813934,
+                            "MMHONEIBHNP": 0.30000001192092896
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForWalk",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Hard",
+                            "AAIFCLGLOMO": 0.17000000178813934,
+                            "MMHONEIBHNP": 0.30000001192092896
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForSprint",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Hard",
+                            "AAIFCLGLOMO": 0.17000000178813934,
+                            "MMHONEIBHNP": 0.30000001192092896
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Jump",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Normal",
+                            "AAIFCLGLOMO": 0.30000001192092896,
+                            "MMHONEIBHNP": 0.4000000059604645
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForRun",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Normal",
+                            "AAIFCLGLOMO": 0.30000001192092896,
+                            "MMHONEIBHNP": 0.4000000059604645
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForWalk",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Normal",
+                            "AAIFCLGLOMO": 0.30000001192092896,
+                            "MMHONEIBHNP": 0.4000000059604645
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForSprint",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_Normal",
+                            "AAIFCLGLOMO": 0.30000001192092896,
+                            "MMHONEIBHNP": 0.4000000059604645
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Jump",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_FallingProtection",
+                            "MMHONEIBHNP": 0.20000000298023224
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForRun",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_FallingProtection",
+                            "MMHONEIBHNP": 0.20000000298023224
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForWalk",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_FallingProtection",
+                            "MMHONEIBHNP": 0.20000000298023224
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "JumpForSprint",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_FallingProtection",
+                            "MMHONEIBHNP": 0.20000000298023224
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "DevilDash",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_DevilDash",
+                            "MMHONEIBHNP": 0.699999988079071
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "DevilDashAir",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_DevilDashAir",
+                            "MMHONEIBHNP": 0.699999988079071
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Attack03",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_Attack03",
+                            "MMHONEIBHNP": 0.15000000596046448
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Attack04",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_Attack04",
+                            "MMHONEIBHNP": 0.20000000298023224
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Attack05",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_Attack05",
+                            "MMHONEIBHNP": 0.10999999940395355
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Attack06",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_Attack06",
+                            "MMHONEIBHNP": 0.10000000149011612
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "EFAJCDMGOHL": "Attack06",
+                            "GAIGOBCNNEE": "HowlingSoul_AfterImage_Main_Handler_Attack06",
+                            "AAIFCLGLOMO": 0.20999999344348907,
+                            "MMHONEIBHNP": 0.25
+                        },
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06",
+                                "ExtraAttack",
+                                "FallingAttack"
+                            ],
+                            "damagePercentageRatio": "HowlingSoul_DamageUp"
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.5
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "LFIHLDLEOCI": "Arm",
+                            "weight": 20.0,
+                            "duration": 20.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Loop"
+                        },
+                        {
+                            "$type": "EnableRocketJump",
+                            "CFIPAGENGPE": true,
+                            "enable": true,
+                            "MJIDJNMCKCP": {
+                                "IMLKBGMCLLH": 2.299999952316284,
+                                "HFBNHJBODPH": 5.0
+                            }
+                        },
+                        {
+                            "$type": "ClearEndura"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "CanSpecialPerform"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableRocketJump",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -999.0,
+                            "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Weather"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Mask_Dissipate"
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "ACOKKHADPOJ": true,
+                            "floatID": "HowlingSoul_Flag",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Mask_Material_Remover"
+                        },
+                        {
+                            "$type": "SetEmissionScaler",
+                            "ACOKKHADPOJ": true,
+                            "LFIHLDLEOCI": "Arm",
+                            "weight": 0.5
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "ACOKKHADPOJ": true,
+                            "HHFIHBEAPAP": "CanSpecialPerform",
+                            "value": true
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "LoseHP",
+                            "HDEFNDNPOKD": "HowlingSoul_LifeCostRatio",
+                            "NPCCIJINMGO": false
+                        },
+                        {
+                            "$type": "EnableRocketJump",
+                            "CFIPAGENGPE": true,
+                            "enable": true,
+                            "MJIDJNMCKCP": {
+                                "IMLKBGMCLLH": 2.299999952316284,
+                                "HFBNHJBODPH": 5.0
+                            }
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "ACOKKHADPOJ": true,
+                            "LFIHLDLEOCI": "Arm",
+                            "weight": 0.5
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Main_Handler"
+                        }
+                    ],
+                    "NDHIFGEGBAC": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "HowlingSoul_Flag",
+                            "value": 1.0
+                        }
+                    ],
+                    "NPEJFLBOAAN": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Main_Handler"
+                        }
+                    ]
+                },
+                "UNIQUE_HowlingSoul_Weather": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TriggerWeatherMixin",
+                            "type": "Skill",
+                            "IHMBDACJNDO": "Weather_Xiao_HowlingSoul",
+                            "duration": 999.0
+                        }
+                    ]
+                },
+                "HowlingSoul_Jump_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Jump"
+                        }
+                    ]
+                },
+                "HowlingSoul_StayInAir_Hard": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_MoveSpeedRatio": -0.699999988079071
+                    }
+                },
+                "HowlingSoul_StayInAir_Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_MoveSpeedRatio": -0.5
+                    }
+                },
+                "HowlingSoul_StayInAir_FallingProtection": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "HowlingSoul_StayInAir_FallingProtection_Handler"
+                        }
+                    ]
+                },
+                "HowlingSoul_StayInAir_FallingProtection_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": -1.0
+                    }
+                },
+                "UNIQUE_HowlingSoul_Mask_Material_Remover": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.600000023841858,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Fade",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Mask"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Mask_Material"
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler_DevilDash": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler_DevilDashAir": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler_Attack03": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler_Attack04": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler_Attack05": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Main_Handler_Attack06": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "HowlingSoul_AfterImage_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.3499999940395355,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "enable": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableAfterImage",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -999.0,
+                    "HJJEAOMEOFI": "_ABILITY_HowlingSoul_Flag",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Pre_Weather"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Weather"
+                },
+                {
+                    "$type": "SetAnimatorFloat",
+                    "floatID": "HowlingSoul_Flag",
+                    "value": 1.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Main_Handler"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_HowlingSoul_Burst"
+                },
+                {
+                    "$type": "AvatarSkillStart",
+                    "overtime": 10265,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_Talent_Zen",
+            "EDDGGPMFDGK": {
+                "Xiao_Talent_Zen_ChargeEfficiencyUp": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Zen_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByIsLocalAvatar"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Zen_ChargeEfficiencyUp"
+                        }
+                    ],
+                    "NDHIFGEGBAC": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Zen_ChargeEfficiencyUp"
+                        }
+                    ],
+                    "NPEJFLBOAAN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Zen_ChargeEfficiencyUp"
+                        }
+                    ]
+                },
+                "UNIQUE_Zen_ChargeEfficiencyUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ChargeEfficiencyDelta": "Xiao_Talent_Zen_ChargeEfficiencyUp"
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Zen_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_Talent_DevilMayCry",
+            "EDDGGPMFDGK": {
+                "DevilMayCry_DamageUp": 0.0,
+                "DevilMayCry_DeltaTime": 0.0,
+                "DevilMayCry_TimeToDamage_Interval": 3.0
+            },
+            "HNEIEGHMLKH": {
+                "DevilMayCry_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_HowlingSoul_Flag",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "DevilMayCry_Blank",
+                                "DevilMayCry_TimeToDamage"
+                            ]
+                        }
+                    ]
+                },
+                "DevilMayCry_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "DevilMayCry_TimeToDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "DevilMayCry_TimeToDamage_Interval",
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "BNNAFHAMNJG": true,
+                            "damagePercentageRatio": [
+                                "DevilMayCry_DamageUp",
+                                "DevilMayCry_DeltaTime",
+                                "Mul"
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_XIAO_DEVILMAYCRY_DELTATIME",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                0.0,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "DevilMayCry_Material_Low",
+                                "DevilMayCry_Material_High"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -4.0,
+                            "HJJEAOMEOFI": "_ABILITY_XIAO_DEVILMAYCRY_DELTATIME",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_ABILITY_XIAO_DEVILMAYCRY_DELTATIME",
+                            "OGAHELLALBB": "DevilMayCry_DeltaTime"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_XIAO_DEVILMAYCRY_DELTATIME",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_ABILITY_XIAO_DEVILMAYCRY_DELTATIME",
+                            "OGAHELLALBB": "DevilMayCry_DeltaTime"
+                        }
+                    ]
+                },
+                "DevilMayCry_Material_Low": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_DevilMayCry_Low"
+                        }
+                    ]
+                },
+                "DevilMayCry_Material_High": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Boy_Pole_Xiao_DevilMayCry_High"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "DevilMayCry_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_NormalAttack_DamageHandler",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK01A",
+                        "ATK01A_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_01A_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK01B",
+                        "ATK01B_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_01B_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK02",
+                        "ATK02_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_02_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK03",
+                        "ATK03_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_03_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK04A",
+                        "ATK04A_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_04A_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK04B",
+                        "ATK04B_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_04B_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK05",
+                        "ATK05_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_05_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ATK06",
+                        "ATK06_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_06_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "ExtraAttack",
+                        "ExtraAttack_HowlingSoul"
+                    ],
+                    "bonusCriticalHurt": "ExtraAttack_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "NormalAttack_01A_DamagePercentage": 0.0,
+                "NormalAttack_01B_DamagePercentage": 0.0,
+                "NormalAttack_02_DamagePercentage": 0.0,
+                "NormalAttack_03_DamagePercentage": 0.0,
+                "NormalAttack_04A_DamagePercentage": 0.0,
+                "NormalAttack_04B_DamagePercentage": 0.0,
+                "NormalAttack_05_DamagePercentage": 0.0,
+                "NormalAttack_06_DamagePercentage": 0.0,
+                "ExtraAttack_DamagePercentage": 0.0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_CoreSkill",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "ExtraAttack"
+                    ],
+                    "damagePercentageRatio": "CoreSkill_DamagePercentageRatio"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "CoreSkill_DamagePercentageRatio": 0.0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_Talent_LowHP_DefenceUp",
+            "EDDGGPMFDGK": {
+                "Xiao_Talent_LowHPRatio": 0.0,
+                "Xiao_Talent_LowHP_DefenceRatio": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Xiao_Talent_LowHP_DefenceUp_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Xiao_Talent_LowHP_DefenceUp_Active",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Xiao_Talent_LowHP_DefenceUp_Blank",
+                                "Xiao_Talent_LowHP_DefenceUp_Buff"
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetHPRatio",
+                                    "NPHOOPNDCAC": "Self",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "BCJJBMJKHED": "Xiao_Talent_LowHPRatio"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Xiao_Talent_LowHP_DefenceUp_Active",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetHPRatio",
+                                    "NPHOOPNDCAC": "Self",
+                                    "BCJJBMJKHED": "Xiao_Talent_LowHPRatio"
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Xiao_Talent_LowHP_DefenceUp_Active",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Xiao_Talent_LowHP_DefenceUp_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Xiao_Talent_LowHP_DefenceUp_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_DefenceRatio": "Xiao_Talent_LowHP_DefenceRatio"
+                    },
+                    "state": "DefenseUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "Xiao_Talent_LowHP_DefenceUp_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_FallingDamageReduction"
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Xiao_ClimbStamina_Reduction",
+            "HNEIEGHMLKH": {
+                "UNIQUE_ClimbStaminaReduction_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Climb"
+                            ],
+                            "GAIGOBCNNEE": "ClimbStamina_Reduction"
+                        }
+                    ]
+                },
+                "ClimbStamina_Reduction": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_CostStaminaRatio": -0.20000000298023224
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_ClimbStaminaReduction_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    }
+]

@@ -1,0 +1,4680 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_DamageUpToEnemy",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_DamageUpToEnemy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "BNNAFHAMNJG": true,
+                            "damagePercentageRatio": "Rate",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Electric"
+                                        },
+                                        {
+                                            "$type": "ByHasElement",
+                                            "GOMLPAOIKJA": "Water"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_DamageUpToEnemy_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_OnChangeAttackUp",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_OnChangeAttackUp",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_OnChangeAttackUp_CD",
+                        "UNIQUE_Catalyst_OnChangeAttackUp_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "AttackUp": 0.0,
+                "Time": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_OnChangeAttackUp_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "Catalyst_OnChangeAttackUpCheckIn"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetType",
+                                    "GAIGNEFHDBL": false
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Catalyst_OnChangeAttackUpCheckIn"
+                        }
+                    ],
+                    "NDHIFGEGBAC": [
+                        {
+                            "$type": "AttachModifier",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetType",
+                                    "GAIGNEFHDBL": false
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Catalyst_OnChangeAttackUpCheckIn"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_OnChangeAttackUp_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_OnChangeAttackUp",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Catalyst_OnChangeAttackUpCheckIn": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "NDHIFGEGBAC": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_OnChangeAttackUp"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Applier",
+                            "ACOKKHADPOJ": true,
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_OnChangeAttackUp",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": -1.0,
+                            "KHAHOELDONA": -1.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_OnChangeAttackUp": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "AttackUp"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "Catalyst_OnChangeAttackUpCheckIn"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "CurTeamAvatars",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_OnChangeAttackUp"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_OnGainEnergyHealHP",
+            "EDDGGPMFDGK": {
+                "HealHP": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_OnGainEnergyHealHP_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByEnergyChangeMixin",
+                            "FNHOFLJNEOD": [
+                                "Electric",
+                                "Fire",
+                                "Water",
+                                "Grass",
+                                "Ice",
+                                "Wind",
+                                "Rock"
+                            ],
+                            "HAIBPADIJMD": true,
+                            "PODACCOMKHD": [
+                                {
+                                    "$type": "HealHP",
+                                    "AJAHODOGLMH": "HealHP"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_OnGainEnergyHealHP_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_AttacktUpAfterReaction",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_AttacktUpAfterReaction_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "Stream",
+                                "Freeze",
+                                "Shock",
+                                "SwirlWater"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_AttacktUpAfterReaction"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_AttacktUpAfterReaction": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 12.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_AttacktUpAfterReaction_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_SpeedUponEnemeyKilled",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByKillingMixin",
+                    "AJPHDMLEOGE": 0.6000000238418579,
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Other",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_SpeedUponEnemeyKilled"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Time": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_SpeedUponEnemeyKilled": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate",
+                        "Animator_MoveSpeedRatio": "Rate"
+                    },
+                    "state": "SpeedUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_ElementUpWhenNormalHit",
+            "EDDGGPMFDGK": {
+                "ElementDamageUp": 0.0,
+                "Time": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_ElementUpWhenNormalHit_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ElementUpWhenNormalHit"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_ElementUpWhenNormalHit": {
+                    "FGJPBKGPNJJ": "MultipleAllRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 2.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "ElementDamageUp",
+                        "Actor_WaterAddHurtDelta": "ElementDamageUp",
+                        "Actor_GrassAddHurtDelta": "ElementDamageUp",
+                        "Actor_IceAddHurtDelta": "ElementDamageUp",
+                        "Actor_RockAddHurtDelta": "ElementDamageUp",
+                        "Actor_ElecAddHurtDelta": "ElementDamageUp",
+                        "Actor_WindAddHurtDelta": "ElementDamageUp"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ElementUpWhenNormalHit_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_GenerateBallWhenCritic",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_GenerateBallWhenCritic_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Randomed",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitCritical"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 114401
+                                }
+                            ],
+                            "PLKDGIELEEF": "Rate",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_GenerateBallWhenCritic"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_GenerateBallWhenCritic": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 114401
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_ExtraElementBall"
+                        },
+                        {
+                            "$type": "GenerateElemBall",
+                            "APIAFGPIIHE": 2024,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -1.0
+                                },
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 0.0,
+                                    "MFBOELKCPDP": 0.5
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 6.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_GenerateBallWhenCritic_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_RandomBuff",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_RandomBuff",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_RandomBuff_Timer",
+                        "UNIQUE_RandomBuff_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "AttackUp": 0.0,
+                "Actor_ElementAddDelta": 0.0,
+                "ElemMastery": 0.0,
+                "Time": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_RandomBuff_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "NDHIFGEGBAC": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 114402
+                                }
+                            ],
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_RandomBuff",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": -1.0,
+                            "KHAHOELDONA": -1.0
+                        }
+                    ]
+                },
+                "UNIQUE_Do": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "AttackUp"
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_MusicOnEnter1"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Re": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Actor_ElementAddDelta",
+                        "Actor_ElecAddHurtDelta": "Actor_ElementAddDelta",
+                        "Actor_WaterAddHurtDelta": "Actor_ElementAddDelta",
+                        "Actor_GrassAddHurtDelta": "Actor_ElementAddDelta",
+                        "Actor_WindAddHurtDelta": "Actor_ElementAddDelta",
+                        "Actor_IceAddHurtDelta": "Actor_ElementAddDelta",
+                        "Actor_RockAddHurtDelta": "Actor_ElementAddDelta"
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_MusicOnEnter2"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Mi": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Time",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElemMasteryDelta": "ElemMastery"
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_MusicOnEnter3"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_RandomBuff_Timer": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": 0.33000001311302185,
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Do"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "Randomed",
+                                    "PLKDGIELEEF": 0.5,
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "AttachModifier",
+                                            "GAIGOBCNNEE": "UNIQUE_Re"
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "AttachModifier",
+                                            "GAIGOBCNNEE": "UNIQUE_Mi"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 114402
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_RandomBuff",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_ResetCDWhenSkillHit",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Catalyst_ResetCDWhenSkillHit",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_ResetCDWhenSkillHit_CD",
+                        "UNIQUE_Catalyst_ResetCDWhenSkillHit_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_ResetCDWhenSkillHit_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 114403
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ResetCDWhenSkillHit_SanCheck"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_ResetCDWhenSkillHit_SanCheck": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 3.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.899999976158142,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "Randomed",
+                            "PLKDGIELEEF": "Rate",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Catalyst_ResetCDWhenSkillHit",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_ResetCDWhenSkillHit_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_ResetCD"
+                        },
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 114403
+                        },
+                        {
+                            "$type": "ModifyAvatarSkillCD",
+                            "CDBCHJIFPKA": [
+                                2
+                            ],
+                            "AFPAPIFKIHK": -1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Catalyst_ResetCDWhenSkillHit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_ChanceBoltWhenNormalAttack",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Catalyst_ChanceBoltWhenNormalAttack",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_ChanceBoltWhenNormalAttack_CD",
+                        "UNIQUE_Catalyst_ChanceBoltWhenNormalAttack_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_ChanceBoltWhenNormalAttack_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEquipAffixReady",
+                                            "NPHOOPNDCAC": "Self",
+                                            "DAGGLMBBODJ": 114404
+                                        }
+                                    ],
+                                    "PLKDGIELEEF": "Rate",
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "TriggerBullet",
+                                            "NGAAOMEHOGE": 40010001,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByAttachPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.20000000298023224
+                                                },
+                                                "KJNJNKLLNCN": "WeaponL"
+                                            }
+                                        },
+                                        {
+                                            "$type": "EquipAffixStart",
+                                            "GPKNEFCCKGN": "CDTime",
+                                            "DAGGLMBBODJ": 114404
+                                        },
+                                        {
+                                            "$type": "AddGlobalValue",
+                                            "value": -1.0,
+                                            "HJJEAOMEOFI": "_ABILITY_Weapon_Catalyst_ChanceBoltWhenNormalAttack",
+                                            "EODOIECEPEF": true,
+                                            "JDHHMBHOOEC": -1.0,
+                                            "KHAHOELDONA": -1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_ChanceBoltWhenNormalAttack_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Catalyst_ChanceBoltWhenNormalAttack",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Arcane_Arrow",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_Arcane_Arrow"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 1.2000000476837158
+                        },
+                        "attackInfo": {
+                            "attackTag": "WeaponSkill",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Rate",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Default",
+                                "enBreak": 20.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Hit_None_Blunt_Small",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_CritUpWhenHitNoCrit",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_CritUpWhenHitNoCrit_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHitCritical"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_CritUpWhenHitNoCrit_CD"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByHitCritical"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "RemoveModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_CritUpWhenHitNoCrit"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_CritUpWhenHitNoCrit_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_CritUpWhenHitNoCrit"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_CritUpWhenHitNoCrit": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 5.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_CriticalDelta": "Rate"
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_CritUpWhenHitNoCrit_Handler"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "RemoveModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_CritUpWhenHitNoCrit"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_NormalAttackAndSkillAttack",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_NormalAttackAndSkillAttack_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_SkillUp"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art",
+                                        "Elemental_Art_Hold",
+                                        "Elemental_Art_Extra",
+                                        "Elemental_Burst"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_NormalAttackUp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_NormalAttackUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06"
+                            ],
+                            "damagePercentageRatio": "Rate"
+                        }
+                    ],
+                    "state": "AttackUp"
+                },
+                "UNIQUE_Catalyst_SkillUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "Elemental_Art",
+                                "Elemental_Art_Hold",
+                                "Elemental_Art_Extra",
+                                "Elemental_Burst"
+                            ],
+                            "damagePercentageRatio": "Rate"
+                        }
+                    ],
+                    "state": "AttackUp"
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_NormalAttackAndSkillAttack_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_TeamHealAfterElementalBurst",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "OnAvatarUseSkillMixin",
+                    "MLBANMCFDAF": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_TeamHealAfterElementalBurst_Energy"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_TeamHealAfterElementalBurst_Heal"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_TeamHealAfterElementalBurst_Heal"
+                        }
+                    ],
+                    "CAHFPMLJFAK": 0.20000000298023224
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Time": 0.0,
+                "Interval": 0.0,
+                "Energy": 0.0,
+                "HealRatio": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_Catalyst_TeamHealAfterElementalBurst_Energy": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "Time",
+                        1.0,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ReviveElemEnergyMixin",
+                            "KPBMABEIBHE": "Interval",
+                            "HMHDCLAJCLB": "Energy",
+                            "ratio": 1.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_TeamHealAfterElementalBurst_Heal": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": [
+                        "Time",
+                        1.0,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": "Interval",
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "HealHP",
+                            "ACOKKHADPOJ": true,
+                            "AJAHODOGLMH": "HealRatio"
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_ElementUpAfterReaction",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_ElementUpAfterReaction_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByElementReactionMixin",
+                            "entityTypes": [
+                                "Monster"
+                            ],
+                            "KEFGMDOFKHM": [
+                                "Explode",
+                                "Stream",
+                                "Burning",
+                                "Melt",
+                                "Freeze",
+                                "Shock",
+                                "Superconductor",
+                                "SwirlFire",
+                                "SwirlWater",
+                                "SwirlElectric",
+                                "SwirlIce",
+                                "CrystallizeFire",
+                                "CrystallizeWater",
+                                "CrystallizeElectric",
+                                "CrystallizeIce"
+                            ],
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ElementUpAfterReaction"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_ElementUpAfterReaction": {
+                    "FGJPBKGPNJJ": "MultipleAllRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 2.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Rate",
+                        "Actor_ElecAddHurtDelta": "Rate",
+                        "Actor_WaterAddHurtDelta": "Rate",
+                        "Actor_GrassAddHurtDelta": "Rate",
+                        "Actor_WindAddHurtDelta": "Rate",
+                        "Actor_IceAddHurtDelta": "Rate",
+                        "Actor_RockAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ElementUpAfterReaction_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Blackrock",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_WEAPON_Blackrock_COUNT",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_Blackrock_Buff1",
+                        "UNIQUE_Catalyst_Blackrock_Buff2",
+                        "UNIQUE_Catalyst_Blackrock_Buff3"
+                    ]
+                },
+                {
+                    "$type": "DoActionByKillingMixin",
+                    "AJPHDMLEOGE": 0.6000000238418579,
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Other",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Blackrock_Timer_Ind"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_WEAPON_Blackrock_COUNT",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 3.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Dua": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Blackrock_Timer_Ind": {
+                    "FGJPBKGPNJJ": "MultipleRefresh",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 3.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dua",
+                    "elementDurability": 100.0,
+                    "state": "AttackUp",
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -1.0,
+                            "HJJEAOMEOFI": "_ABILITY_WEAPON_Blackrock_COUNT",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Blackrock_Buff1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Blackrock1_Catalyst",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Blackrock_Buff2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Blackrock2_Catalyst",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Blackrock_Buff3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Blackrock3_Catalyst",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_WEAPON_Blackrock_COUNT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_BouncingBall",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Weapon_Catalyst_BouncingBall",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_BouncingBall_CD",
+                        "UNIQUE_Catalyst_BouncingBall_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Chance": 0.0,
+                "Times": 0.0,
+                "Rate": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_BouncingBall_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 114409
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "NPHOOPNDCAC": "Target",
+                                    "PLKDGIELEEF": "Chance",
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "TriggerBullet",
+                                            "NGAAOMEHOGE": 40010005,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByAttachPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.20000000298023224
+                                                },
+                                                "KJNJNKLLNCN": "WeaponL",
+                                                "MMFHENHCBGB": "Self"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AddGlobalValue",
+                                            "value": "Times",
+                                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Times",
+                                            "EODOIECEPEF": true,
+                                            "JDHHMBHOOEC": "Times",
+                                            "KHAHOELDONA": "Times"
+                                        },
+                                        {
+                                            "$type": "ApplyModifier",
+                                            "NPHOOPNDCAC": "SelfAttackTarget",
+                                            "GAIGOBCNNEE": "Weapon_SetMark"
+                                        },
+                                        {
+                                            "$type": "AddGlobalValue",
+                                            "value": -1.0,
+                                            "HJJEAOMEOFI": "_ABILITY_Weapon_Catalyst_BouncingBall",
+                                            "EODOIECEPEF": true,
+                                            "JDHHMBHOOEC": -1.0,
+                                            "KHAHOELDONA": -1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_BouncingBall_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 114409
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_Catalyst_BouncingBall",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Weapon_SetMark": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Recently_Hit",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_BouncingBall_Bullet",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "OpenCollider": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger",
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                },
+                "Weapon_Mark": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.6000000238418579,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Recently_Hit",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Weapon_SetMark": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Recently_Hit",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_Purple_Bullet"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "OpenCollider"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 0.6000000238418579
+                        },
+                        "attackInfo": {
+                            "attackTag": "WeaponSkill",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Rate",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Default",
+                                "enBreak": 36.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Hit_None_Default_Small",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "Weapon_Mark"
+                },
+                {
+                    "$type": "SetSelfAttackTarget",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "AKMLOIFOBPO": "Nearest",
+                        "JBKKOJLJHDK": "CircleR8",
+                        "ONPOPLLHJLE": "Enemy",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster"
+                            ]
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Recently_Hit",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ]
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "OriginOwner",
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Times",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Weapon_SetMark"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "OriginOwner",
+                    "value": -1.0,
+                    "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Times",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByHasAttackTarget",
+                            "NPHOOPNDCAC": "Self"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "OriginOwner",
+                            "HJJEAOMEOFI": "_ABILITY_Weapon_BouncingBall_Times",
+                            "value": 1.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "NGAAOMEHOGE": 40010005,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "INCAGGBCJNF": 360.0
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Outlaw",
+            "EDDGGPMFDGK": {
+                "Rate_1": 0.0,
+                "Dura_1": 0.0,
+                "Rate_2": 0.0,
+                "Dura_2": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Outlaw_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "SprintBS",
+                                "Sprint",
+                                "LiquidStrike_BS",
+                                "LiquidStrike_BS1",
+                                "LiquidStrike_Move",
+                                "LiquidStrike_MoveStandby"
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_AttackUp_InSprint"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ReduceStaminaCost_Handler"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_AttackUp_InSprint": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate_1"
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_AttackUp_AfterSprint"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_AttackUp_AfterSprint"
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_AttackUp_AfterSprint": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura_1",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate_1"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_ReduceStaminaCost_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura_2",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "SprintBS",
+                                "Sprint",
+                                "LiquidStrike_BS",
+                                "LiquidStrike_BS1",
+                                "LiquidStrike_Move",
+                                "LiquidStrike_MoveStandby"
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_ReduceStaminaCost_Buff"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Outlaw_Common_Buff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_ReduceStaminaCost_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_CostStaminaRatio": [
+                            0.0,
+                            1.0,
+                            "Rate_2",
+                            "Mul",
+                            "Sub"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Outlaw_Handler"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_AttackUp_AfterSprint"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Lanternrite",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_Lanternrite",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_Lanternrite_CD",
+                        "UNIQUE_Catalyst_Lanternrite_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ChanceProb": 0.0,
+                "Rate_Bright": 0.0,
+                "Rate_Dark": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Lanternrite_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 114411
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Lanternrite",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Lanternrite_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Randomed",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 114411
+                                }
+                            ],
+                            "PLKDGIELEEF": "ChanceProb",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "PLKDGIELEEF": 0.5,
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "TriggerBullet",
+                                            "NGAAOMEHOGE": 40010010,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByAttachPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.20000000298023224
+                                                },
+                                                "KJNJNKLLNCN": "WeaponL"
+                                            }
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "TriggerBullet",
+                                            "NGAAOMEHOGE": 40010011,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByAttachPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.20000000298023224
+                                                },
+                                                "KJNJNKLLNCN": "WeaponL"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Lanternrite",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Lanternrite_Bright",
+            "EDDGGPMFDGK": {
+                "Rate_Bright": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_Lanternrite_Bright"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 0.20000000298023224
+                        },
+                        "attackInfo": {
+                            "attackTag": "WeaponSkill",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Rate_Bright",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Default",
+                                "enBreak": 20.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Hit_None_Blunt_Small",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Lanternrite_Dark",
+            "EDDGGPMFDGK": {
+                "Rate_Dark": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_Lanternrite_Dark"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "NPHOOPNDCAC": "Target",
+                    "JBHFPDMBFHN": "Eff_Weapon_Blast_R30",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint",
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 3.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "WeaponSkill",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Rate_Dark",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Default",
+                                "enBreak": 20.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Hit_None_Blunt_Small",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Dragonfell",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_Dragonfell",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_Dragonfell_CD",
+                        "UNIQUE_Catalyst_Dragonfell_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ChanceProb": 0.0,
+                "Rate": 0.0,
+                "RateToIce": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Dragonfell_CD": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EquipAffixStart",
+                            "GPKNEFCCKGN": "CDTime",
+                            "DAGGLMBBODJ": 114412
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Dragonfell",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Dragonfell_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Randomed",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEquipAffixReady",
+                                    "NPHOOPNDCAC": "Self",
+                                    "DAGGLMBBODJ": 114412
+                                }
+                            ],
+                            "PLKDGIELEEF": "ChanceProb",
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "NPHOOPNDCAC": "Target",
+                                    "HJJEAOMEOFI": "_ABILITY_Weapon_Dragonfell_Pos",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByHitPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "OGADOPDNBMM": false
+                                },
+                                {
+                                    "$type": "CreateGadget",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_ABILITY_Weapon_Dragonfell_Pos",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "CABLIPAKCGB": 40020007,
+                                    "DOLAJLACEDF": 1001,
+                                    "ONPOPLLHJLE": "Enemy"
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": -1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Dragonfell",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": -1.0,
+                                    "KHAHOELDONA": -1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Dragonfell_Gadget",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "WeaponSkill"
+                    ],
+                    "bonusCriticalHurt": "RateToIce",
+                    "damagePercentageRatio": 0.0,
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster"
+                            ]
+                        },
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Ice"
+                                },
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Frozen"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "RateToIce": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Dragonfell_Appear": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.4000000059604645,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Dragonfell_Gadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -1.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 2.0,
+                                    "ICGFCBOFFDI": 3.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "WeaponSkill",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "Rate",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "enBreak": 20.0,
+                                        "attackType": "Range"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Heavy",
+                                            "HPOPMELEPEB": 500.0,
+                                            "hitImpulseY": 0.0
+                                        },
+                                        "retreatType": "ByHitDirection",
+                                        "hitHaltTimeScale": 0.009999999776482582
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Dragonfell_Appear"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_NormalAttackAndExtraAttack",
+            "EDDGGPMFDGK": {
+                "Rate_1": 0.0,
+                "Duration_1": 0.0,
+                "Rate_2": 0.0,
+                "Duration_2": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_NormalAttackAndExtraAttack_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_NormalAttackHit_Buff"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_ExtraAttackHit_Buff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_NormalAttackHit_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Duration_1",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "ExtraAttack"
+                            ],
+                            "damagePercentageRatio": "Rate_1"
+                        }
+                    ],
+                    "state": "AttackUp"
+                },
+                "UNIQUE_Catalyst_ExtraAttackHit_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Duration_2",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Rate_2"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_NormalAttackAndExtraAttack_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Legend_Dvalin",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_Legend_Dvalin",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.5,
+                        -0.5,
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_Legend_Dvalin_CD",
+                        "UNIQUE_Catalyst_Legend_Dvalin_Handler"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "Chance": 0.0,
+                "Rate_2": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Legend_Dvalin_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "Randomed",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByEquipAffixReady",
+                                            "NPHOOPNDCAC": "Self",
+                                            "DAGGLMBBODJ": 114501
+                                        }
+                                    ],
+                                    "PLKDGIELEEF": "Chance",
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "TriggerBullet",
+                                            "NGAAOMEHOGE": 40010003,
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "$type": "EquipAffixStart",
+                                            "GPKNEFCCKGN": "CDTime",
+                                            "DAGGLMBBODJ": 114501
+                                        },
+                                        {
+                                            "$type": "AddGlobalValue",
+                                            "ACOKKHADPOJ": true,
+                                            "value": -1.0,
+                                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Legend_Dvalin",
+                                            "EODOIECEPEF": true,
+                                            "JDHHMBHOOEC": -1.0,
+                                            "KHAHOELDONA": -1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Legend_Dvalin_CD": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Legend_Dvalin",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Legend_Dvalin_ElementUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Rate",
+                        "Actor_ElecAddHurtDelta": "Rate",
+                        "Actor_WaterAddHurtDelta": "Rate",
+                        "Actor_GrassAddHurtDelta": "Rate",
+                        "Actor_WindAddHurtDelta": "Rate",
+                        "Actor_IceAddHurtDelta": "Rate",
+                        "Actor_RockAddHurtDelta": "Rate"
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Legend_Dvalin_ElementUp"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "KillGadget",
+                    "LBGGIBBMCMF": {
+                        "APIAFGPIIHE": 40010003
+                    }
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Legend_Dvalin_WindBall",
+            "HNEIEGHMLKH": {
+                "Serch_And_Fire": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.5,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "SetSelfAttackTarget",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "DJLKFLJENEG": 1,
+                                "AKMLOIFOBPO": "Nearest",
+                                "JBKKOJLJHDK": "CircleR15",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasAttackTarget"
+                                }
+                            ],
+                            "NGAAOMEHOGE": 40010004,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_WindBall"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Serch_And_Fire"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Arcane_Bullet",
+            "EDDGGPMFDGK": {
+                "Rate": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Weapon_Arcane_Bullet"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "ICGFCBOFFDI": 1.2000000476837158
+                        },
+                        "attackInfo": {
+                            "attackTag": "WeaponSkill",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "Rate",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Default",
+                                "enBreak": 20.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Hit_None_Blunt_Small",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Legend_Fourwinds",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_Fourwinds_AttackBuffLevel",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5,
+                        4.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Blank",
+                        "UNIQUE_Catalyst_FourwindsBuff1",
+                        "UNIQUE_Catalyst_FourwindsBuff2",
+                        "UNIQUE_Catalyst_FourwindsBuff3",
+                        "UNIQUE_Catalyst_FourwindsBuff4"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Speed": 0.0,
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Catalyst_Fourwinds_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 4.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_FourwindsBuffTime"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Fourwinds_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_FourwindsBuffTime": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -100.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Fourwinds_AttackBuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 4.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_FourwindsBuff1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Rate",
+                        "Actor_ElecAddHurtDelta": "Rate",
+                        "Actor_WaterAddHurtDelta": "Rate",
+                        "Actor_GrassAddHurtDelta": "Rate",
+                        "Actor_WindAddHurtDelta": "Rate",
+                        "Actor_IceAddHurtDelta": "Rate",
+                        "Actor_RockAddHurtDelta": "Rate"
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_MengdeTag1",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_FourwindsBuff2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_ElecAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_WaterAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_GrassAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_WindAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_IceAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ],
+                        "Actor_RockAddHurtDelta": [
+                            "Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_MengdeTag2",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_FourwindsBuff3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_ElecAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_WaterAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_GrassAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_WindAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_IceAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ],
+                        "Actor_RockAddHurtDelta": [
+                            "Rate",
+                            3.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_MengdeTag3",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_FourwindsBuff4": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_ElecAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_WaterAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_GrassAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_WindAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_IceAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ],
+                        "Actor_RockAddHurtDelta": [
+                            "Rate",
+                            4.0,
+                            "Mul"
+                        ]
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_MengdeTag4",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        }
+                    ],
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Fourwinds_MoveSpeed": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_MoveSpeedRatio": "Speed"
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Fourwinds_Handler"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Fourwinds_MoveSpeed"
+                }
+            ],
+            "ILBIENDPCBG": [
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Fourwinds_AttackBuffLevel",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "NPEJFLBOAAN": [
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": -100.0,
+                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Fourwinds_AttackBuffLevel",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 4.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Kunwu_DamageUpWithShield",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_Kunwu_IsHasShield",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff",
+                        "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff"
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToPredicateMixin",
+                    "type": "Current",
+                    "predicates": [
+                        {
+                            "$type": "ByHasShield",
+                            "type": "All"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_Kunwu_CheckShield"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Shield_Up": 0.0,
+                "Dmg_Rate": 0.0,
+                "Timer": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_Catalyst_Kunwu_DamageUpWithShield_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_Kunwu_AddCount"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_CheckShield": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Kunwu_IsHasShield",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Kunwu_IsHasShield",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_AddCount": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Kunwu_BuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_Kunwu_BuffTimer"
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_BuffTimer": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Timer",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Kunwu_BuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Catalyst_Kunwu_BuffLevel",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Blank",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level01",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level02",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level03",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level04",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level05"
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level01": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": "Dmg_Rate"
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level02": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level03": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            3.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level04": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            4.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_NoShieldBuff_Level05": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            5.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Catalyst_Kunwu_BuffLevel",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Blank",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level01",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level02",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level03",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level04",
+                                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level05"
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level01": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            2.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level02": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            4.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level03": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            6.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level04": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            8.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_HasShieldBuff_Level05": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackRatio": [
+                            "Dmg_Rate",
+                            10.0,
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Weapon_Catalyst_Kunwu_BuffEffHandler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Catalyst_Kunwu_BuffLevel",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5,
+                                4.5,
+                                5.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Weapon_Catalyst_Kunwu_Eff_Blank",
+                                "Weapon_Catalyst_Kunwu_Eff_1",
+                                "Weapon_Catalyst_Kunwu_Eff_2",
+                                "Weapon_Catalyst_Kunwu_Eff_3",
+                                "Weapon_Catalyst_Kunwu_Eff_4",
+                                "Weapon_Catalyst_Kunwu_Eff_5"
+                            ]
+                        }
+                    ]
+                },
+                "Weapon_Catalyst_Kunwu_Eff_Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Weapon_Catalyst_Kunwu_Eff_1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_01"
+                        }
+                    ]
+                },
+                "Weapon_Catalyst_Kunwu_Eff_2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_02"
+                        }
+                    ]
+                },
+                "Weapon_Catalyst_Kunwu_Eff_3": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_03"
+                        }
+                    ]
+                },
+                "Weapon_Catalyst_Kunwu_Eff_4": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_04"
+                        }
+                    ]
+                },
+                "Weapon_Catalyst_Kunwu_Eff_5": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Weapon_Kunwu_Stack_05"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_Kunwu_DamageUpWithShield_Handler"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_Catalyst_Kunwu_BuffEffHandler"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Kunwu_BuffLevel",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Kunwu_IsHasShield",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Morax_HpToAtk",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByEventMixin",
+                    "PDPENHIADJD": "HP",
+                    "predicates": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Morax_Last_MaxHp",
+                                    "value": "FIGHT_PROP_MAX_HP"
+                                }
+                            ]
+                        }
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": "FIGHT_PROP_MAX_HP",
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Morax_Last_MaxHp",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Morax_HpToAtk_Buff"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "ACOKKHADPOJ": true,
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Morax_HpToAtk_Buff"
+                        }
+                    ],
+                    "LIINFCJLBOP": ""
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Hp_Rate": 0.0,
+                "HptoAtk_Factor": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Morax_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 2.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Morax_HpToAtk_Buff"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "ACOKKHADPOJ": true,
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Morax_Last_MaxHp",
+                                    "value": "FIGHT_PROP_MAX_HP"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetGlobalValue",
+                                    "ACOKKHADPOJ": true,
+                                    "value": "FIGHT_PROP_MAX_HP",
+                                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Morax_Last_MaxHp",
+                                    "JDHHMBHOOEC": 0.0,
+                                    "KHAHOELDONA": 0.0
+                                },
+                                {
+                                    "$type": "RemoveUniqueModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Morax_HpToAtk_Buff"
+                                },
+                                {
+                                    "$type": "AttachModifier",
+                                    "ACOKKHADPOJ": true,
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Morax_HpToAtk_Buff"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Morax_HpToAtk_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AttackExtraDelta": [
+                            "FIGHT_PROP_MAX_HP",
+                            "HptoAtk_Factor",
+                            "Mul"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValue",
+                    "ACOKKHADPOJ": true,
+                    "value": "FIGHT_PROP_MAX_HP",
+                    "HJJEAOMEOFI": "_ABILITY_Catalyst_Morax_Last_MaxHp",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Morax_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Kaleido",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "NMJGDKCDFOJ": [
+                        "NormalAttack_01",
+                        "NormalAttack_02",
+                        "NormalAttack_03",
+                        "NormalAttack_04",
+                        "NormalAttack_05",
+                        "NormalAttack_06"
+                    ],
+                    "damagePercentageRatio": 0.0,
+                    "damageExtra": [
+                        "FIGHT_PROP_MAX_HP",
+                        "HptoExtraDamage_Factor",
+                        "Mul"
+                    ]
+                },
+                {
+                    "$type": "OnAvatarUseSkillMixin",
+                    "MLBANMCFDAF": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Kaleido_BurstBuff"
+                        }
+                    ],
+                    "CAHFPMLJFAK": 0.20000000298023224
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "HptoExtraDamage_Factor": 0.0,
+                "Dura": 0.0,
+                "Energy": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Kaleido_BurstBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Kaleido_Inner"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Kaleido_Outer"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "UNIQUE_Catalyst_Kaleido_ReviveEnergy"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Kaleido_ReviveEnergy": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ReviveElemEnergy",
+                            "value": "Energy"
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Bakufu",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByElementReactionMixin",
+                    "entityTypes": [
+                        "Monster"
+                    ],
+                    "KEFGMDOFKHM": [
+                        "Explode"
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_FireBuff_Handler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff_Handler"
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByElementReactionMixin",
+                    "entityTypes": [
+                        "Monster"
+                    ],
+                    "KEFGMDOFKHM": [
+                        "Shock"
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_WaterBuff_Handler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff_Handler"
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByElementReactionMixin",
+                    "entityTypes": [
+                        "Monster"
+                    ],
+                    "KEFGMDOFKHM": [
+                        "Superconductor"
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_IceBuff_Handler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff_Handler"
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByElementReactionMixin",
+                    "entityTypes": [
+                        "Monster"
+                    ],
+                    "KEFGMDOFKHM": [
+                        "SwirlElectric"
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_WindBuff_Handler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff_Handler"
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByElementReactionMixin",
+                    "entityTypes": [
+                        "Monster"
+                    ],
+                    "KEFGMDOFKHM": [
+                        "CrystallizeElectric"
+                    ],
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_RockBuff_Handler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff_Handler"
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Rate": 0.0,
+                "BuffTime": 0.0,
+                "CDTime": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Bakufu_ElecBuff_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Electric"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Electric"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_ElecBuff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Bakufu_FireBuff_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Fire"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_FireBuff"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Fire"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_FireBuff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Bakufu_WaterBuff_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Water"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_WaterBuff"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Water"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_WaterBuff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Bakufu_IceBuff_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Ice"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_IceBuff"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Ice"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_IceBuff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Bakufu_WindBuff_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Wind"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_WindBuff"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Wind"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_WindBuff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Bakufu_RockBuff_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "CDTime",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Rock"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_RockBuff"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "AllPlayerAvatars",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 40.0
+                                },
+                                {
+                                    "$type": "ByTargetElement",
+                                    "elementType": "Rock"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Bakufu_RockBuff"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Bakufu_ElecBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "BuffTime",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ElecAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Bakufu_FireBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "BuffTime",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Bakufu_WaterBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "BuffTime",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_WaterAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Bakufu_IceBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "BuffTime",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_IceAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Bakufu_WindBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "BuffTime",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_WindAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Catalyst_Bakufu_RockBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "BuffTime",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_RockAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Narukami",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "OnAvatarUseSkillMixin",
+                    "MPNINPNOPPE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Narukami_Buff_Timer"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Narukami_BuffLevel",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "CAHFPMLJFAK": 0.20000000298023224
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_ABILITY_Catalyst_Narukami_BuffLevel",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        0.5,
+                        1.5,
+                        2.5,
+                        10.0
+                    ],
+                    "MIEPCOONDEM": [
+                        "UNIQUE_Catalyst_Narukami_Buff_1",
+                        "UNIQUE_Catalyst_Narukami_Buff_2",
+                        "UNIQUE_Catalyst_Narukami_Buff_3"
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "DamageRatio": 0.0,
+                "Dura": 0.0,
+                "Rate": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Narukami_Buff_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Catalyst_Narukami_BuffLevel",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Narukami_Buff_1": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "Elemental_Art",
+                                "Elemental_Art_Extra",
+                                "Elemental_Art_Hold"
+                            ],
+                            "damagePercentageRatio": "DamageRatio"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "MOCGJNIDDAI": "Level",
+                            "type": "Int",
+                            "weight": 1,
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "MOCGJNIDDAI": "Change",
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Narukami_Buff_2": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "Elemental_Art",
+                                "Elemental_Art_Extra",
+                                "Elemental_Art_Hold"
+                            ],
+                            "damagePercentageRatio": [
+                                "DamageRatio",
+                                2.0,
+                                "Mul"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "MOCGJNIDDAI": "Level",
+                            "type": "Int",
+                            "weight": 2,
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "MOCGJNIDDAI": "Change",
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        }
+                    ]
+                },
+                "UNIQUE_Catalyst_Narukami_Buff_3": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ModifyDamageMixin",
+                            "NMJGDKCDFOJ": [
+                                "Elemental_Art",
+                                "Elemental_Art_Extra",
+                                "Elemental_Art_Hold"
+                            ],
+                            "damagePercentageRatio": [
+                                "DamageRatio",
+                                3.0,
+                                "Mul"
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_FireAddHurtDelta": "Rate",
+                        "Actor_ElecAddHurtDelta": "Rate",
+                        "Actor_WaterAddHurtDelta": "Rate",
+                        "Actor_GrassAddHurtDelta": "Rate",
+                        "Actor_WindAddHurtDelta": "Rate",
+                        "Actor_IceAddHurtDelta": "Rate",
+                        "Actor_RockAddHurtDelta": "Rate"
+                    },
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "MOCGJNIDDAI": "Level",
+                            "type": "Int",
+                            "weight": 3,
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "ACOKKHADPOJ": true,
+                            "MOCGJNIDDAI": "Change",
+                            "JBHFPDMBFHN": "Eff_Weapon_Catalyst_Narukami"
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Weapon_Catalyst_Jyanome",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "OnAvatarUseSkillMixin",
+                    "MPNINPNOPPE": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Catalyst_Jyanome_ArtBuff"
+                        }
+                    ],
+                    "CAHFPMLJFAK": 0.20000000298023224
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ChargeEfficiency": 0.0,
+                "Dura": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Catalyst_Jyanome_ArtBuff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Dura",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_ChargeEfficiencyDelta": "ChargeEfficiency"
+                    },
+                    "state": "AttackUp"
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    }
+]

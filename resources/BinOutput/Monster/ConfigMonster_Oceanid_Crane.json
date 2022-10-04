@@ -1,0 +1,434 @@
+{
+    "common": {
+        "effectAttachShape": {
+            "$type": "ConfigEffectAttachSkinnedMesh",
+            "FGKBBEGGKCB": "EffectMesh"
+        },
+        "mass": 999999.0,
+        "viewSize": 1.5,
+        "LALONNAHJDN": 2.0
+    },
+    "model": {
+        "bornEffect": "Eff_Monster_Oceanid_AnimalBorn_Small",
+        "attachEffect": "",
+        "canBakeMesh": false
+    },
+    "dither": {
+        "showDitherDuration": 3.0
+    },
+    "combat": {
+        "property": {
+            "endureType": "Monster_Boss_Other",
+            "w": 150.0
+        },
+        "beHit": {
+            "hitBloodEffect": ""
+        },
+        "combatLock": {
+            "lockShape": "CircleLockEnemy",
+            "lockType": "Avatar&Monster_Lv4"
+        },
+        "die": {
+            "hasAnimatorDie": true,
+            "HGGPMFGGBNC": 2.0,
+            "dieForceDisappearTime": 5.0,
+            "dieDisappearEffect": "",
+            "MBIPMCDOFBG": true,
+            "EFLALLBMIBB": true,
+            "NLFNLBDLPFC": true,
+            "NDACEHEDOMA": true,
+            "NENNBGPECAO": true,
+            "DMALDDCGAMB": true
+        }
+    },
+    "abilities": [
+        {
+            "abilityID": "Monster_Oceanid_Crane_WaterWave",
+            "abilityName": "Monster_Oceanid_Crane_WaterWave",
+            "abilityOverride": ""
+        },
+        {
+            "abilityID": "Monster_Oceanid_Crane_Steer",
+            "abilityName": "Monster_Oceanid_Crane_Steer",
+            "abilityOverride": ""
+        },
+        {
+            "abilityID": "Monster_Oceanid_Crane_ElementState",
+            "abilityName": "Monster_Oceanid_Crane_ElementState",
+            "abilityOverride": ""
+        },
+        {
+            "abilityID": "Monster_Common_WaterMuteHurt",
+            "abilityName": "Monster_Common_WaterMuteHurt",
+            "abilityOverride": ""
+        },
+        {
+            "abilityID": "Monster_Oceanid_Animal_BeingHit",
+            "abilityName": "Monster_Oceanid_Animal_BeingHit",
+            "abilityOverride": ""
+        },
+        {
+            "abilityID": "Monster_Oceanid_Animal_Die",
+            "abilityName": "Monster_Oceanid_Animal_Die",
+            "abilityOverride": ""
+        }
+    ],
+    "stateLayers": {
+        "defaultLayer": {
+            "$type": "ConfigNormalStateLayer",
+            "JLAFELOFEGB": "",
+            "stateIDs": {
+                "Born": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Born": []
+                    },
+                    "KGOCGKMHPKM": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "NormalIdle": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Standby": []
+                    },
+                    "KGOCGKMHPKM": true,
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "Turn": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Turn": []
+                    },
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ],
+                    "HNDGEBFOBMD": true
+                },
+                "NormalMove": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Walk": []
+                    },
+                    "KGOCGKMHPKM": true,
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ],
+                    "HNDGEBFOBMD": true
+                },
+                "Die": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Die": [
+                            "Monster_Oceanid_Crane_Die"
+                        ]
+                    }
+                },
+                "Alert": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Alert": []
+                    },
+                    "KGOCGKMHPKM": true,
+                    "KJALBKOJAJE": [
+                        "BeHit",
+                        "DoSkill"
+                    ]
+                },
+                "WaterWave": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "WaterWave": [
+                            "Audio_Monster_Oceanid_Crane_WaterWave",
+                            "Monster_Oceanid_Crane_WaterWave"
+                        ]
+                    },
+                    "KJALBKOJAJE": [
+                        "BeHit",
+                        "DoSkill",
+                        "CrashTrigger"
+                    ],
+                    "HNDGEBFOBMD": true
+                },
+                "Dodge": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Dodge": [
+                            "Monster_Oceanid_Crane_Dodge",
+                            "Audio_Monster_Oceanid_Crane_Dodge"
+                        ]
+                    },
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "BeHit",
+                        "DoSkill",
+                        "CrashTrigger"
+                    ],
+                    "HNDGEBFOBMD": true
+                },
+                "RandomAction1": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "RandomAction1": []
+                    },
+                    "KJALBKOJAJE": [
+                        "BeHit",
+                        "DoSkill"
+                    ],
+                    "HNDGEBFOBMD": true
+                }
+            }
+        }
+    },
+    "billboard": {
+        "$type": "ConfigCombatBillboard",
+        "BDMAMLPPCMN": "BillboardAttach",
+        "MDLKCFCDDCD": "Character",
+        "GNMDLCFGJHA": 0.25,
+        "MIBFGCAAAFK": true,
+        "EIAJODLDKJG": 50.0
+    },
+    "initialPoses": {
+        "Default": {},
+        "Free": {
+            "initialPoseID": 2,
+            "initialPoseParams": {
+                "boolParams": {
+                    "Free": "true"
+                }
+            }
+        },
+        "Stand": {
+            "initialPoseID": 3,
+            "initialPoseParams": {
+                "boolParams": {
+                    "Stand": "true"
+                }
+            }
+        }
+    },
+    "aibeta": {
+        "enable": true,
+        "moveSetting": {
+            "moveCategory": "Amphibious",
+            "useNavMesh": false,
+            "navMeshAgentName": "Undead01"
+        },
+        "sensing": {
+            "settings": {
+                "DefaultSetting": {
+                    "sourcelessHitAttractionRange": 50.0
+                },
+                "LowAlert": {
+                    "sensitivity": 2.0,
+                    "horizontalFov": 90.0,
+                    "DMGFGMCJFMN": 30.0,
+                    "sourcelessHitAttractionRange": 15.0
+                },
+                "StandAlert": {
+                    "viewRange": 0.0,
+                    "sourcelessHitAttractionRange": 8.0
+                },
+                "SpecialLowAlert": {
+                    "sourcelessHitAttractionRange": 8.0
+                }
+            },
+            "templates": {
+                "DefaultTemplate": {
+                    "DefaultPoses": "DefaultSetting",
+                    "2": "LowAlert",
+                    "3": "StandAlert"
+                },
+                "LowAlertTemplate": {
+                    "DefaultPoses": "SpecialLowAlert",
+                    "2": "LowAlert",
+                    "3": "StandAlert"
+                }
+            }
+        },
+        "threat": {
+            "billboardShowUIBarDis": 70.0,
+            "feelThreatGrow": 100.0,
+            "threatDecreaseSpeed": 100.0,
+            "viewAttenuation": [
+                {
+                    "x": 10.0,
+                    "y": 2.0
+                },
+                {
+                    "x": 15.0,
+                    "y": 1.25
+                },
+                {
+                    "x": 20.0,
+                    "y": 0.5
+                }
+            ]
+        },
+        "defendArea": {
+            "defendRange": 50.0
+        },
+        "skills": {
+            "1": {
+                "name": "OnAlert",
+                "skillType": "OnAlert",
+                "publicCDGroup": "",
+                "ignoreGCD": true,
+                "triggerGCD": false,
+                "stateIDs": [
+                    "Alert"
+                ],
+                "flagTargetReachable": "10",
+                "flagSelfOnTemplateCollider": "01",
+                "flagSelfInZone": "10",
+                "flagTargetInZone": "11"
+            },
+            "2": {
+                "name": "RandomAction1",
+                "skillType": "Free",
+                "castCondition": {
+                    "pose": [
+                        2,
+                        3
+                    ]
+                },
+                "targetBackSpace": 10.0,
+                "cdUpperRange": 5.0,
+                "initialCD": 7.5,
+                "publicCDGroup": "",
+                "stateIDs": [
+                    "RandomAction1"
+                ],
+                "flagTargetReachable": "10",
+                "flagSelfOnTemplateCollider": "01",
+                "flagSelfInZone": "10",
+                "flagTargetInZone": "11"
+            },
+            "201": {
+                "name": "WaterWave",
+                "castCondition": {
+                    "pose": [
+                        101
+                    ]
+                },
+                "targetBackSpace": 4.0,
+                "cdUpperRange": 3.0,
+                "publicCDGroup": "Oceanid_rangedAttack",
+                "stateIDs": [
+                    "WaterWave"
+                ],
+                "flagTargetReachable": "11",
+                "flagSelfOnTemplateCollider": "01",
+                "flagSelfInZone": "11",
+                "flagTargetInZone": "11"
+            },
+            "211": {
+                "name": "Dodge",
+                "castCondition": {
+                    "pose": [
+                        101
+                    ],
+                    "pickRangeMax": 3.5
+                },
+                "targetBackSpace": 10.0,
+                "cdUpperRange": 5.0,
+                "initialCD": 7.5,
+                "publicCDGroup": "",
+                "ignoreGCD": true,
+                "triggerGCD": false,
+                "stateIDs": [
+                    "Dodge"
+                ],
+                "flagTargetReachable": "10",
+                "flagSelfOnTemplateCollider": "01",
+                "flagSelfInZone": "10",
+                "flagTargetInZone": "11"
+            },
+            "301": {
+                "name": "RandomAction1",
+                "castCondition": {
+                    "pose": [
+                        101
+                    ]
+                },
+                "targetBackSpace": 15.0,
+                "cdUpperRange": 15.0,
+                "initialCD": 7.5,
+                "initialCDUpperRange": 7.5,
+                "publicCDGroup": "",
+                "stateIDs": [
+                    "RandomAction1"
+                ],
+                "flagTargetReachable": "10",
+                "flagSelfOnTemplateCollider": "01",
+                "flagSelfInZone": "10",
+                "flagTargetInZone": "11"
+            }
+        },
+        "skillGCD": 3.0,
+        "returnToBornTactic": {
+            "enable": true,
+            "defaultSetting": {
+                "yHigh": 0,
+                "HLKOFOJFNPF": 3.0,
+                "fadeoutEndTime": 4.0
+            }
+        },
+        "wanderTactic": {
+            "enable": true,
+            "condition": {
+                "pose": [
+                    2
+                ]
+            },
+            "defaultSetting": {
+                "probeNumberMax": 0.25,
+                "distanceFromBorn": 10.0,
+                "distanceFromCurrentMin": 3.0,
+                "terrainOffsetMin": 5.0
+            }
+        },
+        "meleeChargeTactic": {
+            "enable": true,
+            "condition": {
+                "pose": [
+                    101
+                ]
+            },
+            "defaultSetting": {
+                "yHigh": 1,
+                "startDistanceMin": 20.0,
+                "startDistanceMax": 99.0,
+                "turnSpeedOverrideOuter": 20.0,
+                "startAngle": 20.0,
+                "outDistance": 0
+            }
+        }
+    },
+    "inputKeys": [
+        {
+            "keyID": 201,
+            "inputKeyCode": 257,
+            "abilityName": ""
+        },
+        {
+            "keyID": 211,
+            "inputKeyCode": 258,
+            "abilityName": ""
+        }
+    ],
+    "move": {
+        "$type": "ConfigAnimatorMove",
+        "LLNGHPMEALD": {
+            "CCCNFHNGFAK": true
+        },
+        "IKDCDJHKGGC": false,
+        "AOGDBDGDBPL": true
+    }
+}

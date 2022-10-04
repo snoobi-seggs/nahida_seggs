@@ -1,0 +1,1322 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_Improve",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_SKIRMISHER_IMPROVED_",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "EyeEffect_Normal",
+                        "EyeEffect_Improve"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "GAIGOBCNNEE": "ImprovedConfig"
+                },
+                {
+                    "$type": "AttachModifierToHPPercentMixin",
+                    "CMEDACODLEA": [
+                        0.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Empty",
+                        "Skirmisher_Male_Fat_SprayGun_Ice_ForceImprove"
+                    ]
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        901,
+                        902,
+                        903
+                    ],
+                    "GAIGOBCNNEE": "RemoveImproveState"
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        1,
+                        2
+                    ],
+                    "GAIGOBCNNEE": "ResetMonsterSkill"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Frozen",
+                    "elementDurability": 200.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        },
+                        {
+                            "$type": "ModifyElementDecrateMixin",
+                            "group": "Monster_SingleElement_Method_Frozen"
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Entity_WeightRatio": 5.0,
+                        "Actor_EndureDelta": 0.0,
+                        "Actor_PhysicalSubHurtDelta": 1.0,
+                        "Actor_FireSubHurtDelta": 1.0,
+                        "Actor_ElecSubHurtDelta": 1.0,
+                        "Actor_WaterSubHurtDelta": 1.0,
+                        "Actor_GrassSubHurtDelta": 1.0,
+                        "Actor_WindSubHurtDelta": 1.0,
+                        "Actor_IceSubHurtDelta": 1.0,
+                        "Actor_RockSubHurtDelta": 1.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "CFIPAGENGPE": true,
+                            "HHFIHBEAPAP": "ImprovedState",
+                            "value": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImproveBS"
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                501
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "ImproveEffect_SprayGunEffect"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "ImproveEffect_BackPackEffect"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_IMPROVED_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_IMPROVED_COUNT_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 99.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "LOBIDJEHBGH": [
+                                "ElementFreeze",
+                                "ElementIce"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_MOSNTER_SKIRMISHER_RETURNTOBORN_",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "triggerID": "WeakStart"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "CFIPAGENGPE": true,
+                            "HHFIHBEAPAP": "ImprovedState"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImproveAS"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_IMPROVED_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "ImproveEffect_BackPackEffect"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "ImproveEffect_SprayGunEffect"
+                        }
+                    ]
+                },
+                "ImproveEffect_SprayGunEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_SprayGunImprove"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Improved",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "CFIPAGENGPE": true,
+                            "HHFIHBEAPAP": "Improved"
+                        }
+                    ]
+                },
+                "ImproveEffect_BackPackEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_BackPackImprove"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Improved",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "CFIPAGENGPE": true,
+                            "HHFIHBEAPAP": "Improved"
+                        }
+                    ]
+                },
+                "EyeEffect_Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_EyeNormal"
+                        }
+                    ]
+                },
+                "EyeEffect_Improve": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_EyeToImprove"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_EyeToNormal"
+                        }
+                    ]
+                },
+                "Skirmisher_Male_Fat_SprayGun_Ice_AttackDetect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetType",
+                                    "GAIGNEFHDBL": false
+                                },
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "IceSpary"
+                                            ]
+                                        },
+                                        {
+                                            "$type": "ByAttackTags",
+                                            "NMJGDKCDFOJ": [
+                                                "RocketJump"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ElementalFlag"
+                        }
+                    ]
+                },
+                "ElementalFlag": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementIce"
+                            ],
+                            "GAIGOBCNNEE": "HasIce"
+                        }
+                    ]
+                },
+                "HasIce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SKIRMISHER_ELEMENT_ICE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_SKIRMISHER_ELEMENT_ICE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "ImprovedConfig": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0,
+                        "Actor_SubHurtDelta": 0.949999988079071
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ClearEndura"
+                        }
+                    ]
+                },
+                "Skirmisher_Male_Fat_SprayGun_Ice_ForceImprove": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "CFIPAGENGPE": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "NPHOOPNDCAC": "Self",
+                                    "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_IMPROVED_COUNT_",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "HHFIHBEAPAP": "SpecaialState",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "SpecaialState"
+                        }
+                    ]
+                },
+                "RemoveImproveState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MOSNTER_SKIRMISHER_RETURNTOBORN_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedState"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MOSNTER_SKIRMISHER_RETURNTOBORN_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "ResetMonsterSkill": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_IMPROVED_COUNT_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                401,
+                                403
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                401
+                            ]
+                        }
+                    ]
+                },
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Male_Fat_SprayGun_Ice_AttackDetect"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONSTER_SIGNLEELEMENTMETHOD_FROZEN_",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 1.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_Die",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_EyeAlert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_IMPROVED_",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Water_EyeImprove"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_Weak",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Weak"
+                    ],
+                    "GAIGOBCNNEE": "WeakState"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_SKIRMISHER_RECOVER",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Empty",
+                        "Recover"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "WeakState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_MONSTER_SKIRMISHER_RECOVER",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -0.5,
+                                0.5,
+                                1.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Empty",
+                                "Recover"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "WeakState",
+                            "value": true
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RECOVER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_WEAK_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "CFIPAGENGPE": true,
+                            "HHFIHBEAPAP": "WeakState"
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RECOVER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetAISkillCDAvailableNow",
+                                    "FJNGOGJOBEE": [
+                                        402
+                                    ]
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "ReTriggerAISkillInitialCD",
+                                    "FJNGOGJOBEE": [
+                                        402
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RECOVER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "CFIPAGENGPE": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_WEAK_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Recover": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "Recover"
+                        }
+                    ]
+                },
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_IceSpray",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "IceSpray",
+                    "GAIGOBCNNEE": "IceSprayDamageHandler",
+                    "AAIFCLGLOMO": 0.3799999952316284,
+                    "MMHONEIBHNP": 0.800000011920929
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "IceSpray",
+                    "GAIGOBCNNEE": "IceSprayEffectHandler",
+                    "AAIFCLGLOMO": 0.3799999952316284,
+                    "MMHONEIBHNP": 0.8500000238418579
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_IceSprayDamage": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 2.700000047683716,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.15000000596046448,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -0.25,
+                                            "PHDCJAHHIOG": -2.0
+                                        },
+                                        "KJNJNKLLNCN": "WeaponEffect"
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 1.5,
+                                        "KAAPLGBEDPM": 1.75,
+                                        "PHDCJAHHIOG": 8.5
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "IceSpary",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.30000001192092896,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 1.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "UNIQUE_IceSprayEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 2.700000047683716,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_IceSprayLoop"
+                        }
+                    ]
+                },
+                "IceSprayDamageHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayDamage"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayDamage"
+                        }
+                    ]
+                },
+                "IceSprayEffectHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayEffect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayEffect"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayStart",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ImprovedIceSpray_BS",
+                        "ImprovedIceSpray_Loop",
+                        "ImprovedIceSpray_AS"
+                    ],
+                    "GAIGOBCNNEE": "IceSprayState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayLoop"
+                        }
+                    ]
+                },
+                "IceSprayState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEffect"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayDamage"
+                        }
+                    ]
+                },
+                "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayDamage": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.15000000596046448,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -0.25,
+                                            "PHDCJAHHIOG": -2.0
+                                        },
+                                        "KJNJNKLLNCN": "WeaponEffect"
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 1.5,
+                                        "KAAPLGBEDPM": 1.75,
+                                        "PHDCJAHHIOG": 8.5
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "IceSpary",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.30000001192092896,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 1.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEffect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayDamage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEnd",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEffect"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayDamage"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_RocketJump",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "RocketJump"
+                    ],
+                    "GAIGOBCNNEE": "ResetAISkill"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "RocketJump",
+                    "GAIGOBCNNEE": "BackPackEffect",
+                    "AAIFCLGLOMO": 0.47999998927116394,
+                    "MMHONEIBHNP": 0.8199999928474426
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "RocketJump",
+                    "GAIGOBCNNEE": "RocketJump_InAir",
+                    "AAIFCLGLOMO": 0.5400000214576721,
+                    "MMHONEIBHNP": 0.7900000214576721
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ResetAISkill": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                101
+                            ]
+                        }
+                    ]
+                },
+                "BackPackEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "RocketJump_BackPackEffect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR4H2",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "attackInfo": {
+                                "attackTag": "RocketJump",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.5,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Ice",
+                                    "elementDurability": 50.0,
+                                    "strikeType": "Blunt",
+                                    "enBreak": 200.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV5",
+                                    "hitHaltTimeScale": 0.05000000074505806,
+                                    "muteHitText": true
+                                }
+                            }
+                        }
+                    ]
+                },
+                "RocketJump_BackPackEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_RocketJumpLoop1"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_RocketJumpLoop2"
+                        }
+                    ]
+                },
+                "RocketJump_InAir": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "IsGhostToEnemy",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_RocketJump_CameraShake",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "ICGFCBOFFDI": 5.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV0"
+                            },
+                            "forceCameraShake": true,
+                            "cameraShake": {
+                                "shakeType": "CustomVector",
+                                "shakeRange": 0.800000011920929,
+                                "shakeTime": 0.4000000059604645,
+                                "shakeDistance": 30.0,
+                                "shakeDir": {
+                                    "_y": 1.0,
+                                    "_z": 1.0
+                                }
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_SprayGunAlert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip01"
+                        ]
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_SprayGunAlert"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_BackPackAlert",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip02"
+                        ]
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_BackPack_Ice_BackPackAlert"
+                },
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip02"
+                        ]
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_BackPack_Ice_BackPackAlertR"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_WeaponSpecialElementState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAbilityStateMixin",
+                    "ELJGGBDOPIL": [
+                        "ElementFreeze"
+                    ],
+                    "GAIGOBCNNEE": "WeaponElementFreezeHandler"
+                },
+                {
+                    "$type": "AttachToAbilityStateMixin",
+                    "ELJGGBDOPIL": [
+                        "ElementPetrifaction"
+                    ],
+                    "GAIGOBCNNEE": "WeaponElementPetrifactionHandler"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "WeaponElementFreezeHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "WeaponElementFreeze"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEnd"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayEffect"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayDamage"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "IceSprayEnd",
+                            "IFJLLJJCLNC": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "IceSprayEnd",
+                            "IFJLLJJCLNC": true
+                        }
+                    ]
+                },
+                "WeaponElementPetrifactionHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01",
+                                    "equip02"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "WeaponElementPetrifaction"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_ImprovedIceSprayEnd"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayEffect"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_IceSprayDamage"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "IceSprayEnd",
+                            "IFJLLJJCLNC": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "IceSprayEnd",
+                            "IFJLLJJCLNC": true
+                        }
+                    ]
+                },
+                "WeaponElementFreeze": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "ElementFreeze",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Dark",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "CFIPAGENGPE": true,
+                            "HHFIHBEAPAP": "Dark"
+                        }
+                    ]
+                },
+                "WeaponElementPetrifaction": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "ElementPetrifaction"
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_SprayGun_Ice_Steer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Turn"
+                    ],
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "MeleeAtk"
+                    ],
+                    "IMHBEGIKDKB": 0.30000001192092896,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "IceSpray"
+                    ],
+                    "IMHBEGIKDKB": 0.3499999940395355,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "RocketJump"
+                    ],
+                    "IMHBEGIKDKB": 0.5299999713897705,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "ImprovedIceSpray_BS"
+                    ],
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackTraceMixin",
+                    "EHNAPMMMNFI": [
+                        "ImprovedIceSpray_Loop"
+                    ],
+                    "IMHBEGIKDKB": 4.0,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Fat_EatEffect",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Practice"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Male_Fat_EatEffect"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Male_Fat_EatEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_Eat"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,231 @@
+{
+    "Slime_FindHome_FireBall": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 15.0,
+                "defense": 999999.0,
+                "canTriggerBullet": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "FireBall_Loop",
+                "abilityName": "Slime_Fire_FireBall_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "FireBall_Explode",
+                "abilityName": "Slime_Fire_Immune_FireBall_Explode",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "lifeInfinite": true,
+            "KHMAEMALBFD": 999.0
+        },
+        "move": {
+            "$type": "ConfigTrackBulletMove",
+            "FMMJLOCHHLM": 1.0,
+            "JMEOBDFCELF": true,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "MCNHEAILGPP": true
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "Alliance"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Slime_Fire_Immune_FireBall_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    },
+    "Slime_FireBall_RigidBody": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox"
+            },
+            "affectedByWorld": true,
+            "checkInSurface": true
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 15.0,
+                "defense": 999999.0,
+                "canTriggerBullet": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "FireBall_Loop",
+                "abilityName": "Slime_Fire_FireBall_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Slime_Fire_FireBall_Explode",
+                "abilityName": "Slime_Fire_FireBall_Explode",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Slime_Fire_Immune_FireBall_RigidBody",
+                "abilityName": "Slime_Fire_Immune_FireBall_RigidBody",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 2.5
+        },
+        "move": {
+            "$type": "ConfigRigidbodyMove",
+            "LLNGHPMEALD": {
+                "HCLFFPJLKJN": [
+                    "RetreatType",
+                    "RetreatAirType",
+                    "WindZoneType"
+                ]
+            },
+            "CCPCIIKNOMF": false
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigGadgetCollidedPattern",
+            "EJFGJMDMBNJ": {
+                "PENKNGDICGD": 0.30000001192092896,
+                "OJIFKEOCJGB": "All"
+            },
+            "EJODEIIDHIH": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Slime_Fire_FireBall_Explode"
+                },
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Slime_Fire_Immune_FireBall_RigidBody"
+                }
+            ],
+            "LAHCODPGOHB": "Collider",
+            "GAAJFJBDOPF": "InteeTrigger"
+        }
+    },
+    "Slime_Bubble_Missile": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachBox",
+                "FGNLBMLCKLP": 0.4000000059604645
+            }
+        },
+        "combat": {
+            "property": {
+                "useCreatorProperty": true,
+                "HP": 999999.0,
+                "attack": 15.0,
+                "defense": 999999.0,
+                "isLockHP": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Bubble_Loop",
+                "abilityName": "Slime_Water_Bubble_Loop",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Bubble_Explode",
+                "abilityName": "Slime_Water_Bubble_Explode",
+                "abilityOverride": ""
+            },
+            {
+                "abilityID": "Bubble_Surround",
+                "abilityName": "Slime_Water_Bubble_Surround",
+                "abilityOverride": ""
+            }
+        ],
+        "AGOIJBKMIOI": {
+            "KHMAEMALBFD": 5.0
+        },
+        "move": {
+            "$type": "ConfigParabolaBulletMove",
+            "FMMJLOCHHLM": 9.0,
+            "DMMDOKKMANE": {
+                "$type": "ConfigBulletMoveAngleByVelocity"
+            },
+            "IBEKNBIGDBM": 60.0,
+            "OOKNCMNOLHL": 15.0,
+            "PKGGMCBEEMN": {
+                "$type": "ConfigParabolaBulletMoveCorrection",
+                "FOHINLMCLCC": 2.0,
+                "LAOHLEAPNBF": 4.0,
+                "OGKIPNLKEJP": 12.0
+            }
+        },
+        "AFEIEIPGDCN": {
+            "$type": "ConfigBulletPattern",
+            "EJFGJMDMBNJ": {
+                "OJIFKEOCJGB": "All"
+            },
+            "DHBKLEHDFNF": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Slime_Water_Bubble_Surround"
+                }
+            ],
+            "LDMDKHENHNH": [
+                {
+                    "$type": "ConfigGadgetTriggerAbility",
+                    "abilityName": "Slime_Water_Bubble_Explode"
+                }
+            ],
+            "LNKCPELLKIF": true
+        }
+    }
+}

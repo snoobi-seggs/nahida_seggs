@@ -1,0 +1,474 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "DropLight_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMutexMixin",
+                    "AFOHJEBACGJ": [
+                        0,
+                        201
+                    ],
+                    "BODPLILMLED": [
+                        [
+                            "Fire_Off"
+                        ],
+                        [
+                            "Fire_On"
+                        ]
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Trigger_Bullet": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_Broken",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            }
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 70950002,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "ShootPoint"
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Trigger_Bullet02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_Broken",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffectPoint"
+                            }
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 70950003,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "ShootPoint"
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Fire_Off": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 1.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitBoxName",
+                                    "EACGOCFODIC": [
+                                        "RopeHitbox"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Trigger_Bullet02"
+                        }
+                    ]
+                },
+                "Fire_On": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Burning"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Burning"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitBoxName",
+                                    "EACGOCFODIC": [
+                                        "LightHitBox"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Wind"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Burning"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitBoxName",
+                                    "EACGOCFODIC": [
+                                        "RopeHitbox"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Trigger_Bullet"
+                        }
+                    ]
+                },
+                "Burning": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 15.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "DropLight_Bullet",
+            "HNEIEGHMLKH": {
+                "DropLight_Bullet": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.05000000074505806,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_BombBarrel_01_Explode"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DropLight_Bullet"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "DropLight_Crash",
+            "HNEIEGHMLKH": {
+                "DropLight_Crash": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "UnlockIntee"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_BombBarrel_01_Explode"
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "ICGFCBOFFDI": 2.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Fire",
+                                        "elementDurability": 20.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 200.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV6",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Air",
+                                            "HPOPMELEPEB": 700.0,
+                                            "hitImpulseY": 400.0
+                                        },
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "All"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "UnlockIntee": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": true
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 1
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DropLight_Crash"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "DropLight_Crash02",
+            "HNEIEGHMLKH": {
+                "DropLight_Crash": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_WoodenObject_Broken",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf"
+                                    },
+                                    "ICGFCBOFFDI": 0.5
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Fire",
+                                        "elementDurability": 20.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 200.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV6",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Air",
+                                            "HPOPMELEPEB": 700.0,
+                                            "hitImpulseY": 400.0
+                                        },
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "All"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "DropLight_Crash"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "GearWater_Interact",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "Switch_Close"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Swtich_Open"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Switch_Close": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 1.0
+                },
+                "Swtich_Open": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Water",
+                    "elementDurability": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Burning"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Burning"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Fire"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Burning"
+                        }
+                    ]
+                },
+                "Burning": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Fire",
+                    "elementDurability": 15.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_FireBasin_01"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_FIRE_GADGET_ATTACK",
+                                    "value": 1.0
+                                }
+                            ],
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "MLOEFNBPCCH": "Both",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "offset": {
+                                            "PHDCJAHHIOG": -0.5
+                                        },
+                                        "KJNJNKLLNCN": "attachPoint"
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 1.0,
+                                        "KAAPLGBEDPM": 1.0,
+                                        "PHDCJAHHIOG": 1.0
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Fire",
+                                        "elementDurability": 100.0,
+                                        "strikeType": "Default"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "none",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.5
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "All"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_FIRE_GADGET_ATTACK",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": -1.0
+                }
+            ],
+            "KJKECFBMHKH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 2.0,
+                    "HJJEAOMEOFI": "_FIRE_GADGET_ATTACK",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": -1.0
+                }
+            ],
+            "JPKNDOGGOIN": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -2.0,
+                    "HJJEAOMEOFI": "_FIRE_GADGET_ATTACK",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": -1.0
+                }
+            ]
+        }
+    }
+]

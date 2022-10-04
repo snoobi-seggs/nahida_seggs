@@ -1,0 +1,1806 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Equip_SelfDestroy",
+            "POCIJLIJCIE": [
+                {
+                    "$type": "KillSelf"
+                },
+                {
+                    "$type": "HideUIBillBoard",
+                    "COCENMAFJGD": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_Grass_5",
+            "HNEIEGHMLKH": {
+                "GrassMaterial": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 50.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        },
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementBurning"
+                            ],
+                            "GAIGOBCNNEE": "ShieldOnFire"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "ShieldOnFire": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "ShieldOnFire",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "ShieldOnFire"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "GrassMaterial"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_Grass_10",
+            "HNEIEGHMLKH": {
+                "GrassMaterial": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "GrassMaterial"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_Grass_30",
+            "HNEIEGHMLKH": {
+                "GrassMaterial": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Grass",
+                    "elementDurability": 300.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "WeaponBroken_Attack"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "WeaponBroken_Attack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Default"
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV4",
+                                    "hitHaltTimeScale": 0.05000000074505806
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "GrassMaterial"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_ShieldDefend",
+            "HNEIEGHMLKH": {
+                "NormalDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "NormalIdle",
+                                "NormalMove",
+                                "Turn",
+                                "ShieldSmash",
+                                "Defend",
+                                "Defend_AS"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "DEHPOLDCMNJ": 90.0,
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 0.0,
+                            "HFCIHIJGLMA": 0
+                        }
+                    ]
+                },
+                "ForceDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit",
+                                "BeHitThrow"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 4.0,
+                            "EAEELLPBGHO": false,
+                            "HFCIHIJGLMA": 0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "NormalDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "ForceDefend"
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "NormalDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "ForceDefend"
+                }
+            ],
+            "POCIJLIJCIE": [
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "NormalDefend"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "ForceDefend"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_ShieldDefendAttack",
+            "HNEIEGHMLKH": {
+                "ShieldBroken_Attack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 1000.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV4",
+                                    "hitHaltTimeScale": 0.05000000074505806
+                                }
+                            }
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Weapon_GrassMatrial": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Grass",
+                    "elementDurability": 50.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Grass",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Undead_01_Shield_Broken"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "FreezeDetect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementFreeze"
+                            ],
+                            "GAIGOBCNNEE": "BeFreezed"
+                        }
+                    ]
+                },
+                "BeFreezed": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Grass"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ReDefend"
+                        }
+                    ]
+                },
+                "BurningDetect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementBurning"
+                            ],
+                            "GAIGOBCNNEE": "WeaponOnFire"
+                        }
+                    ]
+                },
+                "WeaponOnFire": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "WeaponOnFire",
+                            "value": true
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "NPHOOPNDCAC": "Owner",
+                            "HHFIHBEAPAP": "WeaponOnFire"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Grass"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ReDefend"
+                        }
+                    ]
+                },
+                "ReDefend": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ]
+                },
+                "InDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "NormalDefend"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ForceDefend"
+                        }
+                    ]
+                },
+                "NormalDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "NormalIdle",
+                                "NormalMove",
+                                "Defend",
+                                "DefendAttack"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "DEHPOLDCMNJ": 90.0,
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 0.0,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_None_Block"
+                                },
+                                {
+                                    "$type": "ActCameraShake",
+                                    "cameraShake": {
+                                        "shakeRange": 0.03999999910593033,
+                                        "shakeTime": 0.18000000715255737
+                                    }
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_WEAPON_SHIELD_DEFEND_COUNT",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 4.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.5
+                    }
+                },
+                "DefendAttack": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "NormalIdle",
+                                "NormalMove",
+                                "Defend",
+                                "DefendAttack",
+                                "BeHit"
+                            ],
+                            "OKFKMBDCDHO": "DefendAttackTrigger",
+                            "DEHPOLDCMNJ": 90.0,
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 0.0,
+                            "HFCIHIJGLMA": 0,
+                            "attackType": "Melee",
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_None_Block"
+                                },
+                                {
+                                    "$type": "ActCameraShake",
+                                    "cameraShake": {
+                                        "shakeRange": 0.03999999910593033,
+                                        "shakeTime": 0.18000000715255737
+                                    }
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": -5.0,
+                                    "HJJEAOMEOFI": "_ABILITY_WEAPON_SHIELD_DEFEND_COUNT",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 4.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_None_Shield"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_None_ShieldCreate"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_None_ShieldDestroy"
+                        }
+                    ]
+                },
+                "ForceDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit",
+                                "BeHitThrow"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 4.0,
+                            "EAEELLPBGHO": false,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "ActCameraShake",
+                                    "cameraShake": {
+                                        "shakeRange": 0.03999999910593033,
+                                        "shakeTime": 0.18000000715255737
+                                    }
+                                },
+                                {
+                                    "$type": "AddGlobalValue",
+                                    "value": 1.0,
+                                    "HJJEAOMEOFI": "_ABILITY_WEAPON_SHIELD_DEFEND_COUNT",
+                                    "EODOIECEPEF": true,
+                                    "JDHHMBHOOEC": 4.0,
+                                    "KHAHOELDONA": 0.0
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.5
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Weapon_GrassMatrial"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "BurningDetect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_WEAPON_SHIELD_DEFEND_COUNT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 4.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "BurningDetect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_WEAPON_SHIELD_DEFEND_COUNT",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 4.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "POCIJLIJCIE": [
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "BurningDetect"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                },
+                {
+                    "$type": "ClearGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "HJJEAOMEOFI": "_ABILITY_WEAPON_SHIELD_DEFEND_COUNT"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "ShieldBroken_Attack"
+                },
+                {
+                    "$type": "ResetAnimatorTrigger",
+                    "NPHOOPNDCAC": "Target",
+                    "triggerID": "DefendTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_RockShield_DefendAttack",
+            "HNEIEGHMLKH": {
+                "ShieldBroken_Attack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 1000.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV4",
+                                    "hitHaltTimeScale": 0.05000000074505806
+                                }
+                            }
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Weapon_RockMatrial": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Rock",
+                    "elementDurability": 200.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Rock",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224,
+                            "FFOEHJLIDFC": [
+                                {
+                                    "$type": "FireEffect",
+                                    "NPHOOPNDCAC": "Owner",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_BlockSuccess"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToElementDurabilityMixin",
+                            "CMEDACODLEA": [
+                                0.5,
+                                100.5,
+                                200.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Empty",
+                                "Shield_Stage01"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "Owner",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_ShieldDestroy"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Shield_Stage01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Damaged"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "Owner",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_ShieldDamaged"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Damaged",
+                            "value": true
+                        }
+                    ]
+                },
+                "FreezeDetect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementFreeze"
+                            ],
+                            "GAIGOBCNNEE": "BeFreezed"
+                        }
+                    ]
+                },
+                "BeFreezed": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Rock"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ReDefend"
+                        }
+                    ]
+                },
+                "ReDefend": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ]
+                },
+                "InDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "NormalDefend"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ForceDefend"
+                        }
+                    ]
+                },
+                "NormalDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "NormalIdle",
+                                "NormalMove",
+                                "Defend",
+                                "DefendAttack"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "DEHPOLDCMNJ": 90.0,
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 0.0,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_Block"
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.25
+                    }
+                },
+                "ForceDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit",
+                                "BeHitThrow"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 4.0,
+                            "EAEELLPBGHO": false,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_Block"
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 1.0
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Weapon_RockMatrial"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                }
+            ],
+            "POCIJLIJCIE": [
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "ShieldBroken_Attack"
+                },
+                {
+                    "$type": "ResetAnimatorTrigger",
+                    "NPHOOPNDCAC": "Target",
+                    "triggerID": "DefendTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_IceShield_DefendAttack",
+            "HNEIEGHMLKH": {
+                "ShieldBroken_Attack": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.0,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 1000.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "default",
+                                    "hitImpulseType": "LV4",
+                                    "hitHaltTimeScale": 0.05000000074505806
+                                }
+                            }
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Weapon_IceMatrial": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Frozen",
+                    "elementDurability": 200.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Ice",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224,
+                            "FFOEHJLIDFC": [
+                                {
+                                    "$type": "FireEffect",
+                                    "NPHOOPNDCAC": "Owner",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_BlockSuccess"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToElementDurabilityMixin",
+                            "CMEDACODLEA": [
+                                0.5,
+                                100.5,
+                                200.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Empty",
+                                "Shield_Stage01"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "Owner",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_ShieldDestroy"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Shield_Stage01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Damaged"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "Owner",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_ShieldDamaged"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Damaged",
+                            "value": true
+                        }
+                    ]
+                },
+                "FreezeDetect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToAbilityStateMixin",
+                            "ELJGGBDOPIL": [
+                                "ElementFreeze"
+                            ],
+                            "GAIGOBCNNEE": "BeFreezed"
+                        }
+                    ]
+                },
+                "BeFreezed": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByHasElement",
+                                    "GOMLPAOIKJA": "Rock"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ReDefend"
+                        }
+                    ]
+                },
+                "ReDefend": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Owner",
+                            "GAIGOBCNNEE": "InDefend"
+                        }
+                    ]
+                },
+                "InDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "NormalDefend"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "ForceDefend"
+                        }
+                    ]
+                },
+                "NormalDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "NormalIdle",
+                                "NormalMove",
+                                "Defend",
+                                "DefendAttack"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "DEHPOLDCMNJ": 90.0,
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 0.0,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_Block"
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.25
+                    }
+                },
+                "ForceDefend": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit",
+                                "BeHitThrow"
+                            ],
+                            "OKFKMBDCDHO": "DefendTrigger",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 4.0,
+                            "EAEELLPBGHO": false,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Hili_Rock_Block"
+                                }
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 1.0
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Weapon_IceMatrial"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                }
+            ],
+            "POCIJLIJCIE": [
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "InDefend"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "FreezeDetect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Target",
+                    "GAIGOBCNNEE": "ShieldBroken_Attack"
+                },
+                {
+                    "$type": "ResetAnimatorTrigger",
+                    "NPHOOPNDCAC": "Target",
+                    "triggerID": "DefendTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Staff_Fire_WeaponInit",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerAbility",
+                    "NPHOOPNDCAC": "Owner",
+                    "abilityName": "Abyss_Fire_WeaponElement"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Staff_Ice_WeaponInit",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerAbility",
+                    "NPHOOPNDCAC": "Owner",
+                    "abilityName": "Abyss_Ice_WeaponElement"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Staff_Water_WeaponInit",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerAbility",
+                    "NPHOOPNDCAC": "Owner",
+                    "abilityName": "Abyss_Water_WeaponElement"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Torch_FireState",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Hili_Fire_Torch_FireState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Fire",
+                    "elementDurability": 50.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Fire_Torch_FireElementLoop"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "NPHOOPNDCAC": "Owner",
+                            "abilityName": "Hili_Torch_FireState_OnFire"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "NPHOOPNDCAC": "Owner",
+                            "abilityName": "Hili_Torch_FireState_OffFire"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Hili_Fire_Torch_FireElementAS"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Hili_Fire_Torch_FireState"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Hili_Fire_Torch_FireState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_WoodenClub_Grass_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 5.0,
+                    "HJJEAOMEOFI": "_IS_CLUB_",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 5.0,
+                    "HJJEAOMEOFI": "_IS_CLUB_",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Warglaive_Fire_01_IntoShadow",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerSetRenderersEnable",
+                    "GEDDBEFBOKD": [
+                        "MonEquip_Warglaive_Fire_01"
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Warglaive_Fire_01_OutOfShadow",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerSetRenderersEnable",
+                    "GEDDBEFBOKD": [
+                        "MonEquip_Warglaive_Fire_01"
+                    ],
+                    "PAHBCOACBAI": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_Gadget_Disappear",
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Weapon_Disappear"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Weapon_BeingHitDetect",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Weapon_BeingHitDetect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "NPHOOPNDCAC": "Owner",
+                            "triggerID": "AwakeAlert"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Weapon_BeingHitDetect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_WoodenClub_01_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_CLUB_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_CLUB_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Shield_01_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_SHIELD_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_SHIELD_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Crossbow_01_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_CROSSBOW_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_CROSSBOW_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Shield_02_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_CLUB_02",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_CLUB_02",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Torch_02_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_TORCH_02",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_TORCH_02",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Axe_01_SetGlobalValue",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Owner",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_Axe_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "AddGlobalValue",
+                    "NPHOOPNDCAC": "Target",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_IS_Axe_01",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Skirmisher_Spraygun_Ice_ImproveState",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_SprayGunNormal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Skirmisher_Backpack_Ice_ImproveState",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Ice_BackPackNormal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Skirmisher_Spraygun_Water_ImproveState",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Water_SprayGunNormal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "MonEquip_Skirmisher_Backpack_Water_ImproveState",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Fat_SprayGun_Water_BackPackNormal"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shougun_Pole_Effect",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Monster_Shougun_Pole_Visable": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip02"
+                            ]
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Shougun_Pole_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shougun_Pole_WeaponLoopEffect"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Shougun_Pole_Effect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_MITAKENARUKAMI_WEAPONTYPE_",
+                            "value": 0.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Pole_Visable"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_WEAPONTYPE_",
+                            "value": 0.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Pole_Visable"
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_MITAKENARUKAMI_WEAPONTYPE_",
+                            "value": 0.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Pole_Visable"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_MITAKENARUKAMI_WEAPONTYPE_",
+                            "value": 0.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Tachi_Visable"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Shougun_Tachi_Effect",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Monster_Shougun_Tachi_Visable": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip02"
+                            ]
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Shougun_Tachi_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Shougun_Tachi_WeaponLoopEffect"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Monster_Shougun_Tachi_Effect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_MITAKENARUKAMI_WEAPONTYPE_",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Tachi_Visable"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_WEAPONTYPE_",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Tachi_Visable"
+                }
+            ],
+            "PDBPHPPJPNH": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_MITAKENARUKAMI_WEAPONTYPE_",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Tachi_Visable"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "Owner",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_MONSTER_SHOUGUN_MITAKENARUKAMI_WEAPONTYPE_",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Shougun_Pole_Visable"
+                }
+            ]
+        }
+    }
+]

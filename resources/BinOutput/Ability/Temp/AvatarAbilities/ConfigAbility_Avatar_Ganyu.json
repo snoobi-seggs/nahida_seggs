@@ -1,0 +1,4164 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_PressShoot",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ButtonHoldChargeMixin",
+                    "overtime": 10371,
+                    "DBKLMBJJHDP": 0.20000000298023224,
+                    "BLOPHAGIDDP": 999999.0,
+                    "CBGHBGNKMPO": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 100.0
+                        }
+                    ],
+                    "CGFPHLEJDMJ": [
+                        {
+                            "$type": "SetCameraLockTime",
+                            "NOFHGBACFFD": 0.30000001192092896
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "PKNMLLHNOLA": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 101.0
+                        }
+                    ],
+                    "NFPDHLMEPGB": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "KBDIHBMGNBC": [
+                        "ShootBS",
+                        "Shoot",
+                        "FastAim",
+                        "FastAimShoot"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FastAim",
+                        "FastAimShoot"
+                    ],
+                    "GAIGOBCNNEE": "KeepFastAiming"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FastAimShoot"
+                    ],
+                    "GAIGOBCNNEE": "SetFastAimShooting"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ShootBS",
+                        "FastAim",
+                        "FastAimShoot"
+                    ],
+                    "GAIGOBCNNEE": "SetNeedAimEndStates"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "KeepFastAiming": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "FastAiming",
+                            "value": true
+                        },
+                        {
+                            "$type": "AvatarEnterFocus",
+                            "OBGFLLMNMEC": {
+                                "_x": 0.7549999952316284,
+                                "_y": 0.17000000178813934,
+                                "_z": -1.899999976158142
+                            },
+                            "JIEOBPNGIMH": {
+                                "_x": 0.7549999952316284,
+                                "_y": 0.3700000047683716,
+                                "_z": -1.600000023841858
+                            },
+                            "OIAHIMEGJFA": true,
+                            "LGBHLEKKEHF": true,
+                            "MMKJGOHOFIH": 360.0,
+                            "JCBJMHODNNI": "Skill1",
+                            "OKFIENEGKLC": {
+                                "ps4": {
+                                    "ODHLBFFCAEN": true
+                                },
+                                "ps5": {
+                                    "ODHLBFFCAEN": true
+                                },
+                                "other": {
+                                    "ODHLBFFCAEN": true,
+                                    "DOJPCPNGBBA": true
+                                }
+                            },
+                            "NHLHBICPCBN": 30.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "FastAiming"
+                        },
+                        {
+                            "$type": "AvatarExitFocus",
+                            "IAIJCILPPPA": true
+                        }
+                    ]
+                },
+                "SetFastAimShooting": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "FastAimShooting",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "FastAimShooting"
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorBool",
+                                    "value": true,
+                                    "MOCGJNIDDAI": "FastAiming"
+                                }
+                            ],
+                            "triggerID": "AimEnd"
+                        }
+                    ]
+                },
+                "SetNeedAimEndStates": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "InStatesNeedAimEnd",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "InStatesNeedAimEnd"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_AimPressShoot",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ButtonHoldChargeMixin",
+                    "overtime": 10374,
+                    "BLOPHAGIDDP": 999999.0,
+                    "NFPDHLMEPGB": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1.0
+                        }
+                    ],
+                    "KBDIHBMGNBC": [
+                        "Aim",
+                        "AimShoot"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Aim",
+                        "AimShoot"
+                    ],
+                    "GAIGOBCNNEE": "KeepAiming"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "AimShoot"
+                    ],
+                    "GAIGOBCNNEE": "SetAimShooting"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Aim",
+                        "AimShoot"
+                    ],
+                    "GAIGOBCNNEE": "SetNeedAimEndStates"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "KeepAiming": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Aiming",
+                            "value": true
+                        },
+                        {
+                            "$type": "AvatarEnterFocus",
+                            "OBGFLLMNMEC": {
+                                "_x": 0.7549999952316284,
+                                "_y": 0.17000000178813934,
+                                "_z": -1.899999976158142
+                            },
+                            "JIEOBPNGIMH": {
+                                "_x": 0.7549999952316284,
+                                "_y": 0.3700000047683716,
+                                "_z": -1.600000023841858
+                            },
+                            "OIAHIMEGJFA": true,
+                            "LGBHLEKKEHF": true,
+                            "MMKJGOHOFIH": 360.0,
+                            "JCBJMHODNNI": "Skill1",
+                            "OKFIENEGKLC": {
+                                "ps4": {
+                                    "ODHLBFFCAEN": true
+                                },
+                                "ps5": {
+                                    "ODHLBFFCAEN": true
+                                },
+                                "other": {
+                                    "ODHLBFFCAEN": true,
+                                    "DOJPCPNGBBA": true
+                                }
+                            },
+                            "NHLHBICPCBN": 30.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "Aiming"
+                        },
+                        {
+                            "$type": "AvatarExitFocus",
+                            "IAIJCILPPPA": true
+                        }
+                    ]
+                },
+                "SetAimShooting": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "AimShooting",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "AimShooting"
+                        }
+                    ]
+                },
+                "SetNeedAimEndStates": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "InStatesNeedAimEnd",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "InStatesNeedAimEnd"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_Arrow_FX",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Aim",
+                        "FastAim"
+                    ],
+                    "GAIGOBCNNEE": "Ganyu_Arrow_FX"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Ganyu_Arrow_FX": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Bow_Arrow"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootAimingArrow_Charge",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Aim",
+                        "FastAim"
+                    ],
+                    "GAIGOBCNNEE": "ShootAimingArrow_ChargeMark"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FastAim",
+                        "FastAimShoot",
+                        "Aim",
+                        "AimShoot"
+                    ],
+                    "GAIGOBCNNEE": "ShowAimingEffect"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "AimLoop",
+                    "GAIGOBCNNEE": "Aim_ChangeAlpha"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "FastAimLoop",
+                    "GAIGOBCNNEE": "FastAim_ChangeAlpha"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ShootAimingArrow_ChargeMark": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.25,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Aim_ChangeAlpha": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "EffectChangeAlphaMixin",
+                            "NPHOOPNDCAC": "Team",
+                            "HFFJNJPFMEE": 0.20000000298023224,
+                            "JMNILCJHBLL": 0.30000001192092896
+                        }
+                    ]
+                },
+                "FastAim_ChangeAlpha": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "EffectChangeAlphaMixin",
+                            "NPHOOPNDCAC": "Team",
+                            "HFFJNJPFMEE": 0.20000000298023224,
+                            "JMNILCJHBLL": 0.30000001192092896
+                        }
+                    ]
+                },
+                "ShowAimingEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.10000000149011612,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Aiming_Arrow_Glow_Fission_Talent"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Aiming_Arrow_Glow_WithoutElement_Loop"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Time",
+                                    "value": 1.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Aiming_Arrow_Glow_WithoutElement_Loop"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Time",
+                                    "value": 4.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Aiming_Arrow_Glow_Loop"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Time",
+                                    "value": 6.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Aiming_Arrow_Glow_Fission_Loop"
+                        }
+                    ]
+                },
+                "Aiming_Arrow_Glow_WithoutElement_Loop": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Glow_Loop_01"
+                        }
+                    ]
+                },
+                "Aiming_Arrow_Glow_Loop": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Glow_Loop_02"
+                        }
+                    ]
+                },
+                "Aiming_Arrow_Glow_Fission_Loop": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Glow_Loop_Fission"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Glow_Loop_Fission_Burst"
+                        }
+                    ]
+                },
+                "Aiming_Arrow_Glow_Fission_Talent": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Glow_Loop_Fission_Talent"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Glow_Loop_Fission_Talent_Burst"
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Aiming_Arrow_Glow_WithoutElement_Loop"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Aiming_Arrow_Glow_Loop"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Aiming_Arrow_Glow_Fission_Loop"
+                },
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Aiming_Arrow_Glow_Fission_Talent"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_Enchanted_Time",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_01",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41037001,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_ShootSpark_Small",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_02",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41037002,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_ShootSpark_Small",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_03",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41037003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_ShootSpark_Big",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_04",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41037004,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_ShootSpark_Small",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_05",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41037005,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_ShootSpark_Big",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_06",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 41037006,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_Aiming",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 3.0,
+                            "ONPJJFKDCED": "LessAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Onshooting_Unsuccessful",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.8999999761581421
+                        },
+                        "KJNJNKLLNCN": "WeaponR"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 4.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 5.0,
+                            "ONPJJFKDCED": "LessAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "value": 0.0
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Onshooting",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.8999999761581421
+                        },
+                        "KJNJNKLLNCN": "WeaponR"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Time",
+                                    "value": 6.0,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                                    "value": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_IceCharge_Onshooting_Fission",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.8999999761581421
+                        },
+                        "KJNJNKLLNCN": "WeaponR"
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 3.0,
+                            "ONPJJFKDCED": "LessAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "NGAAOMEHOGE": 41037007,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 4.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 5.0,
+                            "ONPJJFKDCED": "LessAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "NGAAOMEHOGE": 41037008,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 6.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "NGAAOMEHOGE": 41037009,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "value": 1.0
+                        }
+                    ],
+                    "NGAAOMEHOGE": 41037009,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttachPoint",
+                            "KJNJNKLLNCN": "FocusAnchor",
+                            "MMFHENHCBGB": "Self"
+                        },
+                        "KJNJNKLLNCN": "WeaponL"
+                    }
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Enchanted_Time",
+                            "value": 4.0,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "cameraShake": {
+                        "shakeRange": 0.20000000298023224,
+                        "shakeTime": 0.11999999731779099,
+                        "shakeDistance": 30.0,
+                        "extension": {
+                            "baseOnCamera": true
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_ShootArrow_Enchanted_WithoutIce",
+            "EDDGGPMFDGK": {
+                "DamageWithoutIce": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_Fly_Big"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireHitEffect",
+                    "OFIGOLJOGPJ": "",
+                    "MHCHJLOELPF": {
+                        "MCNFNFLLGIH": "Eff_Arrow_Hit_Earth",
+                        "GACILIABHFB": {
+                            "Water": "Eff_Arrow_Hit_Water"
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "MLOEFNBPCCH": "Both",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -0.5
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 0.10000000149011612,
+                                "KAAPLGBEDPM": 0.10000000149011612,
+                                "PHDCJAHHIOG": 1.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "ExtraAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "DamageWithoutIce",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Pierce",
+                                "enBreak": 10.0,
+                                "enHeadBreak": 30.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canHitHead": true,
+                            "hitHeadPattern": {
+                                "onHitEffectName": "Eff_Arrow_Hit_Head",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTime": 0.11999999731779099,
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "bulletWane": {
+                                "FLLGELFAPDD": 0.699999988079071,
+                                "HEKHEBOLJKI": 0.05000000074505806,
+                                "KMCFCPMLLOO": 0.10000000149011612,
+                                "OFDAOEOCOLF": 0.10000000149011612,
+                                "KGAHILAFFCA": 0.05000000074505806,
+                                "FPBCHNPPHEM": 0.10000000149011612,
+                                "EGMBJJJLGDA": 0.10000000149011612,
+                                "LBEBDNONIAJ": 0.10000000149011612,
+                                "EKBEJAPELDM": "Mute"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_ShootArrow_WithIce",
+            "EDDGGPMFDGK": {
+                "DamageWithIce": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_Fly_Ice"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireHitEffect",
+                    "OFIGOLJOGPJ": "",
+                    "MHCHJLOELPF": {
+                        "MCNFNFLLGIH": "Eff_Ganyu_Arrow_IceCharge_Hit",
+                        "GACILIABHFB": {
+                            "Water": "Eff_Arrow_Hit_Water"
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "lifeTime": "TriggerNoRepeat",
+                            "MLOEFNBPCCH": "Both",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": -0.5
+                                }
+                            },
+                            "size": {
+                                "AEAAJCIDPED": 0.10000000149011612,
+                                "KAAPLGBEDPM": 0.10000000149011612,
+                                "PHDCJAHHIOG": 1.0
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "ExtraAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "DamageWithIce",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Ice",
+                                "elementDurability": 25.0,
+                                "strikeType": "Pierce",
+                                "enBreak": 20.0,
+                                "enHeadBreak": 60.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "Eff_Ganyu_Arrow_IceCharge_Hit",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "canHitHead": true,
+                            "hitHeadPattern": {
+                                "onHitEffectName": "Eff_Arrow_Hit_Head_Ice",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTime": 0.11999999731779099,
+                                "hitHaltTimeScale": 0.009999999776482582
+                            },
+                            "bulletWane": {
+                                "FLLGELFAPDD": 0.699999988079071,
+                                "HEKHEBOLJKI": 0.05000000074505806,
+                                "KMCFCPMLLOO": 0.10000000149011612,
+                                "OFDAOEOCOLF": 0.10000000149011612,
+                                "KGAHILAFFCA": 0.05000000074505806,
+                                "FPBCHNPPHEM": 0.10000000149011612,
+                                "EGMBJJJLGDA": 0.10000000149011612,
+                                "LBEBDNONIAJ": 0.10000000149011612,
+                                "EKBEJAPELDM": "Mute"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_ShootArrow_WithIce_BeforeFission",
+            "EDDGGPMFDGK": {
+                "DamageWithIce_BeforeFission": 0.0,
+                "Ganyu_IceSubHurt": 0.0,
+                "Ganyu_IceSubHurtTime": 0.0,
+                "FissionBonusCritical": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_BeforeFission_FakeDeath": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Animator_OverallSpeedRatioMultiplied": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Fission_FX"
+                        },
+                        {
+                            "$type": "EnableBulletCollisionPluginTrigger"
+                        },
+                        {
+                            "$type": "FireHitEffect",
+                            "OFIGOLJOGPJ": "",
+                            "MHCHJLOELPF": {
+                                "MCNFNFLLGIH": "Eff_Ganyu_Arrow_IceCharge_BeforeFission_Hit",
+                                "GACILIABHFB": {
+                                    "Water": "Eff_Arrow_Hit_Water"
+                                }
+                            }
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Ganyu_CriticalFission_Mark",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "TriggerAttackEvent",
+                                    "DMCJDGELKBC": {
+                                        "attackPattern": {
+                                            "$type": "ConfigAttackBox",
+                                            "lifeTime": "TriggerNoRepeat",
+                                            "MLOEFNBPCCH": "Both",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByCollisionPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": -0.5
+                                                }
+                                            },
+                                            "size": {
+                                                "AEAAJCIDPED": 0.10000000149011612,
+                                                "KAAPLGBEDPM": 0.10000000149011612,
+                                                "PHDCJAHHIOG": 1.0
+                                            }
+                                        },
+                                        "attackInfo": {
+                                            "attackTag": "ExtraAttack",
+                                            "attenuationTag": "",
+                                            "attenuationGroup": "default",
+                                            "attackProperty": {
+                                                "bonusCriticalHurt": "DamageWithIce_BeforeFission",
+                                                "damagePercentageRatio": 0.0,
+                                                "elementType": "Ice",
+                                                "elementDurability": 25.0,
+                                                "strikeType": "Pierce",
+                                                "enBreak": 20.0,
+                                                "enHeadBreak": 60.0,
+                                                "bonusCritical": "FissionBonusCritical"
+                                            },
+                                            "hitPattern": {
+                                                "onHitEffectName": "Eff_Ganyu_Arrow_IceCharge_BeforeFission_Hit",
+                                                "hitImpulseType": "LV2",
+                                                "hitHaltTimeScale": 0.009999999776482582
+                                            },
+                                            "canHitHead": true,
+                                            "hitHeadPattern": {
+                                                "onHitEffectName": "Eff_Arrow_Hit_Head_Ice",
+                                                "hitImpulseType": "LV5",
+                                                "hitHaltTime": 0.11999999731779099,
+                                                "hitHaltTimeScale": 0.009999999776482582
+                                            },
+                                            "bulletWane": {
+                                                "FLLGELFAPDD": 0.699999988079071,
+                                                "HEKHEBOLJKI": 0.05000000074505806,
+                                                "KMCFCPMLLOO": 0.10000000149011612,
+                                                "OFDAOEOCOLF": 0.10000000149011612,
+                                                "KGAHILAFFCA": 0.05000000074505806,
+                                                "FPBCHNPPHEM": 0.10000000149011612,
+                                                "EGMBJJJLGDA": 0.10000000149011612,
+                                                "LBEBDNONIAJ": 0.10000000149011612,
+                                                "EKBEJAPELDM": "Mute"
+                                            },
+                                            "canBeModifiedBy": "OriginOwner"
+                                        }
+                                    },
+                                    "OJIFKEOCJGB": "Enemy"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "TriggerAttackEvent",
+                                    "DMCJDGELKBC": {
+                                        "attackPattern": {
+                                            "$type": "ConfigAttackBox",
+                                            "lifeTime": "TriggerNoRepeat",
+                                            "MLOEFNBPCCH": "Both",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornByCollisionPoint",
+                                                "offset": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": -0.5
+                                                }
+                                            },
+                                            "size": {
+                                                "AEAAJCIDPED": 0.10000000149011612,
+                                                "KAAPLGBEDPM": 0.10000000149011612,
+                                                "PHDCJAHHIOG": 1.0
+                                            }
+                                        },
+                                        "attackInfo": {
+                                            "attackTag": "ExtraAttack",
+                                            "attenuationTag": "",
+                                            "attenuationGroup": "default",
+                                            "attackProperty": {
+                                                "bonusCriticalHurt": "DamageWithIce_BeforeFission",
+                                                "damagePercentageRatio": 0.0,
+                                                "elementType": "Ice",
+                                                "elementDurability": 25.0,
+                                                "strikeType": "Pierce",
+                                                "enBreak": 20.0,
+                                                "enHeadBreak": 60.0
+                                            },
+                                            "hitPattern": {
+                                                "onHitEffectName": "Eff_Ganyu_Arrow_IceCharge_BeforeFission_Hit",
+                                                "hitImpulseType": "LV2",
+                                                "hitHaltTimeScale": 0.009999999776482582
+                                            },
+                                            "canHitHead": true,
+                                            "hitHeadPattern": {
+                                                "onHitEffectName": "Eff_Arrow_Hit_Head_Ice",
+                                                "hitImpulseType": "LV5",
+                                                "hitHaltTime": 0.11999999731779099,
+                                                "hitHaltTimeScale": 0.009999999776482582
+                                            },
+                                            "bulletWane": {
+                                                "FLLGELFAPDD": 0.699999988079071,
+                                                "HEKHEBOLJKI": 0.05000000074505806,
+                                                "KMCFCPMLLOO": 0.10000000149011612,
+                                                "OFDAOEOCOLF": 0.10000000149011612,
+                                                "KGAHILAFFCA": 0.05000000074505806,
+                                                "FPBCHNPPHEM": 0.10000000149011612,
+                                                "EGMBJJJLGDA": 0.10000000149011612,
+                                                "LBEBDNONIAJ": 0.10000000149011612,
+                                                "EKBEJAPELDM": "Mute"
+                                            },
+                                            "canBeModifiedBy": "OriginOwner"
+                                        }
+                                    },
+                                    "OJIFKEOCJGB": "Enemy"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_FissionPos",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            }
+                        },
+                        {
+                            "$type": "SetGlobalDir",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_FissionDir",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            }
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_FissionDir_1",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_ABILITY_Ganyu_FissionPos",
+                                "MICIJLHMIIH": "_ABILITY_Ganyu_FissionDir"
+                            },
+                            "CABLIPAKCGB": 41037010,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "Enemy"
+                        }
+                    ]
+                },
+                "Fission_FX": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Arrow_Fly_Ice_BeforeFission"
+                        }
+                    ]
+                },
+                "Fission_AttackLanded": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "PerfectFission"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Target",
+                                    "GAIGOBCNNEE": "UNIQUE_Fission_Debuff"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Target",
+                                    "GAIGOBCNNEE": "Ganyu_Fission_Debuff_Keeper"
+                                },
+                                {
+                                    "$type": "TriggerAbility",
+                                    "NPHOOPNDCAC": "OriginOwner",
+                                    "abilityName": "Avatar_Ganyu_Fission_GainEnergy"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Fission_Debuff": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "Ganyu_IceSubHurtTime",
+                    "elementDurability": "Ganyu_IceSubHurtTime",
+                    "FFOHEEFOELN": {
+                        "Actor_IceSubHurtDelta": "Ganyu_IceSubHurt"
+                    },
+                    "state": "DefenseDown",
+                    "FBMJEOALKEJ": true
+                },
+                "Ganyu_Fission_Debuff_Keeper": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddElementDurability",
+                            "ACOKKHADPOJ": true,
+                            "value": "Ganyu_IceSubHurtTime",
+                            "GAIGOBCNNEE": "UNIQUE_Fission_Debuff",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "Ganyu_IceSubHurtTime",
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Fission_FX"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Fission_AttackLanded"
+                },
+                {
+                    "$type": "CopyGlobalValue",
+                    "IGKNCNDCLOO": "OriginOwner",
+                    "KNAELFCJEPL": "Self",
+                    "DHPMANPAAFN": "_ABILITY_Ganyu_CriticalFission_Mark",
+                    "CGMMPCHEGIH": "_ABILITY_Ganyu_CriticalFission_Mark"
+                },
+                {
+                    "$type": "TriggerAbility",
+                    "NPHOOPNDCAC": "OriginOwner",
+                    "predicates": [
+                        {
+                            "$type": "ByUnlockTalentParam",
+                            "GFIJPNMCOGJ": "CriticalFission"
+                        }
+                    ],
+                    "abilityName": "Avatar_Ganyu_EnchantedFission"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "NPHOOPNDCAC": "OriginOwner",
+                    "GAIGOBCNNEE": "UNIQUE_Ganyu_Talent_QuickBloom_FX"
+                },
+                {
+                    "$type": "SetGlobalValue",
+                    "NPHOOPNDCAC": "OriginOwner",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_Enchanted_Talent",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_BeforeFission_FakeDeath"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_ShootArrow_WithIce_AfterFission",
+            "EDDGGPMFDGK": {
+                "DamageWithIce_AfterFission": 0.0,
+                "FissionBonusCritical": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_CriticalFission_Mark",
+                            "value": 1.0
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "KECPGHFBFMA": 0.6000000238418579,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_ABILITY_Ganyu_FissionAttackPos",
+                                        "MICIJLHMIIH": "_ABILITY_Ganyu_FissionAttackDir"
+                                    },
+                                    "secondHeight": 7.5,
+                                    "ICGFCBOFFDI": 5.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "ExtraAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "DamageWithIce_AfterFission",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Pierce",
+                                        "enBreak": 40.0,
+                                        "bonusCritical": "FissionBonusCritical"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "KECPGHFBFMA": 0.6000000238418579,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_ABILITY_Ganyu_FissionAttackPos",
+                                        "MICIJLHMIIH": "_ABILITY_Ganyu_FissionAttackDir"
+                                    },
+                                    "secondHeight": 7.5,
+                                    "ICGFCBOFFDI": 5.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "ExtraAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "DamageWithIce_AfterFission",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Pierce",
+                                        "enBreak": 40.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                {
+                    "$type": "KillSelf"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SkillObj_AimingArrow_FissionAgent",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Fission_Arrows_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_FissionAgent"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Fission_Arrows"
+                        }
+                    ]
+                },
+                "UNIQUE_Fission_Arrows": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Fission_Arrows_Handler"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_FissionAgent_Break",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "GameObject"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_FissionAgent_Arrows",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "GameObject"
+                            }
+                        },
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_FissionAttackPos",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -3.0,
+                                    "PHDCJAHHIOG": -0.20000000298023224
+                                }
+                            }
+                        },
+                        {
+                            "$type": "SetGlobalDir",
+                            "NPHOOPNDCAC": "Owner",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_FissionAttackDir",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "NPHOOPNDCAC": "Owner",
+                            "abilityName": "Bullet_Ganyu_ShootArrow_WithIce_AfterFission"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fission_Arrows_Handler"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_Fission_GainEnergy",
+            "EDDGGPMFDGK": {
+                "Ganyu_Fission_GainEnergy": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Ganyu_Fission_GainEnergy": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ReviveElemEnergy",
+                            "ACOKKHADPOJ": true,
+                            "value": "Ganyu_Fission_GainEnergy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_Ganyu_Fission_GainEnergy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_EnchantedFission",
+            "EDDGGPMFDGK": {
+                "EnchantedFission_Timer": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_Ganyu_EnchantedFission_Buff": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "EnchantedFission_Timer",
+                    "elementDurability": 100.0,
+                    "state": "AttackUp",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_CriticalFission_Mark",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_CriticalFission_Mark",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Ganyu_EnchantedFission_Buff"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_ShootArrow",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "Arrow_ATK01"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_01_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "Arrow_ATK02"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_02_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "Arrow_ATK03"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_03_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "Arrow_ATK04"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_04_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "Arrow_ATK05"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_05_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "MBGPMKGOEIJ": [
+                        "Arrow_ATK06"
+                    ],
+                    "bonusCriticalHurt": "NormalAttack_06_DamagePercentage",
+                    "damagePercentageRatio": 0.0
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "NormalAttack_01_DamagePercentage": 0.0,
+                "NormalAttack_02_DamagePercentage": 0.0,
+                "NormalAttack_03_DamagePercentage": 0.0,
+                "NormalAttack_04_DamagePercentage": 0.0,
+                "NormalAttack_05_DamagePercentage": 0.0,
+                "NormalAttack_06_DamagePercentage": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireHitEffect",
+                    "OFIGOLJOGPJ": "",
+                    "MHCHJLOELPF": {
+                        "MCNFNFLLGIH": "Eff_Arrow_Hit_Earth",
+                        "GACILIABHFB": {
+                            "Water": "Eff_Arrow_Hit_Water"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_ShootArrow_LightFX",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_Fly_Small"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_ShootArrow_HeavyFX",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_Arrow_Fly_Big"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_IceBreaker_PrePosCheck",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAbility",
+                    "abilityName": "Avatar_Ganyu_IceBreaker_PosCheck",
+                    "FGCBHPFHDJL": true
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_IceBreaker_PosCheck",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetGlobalPos",
+                    "NPHOOPNDCAC": "Caster",
+                    "HJJEAOMEOFI": "_ABILITY_Ganyu_IceBreaker_Pos",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 3.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        }
+                    }
+                },
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByNot",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "GMFCOCAJBDM": "LesserOrEqual",
+                            "value": 3.0
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "Caster",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_IceBreaker_FixPos",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByEntity"
+                                }
+                            }
+                        },
+                        {
+                            "$type": "CopyGlobalValue",
+                            "IGKNCNDCLOO": "Self",
+                            "KNAELFCJEPL": "Self",
+                            "DHPMANPAAFN": "_ABILITY_Ganyu_IceBreaker_FixPos_0",
+                            "CGMMPCHEGIH": "_ABILITY_Ganyu_IceBreaker_Pos_0"
+                        },
+                        {
+                            "$type": "CopyGlobalValue",
+                            "IGKNCNDCLOO": "Self",
+                            "KNAELFCJEPL": "Self",
+                            "DHPMANPAAFN": "_ABILITY_Ganyu_IceBreaker_FixPos_2",
+                            "CGMMPCHEGIH": "_ABILITY_Ganyu_IceBreaker_Pos_2"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_IceBreaker",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "IceBreaker"
+                    ],
+                    "GAIGOBCNNEE": "IceBreaker_Invisible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "IceBreaker"
+                    ],
+                    "GAIGOBCNNEE": "Ganyu_Talent_QuickBloom_Handler"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Ganyu_Talent_QuickBloom_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "QuickBloom"
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "ACOKKHADPOJ": true,
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "QuickBloom"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_Talent_QuickBloom_FX"
+                        }
+                    ]
+                },
+                "UNIQUE_Ganyu_Talent_QuickBloom_FX": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 30.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "ACOKKHADPOJ": true,
+                            "JBHFPDMBFHN": "Eff_Ganyu_Talent_QuickBloom"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_Enchanted_Talent",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "IceBreaker_Invisible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "ACOKKHADPOJ": true,
+                            "triggerID": "StealthOn"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_IceBreaker_AfterImage_01"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_IceBreaker_AfterImage_02"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_IceBreaker_AfterImage_03"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "ACOKKHADPOJ": true,
+                            "triggerID": "StealthOff"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByGlobalValue",
+                        "JBPCKOKLHEB": true,
+                        "DIJBGJEFBKA": 4.0,
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity"
+                        },
+                        "ANAGBFPADIE": true,
+                        "GDENJEFPMGC": "_ABILITY_Ganyu_IceBreaker_Pos",
+                        "MICIJLHMIIH": ""
+                    },
+                    "CABLIPAKCGB": 41037014,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                },
+                {
+                    "$type": "AvatarSkillStart",
+                    "overtime": 10372,
+                    "AFPAPIFKIHK": 1.0,
+                    "JFIJFCKLFCF": 1.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SkillObj_Ganyu_IceBreaker_Dummy",
+            "EDDGGPMFDGK": {
+                "MaxHPRatio": 0.0,
+                "MaxHPRatioExtra": -1.0,
+                "damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_IceBreaker_HP": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_MaxHPRatio": [
+                            "MaxHPRatio",
+                            "MaxHPRatioExtra",
+                            "Add"
+                        ]
+                    },
+                    "FBMJEOALKEJ": true
+                },
+                "IceBreaker_Taunt": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.800000190734863,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.25,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerTaunt",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasAbilityState",
+                                            "MFKFDKDKKNJ": "MuteTaunt"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Taunted_FX"
+                        }
+                    ]
+                },
+                "IceBreaker_AttackHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "KECPGHFBFMA": 0.6000000238418579,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -2.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 4.0,
+                                    "ICGFCBOFFDI": 4.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Art",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementRank": 1.5,
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 80.0,
+                                        "attackType": "Range"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV3",
+                                        "retreatType": "ByHitDirection",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "Taunted_FX": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_Dummy_Taunted"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Taunted_FX"
+                        }
+                    ]
+                },
+                "IceBreakerElementBall": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "Ball"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Ball": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "GenerateElemBall",
+                            "APIAFGPIIHE": 2022,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 0.5,
+                                    "MFBOELKCPDP": 1.5
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 6.0
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_IceBreaker_HP"
+                },
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_IceBreaker_Dummy"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "IceBreaker_Taunt"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "IceBreaker_AttackHandler"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "IceBreakerElementBall"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "CreateGadget",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf"
+                    },
+                    "CABLIPAKCGB": 41037015,
+                    "DOLAJLACEDF": 1001,
+                    "ONPOPLLHJLE": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SkillObj_Ganyu_IceBreaker_Dummy_EndBoom",
+            "EDDGGPMFDGK": {
+                "damage": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Life_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "IceBreakerElementBall": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "KECPGHFBFMA": 0.6000000238418579,
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -2.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "secondHeight": 4.0,
+                                    "ICGFCBOFFDI": 4.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Art",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Ice",
+                                        "elementRank": 1.5,
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 80.0,
+                                        "attackType": "Range"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    },
+                                    "cameraShake": {
+                                        "shakeRange": 0.36000001430511475,
+                                        "shakeTime": 0.11999999731779099,
+                                        "shakeDistance": 30.0
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_IceBreaker_Dummy_AS"
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "Ball"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Ball": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "GenerateElemBall",
+                            "APIAFGPIIHE": 2022,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 0.5,
+                                    "MFBOELKCPDP": 1.5
+                                }
+                            },
+                            "ratio": 1.0,
+                            "GJNDGIAENMI": 6.0
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "IceBreakerElementBall"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Life_Timer"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_UnbreakableIce",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "UnbreakableIce"
+                    ],
+                    "GAIGOBCNNEE": "UnbreakableIce_SkillStart"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "UnbreakableIce",
+                    "GAIGOBCNNEE": "UnbreakableIce_WeatherChange",
+                    "MMHONEIBHNP": 0.5410000085830688
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "UnbreakableIce",
+                        "UnbreakableIce_AS"
+                    ],
+                    "GAIGOBCNNEE": "UnbreakableIce_CameraShot"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "UnbreakableIce",
+                        "UnbreakableIce_AS"
+                    ],
+                    "GAIGOBCNNEE": "UnbreakableIce_State"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UnbreakableIce_SkillStart": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TriggerWeatherMixin",
+                            "type": "Skill",
+                            "IHMBDACJNDO": "Weather_Ganyu_UnbreakableIce_OnStart",
+                            "DPEJLHDNMOK": 0.0,
+                            "duration": 2.0
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "KillGadget",
+                            "LBGGIBBMCMF": {
+                                "APIAFGPIIHE": 41037016
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_OnStart"
+                        },
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByEntity"
+                                }
+                            },
+                            "CABLIPAKCGB": 41037016,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "Enemy"
+                        },
+                        {
+                            "$type": "AvatarSkillStart",
+                            "overtime": 10373,
+                            "AFPAPIFKIHK": 1.0,
+                            "JFIJFCKLFCF": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 41037016
+                            },
+                            "abilityName": "SkillObj_Ganyu_UnbreakableIce_Dummy"
+                        }
+                    ]
+                },
+                "UnbreakableIce_WeatherChange": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 41037016
+                            },
+                            "abilityName": "SkillObj_Ganyu_UnbreakableIce_Dummy_WeatherChange"
+                        }
+                    ]
+                },
+                "UnbreakableIce_CameraShot": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": -2.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByDefault",
+                                            "LGPBCMEFEJB": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 0.0,
+                                                "PHDCJAHHIOG": 0.0
+                                            }
+                                        }
+                                    },
+                                    "secondHeight": 4.0,
+                                    "ICGFCBOFFDI": 3.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 100.0,
+                                        "enBreak": 400.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "none",
+                                        "hitImpulseType": "",
+                                        "overrideHitImpulse": {
+                                            "hitLevel": "Heavy",
+                                            "HPOPMELEPEB": 1200.0,
+                                            "hitImpulseY": 0.0
+                                        },
+                                        "retreatType": "ByHitDirection"
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 0.5,
+                                                "PHDCJAHHIOG": 0.0
+                                            }
+                                        },
+                                        "secondHeight": 2.0,
+                                        "ICGFCBOFFDI": 1.0
+                                    },
+                                    "AKDGLEOGNGO": true
+                                },
+                                {
+                                    "$type": "ByAvatarInWaterDepth",
+                                    "ONPJJFKDCED": "LessAndEqual",
+                                    "KPLJIGIPGMH": 0.5
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AvatarEnterCameraShot",
+                                    "LOOLBLCGLBM": "Camera_Ganyu_UnbreakableIce"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "EnableHeadControl",
+                            "IKNLAEPLHHL": false
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "AvatarCameraParam",
+                            "ACOKKHADPOJ": true,
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 6.0,
+                                "ENPKPCGKDDH": 0.0,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ],
+                    "NPEJFLBOAAN": [
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "AvatarCameraParam",
+                            "ACOKKHADPOJ": true,
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 6.0,
+                                "ENPKPCGKDDH": 0.0,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "UnbreakableIce_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 11002
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "DBOPCOMLILO": false,
+                            "CBIALJFEDDJ": false,
+                            "LCLBKEALNOO": false
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ControlEmotion",
+                            "ACOKKHADPOJ": true
+                        },
+                        {
+                            "$type": "EnableHeadControl",
+                            "ACOKKHADPOJ": true,
+                            "enable": true
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SkillObj_Ganyu_UnbreakableIce_Dummy",
+            "EDDGGPMFDGK": {
+                "Ganyu_IceAdd": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Ganyu_UnbreakableIce_Dummy_SwitchOn": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 15.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_Interval"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_TalentHandler"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_DelayDie"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_Interval"
+                        }
+                    ]
+                },
+                "Ganyu_UnbreakableIce_DelayDie": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.6000000238418579,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Die",
+                            "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Alert"
+                        },
+                        {
+                            "$type": "SendEffectTrigger",
+                            "MOCGJNIDDAI": "Die",
+                            "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Dummy"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_UnbreakableIce_Dummy_Weather"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "Ganyu_UnbreakableIce_Interval": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_UnbreakableIce_TriggerPos",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 5.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "HAGMNJAHNLG": {
+                                    "$type": "BornRandomFromCenter",
+                                    "LJCNOPEIJEF": 0.5,
+                                    "MFBOELKCPDP": 9.5
+                                }
+                            }
+                        },
+                        {
+                            "$type": "Predicated",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "DJLKFLJENEG": 1,
+                                "AKMLOIFOBPO": "Random",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_Ganyu_UnbreakableIce_UnavailableMark",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Target",
+                                    "GAIGOBCNNEE": "Ganyu_UnbreakableIce_UnavailableMark"
+                                },
+                                {
+                                    "$type": "SetGlobalPos",
+                                    "NPHOOPNDCAC": "Target",
+                                    "HJJEAOMEOFI": "_ABILITY_Ganyu_UnbreakableIce_FixTriggerPos",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "KJNJNKLLNCN": "Fx_ChestNode"
+                                    },
+                                    "OGADOPDNBMM": false
+                                },
+                                {
+                                    "$type": "CopyGlobalValue",
+                                    "IGKNCNDCLOO": "Self",
+                                    "KNAELFCJEPL": "Self",
+                                    "DHPMANPAAFN": "_ABILITY_Ganyu_UnbreakableIce_FixTriggerPos_0",
+                                    "CGMMPCHEGIH": "_ABILITY_Ganyu_UnbreakableIce_TriggerPos_0"
+                                },
+                                {
+                                    "$type": "CopyGlobalValue",
+                                    "IGKNCNDCLOO": "Self",
+                                    "KNAELFCJEPL": "Self",
+                                    "DHPMANPAAFN": "_ABILITY_Ganyu_UnbreakableIce_FixTriggerPos_2",
+                                    "CGMMPCHEGIH": "_ABILITY_Ganyu_UnbreakableIce_TriggerPos_2"
+                                },
+                                {
+                                    "$type": "DebugLog",
+                                    "ACOKKHADPOJ": true,
+                                    "CBEDAJEGJBM": "!!!!!!!!!!!SetFixTriggerPos!!!!!!!!!!"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 41037017,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByWorld",
+                                    "GLNBFGDJBAJ": {
+                                        "_x": 90.0
+                                    }
+                                },
+                                "GDENJEFPMGC": "_ABILITY_Ganyu_UnbreakableIce_TriggerPos",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ]
+                },
+                "Ganyu_UnbreakableIce_UnavailableMark": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.4500000476837158,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_UnbreakableIce_UnavailableMark",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_Ganyu_UnbreakableIce_UnavailableMark",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Ganyu_UnbreakableIce_TalentHandler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Alliance",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "IceAttackUp"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_UnbreakableIce_IceAttackUp"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Alliance",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "IceAttackUp"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_IceAttackUp_Keeper"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "SubHurtWithTime"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_UnbreakableIce_SubHurtWithTimeHandler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "SubHurtWithTime"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_SubHurtWithTimeHandler_Keeper"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Alliance",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "IceAttackUp"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_UnbreakableIce_IceAttackUp"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Alliance",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "IceAttackUp"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_IceAttackUp_Keeper"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "SubHurtWithTime"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_UnbreakableIce_SubHurtWithTimeHandler"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR10H10",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "GFIJPNMCOGJ": "SubHurtWithTime"
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_SubHurtWithTimeHandler_Keeper"
+                        }
+                    ]
+                },
+                "UNIQUE_Ganyu_UnbreakableIce_IceAttackUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 1.0,
+                    "FFOHEEFOELN": {
+                        "Actor_IceAddHurtDelta": "Ganyu_IceAdd"
+                    },
+                    "state": "AttackUp",
+                    "FBMJEOALKEJ": true
+                },
+                "UNIQUE_Ganyu_UnbreakableIce_SubHurtWithTimeHandler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 3.0,
+                    "elementDurability": 3.0,
+                    "IKKMDDLDLIN": 3.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_SubHurtWithTime"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Ganyu_UnbreakableIce_SubHurtWithTime"
+                        }
+                    ]
+                },
+                "Ganyu_UnbreakableIce_SubHurtWithTime": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 5.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_SubHurtDelta": -0.05000000074505806
+                    },
+                    "state": "DefenseDown",
+                    "FBMJEOALKEJ": true
+                },
+                "Ganyu_UnbreakableIce_IceAttackUp_Keeper": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddElementDurability",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_UnbreakableIce_IceAttackUp",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Ganyu_UnbreakableIce_SubHurtWithTimeHandler_Keeper": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddElementDurability",
+                            "ACOKKHADPOJ": true,
+                            "value": 3.0,
+                            "GAIGOBCNNEE": "UNIQUE_Ganyu_UnbreakableIce_SubHurtWithTimeHandler",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Dummy"
+                },
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Alert"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Ganyu_UnbreakableIce_Dummy_SwitchOn"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SkillObj_Ganyu_UnbreakableIce_Dummy_WeatherChange",
+            "HNEIEGHMLKH": {
+                "UNIQUE_UnbreakableIce_Dummy_Weather": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "TriggerWeatherMixin",
+                            "type": "Skill",
+                            "IHMBDACJNDO": "Weather_Ganyu_UnbreakableIce",
+                            "DPEJLHDNMOK": 0.20000000298023224,
+                            "duration": 20.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_UnbreakableIce_Dummy_Weather"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Bullet_Ganyu_UnbreakableIce_Iceberg1",
+            "EDDGGPMFDGK": {
+                "damage": 0.0
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Iceberg1"
+                },
+                {
+                    "$type": "AttachEffect",
+                    "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Iceberg_Follow"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "KECPGHFBFMA": 0.6000000238418579,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 2.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attenuationTag": "Elemental_Burst",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Ice",
+                                "elementRank": 1.5,
+                                "elementDurability": 25.0,
+                                "strikeType": "Default",
+                                "enBreak": 60.0,
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV2",
+                                "retreatType": "ByHitDirection"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster",
+                                "MonsterEquip",
+                                "Gadget",
+                                "Bullet",
+                                "Field",
+                                "Gear"
+                            ]
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "FireSubEmitterEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Iceberg1_AS1",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            }
+                        },
+                        {
+                            "$type": "TriggerAudio",
+                            "POCPPGDMDEA": {
+                                "$type": "ConfigAudioEventOp",
+                                "POCPPGDMDEA": {
+                                    "text": "Play_sfx_char_chongyun_elementalSkill_hit"
+                                }
+                            }
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "FireSubEmitterEffect",
+                            "JBHFPDMBFHN": "Eff_Ganyu_UnbreakableIce_Iceberg1_AS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "$type": "TriggerAudio",
+                    "POCPPGDMDEA": {
+                        "$type": "ConfigAudioEventOp",
+                        "POCPPGDMDEA": {
+                            "text": "Play_sfx_char_ganyu_unbreakAbleice_hit"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_HideWeaponControl",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "IceBreaker_BS",
+                        "IceBreaker",
+                        "IceBreaker_Release_AS",
+                        "UnbreakableIce",
+                        "UnbreakableIce_AS"
+                    ],
+                    "GAIGOBCNNEE": "HideWeapon"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "HideWeapon": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01",
+                                "equip02",
+                                "sheathPoint"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Ganyu_FallingAnthem",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AvatarChangeSkillMixin",
+                    "CNPIEDBKHII": 5037010,
+                    "CLJNFKPHGEO": 5037010
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_Material"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Loop_Normal"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS_2",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_Loop_Low"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_LoopDamage"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_BS_VelocityForce_Initialize"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_Height_Detect"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_01"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Inertia"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_OverHead_Camera"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_ClearVelocityForce"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop"
+                    ],
+                    "GAIGOBCNNEE": "FallingAnthem_AttachEffect_BS_01"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "FallingAnthem_Normal_Loop_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_1_Damage": 0.0,
+                "FallingAnthem_Normal_Rank_2_Damage": 0.0,
+                "FallingAnthem_Altitude_Lv0": 20.0,
+                "FallingAnthem_Altitude_Lv1": 40.0,
+                "FallingAnthem_Altitude_Lv2": 60.0,
+                "FallingAnthem_Altitude_Lv3": 100.0,
+                "FallingAnthem_Altitude_Lv4": 200.0,
+                "FallingAnthem_FallingDamageRatio_Lv0": -1.0,
+                "FallingAnthem_FallingDamageRatio_Lv1": -1.0,
+                "FallingAnthem_FallingDamageRatio_Lv2": -0.8999999761581421,
+                "FallingAnthem_FallingDamageRatio_Lv3": -0.800000011920929,
+                "FallingAnthem_FallingDamageRatio_Lv4": -0.6000000238418579,
+                "FallingAnthem_FallingDamageRatio": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "FallingAnthem_AttachEffect_BS_01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Bow_FallAnthem_BS_01"
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_Material": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Bow_FallAnthem_BS"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ActCameraRadialBlur",
+                            "JDLOKNCEKAE": {
+                                "NPOJMKDPDHI": 0.30000001192092896,
+                                "OMAFLDHOHAC": 0.30000001192092896,
+                                "HMBJAKBLION": 0.15000000596046448
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_BS_VelocityForce_Initialize": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_AddGravityScale": -2.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType"
+                            ]
+                        }
+                    ]
+                },
+                "FallingAnthem_LoopDamage": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.30000001192092896,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        }
+                                    },
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "FallingAttack",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": "FallingAnthem_Normal_Loop_Damage",
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "strikeType": "Pierce",
+                                        "enBreak": 10.0,
+                                        "attackType": "Melee"
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV2",
+                                        "hitHaltTimeScale": 0.019999999552965164
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_01": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ClearGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv0"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv0",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv0"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv1"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv0"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv1",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv1"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv2"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv1"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv2",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv2"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": "FallingAnthem_Altitude_Lv3"
+                                },
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv2"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv3",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv3"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": "FallingAnthem_Altitude_Lv3"
+                                }
+                            ],
+                            "value": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAttack_Altitude",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": "FallingAnthem_FallingDamageRatio_Lv4",
+                            "KHAHOELDONA": "FallingAnthem_FallingDamageRatio_Lv4"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_02"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_02": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_ABILITY_FallingAttack_Altitude",
+                            "OGAHELLALBB": "FallingAnthem_FallingDamageRatio"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "FallingAnthem_FallingDamageImmune_03"
+                        }
+                    ]
+                },
+                "FallingAnthem_FallingDamageImmune_03": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": "FallingAnthem_FallingDamageRatio"
+                    }
+                },
+                "FallingAnthem_Loop_Normal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                                    "value": 1.0,
+                                    "EODMLMGMLNP": true
+                                }
+                            ],
+                            "JBHFPDMBFHN": "Eff_Avatar_Bow_FallAnthem_Loop_02"
+                        }
+                    ]
+                },
+                "Inertia": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ApplyInertiaVelocityMixin",
+                            "DOOIAANMOKN": false,
+                            "PJACACNPMJA": false
+                        }
+                    ]
+                },
+                "FallingAnthem_Height_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "value": 5.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetAltitude",
+                                    "value": 2.4000000953674316
+                                }
+                            ],
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 1.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorFloat",
+                            "floatID": "FallingAnthem_UseCamera",
+                            "value": 0.0
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 4.5,
+                                "ENPKPCGKDDH": 0.20000000298023224,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_OverHead_Camera_Remover": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                },
+                "FallingAnthem_Landed_Camera": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AvatarCameraParam",
+                            "predicates": [
+                                {
+                                    "$type": "ByAnimatorFloat",
+                                    "GMFCOCAJBDM": "Equal",
+                                    "value": 1.0,
+                                    "MOCGJNIDDAI": "FallingAnthem_UseCamera"
+                                }
+                            ],
+                            "HBPCGNIGHPH": {
+                                "JABJOOHIIKI": 6.0,
+                                "ENPKPCGKDDH": 0.10000000149011612,
+                                "MPFLBBFBBGK": true
+                            }
+                        }
+                    ]
+                },
+                "FallingAnthem_ClearVelocityForce": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveVelocityForce",
+                            "forces": [
+                                "RushMoveType",
+                                "InertiaType"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_1_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 25.0,
+                                "strikeType": "Pierce",
+                                "enBreak": 50.0,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV2",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": -0.5,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "secondHeight": 2.0,
+                            "ICGFCBOFFDI": 3.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "FallingAttack",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": "FallingAnthem_Normal_Rank_2_Damage",
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 25.0,
+                                "strikeType": "Pierce",
+                                "enBreak": 100.0,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV3",
+                                "hitHaltTimeScale": 0.10000000149011612
+                            }
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Bow_FallAnthem_Strike_01"
+                },
+                {
+                    "$type": "FireEffect",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ABILITY_FallingAnthem_UseCamera",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "JBHFPDMBFHN": "Eff_Avatar_Bow_FallAnthem_Strike_02"
+                }
+            ]
+        }
+    }
+]

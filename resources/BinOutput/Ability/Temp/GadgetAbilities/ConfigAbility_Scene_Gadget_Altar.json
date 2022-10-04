@@ -1,0 +1,317 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Ljxs_Property_Ani_Tree_AncientBloodTree_Ability",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "Lv1_Modifier"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 202,
+                    "GAIGOBCNNEE": "Lv2_Modifier"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 203,
+                    "GAIGOBCNNEE": "Lv3_Modifier"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "Lv1_State",
+                        "Lv2_State",
+                        "Lv3_State"
+                    ],
+                    "GAIGOBCNNEE": "ChangeToStableState"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "All"
+                    ],
+                    "GAIGOBCNNEE": "Born_Modifier"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GadgetLv1_State"
+                    ],
+                    "GAIGOBCNNEE": "GadgetLv1_StateModifier"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GadgetLv2_State"
+                    ],
+                    "GAIGOBCNNEE": "GadgetLv2_StateModifier"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "GadgetLv3_State"
+                    ],
+                    "GAIGOBCNNEE": "GadgetLv3_StateModifier"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Born_Modifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "TreeRoot"
+                            }
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "LevelUp",
+                            "IFJLLJJCLNC": true
+                        }
+                    ]
+                },
+                "Lv1_Modifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "LevelUp",
+                            "IFJLLJJCLNC": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "TreeRoot"
+                            }
+                        }
+                    ]
+                },
+                "Lv2_Modifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "LevelUp",
+                            "IFJLLJJCLNC": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_02",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "TreeRoot"
+                            }
+                        }
+                    ]
+                },
+                "Lv3_Modifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 3.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "LevelUp",
+                            "IFJLLJJCLNC": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_03",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "TreeRoot"
+                            }
+                        }
+                    ]
+                },
+                "ChangeToStableState": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.10000000149011612,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGadgetState",
+                                            "IJNIFFOPHNJ": 201
+                                        },
+                                        {
+                                            "$type": "ByTargetGadgetState",
+                                            "IJNIFFOPHNJ": 204
+                                        }
+                                    ]
+                                }
+                            ],
+                            "JFOEGBAHFAC": 901
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGadgetState",
+                                    "IJNIFFOPHNJ": 202
+                                }
+                            ],
+                            "JFOEGBAHFAC": 902
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGadgetState",
+                                    "IJNIFFOPHNJ": 203
+                                }
+                            ],
+                            "JFOEGBAHFAC": 903
+                        }
+                    ]
+                },
+                "GadgetLv1_StateModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_Stone_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffStoneLv1"
+                            }
+                        }
+                    ]
+                },
+                "GadgetLv2_StateModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_Stone_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffStoneLv2"
+                            }
+                        }
+                    ]
+                },
+                "GadgetLv3_StateModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_AncientBloodTree_Stone_01",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EffStoneLv3"
+                            }
+                        }
+                    ]
+                },
+                "WindZone": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "JBKKOJLJHDK": "CircleR20",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget"
+                            },
+                            "BHELOIADOLH": -2.0,
+                            "HBBLBBPBLGE": 0.0,
+                            "IPDEDFHPHPO": 0.0,
+                            "OJIFKEOCJGB": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar",
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": ""
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "WindZone"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Area_Dq_Property_Foliage_ThunderSeedOffer_Levelup",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "NormalState"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "LevelUpState"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "NormalState": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "LevelUpState"
+                        }
+                    ]
+                },
+                "LevelUpState": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_ThunderSeedOffer_01_LevelUp",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "RootNode"
+                            },
+                            "LALONNAHJDN": 0.75
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ExecuteGadgetLua"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

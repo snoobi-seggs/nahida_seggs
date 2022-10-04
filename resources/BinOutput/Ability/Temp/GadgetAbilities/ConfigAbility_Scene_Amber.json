@@ -1,0 +1,300 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Amber_GoldenAmber",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "GAIGOBCNNEE": "GoldenAmber"
+                },
+                {
+                    "$type": "AttachToGadgetStateMixin",
+                    "IJNIFFOPHNJ": 201,
+                    "GAIGOBCNNEE": "HideMesh"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "HideMesh": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableSceneTransformByName",
+                            "DODBNEDGHLA": [
+                                "Collider"
+                            ]
+                        }
+                    ]
+                },
+                "GoldenAmber": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 50.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableSceneTransformByName",
+                            "DODBNEDGHLA": [
+                                "Collider"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Object_Amber_Destory",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "EnableSceneTransformByName",
+                            "DODBNEDGHLA": [
+                                "Collider"
+                            ]
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "JFOEGBAHFAC": 201
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14005
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Amber_RockAmberBroken",
+            "HNEIEGHMLKH": {
+                "RockAmberBuff": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 60.0,
+                    "elementType": "Rock",
+                    "elementDurability": 10.0,
+                    "FFOHEEFOELN": {
+                        "Entity_WeightRatio": 2.0
+                    }
+                },
+                "Broken": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "All",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "GAIGOBCNNEE": "RockAmberBuff"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Amber_Rock_Hit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.30000001192092896,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Broken"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Broken"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14005
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Amber_WaterAmberBroken",
+            "HNEIEGHMLKH": {
+                "Broken": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Water",
+                    "elementDurability": 50.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "CABLIPAKCGB": 70270002,
+                            "DOLAJLACEDF": 5001,
+                            "ONPOPLLHJLE": "All"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Amber_Water_Hit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.30000001192092896,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Broken"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Broken"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14005
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Amber_WindAmberBroken",
+            "HNEIEGHMLKH": {
+                "Broken": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "CreateGadget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            },
+                            "CABLIPAKCGB": 70270003,
+                            "DOLAJLACEDF": 1001,
+                            "ONPOPLLHJLE": "All"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Amber_Wind_Hit",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.30000001192092896,
+                                    "PHDCJAHHIOG": 0.0
+                                }
+                            }
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "Broken"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Broken"
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14005
+                },
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002
+                }
+            ]
+        }
+    }
+]

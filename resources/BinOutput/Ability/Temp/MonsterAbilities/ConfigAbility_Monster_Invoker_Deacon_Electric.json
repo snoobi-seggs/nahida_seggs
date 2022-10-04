@@ -1,0 +1,1498 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_AnimatorSteer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Alert"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "NormalAtk"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "RangeAtk"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "MeleeAtk"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "ChargeAtk"
+                    ],
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_Disappear",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        901,
+                        902,
+                        903
+                    ],
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_DisappearController"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_DisappearController": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_DISAPPEAR",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Invoker_Deacon_Electric_ElementShield"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ElementState"
+                        },
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTERAFFIX_QUEST_RETURNTOBORN",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_ReturnToBornController"
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "AttachModifier",
+                                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_Disappear"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_Disappear_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_Disappear_DenyLockOn"
+                        }
+                    ]
+                },
+                "Invoker_Deacon_Electric_Disappear_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Invoker_Deacon_Electric_Disappear_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                },
+                "Invoker_Deacon_Electric_Disappear": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "DisappearState",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetCanDieImmediately",
+                            "PGEOCOLLNBO": true
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "BEKKIHBPHGD": true,
+                            "EOIGEKNINFE": true,
+                            "EKINLACJBGF": true,
+                            "PGGBJIDIINM": "Disappear"
+                        }
+                    ]
+                },
+                "Invoker_Deacon_Electric_ReturnToBornController": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToPoseIDMixin",
+                            "poseIDs": [
+                                902,
+                                903
+                            ],
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_ReturnToBorn"
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "WanderState",
+                            "value": true
+                        }
+                    ]
+                },
+                "Invoker_Deacon_Electric_ReturnToBorn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachActionToModifierMixin",
+                            "KCICDEJLIJD": [
+                                {
+                                    "$type": "TriggerSetVisible"
+                                },
+                                {
+                                    "$type": "HideUIBillBoard",
+                                    "COCENMAFJGD": true
+                                },
+                                {
+                                    "$type": "EnableHitBoxByName",
+                                    "EACGOCFODIC": [
+                                        "HitBox",
+                                        "HeadBox"
+                                    ]
+                                },
+                                {
+                                    "$type": "EnablePushColliderName",
+                                    "LEHFIPJFKBC": [
+                                        "PushCollider"
+                                    ]
+                                }
+                            ],
+                            "ILBIENDPCBG": [
+                                {
+                                    "$type": "TriggerSetVisible",
+                                    "ACDFJMCPFGH": true
+                                },
+                                {
+                                    "$type": "HideUIBillBoard"
+                                },
+                                {
+                                    "$type": "EnableHitBoxByName",
+                                    "EACGOCFODIC": [
+                                        "HitBox",
+                                        "HeadBox"
+                                    ],
+                                    "PAHBCOACBAI": true
+                                },
+                                {
+                                    "$type": "EnablePushColliderName",
+                                    "LEHFIPJFKBC": [
+                                        "PushCollider"
+                                    ],
+                                    "PAHBCOACBAI": true
+                                }
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_BornHigh"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_BornHigh"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_NormalAtk",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByStateIDMixin",
+                    "stateIDs": [
+                        "NormalAtk"
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetOverrideMapValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                                    "value": 1.0
+                                }
+                            ],
+                            "value": 1.0,
+                            "OGAHELLALBB": "Invoker_Deacon_Electric_NormalAtk_Count"
+                        },
+                        {
+                            "$type": "SetOverrideMapValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                                    "value": 2.0
+                                }
+                            ],
+                            "value": 2.0,
+                            "OGAHELLALBB": "Invoker_Deacon_Electric_NormalAtk_Count"
+                        },
+                        {
+                            "$type": "SetOverrideMapValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                                    "value": 3.0
+                                }
+                            ],
+                            "value": 3.0,
+                            "OGAHELLALBB": "Invoker_Deacon_Electric_NormalAtk_Count"
+                        },
+                        {
+                            "$type": "SetOverrideMapValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                                    "value": 4.0
+                                }
+                            ],
+                            "value": 4.0,
+                            "OGAHELLALBB": "Invoker_Deacon_Electric_NormalAtk_Count"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "AttackContinue",
+                            "value": true
+                        }
+                    ]
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "Invoker_Deacon_Electric_NormalAtk_Count": 1.0
+            },
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_NormalAtk": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalPos",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK_POS",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByPredicatePoint",
+                                "JBPCKOKLHEB": true,
+                                "BIOOFAHEGLA": 0.5
+                            },
+                            "OGADOPDNBMM": false
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_NormalAtk01_Alert",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK_POS",
+                                "MICIJLHMIIH": ""
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_NormalAtk01_Damage",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByGlobalValue",
+                                "GDENJEFPMGC": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK_POS",
+                                "MICIJLHMIIH": ""
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByGlobalValue",
+                                        "GDENJEFPMGC": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK_POS",
+                                        "MICIJLHMIIH": ""
+                                    },
+                                    "secondHeight": 2.0,
+                                    "ICGFCBOFFDI": 2.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 100.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4"
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_NormalAtk"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK",
+                    "JDHHMBHOOEC": 0.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "SetAnimatorBool",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_NORMALATK",
+                            "value": "Invoker_Deacon_Electric_NormalAtk_Count",
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "HHFIHBEAPAP": "AttackContinue"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_RangeAtk",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "NGAAOMEHOGE": 42203001,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTargetLinearPoint",
+                        "offset": {
+                            "AEAAJCIDPED": -6.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "JBPCKOKLHEB": true,
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "IHHIKIACOML": "Horizontal"
+                        },
+                        "FOILCBGLNDF": -12.0,
+                        "JBNMHNDDJJC": 0.0,
+                        "GCJBBHLBLLG": 50.0
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                            "value": 2.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "MoreThan"
+                        }
+                    ],
+                    "NGAAOMEHOGE": 42203001,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTargetLinearPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 6.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "JBPCKOKLHEB": true,
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "IHHIKIACOML": "Horizontal"
+                        },
+                        "FOILCBGLNDF": -12.0,
+                        "JBNMHNDDJJC": 0.0,
+                        "GCJBBHLBLLG": 50.0
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_RangeAtk_Bullet",
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_RangeAtk_Bullet": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.15000000596046448,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireSubEmitterEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_RangeAtk01_Damage",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "JBPCKOKLHEB": true
+                            }
+                        },
+                        {
+                            "$type": "TriggerAudio",
+                            "POCPPGDMDEA": {
+                                "$type": "ConfigAudioEventOp",
+                                "POCPPGDMDEA": {
+                                    "text": "Play_sfx_monster_lnvoker_deacon_electric_vfx_rangeAtk01_damage"
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "JBPCKOKLHEB": true
+                                    },
+                                    "secondHeight": 4.0,
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Invoker_Deacon_Attenuation_1",
+                                    "attenuationGroup": "Monster_Invoker_Deacon_Attenuation_1",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.800000011920929,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 100.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4"
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "FireSubEmitterEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_RangeAtk01_Damage",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "JBPCKOKLHEB": true
+                            }
+                        },
+                        {
+                            "$type": "TriggerAudio",
+                            "POCPPGDMDEA": {
+                                "$type": "ConfigAudioEventOp",
+                                "POCPPGDMDEA": {
+                                    "text": "Play_sfx_monster_lnvoker_deacon_electric_vfx_rangeAtk01_damage"
+                                }
+                            }
+                        },
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "JBPCKOKLHEB": true
+                                    },
+                                    "secondHeight": 4.0,
+                                    "ICGFCBOFFDI": 1.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Invoker_Deacon_Attenuation_1",
+                                    "attenuationGroup": "Monster_Invoker_Deacon_Attenuation_1",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.800000011920929,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 100.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4"
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_RangeAtk_Bullet"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk_Detect",
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_ChargeAtk_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "Invoker_Deacon_Electric_ChargeAtk"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitDamage",
+                                    "GOCKFJJFLHN": 0.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "TargetTeam",
+                                    "GAIGOBCNNEE": "UNIQUE_Invoker_Deacon_Electric_ChargeAtk"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Invoker_Deacon_Electric_ChargeAtk": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "NPHOOPNDCAC": "CurLocalAvatar",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Debuff_Hit_Electric"
+                        },
+                        {
+                            "$type": "ReviveElemEnergy",
+                            "NPHOOPNDCAC": "CurTeamAvatars",
+                            "ACOKKHADPOJ": true,
+                            "value": -20.0
+                        },
+                        {
+                            "$type": "FireUIEffect",
+                            "JBHFPDMBFHN": "Eff_UI_Debuff_DecreaseEnergy_Invoker_Electric",
+                            "HPCINAENGPH": "ElementBurst"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_ChargeAtk_Detect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk01",
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_ChargeAtk01_01": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42203002,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByAttackTarget"
+                                },
+                                "KJNJNKLLNCN": "ChargeAtk01_01"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_ChargeAtk01_02"
+                        }
+                    ]
+                },
+                "Invoker_Deacon_Electric_ChargeAtk01_02": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42203002,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByAttackTarget"
+                                },
+                                "KJNJNKLLNCN": "ChargeAtk01_02"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_ChargeAtk01_03"
+                        }
+                    ]
+                },
+                "Invoker_Deacon_Electric_ChargeAtk01_03": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerBullet",
+                            "NGAAOMEHOGE": 42203002,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "NHPNHKBMAEO": {
+                                    "$type": "ConfigDirectionByAttackTarget"
+                                },
+                                "KJNJNKLLNCN": "ChargeAtk01_03"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_ChargeAtk01_01"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk02",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 2.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 0.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 1.5,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 1.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 45.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 2.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 90.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 1.5,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": -1.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 135.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": -2.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 180.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -1.5,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": -1.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 225.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -2.0,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 270.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerBullet",
+                    "NGAAOMEHOGE": 42203003,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": -1.5,
+                            "KAAPLGBEDPM": 2.0,
+                            "PHDCJAHHIOG": 1.5
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByEntity",
+                            "LGPBCMEFEJB": {
+                                "AEAAJCIDPED": 0.0,
+                                "KAAPLGBEDPM": 315.0,
+                                "PHDCJAHHIOG": 0.0
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk01_Bullet",
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_ChargeAtk01_Bullet": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_ChargeAtk01_Bullet"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_ChargeAtk01_Bullet"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_ChargeAtk01_Explosion",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByCollisionPoint"
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 1.7999999523162842
+                        },
+                        "attackInfo": {
+                            "attackTag": "Invoker_Deacon_Electric_ChargeAtk",
+                            "attenuationTag": "Invoker_Deacon_Attenuation_2",
+                            "attenuationGroup": "Monster_Invoker_Deacon_Attenuation_2",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk01_Explosion",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_ChargeAtk01_Explosion"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "ICGFCBOFFDI": 1.7999999523162842
+                        },
+                        "attackInfo": {
+                            "attackTag": "Invoker_Deacon_Electric_ChargeAtk",
+                            "attenuationTag": "Invoker_Deacon_Attenuation_2",
+                            "attenuationGroup": "Monster_Invoker_Deacon_Attenuation_2",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk02_Bullet",
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_ChargeAtk02_Bullet": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_ChargeAtk02_Bullet"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_ChargeAtk02_Bullet"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByCollisionPoint"
+                            },
+                            "ICGFCBOFFDI": 0.5
+                        },
+                        "attackInfo": {
+                            "attackTag": "Invoker_Deacon_Electric_ChargeAtk",
+                            "attenuationTag": "Invoker_Deacon_Attenuation_2",
+                            "attenuationGroup": "Monster_Invoker_Deacon_Attenuation_2",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_ChargeAtk02_Explosion",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireSubEmitterEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_ChargeAtk02_Explosion"
+                },
+                {
+                    "$type": "TriggerAudio",
+                    "POCPPGDMDEA": {
+                        "$type": "ConfigAudioEventOp",
+                        "POCPPGDMDEA": {
+                            "text": "Play_sfx_monster_lnvoker_deacon_electric_vfx_chargeAtk02_explosion"
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "ICGFCBOFFDI": 5.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "Invoker_Deacon_Electric_ChargeAtk",
+                            "attenuationTag": "Invoker_Deacon_Attenuation_2",
+                            "attenuationGroup": "Monster_Invoker_Deacon_Attenuation_2",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 0.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 50.0,
+                                "strikeType": "Default",
+                                "enBreak": 200.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV4"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_StateControl",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToHPPercentMixin",
+                    "CMEDACODLEA": [
+                        0.6000000238418579,
+                        0.20000000298023224
+                    ],
+                    "MIEPCOONDEM": [
+                        "Invoker_Empty",
+                        "UNIQUE_Invoker_Deacon_Electric_Normal",
+                        "UNIQUE_Invoker_Deacon_Electric_Element"
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        301
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        302
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 2.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        401
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 3.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                {
+                    "$type": "DoActionByPoseIDMixin",
+                    "poseIDs": [
+                        402
+                    ],
+                    "KELPBOLPMNI": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 4.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_STATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Invoker_Deacon_Electric_Limbo": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_HpThresholdRatio": 0.15000000596046448
+                    },
+                    "state": "Limbo",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Invoker_Deacon_Electric_Standby"
+                        }
+                    ]
+                },
+                "Invoker_Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Invoker_Deacon_Electric_Normal": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "NormalStage",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "NormalStage"
+                        }
+                    ]
+                },
+                "UNIQUE_Invoker_Deacon_Electric_Element": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ElementState",
+                            "value": true
+                        },
+                        {
+                            "$type": "ClearEndura"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Invoker_Deacon_Electric_Limbo"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Invoker_Deacon_Electric_Transform",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        401,
+                        402
+                    ],
+                    "GAIGOBCNNEE": "Invoker_Deacon_Electric_Transform"
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "ElementShield_DurabilityImprove": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Invoker_Deacon_Electric_Transform": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "TransformTrigger",
+                            "IFJLLJJCLNC": true
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_Transform_LockHP"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Invoker_Deacon_Electric_Transform_NoHeal"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_ELEMENTSTATE",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "UNIQUE_Invoker_Deacon_Electric_ElementShield"
+                        }
+                    ],
+                    "AMJKBHJBBGN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Invoker_Deacon_Electric_ElementShield"
+                        }
+                    ]
+                },
+                "Invoker_Deacon_Electric_Transform_LockHP": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "LockHP"
+                },
+                "Invoker_Deacon_Electric_Transform_NoHeal": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "NoHeal"
+                },
+                "UNIQUE_Invoker_Deacon_Electric_ElementShield": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Electric",
+                    "elementDurability": [
+                        900.0,
+                        "ElementShield_DurabilityImprove",
+                        "Mul",
+                        900.0,
+                        "Add"
+                    ],
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Electric",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224,
+                            "NGOKEFIDFCJ": true
+                        },
+                        {
+                            "$type": "VelocityForceMixin",
+                            "MPGPCCEHFGL": [
+                                "WindZoneType"
+                            ]
+                        },
+                        {
+                            "$type": "AttachModifierToElementDurabilityMixin",
+                            "CMEDACODLEA": [
+                                0.5,
+                                [
+                                    300.0,
+                                    "ElementShield_DurabilityImprove",
+                                    "Mul",
+                                    300.0,
+                                    "Add"
+                                ],
+                                [
+                                    900.0,
+                                    "ElementShield_DurabilityImprove",
+                                    "Mul",
+                                    900.0,
+                                    "Add"
+                                ]
+                            ],
+                            "MIEPCOONDEM": [
+                                "UNIQUE_Invoker_Deacon_Electric_Transform",
+                                "Invoker_Empty"
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_ELEMENTSTATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_DISAPPEAR",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 14001
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 42203003
+                            }
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_ELEMENTSTATE",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ElementState"
+                        },
+                        {
+                            "$type": "KillSelf",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_INVOKER_DEACON_ELECTRIC_DISAPPEAR",
+                                    "value": 0.0,
+                                    "ONPJJFKDCED": "NoneOrEqual"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Invoker_Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "UNIQUE_Invoker_Deacon_Electric_Transform": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "TransformStage",
+                            "value": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "TransformStage"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetGlobalValueToOverrideMap",
+                    "BPCFCANOMNH": "_MONSTERAFFIX_ELEMENTSHIELD_DURABILITYIMPROVE",
+                    "OGAHELLALBB": "ElementShield_DurabilityImprove"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Invoker_Deacon_Electric_ElementShield"
+                }
+            ]
+        }
+    }
+]

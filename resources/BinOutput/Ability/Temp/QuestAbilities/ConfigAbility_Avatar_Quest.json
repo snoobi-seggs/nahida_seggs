@@ -1,0 +1,447 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Player_StaminaReduced_AbilityGroup",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Avatar_StaminaReduced_AbilityGroup": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Fly"
+                            ],
+                            "GAIGOBCNNEE": "Avatar_Flying_StaminaReduced"
+                        },
+                        {
+                            "$type": "AttachToAnimatorStateIDMixin",
+                            "stateIDs": [
+                                "Run"
+                            ],
+                            "GAIGOBCNNEE": "Avatar_Flying_StaminaReduced"
+                        }
+                    ]
+                },
+                "Avatar_Flying_StaminaReduced": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_CostStaminaRatio": -0.8999999761581421,
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 11002
+                        },
+                        {
+                            "$type": "SetAvatarHitBuckets",
+                            "FJAAOJKKHMA": {
+                                "KGAKHBEALIL": 4
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_StaminaReduced_AbilityGroup"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Remove_Avatar_Player_StaminaReduced_AbilityGroup",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Avatar_StaminaReduced_AbilityGroup"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Player_QuestFireDrug_AbilityGroup",
+            "HNEIEGHMLKH": {
+                "UNIQUE_AlbedoQuest_Fire_DrugWater": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 8.0,
+                    "elementType": "Fire",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Fire",
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 0.0,
+                                    "damageExtra": 10.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "",
+                                    "hitImpulseType": "LV0"
+                                }
+                            }
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Fire",
+                                    "elementDurability": 100.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 0.0,
+                                    "damageExtra": 10.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "",
+                                    "hitImpulseType": "LV0"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_AlbedoQuest_Fire_DrugWater"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_QuestAbility_XiaoTriggerElementalBurst",
+            "HNEIEGHMLKH": {
+                "AutoTriggerAbility": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 5.0
+                        }
+                    ]
+                },
+                "UNIQUE_QuestBuff_DeductElemEnergy": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 5.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "DoActionByEnergyChangeMixin",
+                            "FNHOFLJNEOD": [
+                                "Water",
+                                "Rock",
+                                "Fire",
+                                "Electric",
+                                "Grass",
+                                "Wind",
+                                "Ice"
+                            ],
+                            "HAIBPADIJMD": true,
+                            "PODACCOMKHD": [
+                                {
+                                    "$type": "HealHP",
+                                    "AJAHODOGLMH": 0.10000000149011612
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ReviveElemEnergyMixin",
+                            "KPBMABEIBHE": 0.5,
+                            "HMHDCLAJCLB": -30.0,
+                            "ratio": 1.0
+                        },
+                        {
+                            "$type": "StageReadyMixin",
+                            "DLEFDCFBLDE": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "CurLocalAvatar",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByHasFeatureTag",
+                                            "AMIONINAMLE": [
+                                                10026
+                                            ]
+                                        }
+                                    ],
+                                    "GAIGOBCNNEE": "AutoTriggerAbility"
+                                }
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "QuestBuff_XiaoTriggerElementalBurst",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ClearGlobalValue",
+                            "HJJEAOMEOFI": "QuestBuff_XiaoTriggerElementalBurst"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddElementDurability",
+                            "value": 100.0,
+                            "GAIGOBCNNEE": "UNIQUE_HowlingSoul_Main_Handler",
+                            "JDHHMBHOOEC": 3.4028234663852886e+38
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "CurLocalAvatar",
+                    "predicates": [
+                        {
+                            "$type": "ByHasFeatureTag",
+                            "AMIONINAMLE": [
+                                10026
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "AutoTriggerAbility"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "CurLocalAvatar",
+                    "ACOKKHADPOJ": true,
+                    "predicates": [
+                        {
+                            "$type": "ByHasFeatureTag",
+                            "AMIONINAMLE": [
+                                10026
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_QuestBuff_DeductElemEnergy"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_QuestAbility_ClearFollowPet",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "FollowAttachPointEffectMixin",
+                    "GAIGOBCNNEE": "ClearFollowPet",
+                    "LBCJDGDFIBC": "QuestBlank"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ClearFollowPet": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_QuestAbility_RandomDeadTime",
+            "EDDGGPMFDGK": {
+                "DeadTime_RandomInterval": 25.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_QuestAbility_RandomDeadTime_Interval": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "DeadTime_RandomInterval",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Avatar_QuestAbility_DeadTime"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Avatar_QuestAbility_RandomDeadTime"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "SetRandomOverrideMapValue",
+                    "ACOKKHADPOJ": true,
+                    "MOCGLDDNLKO": 30.0,
+                    "DMNANPGJBJH": 20.0,
+                    "OGAHELLALBB": "DeadTime_RandomInterval"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_QuestAbility_RandomDeadTime_Interval"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetRandomOverrideMapValue",
+                    "ACOKKHADPOJ": true,
+                    "MOCGLDDNLKO": 30.0,
+                    "DMNANPGJBJH": 20.0,
+                    "OGAHELLALBB": "DeadTime_RandomInterval"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_QuestAbility_RandomDeadTime_Interval"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_QuestAbility_DeadTime",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByEventMixin",
+                    "PDKJAFAIDFL": [
+                        {
+                            "MFKFDKDKKNJ": "ElementDeadTime",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "DebugLog",
+                                    "ACOKKHADPOJ": true,
+                                    "CBEDAJEGJBM": "!!!!!!!!!!!SetAvatarCanShakeOn!!!!!!!!!!"
+                                },
+                                {
+                                    "$type": "ForceEnableShakeOffButton",
+                                    "enable": true
+                                }
+                            ]
+                        }
+                    ],
+                    "LDPHCDDGEBA": [
+                        {
+                            "MFKFDKDKKNJ": "ElementDeadTime",
+                            "OAEEBLALAPO": [
+                                {
+                                    "$type": "DebugLog",
+                                    "ACOKKHADPOJ": true,
+                                    "CBEDAJEGJBM": "!!!!!!!!!!!SetAvatarCanShakeOff!!!!!!!!!!"
+                                },
+                                {
+                                    "$type": "ForceEnableShakeOffButton",
+                                    "ACOKKHADPOJ": true
+                                }
+                            ]
+                        }
+                    ],
+                    "LIINFCJLBOP": ""
+                }
+            ],
+            "EDDGGPMFDGK": {
+                "DeadTime": 5.0
+            },
+            "HNEIEGHMLKH": {
+                "UNIQUE_QuestAbility_DeadTime": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": "DeadTime",
+                    "elementDurability": 350.0,
+                    "state": "ElementDeadTime",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CallLuaTask",
+                            "ELEDCPEHJOH": "12041",
+                            "MANLGGPLODK": "ShougunQuest_Timestop"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "DebugLog",
+                            "ACOKKHADPOJ": true,
+                            "CBEDAJEGJBM": "!!!!!!!!!!!SetAvatarCanShakeOff!!!!!!!!!!"
+                        },
+                        {
+                            "$type": "ForceEnableShakeOffButton",
+                            "ACOKKHADPOJ": true
+                        }
+                    ]
+                }
+            },
+            "ILBIENDPCBG": [
+                {
+                    "$type": "DebugLog",
+                    "ACOKKHADPOJ": true,
+                    "CBEDAJEGJBM": "!!!!!!!!!!!SetAvatarCanShakeOff!!!!!!!!!!"
+                },
+                {
+                    "$type": "ForceEnableShakeOffButton",
+                    "ACOKKHADPOJ": true
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_QuestAbility_DeadTime"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_QuestAbility_ReviveEnergy",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ReviveElemEnergy",
+                    "ACOKKHADPOJ": true,
+                    "value": 100.0
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    }
+]

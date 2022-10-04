@@ -1,0 +1,1216 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_SprintBS_Invincible",
+            "HNEIEGHMLKH": {
+                "SprintBS_Invincible": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "DGAJIEGBDKP": {
+                        "BOICMOPAIII": "",
+                        "INDGEIJCJAJ": 2.0
+                    },
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.30000001192092896,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "ACOKKHADPOJ": true,
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "ACOKKHADPOJ": true,
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "SprintBS_Invincible"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Freeze_Duration_Reducer",
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachAbilityStateResistance",
+                    "KPGAIMMIKDA": 14002,
+                    "JOCNPLNCAPM": 0.4000000059604645
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Girl_Catalyst_HitFallToGround_Hide",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Hit_Throw_Ground",
+                    "GAIGOBCNNEE": "Girl_Catalyst_HitFallToGround_Visible_Handler",
+                    "AAIFCLGLOMO": 0.1550000011920929,
+                    "MMHONEIBHNP": 0.2720000147819519
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Hit_Throw_Ground",
+                    "GAIGOBCNNEE": "Girl_Catalyst_HitFallToGround_HideSpark",
+                    "AAIFCLGLOMO": 0.11500000208616257,
+                    "MMHONEIBHNP": 0.2720000147819519
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Girl_Catalyst_HitFallToGround_HideSpark": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_HitFallToGround_HideSpark"
+                        }
+                    ]
+                },
+                "Girl_Catalyst_HitFallToGround_Visible_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_Girl_Catalyst_HitFallToGround_ShowSpark"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Bow_Aim_EmoController",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Aim"
+                    ],
+                    "GAIGOBCNNEE": "AimLoop_EmoController"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "AimLoop_EmoController": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "PlayEmoSync",
+                            "MMKHLLKAHMF": "Cutscene/ShortDialog/Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Common_Bow_Fight_Aim"
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "CBIALJFEDDJ": false
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "PlayEmoSync",
+                            "MMKHLLKAHMF": "Cutscene/ShortDialog/Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Common_Normal"
+                        },
+                        {
+                            "$type": "ControlEmotion"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_RockGadget_Summon_Detect",
+            "HNEIEGHMLKH": {
+                "RockGadget_Summon_Detect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 2.0,
+                                            "PHDCJAHHIOG": -1.399999976158142
+                                        }
+                                    },
+                                    "size": {
+                                        "AEAAJCIDPED": 2.799999952316284,
+                                        "KAAPLGBEDPM": 4.199999809265137,
+                                        "PHDCJAHHIOG": 2.799999952316284
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Gadget_Summon_Detect",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementDurability": 0.0,
+                                        "enBreak": 0.0
+                                    }
+                                }
+                            },
+                            "OJIFKEOCJGB": "All"
+                        }
+                    ]
+                },
+                "RockGadget_Summon_Suicide": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetType",
+                                    "GAIGNEFHDBL": false
+                                },
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_COMMON_GADGET_ISSUMMON",
+                                            "value": 0.0,
+                                            "ONPJJFKDCED": "MoreThan"
+                                        },
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "HJJEAOMEOFI": "_SCENE_GADGET_ISSUMMON",
+                                            "value": 0.0,
+                                            "ONPJJFKDCED": "MoreThan"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "KillSelf"
+                                },
+                                {
+                                    "$type": "ActCameraShake",
+                                    "cameraShake": {
+                                        "shakeRange": 0.03999999910593033,
+                                        "shakeTime": 0.07999999821186066
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_COMMON_GADGET_ISSUMMON",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 1.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "RocketGadget_WeightRatio",
+            "HNEIEGHMLKH": {
+                "RocketGadget_WeightRatio": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Entity_WeightRatio": 2.0
+                    }
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "RocketGadget_WeightRatio"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Common_Achievement_Listener",
+            "HNEIEGHMLKH": {
+                "Achievement_Listener_82001": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetConfigID",
+                                    "EHPJHEOAKJI": [
+                                        28030201,
+                                        28030202,
+                                        28030203,
+                                        28030204
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "ExtraAttack"
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DoWatcherSystemAction",
+                                    "GPGMPHIIAMD": 82001,
+                                    "KLCNAOOJHNO": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Achievement_Listener_82002": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitBoxType",
+                                    "NINOIEPDABF": "Head"
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "ONPJJFKDCED": "XYZ",
+                                    "value": 38.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DoWatcherSystemAction",
+                                    "GPGMPHIIAMD": 82002,
+                                    "KLCNAOOJHNO": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Achievement_Listener_82003": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByHitBoxType",
+                                    "NINOIEPDABF": "Head"
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "ONPJJFKDCED": "XYZ",
+                                    "value": 80.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DoWatcherSystemAction",
+                                    "GPGMPHIIAMD": 82003,
+                                    "KLCNAOOJHNO": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Achievement_Listener_82001"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Achievement_Listener_82002"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Achievement_Listener_82003"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_FallAnthem_Achievement_Listener",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "FallingAnthem_BS",
+                        "FallingAnthem_Loop",
+                        "FallingAnthem_AS_1",
+                        "FallingAnthem_AS_2"
+                    ],
+                    "GAIGOBCNNEE": "Achievement_Listener_82060"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Achievement_Listener_82060": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -5.0,
+                            "HJJEAOMEOFI": "_FallAnthem_Achievement_Timer",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -5.0,
+                            "HJJEAOMEOFI": "_FallAnthem_Achievement_Timer",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "FallingAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_FallAnthem_Achievement_Timer",
+                                    "value": 5.0,
+                                    "EODMLMGMLNP": true,
+                                    "ONPJJFKDCED": "MoreThanAndEqual"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DoWatcherSystemAction",
+                                    "GPGMPHIIAMD": 82060,
+                                    "KLCNAOOJHNO": true
+                                }
+                            ]
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_FallAnthem_Achievement_Timer",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 5.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Watcher_SnowMountain_MPPlay",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "HAS_BLOOD_BUFF_MARK",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -1.0,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Blank",
+                        "BloodSmash_Buff_AttackCount_Handler"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Blank": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "BloodSmash_Buff_AttackCount_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Target",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetConfigID",
+                                    "EHPJHEOAKJI": [
+                                        26020102
+                                    ]
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "NPHOOPNDCAC": "Team",
+                                    "ACOKKHADPOJ": false,
+                                    "GAIGOBCNNEE": "Team_BloodSmash_Buff_Attack_Count"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Team_BloodSmash_Buff_Attack_Count": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_ABILITY_Team_BloodSmash_Buff_Attack_Count",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "UNIQUE_SnowMountain_MPPlay_Trigger_Wtacher_Handler": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "BPCFCANOMNH": "_ABILITY_Team_BloodSmash_Buff_Attack_Count",
+                            "FEGIOIGELHB": 0.0,
+                            "CMEDACODLEA": [
+                                -1.0,
+                                9.5,
+                                10.5
+                            ],
+                            "MIEPCOONDEM": [
+                                "Blank_2",
+                                "SnowMountain_MPPlay_Trigger_Wtacher"
+                            ]
+                        }
+                    ],
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_ABILITY_Team_BloodSmash_Buff_Attack_Count",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                },
+                "Blank_2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "SnowMountain_MPPlay_Trigger_Wtacher": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DoWatcherSystemAction",
+                            "GPGMPHIIAMD": 3010116,
+                            "KLCNAOOJHNO": true
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "XnowMountain_MPPlay_ResetAttackCount"
+                        }
+                    ]
+                },
+                "XnowMountain_MPPlay_ResetAttackCount": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "ACOKKHADPOJ": true,
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_ABILITY_Team_BloodSmash_Buff_Attack_Count",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "NPHOOPNDCAC": "Team",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "UNIQUE_SnowMountain_MPPlay_Trigger_Wtacher_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Attack_ReviveEnergy",
+            "EDDGGPMFDGK": {
+                "Pole_ReviveEnergy_Chance": 0.0,
+                "Bow_ReviveEnergy_Chance": 0.0,
+                "Sword_ReviveEnergy_Chance": 0.0,
+                "Claymore_ReviveEnergy_Chance": 0.0,
+                "Catalyst_ReviveEnergy_Chance": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Avatar_Sword_ReviveEnergy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttackReviveEnergyMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06",
+                                "ExtraAttack"
+                            ],
+                            "maxValue": 1.0,
+                            "minValue": 0.10000000149011612,
+                            "JLPJEKNJEBM": 0.05000000074505806,
+                            "EFIOEIEHNFI": {
+                                "$type": "ReviveElemEnergy",
+                                "value": 1.0
+                            },
+                            "IMPCPBOEGOO": {
+                                "Fire": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Fire"
+                                },
+                                "Ice": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Ice"
+                                },
+                                "Electric": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Electric"
+                                },
+                                "Water": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Water"
+                                },
+                                "Wind": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Wind"
+                                },
+                                "Rock": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Rock"
+                                },
+                                "Grass": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Grass"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Avatar_Bow_ReviveEnergy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttackReviveEnergyMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06",
+                                "ExtraAttack"
+                            ],
+                            "maxValue": 1.0,
+                            "JLPJEKNJEBM": 0.05000000074505806,
+                            "EFIOEIEHNFI": {
+                                "$type": "ReviveElemEnergy",
+                                "value": 1.0
+                            },
+                            "IMPCPBOEGOO": {
+                                "Fire": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Fire"
+                                },
+                                "Ice": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Ice"
+                                },
+                                "Electric": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Electric"
+                                },
+                                "Water": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Water"
+                                },
+                                "Wind": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Wind"
+                                },
+                                "Rock": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Rock"
+                                },
+                                "Grass": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Grass"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Avatar_Claymore_ReviveEnergy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttackReviveEnergyMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06",
+                                "ExtraAttack"
+                            ],
+                            "maxValue": 1.0,
+                            "JLPJEKNJEBM": 0.10000000149011612,
+                            "EFIOEIEHNFI": {
+                                "$type": "ReviveElemEnergy",
+                                "value": 1.0
+                            },
+                            "IMPCPBOEGOO": {
+                                "Fire": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Fire"
+                                },
+                                "Ice": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Ice"
+                                },
+                                "Electric": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Electric"
+                                },
+                                "Water": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Water"
+                                },
+                                "Wind": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Wind"
+                                },
+                                "Rock": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Rock"
+                                },
+                                "Grass": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Grass"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Avatar_Pole_ReviveEnergy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttackReviveEnergyMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06",
+                                "ExtraAttack"
+                            ],
+                            "maxValue": 1.0,
+                            "JLPJEKNJEBM": 0.03999999910593033,
+                            "EFIOEIEHNFI": {
+                                "$type": "ReviveElemEnergy",
+                                "value": 1.0
+                            },
+                            "IMPCPBOEGOO": {
+                                "Fire": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Fire"
+                                },
+                                "Ice": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Ice"
+                                },
+                                "Electric": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Electric"
+                                },
+                                "Water": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Water"
+                                },
+                                "Wind": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Wind"
+                                },
+                                "Rock": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Rock"
+                                },
+                                "Grass": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Grass"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Avatar_Catalyst_ReviveEnergy_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "AttackReviveEnergyMixin",
+                            "NMJGDKCDFOJ": [
+                                "NormalAttack_01",
+                                "NormalAttack_02",
+                                "NormalAttack_03",
+                                "NormalAttack_04",
+                                "NormalAttack_05",
+                                "NormalAttack_06",
+                                "ExtraAttack"
+                            ],
+                            "maxValue": 1.0,
+                            "JLPJEKNJEBM": 0.10000000149011612,
+                            "EFIOEIEHNFI": {
+                                "$type": "ReviveElemEnergy",
+                                "value": 1.0
+                            },
+                            "IMPCPBOEGOO": {
+                                "Fire": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Fire"
+                                },
+                                "Ice": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Ice"
+                                },
+                                "Electric": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Electric"
+                                },
+                                "Water": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Water"
+                                },
+                                "Wind": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Wind"
+                                },
+                                "Rock": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Rock"
+                                },
+                                "Grass": {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Avatar_ReviveEnergy_Grass"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "predicates": [
+                        {
+                            "$type": "ByAvatarWeaponType",
+                            "EBMGNAOCOBG": [
+                                "WEAPON_SWORD_ONE_HAND"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Avatar_Sword_ReviveEnergy_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAvatarWeaponType",
+                            "EBMGNAOCOBG": [
+                                "WEAPON_BOW"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Avatar_Bow_ReviveEnergy_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAvatarWeaponType",
+                            "EBMGNAOCOBG": [
+                                "WEAPON_CLAYMORE"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Avatar_Claymore_ReviveEnergy_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAvatarWeaponType",
+                            "EBMGNAOCOBG": [
+                                "WEAPON_POLE"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Avatar_Pole_ReviveEnergy_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByAvatarWeaponType",
+                            "EBMGNAOCOBG": [
+                                "WEAPON_CATALYST"
+                            ]
+                        }
+                    ],
+                    "GAIGOBCNNEE": "Avatar_Catalyst_ReviveEnergy_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Component_Initializer",
+            "HNEIEGHMLKH": {
+                "Visible_Initializer_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true,
+                            "ACDFJMCPFGH": true
+                        }
+                    ]
+                },
+                "PushCollider_Initializer_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetPassThrough",
+                            "ACOKKHADPOJ": true,
+                            "CFIPAGENGPE": true
+                        }
+                    ]
+                },
+                "ElectricFairy_Initializer_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Team",
+                            "ACOKKHADPOJ": true,
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "HAS_ELECTRIC_FAIRY_BUFF_Team",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "Visible_Initializer_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "PushCollider_Initializer_Handler"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "ACOKKHADPOJ": true,
+                    "GAIGOBCNNEE": "ElectricFairy_Initializer_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_PlayMusic_Lyre_Controller",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "PlayMusic_Lyre_BS",
+                        "PlayMusic_Lyre_Loop"
+                    ],
+                    "GAIGOBCNNEE": "Avatar_PlayMusic_Lyre"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Avatar_PlayMusic_Lyre": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_PlayMusic_Lyre"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Avatar_PlayMusic_Lyre_AS"
+                        }
+                    ]
+                }
+            },
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Watcher_SuperTrial_RangeKillEnemy",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByKillingMixin",
+                    "AJPHDMLEOGE": 0.6000000238418579,
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "Predicated",
+                            "NPHOOPNDCAC": "Other",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetPositionToSelfPosition",
+                                    "GMFCOCAJBDM": "GreaterOrEqual",
+                                    "value": 3.0
+                                },
+                                {
+                                    "$type": "ByCurrentSceneId",
+                                    "ALIAMMKPMIE": [
+                                        43006
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByIsTargetCamp",
+                                    "PMJHEAEANLC": "Caster",
+                                    "ONPOPLLHJLE": "Enemy"
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "DoWatcherSystemAction",
+                                    "NPHOOPNDCAC": "Caster",
+                                    "GPGMPHIIAMD": 1502220,
+                                    "KLCNAOOJHNO": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_RockGadget_KillByBlunt",
+            "HNEIEGHMLKH": {
+                "RockDurability_Handler": {
+                    "GAIGOBCNNEE": "",
+                    "elementType": "Rock",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Recover_RockDurability"
+                        }
+                    ]
+                },
+                "Recover_RockDurability": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddElementDurability",
+                            "value": 100.0,
+                            "GAIGOBCNNEE": "RockDurability_Handler",
+                            "elementType": "Rock",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 100.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "RockDurability_Handler"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    }
+]

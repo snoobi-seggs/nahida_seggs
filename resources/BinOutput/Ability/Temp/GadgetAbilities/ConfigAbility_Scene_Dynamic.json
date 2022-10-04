@@ -1,0 +1,463 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Dynamic_WindFlora_Wudi",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToPredicateMixin",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_GET_COMMONFLORA",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "CommonFlora_ServerLuaCall"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Wudi": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": -1.0
+                    },
+                    "state": "LockHP"
+                },
+                "empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "CommonFlora_ServerLuaCall": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "SpecificGroup",
+                            "GHGADIKFEGC": [
+                                235800001
+                            ],
+                            "PDFANJKMFNK": "AddWindFloraScore",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_GET_COMMONFLORA",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Wudi"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Dynamic_WindFlora_ShootBalloon",
+            "HNEIEGHMLKH": {
+                "BallonTypeController": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_HIGHBALLOON",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "HighCall"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_LOWBALLOON",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "LowCall"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_SUBBALLOON",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "SubCall"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BOMBBALLOON",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "NMJGDKCDFOJ": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05",
+                                        "NormalAttack_06",
+                                        "ExtraAttack"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "BombBalloonSeeker"
+                        }
+                    ]
+                },
+                "BombBalloonSeeker": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5H10",
+                                "ONPOPLLHJLE": "Alliance",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "Balloon03_TargetFlag",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "FindBalloon"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Ballon_03_Shoot"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "FindBalloon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_SceneObj_Ballon_03_Shoot"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_HIGHBALLOON",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "HighCall"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_LOWBALLOON",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "LowCall"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_SUBBALLOON",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "SubCall"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "IS_BOMBBALLOON",
+                                    "value": 1.0
+                                }
+                            ],
+                            "GAIGOBCNNEE": "BombBalloonSeeker"
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "HighCall": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Caster",
+                            "MINNFFNDCJH": "CurGalleryControlGroup",
+                            "GAIGNEFHDBL": true,
+                            "PDFANJKMFNK": "ShootBalloonHighScore",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "LowCall": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Caster",
+                            "MINNFFNDCJH": "CurGalleryControlGroup",
+                            "GAIGNEFHDBL": true,
+                            "PDFANJKMFNK": "ShootBalloonLowScore",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                },
+                "SubCall": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Caster",
+                            "MINNFFNDCJH": "CurGalleryControlGroup",
+                            "GAIGNEFHDBL": true,
+                            "PDFANJKMFNK": "ShootBalloonSubScore",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "BallonTypeController"
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "SceneObj_Dynamic_WindFlora_RecordFloorMemory",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToPredicateMixin",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_GET_COMMONFLORA",
+                            "value": 1.0
+                        }
+                    ],
+                    "GAIGOBCNNEE": "CommonFlora_ServerLuaCall"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Wudi": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_FallingDamageRatio": -1.0
+                    },
+                    "state": "LockHP"
+                },
+                "CALLSERVERLUA": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "NPHOOPNDCAC": "Team",
+                            "MINNFFNDCJH": "SpecificGroup",
+                            "GAIGNEFHDBL": true,
+                            "GHGADIKFEGC": [
+                                235800003
+                            ],
+                            "PDFANJKMFNK": "OnEnterWrongFloor",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        }
+                    ]
+                },
+                "CommonFlora_ServerLuaCall": {
+                    "FGJPBKGPNJJ": "Multiple",
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ServerLuaCall",
+                            "MINNFFNDCJH": "SpecificGroup",
+                            "GHGADIKFEGC": [
+                                235800001
+                            ],
+                            "PDFANJKMFNK": "AddWindFloraScore",
+                            "LIOGECEPJAH": 0.0,
+                            "FDDPMCCJIKN": 0.0,
+                            "KNJMHMKNCKF": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_GET_COMMONFLORA",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Wudi"
+                }
+            ],
+            "ALFIFBFCGGG": [
+                {
+                    "$type": "DebugLog",
+                    "ACOKKHADPOJ": true,
+                    "CBEDAJEGJBM": "!!!!!!!!!!PLAYER RAY TRIGGERED!!!!!!!!!!"
+                },
+                {
+                    "$type": "Predicated",
+                    "NPHOOPNDCAC": "Target",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGadgetState",
+                            "IJNIFFOPHNJ": 201
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "NPHOOPNDCAC": "Target",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_HaveDisappear",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "ExecuteGadgetLua",
+                            "NPHOOPNDCAC": "Target",
+                            "JFOEGBAHFAC": 202
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "CALLSERVERLUA"
+                        }
+                    ]
+                },
+                {
+                    "$type": "ExecuteGadgetLua",
+                    "NPHOOPNDCAC": "Target",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGadgetState",
+                            "IJNIFFOPHNJ": 903
+                        }
+                    ],
+                    "JFOEGBAHFAC": 902
+                }
+            ],
+            "FEFIHIEHDOM": true
+        }
+    }
+]

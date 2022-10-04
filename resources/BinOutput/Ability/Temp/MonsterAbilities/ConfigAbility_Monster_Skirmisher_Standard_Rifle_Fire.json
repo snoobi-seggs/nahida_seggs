@@ -1,0 +1,1505 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Rifle_Fire_JumpBack",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FixedMonsterRushMove",
+                    "FJCBIPKOKMF": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": -6.0
+                        }
+                    },
+                    "FPIJACIKJKL": 0.25,
+                    "GLALMCMAFJF": 6.0,
+                    "MPOEADACOHO": [
+                        "DodgeOnce",
+                        "DodgeTwice_1"
+                    ],
+                    "AGIKEIFOMLO": ""
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Rifle_Fire_ForceImprove_Pose",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        101
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Rifle_Fire_TickHP"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_SKIRMISHER_ROCKWALL_BROADCAST",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Monster_Skirmisher_Rifle_Fire_BatteryModeOff",
+                        "Monster_Skirmisher_Rifle_Fire_BatteryModeOn"
+                    ]
+                },
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        104,
+                        202,
+                        105
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Rifle_Fire_BatteryMode"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Rifle_Fire_BatteryMode": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAISkillGCD"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetAISkillGCD",
+                            "weight": 2.0
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Rifle_Fire_BatteryModeOff": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "BatteryMode"
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Rifle_Fire_BatteryModeOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "BatteryMode",
+                            "value": true
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Rifle_Fire_TickHP": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 1.0,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetHPRatio",
+                                    "GMFCOCAJBDM": "LesserOrEqual",
+                                    "BCJJBMJKHED": 0.5
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RIFLE_FIRE_IMPROVENUM",
+                                    "value": 0.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetPoseBool",
+                                    "HHFIHBEAPAP": "ForceImprove",
+                                    "value": true
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "SetPoseBool",
+                                    "HHFIHBEAPAP": "ForceImprove"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RIFLE_FIRE_IMPROVENUM",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 10.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_EyeEffect",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_NormalEffect": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_EyeNormal"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_NormalEffect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_NormalEffect"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Rifle_Fire_PreCombatRecover",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        9001,
+                        9002,
+                        9003,
+                        9011,
+                        9012,
+                        9013,
+                        9014
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Rifle_Fire_BeHitChangePose"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Rifle_Fire_BeHitChangePose": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "CFIPAGENGPE": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "CFIPAGENGPE": true,
+                            "FLCNICMDANB": [
+                                "equip02"
+                            ]
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Search"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Threat"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Attention"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Afraid"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Practice"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Threat"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Think"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Agree"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Talk"
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip02"
+                            ]
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Monster_Weapon_Disappear"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip02"
+                                ]
+                            },
+                            "JBHFPDMBFHN": "Eff_Monster_Weapon_Disappear"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Search"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Threat"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Attention"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Afraid"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Practice"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Threat"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Think"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Agree"
+                },
+                {
+                    "$type": "SetPoseBool",
+                    "HHFIHBEAPAP": "Talk"
+                },
+                {
+                    "$type": "TriggerHideWeapon",
+                    "ACDFJMCPFGH": true,
+                    "FLCNICMDANB": [
+                        "equip01"
+                    ]
+                },
+                {
+                    "$type": "TriggerHideWeapon",
+                    "ACDFJMCPFGH": true,
+                    "FLCNICMDANB": [
+                        "equip02"
+                    ]
+                },
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip01"
+                        ]
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Weapon_Disappear"
+                },
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByEquipParts",
+                        "GNNLGDBFIDI": [
+                            "equip02"
+                        ]
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Weapon_Disappear"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponEffect",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Weapon_PowerUp": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_WeaponPowerUp"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "PowerUp",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Weapon_PowerUp"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_ReturnToBorn",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToPoseIDMixin",
+                    "poseIDs": [
+                        901,
+                        902,
+                        903
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_ReturnToBorn_Invincible"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Standard_Rifle_Fire_ReturnToBorn_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible",
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_ReturnToBorn_RemoveImproveDelay"
+                        },
+                        {
+                            "$type": "ReTriggerAISkillInitialCD",
+                            "FJNGOGJOBEE": [
+                                401,
+                                403
+                            ]
+                        },
+                        {
+                            "$type": "SetAISkillCDAvailableNow",
+                            "FJNGOGJOBEE": [
+                                401,
+                                403
+                            ]
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Standard_Rifle_Fire_ReturnToBorn_RemoveImproveDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Element"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -11.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RIFLE_FIRE_IMPROVENUM",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_Improve",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Improve",
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_ChangePose",
+                    "AAIFCLGLOMO": 0.49000000953674316
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Standard_Rifle_Fire_ChangePose": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "InWeak"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ImprovedState",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "WeakState"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Element"
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_Improve": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_EyeNormalToImprove",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EyeEffect"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Staff_Rock_EyeImprove",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EyeEffect"
+                            }
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_EyeImproveToNormal",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "KJNJNKLLNCN": "EyeEffect"
+                            }
+                        }
+                    ]
+                },
+                "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Element": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementType": "Fire",
+                    "elementDurability": 200.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ShieldBarMixin",
+                            "FMAPKFDKKPB": ""
+                        },
+                        {
+                            "$type": "ModifyElementDecrateMixin",
+                            "group": "Monster_SingleElement_Method_Fire"
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0,
+                        "Entity_WeightRatio": 5.0,
+                        "Actor_PhysicalSubHurtDelta": 1.0,
+                        "Actor_FireSubHurtDelta": 1.0,
+                        "Actor_ElecSubHurtDelta": 1.0,
+                        "Actor_WaterSubHurtDelta": 1.0,
+                        "Actor_GrassSubHurtDelta": 1.0,
+                        "Actor_WindSubHurtDelta": 1.0,
+                        "Actor_IceSubHurtDelta": 1.0,
+                        "Actor_RockSubHurtDelta": 1.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Rifle_Fire_AtkTag"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ForceImprove"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RIFLE_FIRE_IMPROVENUM",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 10.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_NormalEffect"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_Improve"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 50004048
+                            },
+                            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponEffect"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 201.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        },
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 202.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_WEAK_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 201.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        },
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 202.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "HHFIHBEAPAP": "InWeak",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 201.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        },
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 202.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "triggerID": "WeakStart"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 201.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        },
+                                        {
+                                            "$type": "ByAnimatorFloat",
+                                            "GMFCOCAJBDM": "Equal",
+                                            "value": 202.0,
+                                            "MOCGJNIDDAI": "PoseID"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "HHFIHBEAPAP": "WeakState",
+                            "value": true
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ImprovedState"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "HHFIHBEAPAP": "PowerUp"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_Improve"
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_EyeEffect"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Weapon_PowerUp"
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Rifle_Fire_Eye_Improve"
+                        },
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Weapon_PowerUp"
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "HHFIHBEAPAP": "PowerUp"
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Rifle_Fire_EnterWeak": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0
+                },
+                "Monster_Skirmisher_Rifle_Fire_AtkTag": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "AIJPLNMHBEN": [
+                        {
+                            "$type": "ApplyModifier",
+                            "NPHOOPNDCAC": "Target",
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Rifle_Fire_FireTag"
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Rifle_Fire_FireTag": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementType": "Fire",
+                    "elementDurability": 50.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SKIRMISHER_ELEMENT_FIRE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Target",
+                            "value": -5.0,
+                            "HJJEAOMEOFI": "_SKIRMISHER_ELEMENT_FIRE_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_ExitWeak",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Weak_BS",
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_ExitWeakModiferTimer"
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_MONSTER_SKIRMISHER_RECOVER",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Empty",
+                        "Skirmisher_RecoverFromWeak"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Empty": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0
+                },
+                "Monster_Skirmisher_Standard_Rifle_Fire_ExitWeakModiferTimer": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_ExitWeakDelay"
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Standard_Rifle_Fire_ExitWeakDelay": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 10.0,
+                    "elementDurability": 100.0,
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RECOVER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "Predicated",
+                            "ELDBAFHCOBL": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RECOVER",
+                                    "value": 1.0
+                                }
+                            ],
+                            "NCNDEAPMKCP": [
+                                {
+                                    "$type": "SetAISkillCDAvailableNow",
+                                    "FJNGOGJOBEE": [
+                                        401,
+                                        403
+                                    ]
+                                }
+                            ],
+                            "BMIOBLGLPIM": [
+                                {
+                                    "$type": "ReTriggerAISkillInitialCD",
+                                    "FJNGOGJOBEE": [
+                                        401,
+                                        403
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "Skirmisher_RecoverFromWeak"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_RECOVER",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveModifier",
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_ExitWeakDelay"
+                        }
+                    ]
+                },
+                "Skirmisher_RecoverFromWeak": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "HHFIHBEAPAP": "InWeak"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "WeakState"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "AfterFirstImprove",
+                            "value": true
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -2.0,
+                            "HJJEAOMEOFI": "_MONSTER_SKIRMISHER_WEAK_",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_Steer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Turn"
+                    ],
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "RangeAtk"
+                    ],
+                    "IMHBEGIKDKB": 0.550000011920929,
+                    "HENDIIJFPCI": 300.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "ImprovedRangeAtk"
+                    ],
+                    "IMHBEGIKDKB": 0.4399999976158142,
+                    "HENDIIJFPCI": 300.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "DodgeState"
+                    ],
+                    "IMHBEGIKDKB": 0.2800000011920929,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 2.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Standard_Rifle_Fire_TriggerBullet",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 50004048
+                    },
+                    "NGAAOMEHOGE": 42301008,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "IHHIKIACOML": "Vertical",
+                            "INCAGGBCJNF": 20.0
+                        },
+                        "KJNJNKLLNCN": "Head"
+                    },
+                    "NJEOPILMKCN": true
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_NormalShoot_Launch",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.850000023841858,
+                            "PHDCJAHHIOG": 1.399999976158142
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_NoramalShoot_ChargeEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 50004048
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_NormalShoot_Charge",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "Head"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Standard_Rifle_Fire_TriggerPowerBullet",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 50004048
+                    },
+                    "NGAAOMEHOGE": 42301009,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "IHHIKIACOML": "Vertical",
+                            "INCAGGBCJNF": 20.0
+                        },
+                        "KJNJNKLLNCN": "Head"
+                    },
+                    "NJEOPILMKCN": true
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_ImproveShoot_Launch",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.6799999475479126,
+                            "PHDCJAHHIOG": 1.399999976158142
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_ImproveShoot_ChargeEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 50004048
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_ImproveShoot_Charge",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "Head"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Male_Standard_Rifle_Fire_TriggerBurstBullet",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerBullet",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 50004048
+                    },
+                    "NGAAOMEHOGE": 42301009,
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "NHPNHKBMAEO": {
+                            "$type": "ConfigDirectionByAttackTarget",
+                            "IHHIKIACOML": "Vertical",
+                            "INCAGGBCJNF": 20.0
+                        },
+                        "KJNJNKLLNCN": "Head"
+                    },
+                    "NJEOPILMKCN": true
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_BurstShoot_Launch",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.850000023841858,
+                            "PHDCJAHHIOG": 1.399999976158142
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_BurstShoot_ChargeEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 50004048
+                    },
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_BurstShoot_Charge",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "KJNJNKLLNCN": "Head"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Skirmisher_Rifle_Fire_NormalBullet_Explode",
+            "HNEIEGHMLKH": {
+                "Skirmisher_Rifle_Fire_NormalBulletEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_NormalShoot_Bullet"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_NormalShoot_BulletTrail"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Rifle_Fire_NormalBulletEffect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Rifle_Fire_NormalBulletEffect"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_NormalShoot_BulletHit"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementDurability": 100.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0,
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV2"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Skirmisher_Rifle_Fire_ImproveBullet_Explode",
+            "HNEIEGHMLKH": {
+                "Skirmisher_Rifle_Fire_ImproveBulletEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_ImproveShoot_Bullet"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_ImproveShoot_BulletTrail"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Rifle_Fire_ImproveBulletEffect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Rifle_Fire_ImproveBulletEffect"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_ImproveShoot_BulletHit"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0,
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV2"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Skirmisher_Rifle_Fire_BurstBullet_Explode",
+            "HNEIEGHMLKH": {
+                "Skirmisher_Rifle_Fire_BurstBulletEffect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_BurstShoot_Bullet"
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_BurstShoot_BulletTrail"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Rifle_Fire_BurstBulletEffect"
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveModifier",
+                    "GAIGOBCNNEE": "Skirmisher_Rifle_Fire_BurstBulletEffect"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Skirmisher_Male_Standard_Rifle_Fire_BurstShoot_BulletExplode"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackSphere",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf"
+                            },
+                            "ICGFCBOFFDI": 1.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "Improve_FireShoot",
+                            "attenuationTag": "Improve_FireShoot",
+                            "attenuationGroup": "Skirmisher_Fat_SprayGun_Ice",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.5,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Fire",
+                                "elementDurability": 50.0,
+                                "strikeType": "Blunt",
+                                "enBreak": 100.0,
+                                "attackType": "Range"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "none",
+                                "hitImpulseType": "LV2"
+                            },
+                            "canBeModifiedBy": "OriginOwner"
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_StruggleHideWeapon",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "Struggle",
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_StruggleHideWeapon"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "SwimDie",
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_StruggleHideWeapon"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "EFAJCDMGOHL": "SwimDie_AS",
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_StruggleHideWeapon"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Standard_Rifle_Fire_StruggleHideWeapon": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponSpecialState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAbilityStateMixin",
+                    "ELJGGBDOPIL": [
+                        "ElementFreeze"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponFrozen"
+                },
+                {
+                    "$type": "AttachToAbilityStateMixin",
+                    "ELJGGBDOPIL": [
+                        "ElementPetrifaction"
+                    ],
+                    "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponPetrifaction"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Monster_Skirmisher_Standard_Rifle_Fire_WeaponFrozen": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponBeFrozen"
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Standard_Rifle_Fire_WeaponPetrifaction": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "GNNLGDBFIDI": [
+                                    "equip01"
+                                ]
+                            },
+                            "GAIGOBCNNEE": "Monster_Skirmisher_Standard_Rifle_Fire_WeaponBePetrifaction"
+                        }
+                    ]
+                },
+                "Monster_Skirmisher_Standard_Rifle_Fire_WeaponBeFrozen": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "ElementFreeze"
+                },
+                "Monster_Skirmisher_Standard_Rifle_Fire_WeaponBePetrifaction": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "ElementPetrifaction"
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Skirmisher_Standard_Rifle_Fire_Die",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Monster_Skirmisher_Standard_Rifle_Fire_Element"
+                }
+            ]
+        }
+    }
+]

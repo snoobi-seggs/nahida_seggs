@@ -1,0 +1,110 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Raining",
+            "HNEIEGHMLKH": {
+                "Raining": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.10000000149011612,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR5",
+                                "ONPOPLLHJLE": "All",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "GAIGOBCNNEE": "WetModifier"
+                        }
+                    ]
+                },
+                "WetModifier": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 8.0,
+                    "elementType": "Water",
+                    "elementDurability": 40.0,
+                    "ONDNPIMNAOC": true,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Element_Wet"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Raining"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Test_KapokFlower_Interact",
+            "HNEIEGHMLKH": {
+                "ElementWaterModifier": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Grow"
+                        }
+                    ],
+                    "onBeingHit": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Water"
+                                }
+                            ],
+                            "HHFIHBEAPAP": "BeHitWater",
+                            "value": true
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "predicates": [
+                                {
+                                    "$type": "ByHitElement",
+                                    "GOMLPAOIKJA": "Water"
+                                }
+                            ],
+                            "GAIGOBCNNEE": "ElementWaterModifier"
+                        }
+                    ]
+                },
+                "Grow": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.100000023841858,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_ItemFlower_Bloom"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerGadgetInteractive"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ElementWaterModifier"
+                }
+            ]
+        }
+    }
+]

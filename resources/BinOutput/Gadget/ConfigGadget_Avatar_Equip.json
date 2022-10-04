@@ -1,0 +1,579 @@
+{
+    "Weapon_Sword_Metal": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true,
+                "denyElementStick": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip01",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "SwordOneHand"
+        }
+    },
+    "Catalyst_Book": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true,
+                "denyElementStick": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip02",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "Catalyst"
+        },
+        "stateLayers": {
+            "defaultLayer": {
+                "$type": "ConfigNormalStateLayer",
+                "JLAFELOFEGB": "",
+                "stateIDs": {
+                    "NormalMove": {
+                        "$type": "ConfigNormalStateIDInfo",
+                        "PINCPDEEFJI": {
+                            "AttackLoop": [],
+                            "AttackToIdle": [],
+                            "Open": [],
+                            "Close": []
+                        }
+                    }
+                }
+            }
+        },
+        "audio": {
+            "$type": "ConfigGadgetAudio",
+            "animAudio": {
+                "onTransitionIn": [
+                    {
+                        "currentStateName": "AttackLoop",
+                        "audioEvent": {
+                            "text": "Play_sfx_weapon_catalyst_lady_move"
+                        }
+                    }
+                ],
+                "onTransitionOut": [
+                    {
+                        "currentStateName": "AttackLoop",
+                        "audioEvent": {
+                            "text": "Play_sfx_weapon_catalyst_lady_move_end"
+                        }
+                    },
+                    {
+                        "currentStateName": "Open",
+                        "audioEvent": {
+                            "text": "Play_sfx_weapon_catalyst_lady_close"
+                        },
+                        "otherStateNames": [
+                            "AttackLoop"
+                        ],
+                        "usage": "Except"
+                    }
+                ]
+            }
+        }
+    },
+    "Catalyst_Ball": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true,
+                "denyElementStick": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip02",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "Catalyst"
+        },
+        "stateLayers": {
+            "defaultLayer": {
+                "$type": "ConfigNormalStateLayer",
+                "JLAFELOFEGB": "",
+                "stateIDs": {
+                    "Close": {
+                        "$type": "ConfigNormalStateIDInfo",
+                        "PINCPDEEFJI": {
+                            "Close": []
+                        }
+                    }
+                }
+            },
+            "audioEventLayer": {
+                "$type": "ConfigNormalStateLayer",
+                "ILGOPNKMKDG": 1,
+                "JLAFELOFEGB": "AudioEventLayer",
+                "stateIDs": {
+                    "NormalMove": {
+                        "$type": "ConfigNormalStateIDInfo",
+                        "PINCPDEEFJI": {
+                            "AttackLoop": [],
+                            "Open": [],
+                            "CloseAudio": []
+                        }
+                    }
+                }
+            }
+        },
+        "audio": {
+            "$type": "ConfigGadgetAudio",
+            "animAudio": {
+                "onTransitionIn": [
+                    {
+                        "currentStateName": "AttackLoop",
+                        "audioEvent": {
+                            "text": "Play_sfx_weapon_catalyst_ball_common_attackLoop"
+                        }
+                    }
+                ],
+                "onTransitionOut": [
+                    {
+                        "currentStateName": "AttackLoop",
+                        "audioEvent": {
+                            "text": "Stop_sfx_weapon_catalyst_ball_common_attackLoop"
+                        },
+                        "otherStateNames": [
+                            "Open"
+                        ],
+                        "usage": "Except"
+                    },
+                    {
+                        "currentStateName": "Open",
+                        "audioEvent": {
+                            "text": "Play_sfx_weapon_catalyst_ball_common_close"
+                        },
+                        "otherStateNames": [
+                            "AttackLoop"
+                        ],
+                        "usage": "Except"
+                    }
+                ]
+            }
+        }
+    },
+    "Weapon_Claymore_Metal": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true,
+                "denyElementStick": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip01",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "Claymore"
+        }
+    },
+    "Weapon_Bow_Metal": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 10.0,
+                "isInvincible": true,
+                "canTriggerBullet": true,
+                "denyElementStick": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            },
+            "die": {
+                "dieDisappearEffect": "Eff_Monster_Undead_01_Shield_Broken"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip02",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "Bow",
+            "BLAHEFILLKI": {
+                "FFGPLLEAMHA": "BowRatio",
+                "ABGICLHBCBA": {
+                    "_x": 0.11999999731779099
+                },
+                "CFCELMHPILP": 0.41999998688697815
+            }
+        }
+    },
+    "Weapon_Pole_Metal": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip01",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "Pole"
+        }
+    },
+    "Weapon_Sword_Wood_Normal": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true,
+            "checkInSurface": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Wood_Normal",
+                "abilityName": "Avatar_Weapon_Wood_Normal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip01",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "SwordOneHand"
+        }
+    },
+    "Weapon_Sword_Wood_Hard": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true,
+            "checkInSurface": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Wood_Hard",
+                "abilityName": "Avatar_Weapon_Wood_Hard",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip01",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "SwordOneHand"
+        }
+    },
+    "Catalyst_Mute": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "abilities": [
+            {
+                "abilityID": "Metal",
+                "abilityName": "Avatar_Weapon_Metal",
+                "abilityOverride": ""
+            }
+        ],
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip02",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": "",
+            "NGBOBPPNLCH": "Catalyst"
+        },
+        "stateLayers": {
+            "defaultLayer": {
+                "$type": "ConfigNormalStateLayer",
+                "JLAFELOFEGB": "",
+                "stateIDs": {
+                    "NormalMove": {
+                        "$type": "ConfigNormalStateIDInfo",
+                        "PINCPDEEFJI": {
+                            "AttackLoop": [],
+                            "AttackToIdle": [],
+                            "Open": [],
+                            "Close": []
+                        }
+                    }
+                }
+            }
+        },
+        "audio": {
+            "$type": "ConfigGadgetAudio",
+            "animAudio": {}
+        }
+    },
+    "SubEquip_Feiyan_Steelyard": {
+        "$type": "ConfigGadget",
+        "common": {
+            "effectAttachShape": {
+                "$type": "ConfigEffectAttachMesh",
+                "FGKBBEGGKCB": "EffectMesh"
+            },
+            "affectedByWorld": true
+        },
+        "combat": {
+            "property": {
+                "HP": 9999999.0,
+                "defense": 999999.0,
+                "isInvincible": true,
+                "canTriggerBullet": true,
+                "denyElementStick": true
+            },
+            "beHit": {
+                "hitBloodEffect": "",
+                "muteAllHit": true,
+                "muteAllHitEffect": true,
+                "muteAllHitText": true
+            },
+            "combatLock": {
+                "lockShape": "CircleLockEnemy",
+                "denyLockOn": true,
+                "lockType": "Default"
+            }
+        },
+        "attackAttenuation": "",
+        "KHPJMGGKMNK": {
+            "KKMNLIEOJLL": "equip03",
+            "GBGFLKOHFPH": "",
+            "EHKPLNJLJJL": ""
+        }
+    },
+    "SubEquip_Shinobu_Mask": {
+        "$type": "ConfigGadget",
+        "common": {},
+        "attackAttenuation": ""
+    }
+}

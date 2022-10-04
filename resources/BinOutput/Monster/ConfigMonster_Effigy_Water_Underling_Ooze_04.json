@@ -1,0 +1,230 @@
+{
+    "common": {
+        "effectAttachShape": {
+            "$type": "ConfigEffectAttachSkinnedMesh",
+            "FGKBBEGGKCB": "EffectMesh"
+        },
+        "mass": 80.0,
+        "secondHeight": 0.800000011920929,
+        "OPCPJOJAOOE": 0.4000000059604645,
+        "affectedByWorld": true,
+        "checkInSurface": true,
+        "LALONNAHJDN": 3.0,
+        "useGrassDisplacement": true
+    },
+    "model": {
+        "bornEffect": "Eff_Monster_Effigy_Water_OozeBorn",
+        "attachEffect": "",
+        "canBakeMesh": false
+    },
+    "combat": {
+        "property": {
+            "endureType": "Monster_Slime",
+            "w": 60.0
+        },
+        "beHit": {
+            "hitBloodEffect": ""
+        },
+        "combatLock": {
+            "lockShape": "CircleLockEnemy",
+            "lockType": "Avatar&Monster_Lv4"
+        },
+        "die": {
+            "HGGPMFGGBNC": 4.0,
+            "dieForceDisappearTime": 8.0,
+            "dieDisappearEffect": "",
+            "MBIPMCDOFBG": true,
+            "EFLALLBMIBB": true,
+            "NLFNLBDLPFC": true,
+            "NDACEHEDOMA": true,
+            "NENNBGPECAO": true,
+            "DMALDDCGAMB": true
+        }
+    },
+    "abilities": [
+        {
+            "abilityID": "",
+            "abilityName": "Monster_Effigy_Ooze_TypeHeal_State",
+            "abilityOverride": ""
+        },
+        {
+            "abilityID": "",
+            "abilityName": "Monster_Effigy_Ooze_TypeHeal_TriggerHealBall",
+            "abilityOverride": ""
+        }
+    ],
+    "stateLayers": {
+        "defaultLayer": {
+            "$type": "ConfigNormalStateLayer",
+            "JLAFELOFEGB": "",
+            "stateIDs": {
+                "Born": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Born": [
+                            "Audio_Slime_02_Born_N"
+                        ]
+                    },
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "NormalIdle": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Standby": []
+                    },
+                    "KGOCGKMHPKM": true,
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "NormalMove": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Walk": [
+                            "Audio_Slime_02_Walk_N"
+                        ]
+                    },
+                    "KGOCGKMHPKM": true,
+                    "JFJAOFFPPFP": true,
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ],
+                    "HNDGEBFOBMD": true
+                },
+                "BeHit": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Hit_L": [
+                            "Audio_Slime_02_Hit_L"
+                        ],
+                        "Hit_H": [
+                            "Audio_Slime_02_Hit_H"
+                        ]
+                    },
+                    "OBACGMAOFBH": [
+                        "BeHit"
+                    ],
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "BeHitThrow": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "HitThrow": [
+                            "Audio_Slime_02_HitThrow_N"
+                        ],
+                        "HitThrowDrop": [],
+                        "HitThrowToGround": [
+                            "Audio_Slime_02_HitThrowToGround_N"
+                        ]
+                    },
+                    "OBACGMAOFBH": [
+                        "BeHit",
+                        "HitAir2HitDrop"
+                    ],
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "Struggle": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Struggle": []
+                    },
+                    "OBACGMAOFBH": [
+                        "BeHit",
+                        "HitAir2HitDrop"
+                    ],
+                    "KJALBKOJAJE": [
+                        "DoSkill"
+                    ]
+                },
+                "Die": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "Die": [
+                            "Monster_Effigy_Water_Ooze01_Die"
+                        ]
+                    }
+                },
+                "HealBall": {
+                    "$type": "ConfigMonsterStateIDInfo",
+                    "PINCPDEEFJI": {
+                        "HealBall": [
+                            "Monster_Effigy_Water_Ooze04_HealBall"
+                        ]
+                    },
+                    "KJALBKOJAJE": [
+                        "BeHit",
+                        "DoSkill"
+                    ]
+                }
+            }
+        }
+    },
+    "billboard": {
+        "$type": "ConfigCombatBillboard",
+        "BDMAMLPPCMN": "BillboardAttach",
+        "offset": {
+            "_y": 0.30000001192092896
+        },
+        "MDLKCFCDDCD": "Character",
+        "MIBFGCAAAFK": true
+    },
+    "aibeta": {
+        "enable": true,
+        "sensing": {
+            "settings": {
+                "DefaultSetting": {
+                    "viewRange": 15.0
+                }
+            }
+        },
+        "threat": {
+            "enable": false,
+            "billboardShowUIBarDis": 30.0,
+            "clearThreatEdgeDistance": 3.0,
+            "clearThreatTimerByDistance": 2.0
+        },
+        "defendArea": {
+            "defendRange": 50.0
+        },
+        "skills": {
+            "201": {
+                "name": "HealBall",
+                "skillType": "Free",
+                "NJDDMHGDEMN": 1,
+                "castCondition": {
+                    "pose": [
+                        1
+                    ]
+                },
+                "targetBackSpace": 10.0,
+                "initialCD": 5.0,
+                "publicCDGroup": "",
+                "stateIDs": [
+                    "HealBall"
+                ],
+                "flagTargetReachable": "10",
+                "flagSelfOnTemplateCollider": "01",
+                "flagSelfInZone": "10",
+                "flagTargetInZone": "11"
+            }
+        },
+        "skillGCD": 10.0,
+        "returnToBornTactic": {
+            "enable": true
+        }
+    },
+    "move": {
+        "$type": "ConfigAnimatorMove",
+        "AOGDBDGDBPL": true,
+        "LJGHPINBFHG": 0.10000000149011612,
+        "BNIOAFCEPJD": "SlimeType"
+    }
+}

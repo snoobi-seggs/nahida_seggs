@@ -1,0 +1,2233 @@
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_Fatuus_SetPose",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "BPCFCANOMNH": "_Summon_Count",
+                    "FEGIOIGELHB": 0.0,
+                    "CMEDACODLEA": [
+                        -0.5,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5
+                    ],
+                    "MIEPCOONDEM": [
+                        "Fatuus_Summoner_ChildrenState0",
+                        "Fatuus_Summoner_ChildrenState1",
+                        "Fatuus_Summoner_ChildrenState2",
+                        "Fatuus_Summoner_ChildrenState3"
+                    ]
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_MonsterEliteAffix_DefaultState": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "UseSkillEliteSet",
+                            "AFIOIAPCKEJ": 1
+                        }
+                    ]
+                },
+                "UNIQUE_WeaponEffect": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_Lamp",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "WeaponAttachPoint"
+                            }
+                        }
+                    ]
+                },
+                "Fatuus_Summoner_ChildrenState0": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ChildrenState"
+                        }
+                    ]
+                },
+                "Fatuus_Summoner_ChildrenState1": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ChildrenState",
+                            "weight": 1
+                        }
+                    ]
+                },
+                "Fatuus_Summoner_ChildrenState2": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ChildrenState",
+                            "weight": 2
+                        }
+                    ]
+                },
+                "Fatuus_Summoner_ChildrenState3": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseInt",
+                            "intID": "ChildrenState",
+                            "weight": 3
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "TriggerSetRenderersEnable",
+                    "GEDDBEFBOKD": [
+                        "MonEquip_Lantern_Thunder_01"
+                    ],
+                    "PAHBCOACBAI": true
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_WeaponEffect"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -10.0,
+                    "HJJEAOMEOFI": "_Summon_Count",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -10.0,
+                    "HJJEAOMEOFI": "_TrySummon_Count",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ],
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerSetRenderersEnable",
+                    "GEDDBEFBOKD": [
+                        "MonEquip_Lantern_Thunder_01"
+                    ]
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_WeaponDisappear"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_WeaponEffect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_TAG",
+                            "value": 0.0,
+                            "ONPJJFKDCED": "NoneOrEqual"
+                        }
+                    ],
+                    "GAIGOBCNNEE": "UNIQUE_MonsterEliteAffix_DefaultState"
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "SetPoseBool",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "HHFIHBEAPAP": "IsSummoned"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_Summon",
+            "EDDGGPMFDGK": {
+                "SummonCount": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Fatuus_Summoner_Summon": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 26060101
+                            },
+                            "HHFIHBEAPAP": "IsSummoned",
+                            "value": true
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByChildren",
+                                "APIAFGPIIHE": 26060101
+                            },
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_Is_Summoned",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 1.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "TriggerAbility",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_TrySummon_Count",
+                                    "value": 2.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 2.0,
+                                    "ONPJJFKDCED": "LessAndEqual"
+                                }
+                            ],
+                            "abilityName": "Monster_Fatuus_Summoner_Summon"
+                        }
+                    ]
+                },
+                "ClearGlobalValue": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 2.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": -10.0,
+                            "HJJEAOMEOFI": "_TrySummon_Count",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_MONSTERAFFIX_SUMMON_LIFETIME",
+                            "value": 1.0
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 0.0
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 1.75,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByDefault",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "secondHeight": 0.6000000238418579,
+                                        "BDAPFCGNBKA": 10.0,
+                                        "ICGFCBOFFDI": 3.75
+                                    }
+                                }
+                            ],
+                            "FMHEBAPHGMP": 26060101,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "ServantSlot0"
+                            },
+                            "summonTag": 26060101,
+                            "DMMHIIKIPFB": true,
+                            "JCAMCEOBIFG": true
+                        },
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 1.75,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByDefault",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 135.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "secondHeight": 0.6000000238418579,
+                                        "BDAPFCGNBKA": 10.0,
+                                        "ICGFCBOFFDI": 3.75
+                                    }
+                                }
+                            ],
+                            "FMHEBAPHGMP": 26060101,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "ServantSlot1"
+                            },
+                            "MEPNGPPDMCG": 1,
+                            "summonTag": 26060101,
+                            "DMMHIIKIPFB": true,
+                            "JCAMCEOBIFG": true
+                        },
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 2.0
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 1.75,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByDefault",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 225.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "secondHeight": 0.6000000238418579,
+                                        "BDAPFCGNBKA": 10.0,
+                                        "ICGFCBOFFDI": 3.75
+                                    }
+                                }
+                            ],
+                            "FMHEBAPHGMP": 26060101,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "ServantSlot2"
+                            },
+                            "MEPNGPPDMCG": 2,
+                            "summonTag": 26060101,
+                            "DMMHIIKIPFB": true,
+                            "JCAMCEOBIFG": true
+                        }
+                    ],
+                    "BMIOBLGLPIM": [
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 0.0
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 1.75,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByDefault",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 0.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "secondHeight": 0.6000000238418579,
+                                        "BDAPFCGNBKA": 10.0,
+                                        "ICGFCBOFFDI": 3.75
+                                    }
+                                }
+                            ],
+                            "FMHEBAPHGMP": 26060101,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "ServantSlot0"
+                            },
+                            "summonTag": 26060101,
+                            "JCAMCEOBIFG": true
+                        },
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 1.0
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 1.75,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByDefault",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 135.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "secondHeight": 0.6000000238418579,
+                                        "BDAPFCGNBKA": 10.0,
+                                        "ICGFCBOFFDI": 3.75
+                                    }
+                                }
+                            ],
+                            "FMHEBAPHGMP": 26060101,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "ServantSlot1"
+                            },
+                            "MEPNGPPDMCG": 1,
+                            "summonTag": 26060101,
+                            "JCAMCEOBIFG": true
+                        },
+                        {
+                            "$type": "Summon",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "HJJEAOMEOFI": "_Summon_Count",
+                                    "value": 2.0
+                                },
+                                {
+                                    "$type": "ByAttackNotHitScene",
+                                    "attackPattern": {
+                                        "$type": "ConfigAttackCircle",
+                                        "lifeTime": "TriggerNoRepeat",
+                                        "NGDMCBABOJA": {
+                                            "$type": "ConfigBornBySelf",
+                                            "offset": {
+                                                "AEAAJCIDPED": 0.0,
+                                                "KAAPLGBEDPM": 1.75,
+                                                "PHDCJAHHIOG": 0.0
+                                            },
+                                            "NHPNHKBMAEO": {
+                                                "$type": "ConfigDirectionByDefault",
+                                                "LGPBCMEFEJB": {
+                                                    "AEAAJCIDPED": 0.0,
+                                                    "KAAPLGBEDPM": 225.0,
+                                                    "PHDCJAHHIOG": 0.0
+                                                }
+                                            }
+                                        },
+                                        "secondHeight": 0.6000000238418579,
+                                        "BDAPFCGNBKA": 10.0,
+                                        "ICGFCBOFFDI": 3.75
+                                    }
+                                }
+                            ],
+                            "FMHEBAPHGMP": 26060101,
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.75,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "ServantSlot2"
+                            },
+                            "MEPNGPPDMCG": 2,
+                            "summonTag": 26060101,
+                            "JCAMCEOBIFG": true
+                        }
+                    ]
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_TrySummon_Count",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Fatuus_Summoner_Summon"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "ClearGlobalValue"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_SummonEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_CicinCreate",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.75,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "ServantSlot0"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_CicinCreate",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.75,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "ServantSlot1"
+                    }
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_CicinCreate",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.75,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "ServantSlot2"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_ClearGlobalValue",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "AddGlobalValue",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "value": -10.0,
+                    "HJJEAOMEOFI": "_SummonNumberInCicin",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": -10.0,
+                    "HJJEAOMEOFI": "_SummonNumberInFatuus",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 3.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_CicinRush",
+            "EDDGGPMFDGK": {
+                "SummonNumber": 0.0
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "Predicated",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByShape",
+                        "JBKKOJLJHDK": "CircleR50",
+                        "ONPOPLLHJLE": "Alliance",
+                        "CJJABKCAIEB": 1.0
+                    },
+                    "ELDBAFHCOBL": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_Is_Summoned",
+                            "value": 1.0
+                        }
+                    ],
+                    "NCNDEAPMKCP": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "value": 1.0,
+                            "HJJEAOMEOFI": "_SummonNumberInFatuus",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "BPCFCANOMNH": "_SummonNumberInFatuus",
+                            "OGAHELLALBB": "SummonNumber"
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "NPHOOPNDCAC": "Target",
+                            "value": "SummonNumber",
+                            "HJJEAOMEOFI": "_SummonNumberInCicin",
+                            "EODOIECEPEF": true,
+                            "JDHHMBHOOEC": 3.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_SetCicinBlink",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_SummonNumberInFatuus",
+                            "value": 1.0,
+                            "EODMLMGMLNP": true,
+                            "ONPJJFKDCED": "MoreThanAndEqual"
+                        }
+                    ],
+                    "triggerID": "BlinkTrigger"
+                },
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_SummonNumberInFatuus",
+                            "value": 0.0,
+                            "EODMLMGMLNP": true
+                        }
+                    ],
+                    "triggerID": "NormalCancle"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_SetCicin_NotFollow",
+            "HNEIEGHMLKH": {
+                "UNIQUE_SetCicin_NotFollow": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Follow"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "Follow",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "GAIGOBCNNEE": "UNIQUE_SetCicin_NotFollow"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_CicinFury",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "triggerID": "FuryTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_BlinkState",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "BlinkFar",
+                        "BlinkNear",
+                        "Dodge"
+                    ],
+                    "GAIGOBCNNEE": "Blink_State"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "Blink_State": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_Blink_Actions"
+                        }
+                    ]
+                },
+                "UNIQUE_Fatuus_Summoner_Blink_Actions": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Blink_Invincible"
+                        },
+                        {
+                            "$type": "AttachModifier",
+                            "GAIGOBCNNEE": "Blink_DenyLockOn"
+                        },
+                        {
+                            "$type": "TriggerSetVisible"
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard",
+                            "COCENMAFJGD": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ]
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "TriggerSetVisible",
+                            "ACDFJMCPFGH": true
+                        },
+                        {
+                            "$type": "TriggerHideWeapon",
+                            "ACDFJMCPFGH": true,
+                            "FLCNICMDANB": [
+                                "equip01"
+                            ]
+                        },
+                        {
+                            "$type": "HideUIBillBoard"
+                        }
+                    ]
+                },
+                "Blink_Invincible": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "Invincible"
+                },
+                "Blink_DenyLockOn": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "state": "DenyLockOn"
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_Blink_Actions"
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_Disappear",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2000000476837158,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "ClearLockTarget",
+                    "NPHOOPNDCAC": "CurLocalAvatar"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_FindBlinkPointNear",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPoint",
+                    "DGICDMAKHOJ": 45.0,
+                    "JLCCGHLNHOI": 4.0,
+                    "GLALMCMAFJF": 5.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_BLINK_NEAR_COUNT_",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 10.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_FindBlinkPointFar",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPoint",
+                    "DGICDMAKHOJ": 45.0,
+                    "JLCCGHLNHOI": 8.0,
+                    "GLALMCMAFJF": 9.0
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 1.0,
+                    "HJJEAOMEOFI": "_BLINK_FAR_COUNT_",
+                    "EODOIECEPEF": true,
+                    "JDHHMBHOOEC": 10.0,
+                    "KHAHOELDONA": 0.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_Blink",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_Appear_Trail",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "DoBlink"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_BlinkASNear",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_Appear",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2000000476837158,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_Blink_Actions"
+                },
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "GMFCOCAJBDM": "GreaterOrEqual",
+                            "value": 10.0
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_BLINK_NEAR_COUNT_",
+                            "value": 3.0,
+                            "ONPJJFKDCED": "LessAndEqual"
+                        }
+                    ],
+                    "triggerID": "BlinkTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_BlinkASFar",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BlinkNear_AS",
+                        "BlinkFar_AS"
+                    ],
+                    "GAIGOBCNNEE": "ResetBlinkCount"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "ResetBlinkCount": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_BLINK_NEAR_COUNT_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        },
+                        {
+                            "$type": "SetGlobalValue",
+                            "value": 0.0,
+                            "HJJEAOMEOFI": "_BLINK_FAR_COUNT_",
+                            "JDHHMBHOOEC": 0.0,
+                            "KHAHOELDONA": 0.0
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_Appear",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2000000476837158,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_Blink_Actions"
+                },
+                {
+                    "$type": "SetAnimatorTrigger",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetPositionToSelfPosition",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "GMFCOCAJBDM": "GreaterOrEqual",
+                            "value": 18.0
+                        },
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "NPHOOPNDCAC": "Self",
+                            "HJJEAOMEOFI": "_BLINK_FAR_COUNT_",
+                            "value": 3.0,
+                            "ONPJJFKDCED": "LessAndEqual"
+                        }
+                    ],
+                    "triggerID": "BlinkTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_TriggerDodge",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAbility",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "AKMLOIFOBPO": "Random",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "abilityName": "Monster_Cicin_TriggerOwnerDodge"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_FindDodgePoint",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPoint",
+                    "NPHOOPNDCAC": "Target",
+                    "DGICDMAKHOJ": -30.0,
+                    "JLCCGHLNHOI": 1.5,
+                    "GLALMCMAFJF": 2.5
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_FindDodgeBackPoint",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TryFindBlinkPoint",
+                    "DGICDMAKHOJ": 30.0,
+                    "JLCCGHLNHOI": 8.0,
+                    "GLALMCMAFJF": 10.0
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_DodgeAS",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetSelfAttackTarget",
+                    "NPHOOPNDCAC": "SelfAttackTarget",
+                    "EHOIBKNOCPH": true
+                },
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_Appear",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornBySelf",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 1.2000000476837158,
+                            "PHDCJAHHIOG": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "TriggerAbility",
+                    "abilityName": "Monster_Fatuus_Summoner_SetCicin_NotFollow"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_Blink_Actions"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_DoNotDodge",
+            "HNEIEGHMLKH": {
+                "DoNotDodge_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "DodgeState"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "DodgeState",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "DoNotDodge_Timer"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_ForceDodge",
+            "HNEIEGHMLKH": {
+                "ForceDodge": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "MonsterDefendMixin",
+                            "stateIDs": [
+                                "BeHit",
+                                "BeHitThrow"
+                            ],
+                            "OKFKMBDCDHO": "DodgeTrigger",
+                            "OKEAOJGNCNJ": 1.0,
+                            "CLALNDAGFGJ": 0.0,
+                            "LCJAOCJNEJJ": 5.0,
+                            "HFCIHIJGLMA": 0,
+                            "GOLCBAPOOLF": [
+                                {
+                                    "$type": "TriggerAbility",
+                                    "abilityName": "Abyss_Fire_ForceBlink"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "GAIGOBCNNEE": "DoNotDodge_Timer"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "DoNotDodge_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 6.0,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "DodgeState"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "DodgeState",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "AttachModifier",
+                    "GAIGOBCNNEE": "ForceDodge"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_RangeAtk",
+            "EDDGGPMFDGK": {
+                "RangeAtk_Timers": 0.0
+            },
+            "HNEIEGHMLKH": {
+                "Fatuus_Summoner_RangeAtk_Times": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": [
+                        0.5,
+                        "RangeAtk_Timers",
+                        "Mul",
+                        0.20000000298023224,
+                        "Add"
+                    ],
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "CreateGadget",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByPredicatePoint",
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "BIOOFAHEGLA": 0.5
+                            },
+                            "CABLIPAKCGB": 42303001,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "All"
+                        }
+                    ],
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "CreateGadget",
+                            "NPHOOPNDCAC": "SelfAttackTarget",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByPredicatePoint",
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true,
+                                "BIOOFAHEGLA": 0.5
+                            },
+                            "CABLIPAKCGB": 42303001,
+                            "DOLAJLACEDF": 4001,
+                            "ONPOPLLHJLE": "All"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Fatuus_Summoner_RangeAtk_Times"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "value": 0.0,
+                    "HJJEAOMEOFI": "_ABILITY_RANDOM_RANGEATK_TIMES",
+                    "EODOIECEPEF": true,
+                    "FACHGOPKJKE": true,
+                    "JDHHMBHOOEC": 5.0,
+                    "KHAHOELDONA": 2.0
+                },
+                {
+                    "$type": "SetGlobalValueToOverrideMap",
+                    "predicates": [
+                        {
+                            "$type": "ByTargetGlobalValue",
+                            "HJJEAOMEOFI": "_ELITEAFFIX_ATTACK_ENHANCE",
+                            "value": 1.0
+                        }
+                    ],
+                    "BPCFCANOMNH": "_ABILITY_RANDOM_RANGEATK_TIMES",
+                    "OGAHELLALBB": "RangeAtk_Timers"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_RangeAtk_Damage",
+            "HNEIEGHMLKH": {
+                "Damage_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.2000000476837158,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "SingleDamage"
+                        }
+                    ]
+                },
+                "Effect_Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 1.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_ThunderDrop",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByTarget",
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true
+                            }
+                        }
+                    ]
+                },
+                "SingleDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.5,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "JBPCKOKLHEB": true,
+                                        "ANAGBFPADIE": true
+                                    },
+                                    "secondHeight": 1.0,
+                                    "ICGFCBOFFDI": 2.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 1.0,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 50.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 100.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV4",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeType": "CustomVector",
+                                        "shakeRange": 0.03999999910593033,
+                                        "shakeTime": 0.09000000357627869,
+                                        "shakeDir": {
+                                            "_y": 1.0
+                                        }
+                                    },
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "OverTimeDamage"
+                        }
+                    ]
+                },
+                "OverTimeDamage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.5,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "DMCJDGELKBC": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackCircle",
+                                    "lifeTime": "TriggerNoRepeat",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "AEAAJCIDPED": 0.0,
+                                            "KAAPLGBEDPM": 0.0,
+                                            "PHDCJAHHIOG": 0.0
+                                        },
+                                        "JBPCKOKLHEB": true,
+                                        "ANAGBFPADIE": true
+                                    },
+                                    "secondHeight": 1.0,
+                                    "ICGFCBOFFDI": 2.0
+                                },
+                                "attackInfo": {
+                                    "attackTag": "",
+                                    "attenuationTag": "Group1",
+                                    "attenuationGroup": "default",
+                                    "attackProperty": {
+                                        "bonusCriticalHurt": 0.25,
+                                        "damagePercentageRatio": 0.0,
+                                        "elementType": "Electric",
+                                        "elementDurability": 25.0,
+                                        "strikeType": "Default",
+                                        "enBreak": 1.0
+                                    },
+                                    "hitPattern": {
+                                        "onHitEffectName": "default",
+                                        "hitImpulseType": "LV1",
+                                        "hitHaltTimeScale": 0.05000000074505806
+                                    },
+                                    "forceCameraShake": true,
+                                    "canBeModifiedBy": "OriginOwner"
+                                }
+                            },
+                            "OJIFKEOCJGB": "Enemy"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_ThunderDropAlert",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByTarget",
+                        "JBPCKOKLHEB": true,
+                        "ANAGBFPADIE": true
+                    }
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Effect_Timer"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Damage_Timer"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_ThunderShieldTrigger",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "DoActionByEventMixin",
+                    "type": "Current",
+                    "PDPENHIADJD": "HP",
+                    "OAEEBLALAPO": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_ThunderShieldTrigger"
+                        }
+                    ],
+                    "LIINFCJLBOP": ""
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "UNIQUE_Fatuus_Summoner_ThunderShieldTrigger": {
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "elementDurability": 100.0
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_CicinCreateEnergy",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAbility",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "abilityName": "Monster_Cicin_ThunderShieldCreateEnergy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_KillCicin",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "TriggerAbility",
+                    "GILFKOBKGLI": {
+                        "$type": "SelectTargetsByChildren",
+                        "APIAFGPIIHE": 26060101
+                    },
+                    "abilityName": "Monster_Cicin_ThunderShieldDie"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_ThunderShield",
+            "HNEIEGHMLKH": {
+                "UNIQUE_Fatuus_Summoner_ElementShield": {
+                    "FGJPBKGPNJJ": "Unique",
+                    "GAIGOBCNNEE": "",
+                    "IEOFBCGJGEK": true,
+                    "GMIMMDOGGIO": 12.5,
+                    "elementType": "Electric",
+                    "elementDurability": 200.0,
+                    "FNJKJKACMCH": [
+                        {
+                            "$type": "ElementShieldMixin",
+                            "elementType": "Electric",
+                            "FMAPKFDKKPB": "",
+                            "KFDBBJLMOKJ": 360.0,
+                            "PDGJDMOFOAO": 1.0,
+                            "damageRatio": 0.20000000298023224,
+                            "BOCNCNPHCFL": [
+                                {
+                                    "$type": "DamageByAttackValue",
+                                    "attackInfo": {
+                                        "attackTag": "",
+                                        "attenuationTag": "",
+                                        "attenuationGroup": "default",
+                                        "attackProperty": {
+                                            "bonusCriticalHurt": 0.0,
+                                            "damagePercentageRatio": 0.0,
+                                            "elementDurability": 100.0,
+                                            "strikeType": "Default",
+                                            "enBreak": 1000.0
+                                        },
+                                        "hitPattern": {
+                                            "onHitEffectName": "default",
+                                            "hitImpulseType": "LV5",
+                                            "hitHaltTimeScale": 0.05000000074505806
+                                        },
+                                        "forceCameraShake": true,
+                                        "cameraShake": {
+                                            "shakeRange": 0.23999999463558197,
+                                            "shakeTime": 0.11999999731779099
+                                        }
+                                    }
+                                }
+                            ],
+                            "HMLKELJFCKD": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "Target",
+                                            "HJJEAOMEOFI": "_ABILITY_FATUUS_SUMMONER_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "TargetOriginOwner",
+                                            "HJJEAOMEOFI": "_ABILITY_FATUUS_SUMMONER_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_ElectricShieldHitInvalid",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByGlobalValue",
+                                            "MICIJLHMIIH": "_ABILITY_FATUUS_SUMMONER_ELEMENTSHIELD_HIT"
+                                        }
+                                    }
+                                }
+                            ],
+                            "FFOEHJLIDFC": [
+                                {
+                                    "$type": "Predicated",
+                                    "NPHOOPNDCAC": "Target",
+                                    "ELDBAFHCOBL": [
+                                        {
+                                            "$type": "ByEntityTypes",
+                                            "entityTypes": [
+                                                "Avatar"
+                                            ]
+                                        }
+                                    ],
+                                    "NCNDEAPMKCP": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "Target",
+                                            "HJJEAOMEOFI": "_ABILITY_FATUUS_SUMMONER_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ],
+                                    "BMIOBLGLPIM": [
+                                        {
+                                            "$type": "SetGlobalDir",
+                                            "NPHOOPNDCAC": "TargetOriginOwner",
+                                            "HJJEAOMEOFI": "_ABILITY_FATUUS_SUMMONER_ELEMENTSHIELD_HIT",
+                                            "NGDMCBABOJA": {
+                                                "$type": "ConfigBornBySelf",
+                                                "NHPNHKBMAEO": {
+                                                    "$type": "ConfigDirectionByLookAtEntity"
+                                                }
+                                            },
+                                            "OGADOPDNBMM": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "$type": "FireEffect",
+                                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_ElectricShieldHitValid",
+                                    "NGDMCBABOJA": {
+                                        "$type": "ConfigBornByTarget",
+                                        "NHPNHKBMAEO": {
+                                            "$type": "ConfigDirectionByGlobalValue",
+                                            "MICIJLHMIIH": "_ABILITY_FATUUS_SUMMONER_ELEMENTSHIELD_HIT"
+                                        }
+                                    }
+                                }
+                            ],
+                            "NGOKEFIDFCJ": true
+                        },
+                        {
+                            "$type": "VelocityForceMixin",
+                            "MPGPCCEHFGL": [
+                                "WindZoneType"
+                            ]
+                        }
+                    ],
+                    "FFOHEEFOELN": {
+                        "Actor_EndureDelta": 0.0
+                    },
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_ElectricShieldBS"
+                        },
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ThunderShield",
+                            "value": true
+                        },
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 14003
+                        },
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 14001
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_ElementShield"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ]
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_ElementShield"
+                            ],
+                            "PAHBCOACBAI": true
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "SetPoseBool",
+                            "HHFIHBEAPAP": "ThunderShield"
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_ElectricShieldAS"
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox_ElementShield"
+                            ]
+                        },
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "EACGOCFODIC": [
+                                "HitBox",
+                                "HeadBox"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "EnablePushColliderName",
+                            "LEHFIPJFKBC": [
+                                "PushCollider_ElementShield"
+                            ]
+                        },
+                        {
+                            "$type": "DoWatcherSystemAction",
+                            "GPGMPHIIAMD": 82005,
+                            "LNGKALMLMGN": true
+                        }
+                    ],
+                    "OGFFGLGEOGF": [
+                        {
+                            "$type": "RemoveUniqueModifier",
+                            "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_ElementShield"
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_ElementShield"
+                },
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_ThunderShieldTrigger"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_BurstAtk",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BurstAtk",
+                        "BurstAtkStandby"
+                    ],
+                    "GAIGOBCNNEE": "BurstAtk_Effect"
+                },
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BurstAtk",
+                        "BurstAtkStandby"
+                    ],
+                    "GAIGOBCNNEE": "BurstAtk_FindTargets"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "BurstAtk",
+                        "BurstAtkStandby"
+                    ],
+                    "GAIGOBCNNEE": "BurstAtk_Resistance"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "BurstAtk_Resistance": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "KPGAIMMIKDA": 14001
+                        }
+                    ]
+                },
+                "BurstAtk_Effect": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_BurstAtk",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 0.0,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "Fx_HeadNode"
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_BurstAtk_Trail"
+                        }
+                    ]
+                },
+                "BurstAtk_FindTargets": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "IKKMDDLDLIN": 0.4000000059604645,
+                    "PBDDACFFPOE": [
+                        {
+                            "$type": "ApplyModifier",
+                            "GILFKOBKGLI": {
+                                "$type": "SelectTargetsByShape",
+                                "JBKKOJLJHDK": "CircleR8",
+                                "ONPOPLLHJLE": "Enemy",
+                                "CJJABKCAIEB": 1.0
+                            },
+                            "DNFLNAJKCDK": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ],
+                            "GAIGOBCNNEE": "BurstAtk_Damage"
+                        }
+                    ]
+                },
+                "BurstAtk_Damage": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 0.20000000298023224,
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "DamageByAttackValue",
+                            "attackInfo": {
+                                "attackTag": "",
+                                "attenuationTag": "Group1",
+                                "attenuationGroup": "default",
+                                "attackProperty": {
+                                    "bonusCriticalHurt": 0.25,
+                                    "damagePercentageRatio": 0.0,
+                                    "elementType": "Electric",
+                                    "elementDurability": 25.0,
+                                    "strikeType": "Default",
+                                    "enBreak": 1.0
+                                },
+                                "hitPattern": {
+                                    "onHitEffectName": "Eff_Monster_Fatuus_Summoner_BurstAtk_Hit",
+                                    "hitImpulseType": "LV1",
+                                    "hitHaltTimeScale": 0.05000000074505806
+                                },
+                                "cameraShake": {}
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_BurstAtk_Lightning",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "offset": {
+                                    "AEAAJCIDPED": 0.0,
+                                    "KAAPLGBEDPM": 1.5,
+                                    "PHDCJAHHIOG": 0.0
+                                },
+                                "KJNJNKLLNCN": "WeaponAttachPoint",
+                                "MMFHENHCBGB": "Applier"
+                            }
+                        }
+                    ]
+                }
+            },
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_BurstAtkBS"
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "DMCJDGELKBC": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "lifeTime": "TriggerNoRepeat",
+                            "NGDMCBABOJA": {
+                                "$type": "ConfigBornBySelf",
+                                "JBPCKOKLHEB": true,
+                                "ANAGBFPADIE": true
+                            },
+                            "secondHeight": 1.0,
+                            "ICGFCBOFFDI": 3.0
+                        },
+                        "attackInfo": {
+                            "attackTag": "",
+                            "attenuationTag": "",
+                            "attenuationGroup": "default",
+                            "attackProperty": {
+                                "bonusCriticalHurt": 1.0,
+                                "damagePercentageRatio": 0.0,
+                                "elementType": "Electric",
+                                "elementDurability": 20.0,
+                                "strikeType": "Default",
+                                "enBreak": 100.0
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitImpulseType": "LV5",
+                                "hitHaltTimeScale": 0.05000000074505806
+                            },
+                            "cameraShake": {}
+                        }
+                    },
+                    "OJIFKEOCJGB": "Enemy"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_BurstAtk_SetWeaponRender",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "AttachToAnimatorStateIDMixin",
+                    "stateIDs": [
+                        "BurstAtk_BS2",
+                        "BurstAtk",
+                        "BurstAtk_AS1",
+                        "BurstAtkStandby"
+                    ],
+                    "GAIGOBCNNEE": "SetWeaponRender"
+                }
+            ],
+            "HNEIEGHMLKH": {
+                "SetWeaponRender": {
+                    "GAIGOBCNNEE": "",
+                    "elementDurability": 100.0,
+                    "KCICDEJLIJD": [
+                        {
+                            "$type": "TriggerSetRenderersEnable",
+                            "GEDDBEFBOKD": [
+                                "MonEquip_Lantern_Thunder_01"
+                            ]
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_WeaponDisappear"
+                        }
+                    ],
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "TriggerSetRenderersEnable",
+                            "GEDDBEFBOKD": [
+                                "MonEquip_Lantern_Thunder_01"
+                            ],
+                            "PAHBCOACBAI": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_WeaponDisappear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_BurstAtk_SkinLayerOn",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "HHFIHBEAPAP": "SkinLayerState",
+                    "value": true
+                }
+            ],
+            "OGFFGLGEOGF": [
+                {
+                    "$type": "RemoveUniqueModifier",
+                    "GAIGOBCNNEE": "UNIQUE_Fatuus_Summoner_ElementShield"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_BurstAtk_SkinLayerOff",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "SetAnimatorBool",
+                    "HHFIHBEAPAP": "SkinLayerState"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_Random2_Timer",
+            "HNEIEGHMLKH": {
+                "Timer": {
+                    "GAIGOBCNNEE": "",
+                    "GMIMMDOGGIO": 5.0,
+                    "elementDurability": 100.0,
+                    "ILBIENDPCBG": [
+                        {
+                            "$type": "KillSelf"
+                        }
+                    ]
+                }
+            },
+            "KCICDEJLIJD": [
+                {
+                    "$type": "ApplyModifier",
+                    "GAIGOBCNNEE": "Timer"
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_BurstAtk_LHandEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_BurstAtk_Hand",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "LHandAttachPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Fatuus_Summoner_BurstAtk_RHandEffect",
+            "HKBHLMNEMKM": [
+                {
+                    "$type": "FireEffect",
+                    "JBHFPDMBFHN": "Eff_Monster_Fatuus_Summoner_BurstAtk_Hand",
+                    "NGDMCBABOJA": {
+                        "$type": "ConfigBornByAttachPoint",
+                        "offset": {
+                            "AEAAJCIDPED": 0.0,
+                            "KAAPLGBEDPM": 0.0,
+                            "PHDCJAHHIOG": 0.0
+                        },
+                        "KJNJNKLLNCN": "RHandAttachPoint"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Monster_Fatuus_Summoner_Steer",
+            "CHBMMFLIIGH": [
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Turn"
+                    ],
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "BlinkNear"
+                    ],
+                    "IMHBEGIKDKB": 2.0,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "BlinkFar"
+                    ],
+                    "IMHBEGIKDKB": 2.0,
+                    "HENDIIJFPCI": 150.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "Summon"
+                    ],
+                    "IMHBEGIKDKB": 0.15000000596046448,
+                    "HENDIIJFPCI": 180.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "RangeAtk"
+                    ],
+                    "EOOBFBGMGLD": 0.17499999701976776,
+                    "IMHBEGIKDKB": 0.25,
+                    "HENDIIJFPCI": 360.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                },
+                {
+                    "$type": "SteerAttackMixin",
+                    "EHNAPMMMNFI": [
+                        "BurstAtkStandby"
+                    ],
+                    "IMHBEGIKDKB": 20.0,
+                    "HENDIIJFPCI": 120.0,
+                    "NCAENFOANAG": "",
+                    "BBHBLAIEHAJ": 12.0
+                }
+            ]
+        }
+    }
+]
